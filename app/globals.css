@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="checkbox"]:checked {
+    background-color: black;
+    border-color: black;
+  }
