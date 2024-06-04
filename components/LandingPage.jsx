@@ -255,23 +255,26 @@ const LandingPage = () => {
   };
 
   const handleYellowMenu = () => {
-    // timeline
-    //   .to(teelRef.current, {
-    //     left: "100%",
-    //     duration: 2,
-    //   })
-    //   .to(redRef.current, {
-    //     left: "100%",
-    //     duration: 2,
-    //   })
-    //   .to(
-    //     yellowRef.current,
-    //     {
-    //         width: '150%',
-    //         duration: 2,
-    //     },
-    //     "-=2"
-    //   )
+    timeline
+      .to(
+        yellowRef.current,
+        {
+            width: '150%',
+            duration: 2,
+        },
+        "-=2"
+      )
+      .to(teelRef.current, {
+        left: "100%",
+        duration: 2,
+      })
+      .to(redRef.current, {
+        left: "100%",
+        duration: 2,
+      },
+      "-=2"
+    );
+      
   };
   return (
     <section className="w-full h-screen overflow-hidden relative">
