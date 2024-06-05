@@ -136,6 +136,7 @@ const LandingPage = () => {
   };
 
   const handleBlackMenu = () => {
+    timeline.set(yellowRef.current, { clearProps: 'all' });
     timeline
       .to(logoRef.current, {
         rotate: -90,
