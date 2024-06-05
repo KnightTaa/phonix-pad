@@ -128,7 +128,7 @@ const Uploads = () => {
             </p>
           </div>
           {/* right side */}
-          <div className="w-full md:w-full lg:w-1/2 p-4 sm:p-8 rounded-xl mt-5 bg-white">
+          <div className="w-full md:w-full lg:w-1/2 p-4 sm:p-8 rounded-xl mt-5 sm:mt-0 bg-white">
             <div className="space-y-12">
               <div className="grid grid-cols-1 gap-x-6 gap-y-7 sm:grid-cols-6">
                 <div className="sm:col-span-3">
@@ -144,7 +144,7 @@ const Uploads = () => {
                       name="first-name"
                       id="first-name"
                       autoComplete="given-name"
-                      className="block w-full rounded-xl border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-800 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-900 sm:text-sm sm:leading-6"
+                      className="block w-full rounded-xl border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-800 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-900 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -162,7 +162,7 @@ const Uploads = () => {
                       name="last-name"
                       id="last-name"
                       autoComplete="family-name"
-                      className="block w-full rounded-xl border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-800 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-900 sm:text-sm sm:leading-6"
+                      className="block w-full rounded-xl border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-800 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-900 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
@@ -180,7 +180,7 @@ const Uploads = () => {
                       name="email"
                       type="email"
                       autoComplete="email"
-                      className="block w-full rounded-xl border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-800 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-900 sm:text-sm sm:leading-6"
+                      className="block w-full rounded-xl border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-800 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-900 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
