@@ -304,11 +304,11 @@ const LandingPage = () => {
         ease: "power1.inOut",
         duration: 2,
         onComplete: () => {
-          timeline.set(firstDivRef.current, { display: 'none' });
-          timeline.set(secondDivRef.current, { display: 'block' });
-          timeline.fromTo(secondDivRef.current, { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power1.inOut' });
+          timeline.set(secondDivRef.current, { display: 'block' }, "-=2");
+          timeline.fromTo(secondDivRef.current, { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power1.inOut' }, "-=2");
         }
       })
+      .set(firstDivRef.current, { display: 'none' }, "-=0.5")
       .to(
         teelRef.current,
         {
