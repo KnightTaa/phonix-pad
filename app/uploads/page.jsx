@@ -31,7 +31,7 @@ const Uploads = () => {
   return (
     <section className={`w-full ${bgColor}`}>
       <Wrapper>
-        <form className="w-full flex flex-col md:flex-col lg:flex-row justify-between gap-5 p-4 sm:p-4">
+        <form className="w-full flex flex-col md:flex-col lg:flex-row justify-between gap-5 p-4 sm:p-20">
           {/* left side */}
           <div className="w-full md:w-full lg:w-1/2 flex flex-col gap-2">
             <h1
