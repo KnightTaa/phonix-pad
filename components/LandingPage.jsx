@@ -20,11 +20,15 @@ const LandingPage = () => {
   const blackMenuMobileRef = useRef(null);
   const contentMobileRef = useRef(null);
   const threeDotRef = useRef(null);
+  const whiteThreeDotRef = useRef(null);
 
   //   section refs
   const yellowRef = useRef(null);
   const teelRef = useRef(null);
   const redRef = useRef(null);
+  const yellowDivRef = useRef(null);
+  const yellowLogoRef = useRef(null);
+  const teelLogoRef = useRef(null);
 
   // mobile section Refs
   const yellowMobileRef = useRef(null);
@@ -132,7 +136,7 @@ const LandingPage = () => {
           duration: 2,
         },
         "-=2"
-      )
+      );
   };
 
   const handleBlackMenu = () => {
@@ -177,7 +181,9 @@ const LandingPage = () => {
       .to(
         yellowRef.current,
         {
+          width: yellowRef.current.style.width === "150%" ? "50%" : "",
           left: window.innerWidth > 768 ? "-50%" : "0",
+          zIndex: "1",
           duration: 2,
         },
         "-=2"
@@ -185,7 +191,9 @@ const LandingPage = () => {
       .to(
         teelRef.current,
         {
+          width: teelRef.current.style.width === "150%" ? "50%" : "",
           left: window.innerWidth > 768 ? "-0%" : "0",
+          zIndex: "1",
           duration: 2,
         },
         "-=2"
@@ -193,7 +201,16 @@ const LandingPage = () => {
       .to(
         redRef.current,
         {
+          width: teelRef.current.style.width === "150%" ? "50%" : "",
           left: window.innerWidth > 768 ? "50%" : "0",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        whiteThreeDotRef.current,
+        {
+          opacity: 1,
           duration: 2,
         },
         "-=2"
@@ -251,30 +268,113 @@ const LandingPage = () => {
           duration: 2,
         },
         "-=2"
-      )
+      );
   };
 
   const handleYellowMenu = () => {
     timeline
+      .to(yellowRef.current, {
+        width: "150%",
+        ease: "power1.inOut",
+        duration: 2,
+      })
+      .to(
+        teelRef.current,
+        {
+          left: "100%",
+          duration: 2,
+        },
+        "-=1.55"
+      )
+      .to(
+        redRef.current,
+        {
+          left: "100%",
+          duration: 2,
+        },
+        "-=2"
+      );
+    // .to(
+    //   yellowLogoRef.current,
+    //   {
+    //     top: '0',
+    //     right: '0',
+    //     translateX: '-50%',
+    //     translateY: '100%',
+    //     duration: 2,
+    //   },
+    //   "-=2"
+    // )
+  };
+
+  const handleTeelMenu = () => {
+    timeline
+      .to(teelRef.current, {
+        width: "150%",
+        left: "-50%",
+        ease: "power1.inOut",
+        duration: 2,
+      })
+      .to(
+        redRef.current,
+        {
+          left: "100%",
+          duration: 2,
+        },
+        "-=1.5"
+      )
       .to(
         yellowRef.current,
         {
-            width: '150%',
-            duration: 2,
+          // right: "-100%",
+          left: "-75%",
+          // width: '0%',
+          zIndex: "-100",
+          duration: 2,
         },
         "-=2"
-      )
-      .to(teelRef.current, {
-        left: "100%",
+      );
+    // .to(
+    //   yellowLogoRef.current,
+    //   {
+    //     scale: '0',
+    //     duration: 2,
+    //   },
+    //   "-=2"
+    // )
+  };
+
+  const handleRedMenu = () => {
+    timeline
+      .to(redRef.current, {
+        width: "150%",
+        left: "-50%",
+        ease: "power1.inOut",
         duration: 2,
       })
-      .to(redRef.current, {
-        left: "100%",
-        duration: 2,
-      },
-      "-=2"
-    );
-      
+      .to(
+        yellowRef.current,
+        {
+          // right: "-100%",
+          // width: '0%',
+          left: "-75%",
+          zIndex: "-100",
+          width: "0%",
+          duration: 2,
+        },
+        "-=1.5"
+      )
+      .to(
+        teelRef.current,
+        {
+          // left: "-50%",
+          // width: '0%',
+          left: "-75%",
+          zIndex: "-150",
+          duration: 2,
+        },
+        "-=2"
+      );
   };
   return (
     <section className="w-full h-screen overflow-hidden relative">
@@ -293,7 +393,7 @@ const LandingPage = () => {
       >
         {/* left */}
         <div
-          className="w-full sm:w-[50%] h-[50%] sm:h-full"
+          className="w-full sm:w-[50%] h-[50%] sm:h-full z-10"
           ref={leftDivRef}
         >
           <div className="relative" ref={logoDivRef}>
@@ -353,7 +453,12 @@ const LandingPage = () => {
             className="hidden sm:block h-screen w-full bg-black absolute -right-[100%]"
             ref={blackMenuRef}
           >
-            <div className="h-screen flex items-center justify-center">
+            <div className="h-screen flex items-center justify-center relative">
+              <div className="absolute rotate-90 opacity-0 top-0 right-1/2 translate-x-1/2 mt-5" ref={whiteThreeDotRef}>
+                <button>
+                  <HiDotsHorizontal size={36} className="text-white"/>
+                </button>
+              </div>
               <button onClick={() => handleBlackMenu()}>
                 <Image
                   src={"/image 1.png"}
@@ -386,18 +491,22 @@ const LandingPage = () => {
           </div>
           {/* color 3 section starts here */}
 
-          {/* section 1  -left-[50%] */}
+          {/* section 1  -left-[50%] items-start justify-end p-10*/}
           <div
             className="h-screen w-[50%] bg-[#f7e114] absolute left-[100%]"
             ref={yellowRef}
           >
-            <div className="h-screen flex items-center justify-center">
+            <div
+              className="h-screen flex items-center justify-center relative"
+              ref={yellowDivRef}
+            >
               <button onClick={() => handleYellowMenu()}>
                 <Image
                   src={"/image 7.png"}
                   width={400}
                   height={400}
                   alt={"logo"}
+                  ref={yellowLogoRef}
                   className="w-[150px] sm:w-[150px] scale-[1.8] h-auto p-5"
                 />
               </button>
@@ -409,12 +518,13 @@ const LandingPage = () => {
             ref={teelRef}
           >
             <div className="h-screen flex items-center justify-center">
-              <button>
+              <button onClick={() => handleTeelMenu()}>
                 <Image
                   src={"/image 11.png"}
                   width={400}
                   height={400}
                   alt={"logo"}
+                  ref={teelLogoRef}
                   className="w-[150px] sm:w-[150px] scale-[1.8] h-auto p-5"
                 />
               </button>
@@ -426,7 +536,7 @@ const LandingPage = () => {
             ref={redRef}
           >
             <div className="h-screen flex items-center justify-center">
-              <button>
+              <button onClick={() => handleRedMenu()}>
                 <Image
                   src={"/image 10.png"}
                   width={400}
@@ -447,45 +557,48 @@ const LandingPage = () => {
             className="h-[50%] w-full bg-[#f7e114] absolute top-[100%]"
             ref={yellowMobileRef}
           >
-              <button onClick={() => handleYellowMenu()} className="w-full h-full relative">
-                <Image
-                  src={"/image 7.png"}
-                  width={400}
-                  height={400}
-                  alt={"logo"}
-                  className="w-[100px] scale-[1.8] h-auto absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 p-5"
-                />
-              </button>
+            <button
+              onClick={() => handleYellowMenu()}
+              className="w-full h-full relative"
+            >
+              <Image
+                src={"/image 7.png"}
+                width={400}
+                height={400}
+                alt={"logo"}
+                className="w-[100px] scale-[1.8] h-auto absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 p-5"
+              />
+            </button>
           </div>
           {/* section 2 top-[0%] */}
           <div
             className="h-[50%] w-full bg-[#00d3c8] absolute top-[100%]"
             ref={teelMobileRef}
           >
-              <button className="w-full h-full relative">
-                <Image
-                  src={"/image 11.png"}
-                  width={400}
-                  height={400}
-                  alt={"logo"}
-                  className="w-[100px] scale-[1.8] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-auto p-5"
-                />
-              </button>
+            <button className="w-full h-full relative">
+              <Image
+                src={"/image 11.png"}
+                width={400}
+                height={400}
+                alt={"logo"}
+                className="w-[100px] scale-[1.8] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-auto p-5"
+              />
+            </button>
           </div>
           {/* section 3 top-[50%] */}
           <div
             className="h-[50%] w-full bg-[#ee1d52] absolute top-[100%]"
             ref={redMobileRef}
           >
-              <button className="w-full h-full relative">
-                <Image
-                  src={"/image 10.png"}
-                  width={400}
-                  height={400}
-                  alt={"logo"}
-                  className="w-[100px] scale-[1.8] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-auto p-5"
-                />
-              </button>
+            <button className="w-full h-full relative">
+              <Image
+                src={"/image 10.png"}
+                width={400}
+                height={400}
+                alt={"logo"}
+                className="w-[100px] scale-[1.8] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-auto p-5"
+              />
+            </button>
           </div>
 
           {/* mobile color 3 section ends here */}
