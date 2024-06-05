@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { CloudArrowUpIcon } from "@heroicons/react/24/solid";
 
-const Submit = () => {
+const Uploads = () => {
   const [selectedRadio, setSelectedRadio] = useState("shorts");
   const [bgColor, setBgColor] = useState("bg-yellow-400");
   const [textColor, setTextColor] = useState("text-black");
@@ -27,16 +27,17 @@ const Submit = () => {
         break;
     }
   };
-
   return (
-    <section className={`-mt-10 w-full h-screen ${bgColor}`}>
-      <div className="m-10 p-10">
-      <form className="w-full flex flex-col sm:flex-row gap-5 ">
-        {/* left side of form */}
-        <div className="w-full sm:w-[50%]">
-          <h1 className={`uppercase text-2xl text-start sm:text-5xl font-semibold ${textColor}`}>
+    <section className={`w-full ${bgColor}`}>
+      <form className="w-full flex flex-col md:flex-col lg:flex-row justify-between gap-5 p-4 sm:p-10">
+        {/* left side */}
+        <div className="w-full md:w-full lg:w-1/2 flex flex-col gap-2">
+          <h1
+            className={`uppercase text-2xl text-start sm:text-5xl font-semibold ${textColor}`}
+          >
             Select your project
           </h1>
+
           <fieldset className="mt-5">
             <div className="flex items-center gap-10">
               <input
@@ -50,7 +51,7 @@ const Submit = () => {
               <div
                 onClick={() => handleRadioChange("shorts")}
                 className={`cursor-pointer transition-all duration-300 ${
-                  selectedRadio === "shorts" ? "w-[150px]" : "w-[120px]"
+                  selectedRadio === "shorts" ? "w-[100px]" : "w-[80px]"
                 }`}
               >
                 <Image
@@ -72,7 +73,7 @@ const Submit = () => {
               <div
                 onClick={() => handleRadioChange("brands")}
                 className={`cursor-pointer transition-all duration-300 ${
-                  selectedRadio === "brands" ? "w-[150px]" : "w-[120px]"
+                  selectedRadio === "brands" ? "w-[100px]" : "w-[80px]"
                 }`}
               >
                 <Image
@@ -94,8 +95,7 @@ const Submit = () => {
               <div
                 onClick={() => handleRadioChange("products")}
                 className={`cursor-pointer transition-all duration-300 ${
-                  // selectedRadio === "products" ? "w-[150px]" : "w-[120px]"
-                  selectedRadio === "products" ? `${window.innerWidth > 768 ? "150px" : "100px"}` : `${window.innerWidth > 768 ? "100px" : "80px"}`
+                  selectedRadio === "products" ? "w-[100px]" : "w-[80px]"
                 }`}
               >
                 <Image
@@ -108,10 +108,14 @@ const Submit = () => {
               </div>
             </div>
           </fieldset>
-          <h1 className={`uppercase text-xl text-start sm:text-3xl font-semibold mt-10 ${textColor}`}>
+          <h1
+            className={`uppercase text-xl text-start sm:text-3xl font-semibold mt-10 ${textColor}`}
+          >
             Select your project
           </h1>
-          <p className={`text-lg font-medium mt-5 leading-8 ${textColor}`}>
+          <p
+            className={`text-base sm:text-lg font-medium mt-5 leading-6 sm:leading-8 ${textColor}`}
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -121,8 +125,8 @@ const Submit = () => {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
-        {/* right side of form */}
-        <div className="w-full sm:w-[50%] p-8 rounded-xl bg-white">
+        {/* right side */}
+        <div className="w-full md:w-full lg:w-1/2 p-4 sm:p-8 rounded-xl mt-5 bg-white">
           <div className="space-y-12">
             <div className="grid grid-cols-1 gap-x-6 gap-y-7 sm:grid-cols-6">
               <div className="sm:col-span-3">
@@ -257,7 +261,6 @@ const Submit = () => {
               </div>
             </div>
           </div>
-
           <div className="mt-6 flex items-center justify-start gap-x-6">
             <button
               type="button"
@@ -268,9 +271,8 @@ const Submit = () => {
           </div>
         </div>
       </form>
-    </div>
     </section>
   );
 };
 
-export default Submit;
+export default Uploads;
