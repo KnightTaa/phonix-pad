@@ -42,6 +42,9 @@ const LandingPage = () => {
   const otherLinksRef = useRef(null);
   const otherLinksMobileRef = useRef(null);
 
+  const firstDivRef = useRef();
+  const secondDivRef = useRef();
+
   const timeline = gsap.timeline({
     repeat: 0,
   });
@@ -147,7 +150,9 @@ const LandingPage = () => {
   };
 
   const handleBlackMenu = () => {
-    timeline.set(yellowRef.current, { clearProps: 'all' });
+    // timeline.set(yellowRef.current, { clearProps: 'all' });
+    timeline.set(firstDivRef.current, { clearProps: 'all' });
+    timeline.set(secondDivRef.current, { clearProps: 'all' });
     timeline
       .to(logoRef.current, {
         rotate: -90,
@@ -298,6 +303,11 @@ const LandingPage = () => {
         width: "150%",
         ease: "power1.inOut",
         duration: 2,
+        onComplete: () => {
+          timeline.set(firstDivRef.current, { display: 'none' });
+          timeline.set(secondDivRef.current, { display: 'block' });
+          timeline.fromTo(secondDivRef.current, { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power1.inOut' });
+        }
       })
       .to(
         teelRef.current,
@@ -633,7 +643,7 @@ const LandingPage = () => {
               className="h-screen flex items-center justify-center relative"
               ref={yellowDivRef}
             >
-              <button onClick={() => handleYellowMenu()}>
+              <button onClick={() => handleYellowMenu()} ref={firstDivRef}>
                 <Image
                   src={"/image 7.png"}
                   width={400}
@@ -643,6 +653,29 @@ const LandingPage = () => {
                   className="w-[150px] sm:w-[150px] scale-[1.8] h-auto p-5"
                 />
               </button>
+              <div className="hidden" ref={secondDivRef}>
+                <div className="absolute top-0 right-0 ">
+                    <button onClick={() => handleYellowMenu()}>
+                      <Image
+                        src={"/image 7.png"}
+                        width={400}
+                        height={400}
+                        alt="logo"
+                        className="w-[240px] sm:w-[300px] h-auto p-10"
+                      />
+                    </button>
+                </div>
+                {/* info */}
+                <div className="absolute left-0 bottom-0 p-10">
+                  <div className="flex items-start flex-col gap-4">
+                    <div className="w-full sm:w-[50%]">
+                      <p className="text-xl leading-8 font-medium">
+                         Platform to promote, support and recognize all those who use an image as a vehicle to express their creativity, feelings, memories; all that a creative, professional or amateur want to transmit to society.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           {/* section 2 -left-[0%] */}
