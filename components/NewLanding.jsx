@@ -4,11 +4,13 @@ import gsap from "gsap";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 import { HiDotsHorizontal } from "react-icons/hi";
+import { IoIosArrowBack } from "react-icons/io";
 import OtherLinks from "./OtherLinks";
 import OtherLinksMobileCard from "./OtherLinksMobileCard";
 
 const NewLanding = () => {
   const [isRotated, setIsRotated] = useState(false);
+  const [isBack, setIsBack] = useState(false);
 
   const rightBlackRef = useRef(null);
   const threeDotRef = useRef(null);
@@ -16,6 +18,7 @@ const NewLanding = () => {
   const rightDivRef = useRef(null);
   const logoRef = useRef(null);
   const logo1Ref = useRef(null);
+  const logo2Ref = useRef(null);
   const contentRef = useRef(null);
   const yellowDivRef = useRef(null);
   const teelDivRef = useRef(null);
@@ -23,6 +26,10 @@ const NewLanding = () => {
   const yellowLogoRef = useRef(null);
   const teelLogoRef = useRef(null);
   const redLogoRef = useRef(null);
+  const backRef = useRef(null);
+
+  const testRef = useRef(null);
+  const test2Ref = useRef(null);
 
   const timeline = gsap.timeline({
     repeat: 0,
@@ -70,7 +77,7 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
-      );
+      )
   };
 
   const handleThreeDotsClick = () => {
@@ -94,6 +101,27 @@ const NewLanding = () => {
       );
   };
 
+  const handleLeftClick2 = () => {
+    console.log("second click");
+    timeline
+    .to(rightBlackRef.current, {
+        opacity: 0,
+        duration: 2,
+      })
+      .to(
+        contentRef.current,
+        {
+          right: window.innerWidth > 768 ? "0" : "-50%",
+          bottom: window.innerWidth > 768 ? "0" : "0",
+          left: window.innerWidth > 768 ? "50%" : "0",
+          zIndex: '100',
+          opacity: 1,
+          duration: 2,
+        },
+        "-=2"
+      )
+  }
+
   const handleRightClick = () => {
     setIsRotated(!isRotated);
     timeline
@@ -107,6 +135,30 @@ const NewLanding = () => {
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
           width: window.innerWidth > 768 ? "180px" : "120px",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        logo2Ref.current,
+        {
+          rotate: "-90",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        testRef.current,
+        {
+          pointerEvents: "none",
+        },
+        "-=2"
+      )
+      .to(
+        backRef.current,
+        {
+          display: "none",
+        //   opacity: 1,
           duration: 2,
         },
         "-=2"
@@ -249,8 +301,88 @@ const NewLanding = () => {
         {
           left: window.innerWidth > 768 ? "12.5%" : "0",
           top: window.innerWidth > 768 ? "0" : "12.5%",
-        //   zIndex: "-100",
+          //   zIndex: "-100",
           duration: 2,
+        },
+        "-=2"
+      );
+  };
+
+  const handleBackClick = () => {
+    setIsBack(true);
+    timeline
+      .to(redDivRef.current, {
+        left: window.innerWidth > 768 ? "150%" : "0",
+        top: window.innerWidth > 768 ? "0" : "100%",
+        duration: 2,
+      })
+      .to(
+        teelDivRef.current,
+        {
+          left: window.innerWidth > 768 ? "125%" : "0",
+          top: window.innerWidth > 768 ? "0" : "100%",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        yellowDivRef.current,
+        {
+          left: window.innerWidth > 768 ? "100%" : "0",
+          top: window.innerWidth > 768 ? "0" : "100%",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        rightBlackRef.current,
+        {
+          left: window.innerWidth > 768 ? "50%" : "0",
+          width: window.innerWidth > 768 ? "50%" : "100%",
+          height: window.innerWidth > 768 ? "100vh" : "50%",
+          top: window.innerWidth > 768 ? "0" : "50%",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        leftDivRef.current,
+        {
+          width: window.innerWidth > 768 ? "50%" : "100%",
+          height: window.innerWidth > 768 ? "100vh" : "50%",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        logoRef.current,
+        {
+          rotate: 0,
+          scale: window.innerWidth > 768 ? 1.4 : 1,
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        logo1Ref.current,
+        {
+          rotate: 0,
+          scale: window.innerWidth > 768 ? 1.4 : 1,
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        testRef.current,
+        {
+          pointerEvents: "auto",
+        },
+        "-=2"
+      )
+      .to(
+        backRef.current,
+        {
+          opacity: 0,
         },
         "-=2"
       );
@@ -271,8 +403,16 @@ const NewLanding = () => {
           className="w-full sm:w-[50%] h-[50%] sm:h-full absolute left-[-100%]"
           ref={leftDivRef}
         >
-          <div className="w-full h-full flex items-center justify-center">
-            <button onClick={handleLeftClick}>
+          <div className="w-full h-full flex items-center justify-center relative">
+            <button
+              onClick={handleBackClick}
+              className="opacity-0 mt-2 ml-2 flex flex-row items-center justify-center absolute top-0 left-0 gap-2"
+              ref={backRef}
+            >
+              <IoIosArrowBack size={26} className="text-black" />
+              <h1 className="font-semibold text-lg">Back</h1>
+            </button>
+            <button onClick={isBack ? handleLeftClick2 : handleLeftClick} ref={testRef}>
               <Image
                 src={"/image 13.png"}
                 width={400}
@@ -291,7 +431,7 @@ const NewLanding = () => {
           className="w-full sm:w-[50%] h-[50%] sm:h-full bg-black z-20 absolute bottom-0 right-[-100%]"
           ref={rightBlackRef}
         >
-          <div className="w-full h-full flex items-center justify-center">
+          <div className="w-full h-full flex items-center justify-center" ref={test2Ref}>
             <button onClick={handleRightClick}>
               <Image
                 src={"/image 1.png"}
@@ -339,9 +479,11 @@ const NewLanding = () => {
           className="h-[25%] sm:h-screen w-full sm:w-[25%] bg-[#f7e114] absolute left-0 sm:left-[100%] top-[100%] sm:top-0"
           ref={yellowDivRef}
         >
+          {/* absolute -left-[50%] top-0 translate-x-1/2 */}
           <button
             onClick={handleYellowContent}
             className="w-full h-full flex items-center justify-center"
+            ref={yellowLogoRef}
           >
             <Image
               src={"/image 7.png"}
@@ -367,6 +509,7 @@ const NewLanding = () => {
               width={400}
               height={400}
               alt={"logo"}
+              ref={teelLogoRef}
               className="w-[120px] sm:w-[200px] h-auto"
             />
           </button>
@@ -386,6 +529,7 @@ const NewLanding = () => {
               width={400}
               height={400}
               alt={"logo"}
+              ref={redLogoRef}
               className="w-[120px] sm:w-[200px] h-auto"
             />
           </button>
