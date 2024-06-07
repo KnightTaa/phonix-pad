@@ -158,8 +158,8 @@ const NewLanding = () => {
         backRef.current,
         {
           // remove this display none and make opacity 1 to activate back menu
-          display: "none",
-          //   opacity: 1,
+          //   display: "none",
+          opacity: 1,
           duration: 2,
         },
         "-=2"
