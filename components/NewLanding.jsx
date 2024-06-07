@@ -77,7 +77,7 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
-      )
+      );
   };
 
   const handleThreeDotsClick = () => {
@@ -104,7 +104,7 @@ const NewLanding = () => {
   const handleLeftClick2 = () => {
     console.log("second click");
     timeline
-    .to(rightBlackRef.current, {
+      .to(rightBlackRef.current, {
         opacity: 0,
         duration: 2,
       })
@@ -114,13 +114,13 @@ const NewLanding = () => {
           right: window.innerWidth > 768 ? "0" : "-50%",
           bottom: window.innerWidth > 768 ? "0" : "0",
           left: window.innerWidth > 768 ? "50%" : "0",
-          zIndex: '100',
+          zIndex: "100",
           opacity: 1,
           duration: 2,
         },
         "-=2"
-      )
-  }
+      );
+  };
 
   const handleRightClick = () => {
     setIsRotated(!isRotated);
@@ -157,8 +157,9 @@ const NewLanding = () => {
       .to(
         backRef.current,
         {
+          // remove this display none and make opacity 1 to activate back menu
           display: "none",
-        //   opacity: 1,
+          //   opacity: 1,
           duration: 2,
         },
         "-=2"
@@ -412,7 +413,10 @@ const NewLanding = () => {
               <IoIosArrowBack size={26} className="text-black" />
               <h1 className="font-semibold text-lg">Back</h1>
             </button>
-            <button onClick={isBack ? handleLeftClick2 : handleLeftClick} ref={testRef}>
+            <button
+              onClick={isBack ? handleLeftClick2 : handleLeftClick}
+              ref={testRef}
+            >
               <Image
                 src={"/image 13.png"}
                 width={400}
@@ -431,7 +435,10 @@ const NewLanding = () => {
           className="w-full sm:w-[50%] h-[50%] sm:h-full bg-black z-20 absolute bottom-0 right-[-100%]"
           ref={rightBlackRef}
         >
-          <div className="w-full h-full flex items-center justify-center" ref={test2Ref}>
+          <div
+            className="w-full h-full flex items-center justify-center"
+            ref={test2Ref}
+          >
             <button onClick={handleRightClick}>
               <Image
                 src={"/image 1.png"}
