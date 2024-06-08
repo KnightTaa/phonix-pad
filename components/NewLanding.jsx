@@ -36,6 +36,8 @@ const NewLanding = () => {
   const otherLinksMobileRef = useRef(null);
   const otherLinksThreeDotRef = useRef(null);
 
+  const leftLogoDivRef = useRef(null);
+
   const timeline = gsap.timeline({
     repeat: 0,
   });
@@ -64,6 +66,7 @@ const NewLanding = () => {
       );
   });
 
+  // top-[12.5%] sm:top-0
   const handleLeftClick = () => {
     timeline
       .to(rightBlackRef.current, {
@@ -78,7 +81,16 @@ const NewLanding = () => {
           right: window.innerWidth > 768 ? "0" : "-50%",
           bottom: window.innerWidth > 768 ? "0" : "0",
           left: window.innerWidth > 768 ? "50%" : "0",
+          top: window.innerWidth > 768 ? "0" : "12.5%",
           opacity: 1,
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        leftDivRef.current,
+        {
+          height: window.innerWidth > 768 ? "100%" : "15%",
           duration: 2,
         },
         "-=2"
@@ -91,6 +103,7 @@ const NewLanding = () => {
         right: window.innerWidth > 768 ? "-50%" : "0",
         bottom: window.innerWidth > 768 ? "0" : "-50%",
         left: window.innerWidth > 768 ? "100%" : "0",
+        top: window.innerWidth > 768 ? "0" : "100%",
         opacity: 0,
         duration: 2,
       })
@@ -104,11 +117,18 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
+      )
+      .to(
+        leftDivRef.current,
+        {
+          height: window.innerWidth > 768 ? "100%" : "50%",
+          duration: 2,
+        },
+        "-=2"
       );
   };
 
   const handleLeftClick2 = () => {
-    console.log("second click");
     timeline
       .to(rightBlackRef.current, {
         opacity: 0,
@@ -120,8 +140,18 @@ const NewLanding = () => {
           right: window.innerWidth > 768 ? "0" : "-50%",
           bottom: window.innerWidth > 768 ? "0" : "0",
           left: window.innerWidth > 768 ? "50%" : "0",
-          zIndex: "100",
+          top: window.innerWidth > 768 ? "0" : "12.5%",
+          zIndex: window.innerWidth > 768 ? "100" : "0",
+          // zIndex: "100",
           opacity: 1,
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        leftDivRef.current,
+        {
+          height: window.innerWidth > 768 ? "100%" : "15%",
           duration: 2,
         },
         "-=2"
@@ -416,20 +446,33 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
+      )
+      .to(
+        threeDotRef.current,
+        {
+          opacity: 1,
+          duration: 2,
+        },
+        "-=2"
       );
   };
 
   const handleOtherLinks = () => {
-    timeline.to(otherLinksRef.current, {
-      left: otherLinksRef.current.style.left === "25%" ? "100%" : "25%",
-      zIndex: "40",
-      duration: 2,
-    })
-    .to(otherLinksMobileRef.current, {
-      left: otherLinksMobileRef.current.style.left === "0%" ? "100%" : "0%",
-      duration: 2,
-      zIndex: '40',
-    }, '-=2')
+    timeline
+      .to(otherLinksRef.current, {
+        left: otherLinksRef.current.style.left === "25%" ? "100%" : "25%",
+        zIndex: "40",
+        duration: 2,
+      })
+      .to(
+        otherLinksMobileRef.current,
+        {
+          left: otherLinksMobileRef.current.style.left === "0%" ? "100%" : "0%",
+          duration: 2,
+          zIndex: "40",
+        },
+        "-=2"
+      );
   };
   return (
     <section className="w-full h-screen overflow-hidden relative">
@@ -447,7 +490,10 @@ const NewLanding = () => {
           className="w-full sm:w-[50%] h-[50%] sm:h-full absolute left-[-100%]"
           ref={leftDivRef}
         >
-          <div className="w-full h-full flex items-center justify-center relative">
+          <div
+            className="w-full h-full flex items-center justify-center relative"
+            ref={leftLogoDivRef}
+          >
             <button
               onClick={handleBackClick}
               className="opacity-0 mt-2 ml-2 flex flex-row items-center justify-center absolute top-0 left-0 gap-2"
@@ -505,9 +551,9 @@ const NewLanding = () => {
         </div>
 
         {/* content */}
-        {/* absolute right-0 sm:-right-[50%] -bottom-[50%] */}
+        {/* absolute right-0 sm:-right-[50%] -bottom-[50%] h-[85%] top-[12.5%] sm:top-0*/}
         <div
-          className="w-full sm:w-[50%] h-[50%] sm:h-full opacity-0 flex items-start flex-col z-10 absolute right-0 sm:-right-[50%] -bottom-[50%] sm:bottom-0"
+          className="w-full sm:w-[50%] h-[50%] sm:h-full opacity-0 flex items-start flex-col gap-48 z-10 absolute right-0 sm:-right-[50%] -bottom-[50%] sm:bottom-0"
           ref={contentRef}
         >
           <div className="hidden w-full p-5 sm:flex items-center justify-end">
@@ -515,20 +561,25 @@ const NewLanding = () => {
               <HiDotsHorizontal size={36} />
             </button>
           </div>
-          <div className="h-screen p-5 flex items-center">
-            <p className="text-base sm:text-xl font-semibold">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia
-              sapiente illum consequuntur. Laborum placeat eum laboriosam
-              reiciendis hic neque perspiciatis iure dolorem nesciunt nobis.
-              Facere fuga cumque rem possimus placeat fugiat amet.Lorem ipsum
-              dolor sit, amet consectetur adipisicing elit. Mollitia sapiente
-              illum consequuntur. Laborum placeat eum laboriosam reiciendis hic
-              neque perspiciatis iure dolorem nesciunt nobis. Facere fuga cumque
-              rem possimus placeat fugiat amet. Lorem ipsum dolor sit, amet
-              consectetur adipisicing elit. Mollitia sapiente illum
-              consequuntur. Laborum placeat eum laboriosam reiciendis hic neque
-              perspiciatis iure dolorem nesciunt nobis. Facere fuga cumque rem
-              possimus placeat fugiat amet.
+          <div className="p-5 flex items-end flex-col gap-2 sm:gap-10">
+            <h1 className="text-2xl sm:text-5xl font-semibold text-end">
+              Phoenix Arts and Design (PAD)
+            </h1>
+            <p className="text-base sm:text-xl font-medium text-end">
+              Is a platform dedicated to supporting and raising awareness for,
+              designers, artists and creatives in Sri Lanka and the region.
+              <br />
+              <br />
+              Phoenix Industries is committed to fostering culture for a better
+              society. We have created PAD to be the voice of the cultural world
+              by promoting Arts and Design, across all disciplines. PAD is a
+              home for all those who use culture as a vehicle to express
+              themselves and promote culture as a benefit for society.
+              <br />
+              <br />
+              PAD is designed to encourage the ARTISTIC expression, to push
+              boundaries, to challenge the established perceptions, and
+              ultimately, to build a better future for our communities.
             </p>
           </div>
         </div>
@@ -548,7 +599,10 @@ const NewLanding = () => {
         </div>
 
         {/* other links section Mobile left-[100%] to left-0*/}
-        <div className="block sm:hidden h-[75%] w-full bg-[#3c3c3b] absolute left-[100%] top-[25%]" ref={otherLinksMobileRef}>
+        <div
+          className="block sm:hidden h-[75%] w-full bg-[#3c3c3b] absolute left-[100%] top-[25%]"
+          ref={otherLinksMobileRef}
+        >
           <OtherLinksMobile />
         </div>
 
