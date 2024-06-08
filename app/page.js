@@ -4,6 +4,7 @@ import { useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import LandingPage from "@/components/LandingPage";
 import ProjectInfo from "@/components/ProjectInfo";
+import NewLanding from "@/components/NewLanding";
 
 export default function Home() {
   const [loderFinish, setLoderFinish] = useState(false);
@@ -25,7 +26,8 @@ export default function Home() {
 
   return (
     <main className="">
-      <LandingPage />
+      {/* <LandingPage /> */}
+      <NewLanding />
       
       <div className="hidden">
         <div className="mb-10">
