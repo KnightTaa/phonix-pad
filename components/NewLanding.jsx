@@ -81,7 +81,7 @@ const NewLanding = () => {
           right: window.innerWidth > 768 ? "0" : "-50%",
           bottom: window.innerWidth > 768 ? "0" : "0",
           left: window.innerWidth > 768 ? "50%" : "0",
-          top: window.innerWidth > 768 ? "0" : "12.5%",
+          top: window.innerWidth > 768 ? "0" : "12.5%",//New
           opacity: 1,
           duration: 2,
         },
@@ -103,7 +103,7 @@ const NewLanding = () => {
         right: window.innerWidth > 768 ? "-50%" : "0",
         bottom: window.innerWidth > 768 ? "0" : "-50%",
         left: window.innerWidth > 768 ? "100%" : "0",
-        top: window.innerWidth > 768 ? "0" : "100%",
+        top: window.innerWidth > 768 ? "0" : "100%", //New
         opacity: 0,
         duration: 2,
       })
@@ -140,7 +140,7 @@ const NewLanding = () => {
           right: window.innerWidth > 768 ? "0" : "-50%",
           bottom: window.innerWidth > 768 ? "0" : "0",
           left: window.innerWidth > 768 ? "50%" : "0",
-          top: window.innerWidth > 768 ? "0" : "12.5%",
+          top: window.innerWidth > 768 ? "0" : "12.5%",//New
           zIndex: window.innerWidth > 768 ? "100" : "0",
           // zIndex: "100",
           opacity: 1,
@@ -553,7 +553,7 @@ const NewLanding = () => {
         {/* content */}
         {/* absolute right-0 sm:-right-[50%] -bottom-[50%] h-[85%] top-[12.5%] sm:top-0*/}
         <div
-          className="w-full sm:w-[50%] h-[50%] sm:h-full opacity-0 flex items-start flex-col gap-48 z-10 absolute right-0 sm:-right-[50%] -bottom-[50%] sm:bottom-0"
+          className="w-full sm:w-[50%] h-[50%] sm:h-full opacity-0 flex items-start justify-between flex-col z-10 absolute right-0 sm:-right-[50%] -bottom-[50%] sm:bottom-0"
           ref={contentRef}
         >
           <div className="hidden w-full p-5 sm:flex items-center justify-end">
@@ -582,6 +582,7 @@ const NewLanding = () => {
               ultimately, to build a better future for our communities.
             </p>
           </div>
+          <div className="hidden sm:block"></div>
         </div>
 
         {/* other links section Desktop */}
