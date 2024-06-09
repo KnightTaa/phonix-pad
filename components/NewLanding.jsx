@@ -12,6 +12,7 @@ import OtherLinksMobile from "./OtherLinksMobile";
 const NewLanding = () => {
   const [isRotated, setIsRotated] = useState(false);
   const [isBack, setIsBack] = useState(false);
+  const [isMainBack, setIsMainBack] = useState(false);
 
   const rightBlackRef = useRef(null);
   const threeDotRef = useRef(null);
@@ -160,6 +161,7 @@ const NewLanding = () => {
 
   const handleRightClick = () => {
     setIsRotated(!isRotated);
+    setIsBack(true);
     timeline
       .to(logoRef.current, {
         rotate: window.innerWidth > 768 ? -90 : 0,
@@ -186,7 +188,7 @@ const NewLanding = () => {
       .to(
         testRef.current,
         {
-          pointerEvents: "none",
+          pointerEvents: "pointer",
         },
         "-=2"
       )
@@ -361,7 +363,8 @@ const NewLanding = () => {
   };
 
   const handleBackClick = () => {
-    setIsBack(true);
+    setIsMainBack(true);
+    setIsBack(false);
     timeline
       .to(redDivRef.current, {
         left: window.innerWidth > 768 ? "150%" : "0",
@@ -474,6 +477,21 @@ const NewLanding = () => {
         "-=2"
       );
   };
+
+  const getClickHandler = () => {
+    if (isBack) {
+      return handleBackClick;
+    } else {
+      console.log('abbbbbbbbbbbbbbbbbbbbbss')
+      if (isMainBack) {
+        return handleLeftClick2;
+      } else {
+        return handleLeftClick;
+      }
+    }
+  };
+
+  const clickHandler = getClickHandler();
   return (
     <section className="w-full h-screen overflow-hidden relative">
       <div className="h-screen w-full flex flex-col sm:flex-row justify-between relative">
@@ -494,16 +512,16 @@ const NewLanding = () => {
             className="w-full h-full flex items-center justify-center relative"
             ref={leftLogoDivRef}
           >
-            <button
+            {/* <button
               onClick={handleBackClick}
               className="opacity-0 mt-2 ml-2 flex flex-row items-center justify-center absolute top-0 left-0 gap-2"
               ref={backRef}
             >
               <IoIosArrowBack size={26} className="text-black" />
               <h1 className="font-semibold text-lg">Back</h1>
-            </button>
-            <button
-              onClick={isBack ? handleLeftClick2 : handleLeftClick}
+            </button> */}
+             <button
+              onClick={clickHandler}
               ref={testRef}
             >
               <Image
