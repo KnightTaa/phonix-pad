@@ -206,7 +206,7 @@ const NewLanding = () => {
         leftDivRef.current,
         {
           width: window.innerWidth > 768 ? "7%" : "100%",
-          height: window.innerWidth > 768 ? "100%" : "12.5%",
+          height: window.innerWidth > 768 ? "100%" : "7%",
           duration: 2,
         },
         "-=2"
@@ -288,6 +288,8 @@ const NewLanding = () => {
         {
           left: window.innerWidth > 768 ? "87%" : "0",
           top: window.innerWidth > 768 ? "0" : "100%",
+          width: window.innerWidth > 768 ? "7%" : "100%",
+          height: window.innerWidth > 768 ? "100%" : "7%",
           duration: 2,
         },
         "-=2"
@@ -296,7 +298,9 @@ const NewLanding = () => {
         redDivRef.current,
         {
           left: window.innerWidth > 768 ? "94%" : "0",
-          top: window.innerWidth > 768 ? "0" : "125%",
+          top: window.innerWidth > 768 ? "0" : "94%",
+          width: window.innerWidth > 768 ? "7%" : "100%",
+          height: window.innerWidth > 768 ? "100%" : "7%",
           duration: 2,
         },
         "-=2"
@@ -329,8 +333,10 @@ const NewLanding = () => {
       .to(
         yellowDivRef.current,
         {
-          left: window.innerWidth > 768 ? "10.5%" : "0",
-          top: window.innerWidth > 768 ? "0" : "10.5%",
+          left: window.innerWidth > 768 ? "14%" : "0",
+          top: window.innerWidth > 768 ? "0" : "14%",
+          width: window.innerWidth > 768 ? "7%" : "100%",
+          height: window.innerWidth > 768 ? "100%" : "7%",
           zIndex: "-100",
           duration: 2,
         },
@@ -341,6 +347,22 @@ const NewLanding = () => {
         {
           left: window.innerWidth > 768 ? "94%" : "0",
           top: window.innerWidth > 768 ? "0" : "100%",
+          width: window.innerWidth > 768 ? "7%" : "100%",
+          height: window.innerWidth > 768 ? "100%" : "7%",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(yellowLogoRef.current, {
+        rotate: window.innerWidth > 768 ? -90 : 0,
+        width: window.innerWidth > 768 ? "80px" : "60px",
+        duration: 2,
+      })
+      .to(
+        redLogoRef.current,
+        {
+          rotate: window.innerWidth > 768 ? -90 : 0,
+          width: window.innerWidth > 768 ? "80px" : "60px",
           duration: 2,
         },
         "-=2"
@@ -359,8 +381,10 @@ const NewLanding = () => {
       .to(
         yellowDivRef.current,
         {
-          left: window.innerWidth > 768 ? "10.5%" : "0",
-          top: window.innerWidth > 768 ? "0" : "10.5%",
+          left: window.innerWidth > 768 ? "14%" : "0",
+          top: window.innerWidth > 768 ? "0" : "14%",
+          width: window.innerWidth > 768 ? "7%" : "100%",
+          height: window.innerWidth > 768 ? "100%" : "7%",
           zIndex: "-100",
           duration: 2,
         },
@@ -371,7 +395,23 @@ const NewLanding = () => {
         {
           left: window.innerWidth > 768 ? "21%" : "0",
           top: window.innerWidth > 768 ? "0" : "21%",
+          width: window.innerWidth > 768 ? "7%" : "100%",
+          height: window.innerWidth > 768 ? "100%" : "7%",
           zIndex: "-100",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(yellowLogoRef.current, {
+        rotate: window.innerWidth > 768 ? -90 : 0,
+        width: window.innerWidth > 768 ? "80px" : "60px",
+        duration: 2,
+      })
+      .to(
+        teelLogoRef.current,
+        {
+          rotate: window.innerWidth > 768 ? -90 : 0,
+          width: window.innerWidth > 768 ? "80px" : "60px",
           duration: 2,
         },
         "-=2"
@@ -479,7 +519,7 @@ const NewLanding = () => {
   const handleOtherLinks = () => {
     timeline
       .to(otherLinksRef.current, {
-        left: otherLinksRef.current.style.left === "25%" ? "100%" : "25%",
+        left: otherLinksRef.current.style.left === "14%" ? "100%" : "14%",
         zIndex: "40",
         duration: 2,
       })
@@ -626,7 +666,7 @@ const NewLanding = () => {
         className="hidden sm:block h-[25%] sm:h-screen w-full sm:w-[75%] bg-[#8f8f8f] absolute left-0 sm:left-[100%]"
         */}
         <div
-          className="hidden sm:block w-[75%] bg-[#8f8f8f] absolute left-[100%]"
+          className="hidden sm:block w-[86%] bg-[#8f8f8f] absolute left-[100%]"
           ref={otherLinksRef}
         >
           <OtherLinks />
