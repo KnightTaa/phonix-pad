@@ -31,10 +31,10 @@ export default function Home() {
       {/* <LandingPage /> */}
 
       {/* current version */}
-      {/* <NewLanding /> */} 
+      <NewLanding /> 
 
       {/* new version */}
-      <OtherNewLanding />
+      {/* <OtherNewLanding /> */}
       {/* <LayoutTest /> */}
       
       <div className="hidden">

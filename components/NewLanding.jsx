@@ -309,7 +309,7 @@ const NewLanding = () => {
         rotate: window.innerWidth > 768 ? -90 : 0,
         width: window.innerWidth > 768 ? "80px" : "60px",
         duration: 2,
-      })
+      }, "-=2")
       .to(
         redLogoRef.current,
         {
@@ -357,7 +357,7 @@ const NewLanding = () => {
         rotate: window.innerWidth > 768 ? -90 : 0,
         width: window.innerWidth > 768 ? "80px" : "60px",
         duration: 2,
-      })
+      }, "-=2")
       .to(
         redLogoRef.current,
         {
@@ -406,7 +406,7 @@ const NewLanding = () => {
         rotate: window.innerWidth > 768 ? -90 : 0,
         width: window.innerWidth > 768 ? "80px" : "60px",
         duration: 2,
-      })
+      }, "-=2")
       .to(
         teelLogoRef.current,
         {
