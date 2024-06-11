@@ -426,7 +426,9 @@ const NewLanding = () => {
         left: window.innerWidth > 768 ? "150%" : "0",
         top: window.innerWidth > 768 ? "0" : "100%",
         duration: 2,
-      })
+      },
+      "-=2"
+      )
       .to(
         teelDivRef.current,
         {
@@ -536,9 +538,11 @@ const NewLanding = () => {
 
   const getClickHandler = () => {
     if (isBack) {
+      console.log('vvvvvvvvv', isMainBack);
       return handleBackClick;
     } else {
       if (isMainBack) {
+        console.log('aaaaaaaaa', isMainBack);
         return handleLeftClick2;
       } else {
         return handleLeftClick;
