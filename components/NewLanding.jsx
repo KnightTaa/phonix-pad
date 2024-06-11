@@ -39,6 +39,8 @@ const NewLanding = () => {
 
   const leftLogoDivRef = useRef(null);
 
+  const logoSFLRef = useRef(null);
+
   const timeline = gsap.timeline({
     repeat: 0,
   });
@@ -203,7 +205,7 @@ const NewLanding = () => {
       .to(
         leftDivRef.current,
         {
-          width: window.innerWidth > 768 ? "12.5%" : "100%",
+          width: window.innerWidth > 768 ? "7%" : "100%",
           height: window.innerWidth > 768 ? "100%" : "12.5%",
           duration: 2,
         },
@@ -212,10 +214,10 @@ const NewLanding = () => {
       .to(
         rightBlackRef.current,
         {
-          left: window.innerWidth > 768 ? "12.5%" : "0",
-          top: window.innerWidth > 768 ? "0" : "12.5%",
-          width: window.innerWidth > 768 ? "12.5%" : "100%",
-          height: window.innerWidth > 768 ? "100%" : "12.5%",
+          left: window.innerWidth > 768 ? "7%" : "0",
+          top: window.innerWidth > 768 ? "0" : "7%",
+          width: window.innerWidth > 768 ? "7%" : "100%",
+          height: window.innerWidth > 768 ? "100%" : "7%",
           duration: 2,
         },
         "-=2"
@@ -223,10 +225,10 @@ const NewLanding = () => {
       .to(
         yellowDivRef.current,
         {
-          width: yellowDivRef.current.style.width === "75%" ? "25%" : "",
-          height: yellowDivRef.current.style.height === "75%" ? "25%" : "",
-          left: window.innerWidth > 768 ? "25%" : "0",
-          top: window.innerWidth > 768 ? "0" : "25%",
+          width: yellowDivRef.current.style.width === "86%" ? "28.7%" : "",
+          height: yellowDivRef.current.style.height === "86%" ? "28.7%" : "",
+          left: window.innerWidth > 768 ? "14%" : "0",
+          top: window.innerWidth > 768 ? "0" : "14%",
           zIndex: yellowDivRef.current.style.zIndex === "-100" ? "1" : "",
           duration: 2,
         },
@@ -235,11 +237,11 @@ const NewLanding = () => {
       .to(
         teelDivRef.current,
         {
-          width: teelDivRef.current.style.width === "75%" ? "25%" : "",
-          height: teelDivRef.current.style.height === "75%" ? "25%" : "",
-          left: window.innerWidth > 768 ? "50%" : "0",
+          width: teelDivRef.current.style.width === "86%" ? "28.7%" : "",
+          height: teelDivRef.current.style.height === "86%" ? "28.7%" : "",
+          left: window.innerWidth > 768 ? "42.7%" : "0",
           zIndex: teelDivRef.current.style.zIndex === "-100" ? "1" : "",
-          top: window.innerWidth > 768 ? "0" : "50%",
+          top: window.innerWidth > 768 ? "0" : "42.7%",
           duration: 2,
         },
         "-=2"
@@ -247,10 +249,10 @@ const NewLanding = () => {
       .to(
         redDivRef.current,
         {
-          width: redDivRef.current.style.width === "75%" ? "25%" : "",
-          height: redDivRef.current.style.height === "75%" ? "25%" : "",
-          left: window.innerWidth > 768 ? "75%" : "0",
-          top: window.innerWidth > 768 ? "0" : "75%",
+          width: redDivRef.current.style.width === "86%" ? "28.7%" : "",
+          height: redDivRef.current.style.height === "86%" ? "28.7%" : "",
+          left: window.innerWidth > 768 ? "71.4%" : "0",
+          top: window.innerWidth > 768 ? "0" : "71.4%",
           duration: 2,
         },
         "-=2"
@@ -277,14 +279,14 @@ const NewLanding = () => {
   const handleYellowContent = () => {
     timeline
       .to(yellowDivRef.current, {
-        width: window.innerWidth > 768 ? "75%" : "100%",
+        width: window.innerWidth > 768 ? "87%" : "100%",
         height: window.innerWidth > 768 ? "100vh" : "75%",
         duration: 2,
       })
       .to(
         teelDivRef.current,
         {
-          left: window.innerWidth > 768 ? "100%" : "0",
+          left: window.innerWidth > 768 ? "87%" : "0",
           top: window.innerWidth > 768 ? "0" : "100%",
           duration: 2,
         },
@@ -293,8 +295,22 @@ const NewLanding = () => {
       .to(
         redDivRef.current,
         {
-          left: window.innerWidth > 768 ? "125%" : "0",
+          left: window.innerWidth > 768 ? "94%" : "0",
           top: window.innerWidth > 768 ? "0" : "125%",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(teelLogoRef.current, {
+        rotate: window.innerWidth > 768 ? -90 : 0,
+        width: window.innerWidth > 768 ? "80px" : "60px",
+        duration: 2,
+      })
+      .to(
+        redLogoRef.current,
+        {
+          rotate: window.innerWidth > 768 ? -90 : 0,
+          width: window.innerWidth > 768 ? "80px" : "60px",
           duration: 2,
         },
         "-=2"
@@ -304,17 +320,17 @@ const NewLanding = () => {
   const handleTeelContent = () => {
     timeline
       .to(teelDivRef.current, {
-        width: window.innerWidth > 768 ? "75%" : "100%",
-        height: window.innerWidth > 768 ? "100vh" : "75%",
-        left: window.innerWidth > 768 ? "25%" : "0",
-        top: window.innerWidth > 768 ? "0" : "25%",
+        width: window.innerWidth > 768 ? "86%" : "100%",
+        height: window.innerWidth > 768 ? "100vh" : "86%",
+        left: window.innerWidth > 768 ? "21%" : "0",
+        top: window.innerWidth > 768 ? "0" : "21%",
         duration: 2,
       })
       .to(
         yellowDivRef.current,
         {
-          left: window.innerWidth > 768 ? "12.5%" : "0",
-          top: window.innerWidth > 768 ? "0" : "12.5%",
+          left: window.innerWidth > 768 ? "10.5%" : "0",
+          top: window.innerWidth > 768 ? "0" : "10.5%",
           zIndex: "-100",
           duration: 2,
         },
@@ -323,7 +339,7 @@ const NewLanding = () => {
       .to(
         redDivRef.current,
         {
-          left: window.innerWidth > 768 ? "100%" : "0",
+          left: window.innerWidth > 768 ? "94%" : "0",
           top: window.innerWidth > 768 ? "0" : "100%",
           duration: 2,
         },
@@ -334,17 +350,17 @@ const NewLanding = () => {
   const handleRedContent = () => {
     timeline
       .to(redDivRef.current, {
-        width: window.innerWidth > 768 ? "75%" : "100%",
-        height: window.innerWidth > 768 ? "100vh" : "75%",
-        left: window.innerWidth > 768 ? "25%" : "0",
-        top: window.innerWidth > 768 ? "0" : "25%",
+        width: window.innerWidth > 768 ? "86%" : "100%",
+        height: window.innerWidth > 768 ? "100vh" : "86%",
+        left: window.innerWidth > 768 ? "28%" : "0",
+        top: window.innerWidth > 768 ? "0" : "28%",
         duration: 2,
       })
       .to(
         yellowDivRef.current,
         {
-          left: window.innerWidth > 768 ? "12.5%" : "0",
-          top: window.innerWidth > 768 ? "0" : "12.5%",
+          left: window.innerWidth > 768 ? "10.5%" : "0",
+          top: window.innerWidth > 768 ? "0" : "10.5%",
           zIndex: "-100",
           duration: 2,
         },
@@ -353,9 +369,9 @@ const NewLanding = () => {
       .to(
         teelDivRef.current,
         {
-          left: window.innerWidth > 768 ? "12.5%" : "0",
-          top: window.innerWidth > 768 ? "0" : "12.5%",
-          //   zIndex: "-100",
+          left: window.innerWidth > 768 ? "21%" : "0",
+          top: window.innerWidth > 768 ? "0" : "21%",
+          zIndex: "-100",
           duration: 2,
         },
         "-=2"
@@ -626,7 +642,7 @@ const NewLanding = () => {
 
         {/* yellow content left-0 sm:left-[25%] top-[25%] sm:top-0*/}
         <div
-          className="h-[25%] sm:h-screen w-full sm:w-[25%] bg-[#f7e114] absolute left-0 sm:left-[100%] top-[100%] sm:top-0"
+          className="h-[28.7%] sm:h-screen w-full sm:w-[28.7%] bg-[#f7e114] absolute left-0 sm:left-[100%] top-[100%] sm:top-0"
           ref={yellowDivRef}
         >
           {/* absolute -left-[50%] top-0 translate-x-1/2 */}
@@ -640,6 +656,7 @@ const NewLanding = () => {
               width={400}
               height={400}
               alt={"logo"}
+              ref={logoSFLRef}
               className="w-[120px] sm:w-[200px] h-auto"
             />
           </button>
@@ -647,7 +664,7 @@ const NewLanding = () => {
 
         {/* teel content left-0 sm:left-[50%] top-[50%] sm:top-0*/}
         <div
-          className="h-[25%] sm:h-screen w-full sm:w-[25%] bg-[#00d3c8] absolute left-0 sm:left-[100%] top-[100%] sm:top-0"
+          className="h-[28.7%] sm:h-screen w-full sm:w-[28.7%] bg-[#00d3c8] absolute left-0 sm:left-[100%] top-[100%] sm:top-0"
           ref={teelDivRef}
         >
           <button
@@ -667,7 +684,7 @@ const NewLanding = () => {
 
         {/* red content left-0 sm:left-[75%] top-[75%] sm:top-0*/}
         <div
-          className="h-[25%] sm:h-screen w-full sm:w-[25%] bg-[#ee1d52] absolute left-0 sm:left-[100%] top-[100%] sm:top-0"
+          className="h-[28.7%] sm:h-screen w-full sm:w-[28.7%] bg-[#ee1d52] absolute left-0 sm:left-[100%] top-[100%] sm:top-0"
           ref={redDivRef}
         >
           <button
