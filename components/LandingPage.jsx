@@ -230,6 +230,45 @@ const LandingPage = () => {
       );
   };
 
+  const handlewiteMenu = () => {
+    // timeline.set(yellowRef.current, { clearProps: 'all' });
+    timeline.set(loaderLogoRef.current, { clearProps: 'all' });
+    timeline.set(screenRef.current, { clearProps: 'all' });
+    timeline
+    .to(loaderLogoRef.current, {
+      scale: 3,
+      duration: 2,
+      ease: "power1.inOut",
+    })
+    .to(loaderLogoRef.current, {
+      scale: 3,
+      duration: 2,
+      ease: "power1.inOut",
+    })
+    .to(
+      loaderLogoRef.current,
+      {
+        scale: 1,
+        top: window.innerWidth > 768 ? "-6%" : "0",
+        left: 0,
+        opacity: 0,
+        translateX: "50%",
+        translateY: "50%",
+        duration: 1,
+      },
+      "-=2"
+    )
+    .to(
+      screenRef.current,
+      {
+        opacity: 1,
+        duration: 2,
+      },
+      "-=2"
+    );
+    
+  };
+
   const handleBlackMenuMobile = () => {
     timeline
       .to(leftDivRef.current, {
@@ -304,11 +343,23 @@ const LandingPage = () => {
         ease: "power1.inOut",
         duration: 2,
         onComplete: () => {
-          timeline.set(firstDivRef.current, { display: 'none' });
-          timeline.set(secondDivRef.current, { display: 'block' });
-          timeline.fromTo(secondDivRef.current, { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power1.inOut' });
+          timeline.set(secondDivRef.current, { display: 'block' }, "-=2");
+          timeline.fromTo(secondDivRef.current, { opacity: 0 }, { 
+            opacity: 1, 
+            duration: 1, 
+            ease: 'power1.inOut' 
+          }, 
+          "-=2"
+        );
         }
       })
+      .set(firstDivRef.current, 
+        { 
+          display: 'none'
+
+        }, 
+        "-=0.7"
+      )
       .to(
         teelRef.current,
         {
@@ -382,7 +433,7 @@ const LandingPage = () => {
         left: "-50%",
         ease: "power1.inOut",
         duration: 2,
-      })
+      },)
       .to(
         yellowRef.current,
         {
@@ -531,14 +582,21 @@ const LandingPage = () => {
             >
               <HiDotsHorizontal size={36} />
             </button>
-            <Image
-              src={"/image 13.png"}
-              width={400}
-              height={400}
-              alt={"logo"}
-              ref={logoRef}
-              className="w-[150px] sm:w-[200px] h-auto p-5"
-            />
+            <button
+              onClick={() => {
+                handlewiteMenu();
+              }}
+            >
+              <Image
+                src={"/image 13.png"}
+                width={400}
+                height={400}
+                alt={"logo"}
+                ref={logoRef}
+                className="w-[150px] sm:w-[200px] h-auto p-5"
+              />
+            </button>
+            
           </div>
         </div>
 
