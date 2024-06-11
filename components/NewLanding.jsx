@@ -337,7 +337,7 @@ const NewLanding = () => {
           top: window.innerWidth > 768 ? "0" : "14%",
           width: window.innerWidth > 768 ? "7%" : "100%",
           height: window.innerWidth > 768 ? "100%" : "7%",
-          zIndex: "-100",
+          // zIndex: "-100",
           duration: 2,
         },
         "-=2"
@@ -385,7 +385,7 @@ const NewLanding = () => {
           top: window.innerWidth > 768 ? "0" : "14%",
           width: window.innerWidth > 768 ? "7%" : "100%",
           height: window.innerWidth > 768 ? "100%" : "7%",
-          zIndex: "-100",
+          // zIndex: "-100",
           duration: 2,
         },
         "-=2"
@@ -397,7 +397,7 @@ const NewLanding = () => {
           top: window.innerWidth > 768 ? "0" : "21%",
           width: window.innerWidth > 768 ? "7%" : "100%",
           height: window.innerWidth > 768 ? "100%" : "7%",
-          zIndex: "-100",
+          // zIndex: "-100",
           duration: 2,
         },
         "-=2"
