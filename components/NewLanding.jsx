@@ -167,14 +167,14 @@ const NewLanding = () => {
     timeline
       .to(logoRef.current, {
         rotate: window.innerWidth > 768 ? -90 : 0,
-        width: window.innerWidth > 768 ? "180px" : "120px",
+        width: window.innerWidth > 768 ? "180px" : "80px",
         duration: 2,
       })
       .to(
         logo1Ref.current,
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
-          width: window.innerWidth > 768 ? "180px" : "120px",
+          width: window.innerWidth > 768 ? "180px" : "80px",
           duration: 2,
         },
         "-=2"
@@ -280,14 +280,14 @@ const NewLanding = () => {
     timeline
       .to(yellowDivRef.current, {
         width: window.innerWidth > 768 ? "87%" : "100%",
-        height: window.innerWidth > 768 ? "100vh" : "75%",
+        height: window.innerWidth > 768 ? "100vh" : "87%",
         duration: 2,
       })
       .to(
         teelDivRef.current,
         {
           left: window.innerWidth > 768 ? "87%" : "0",
-          top: window.innerWidth > 768 ? "0" : "100%",
+          top: window.innerWidth > 768 ? "0" : "87%",
           width: window.innerWidth > 768 ? "7%" : "100%",
           height: window.innerWidth > 768 ? "100%" : "7%",
           duration: 2,
@@ -337,7 +337,7 @@ const NewLanding = () => {
           top: window.innerWidth > 768 ? "0" : "14%",
           width: window.innerWidth > 768 ? "7%" : "100%",
           height: window.innerWidth > 768 ? "100%" : "7%",
-          zIndex: "-100",
+          // zIndex: "-100",
           duration: 2,
         },
         "-=2"
@@ -346,7 +346,7 @@ const NewLanding = () => {
         redDivRef.current,
         {
           left: window.innerWidth > 768 ? "94%" : "0",
-          top: window.innerWidth > 768 ? "0" : "100%",
+          top: window.innerWidth > 768 ? "0" : "94%",
           width: window.innerWidth > 768 ? "7%" : "100%",
           height: window.innerWidth > 768 ? "100%" : "7%",
           duration: 2,
@@ -385,7 +385,7 @@ const NewLanding = () => {
           top: window.innerWidth > 768 ? "0" : "14%",
           width: window.innerWidth > 768 ? "7%" : "100%",
           height: window.innerWidth > 768 ? "100%" : "7%",
-          zIndex: "-100",
+          // zIndex: "-100",
           duration: 2,
         },
         "-=2"
@@ -397,7 +397,7 @@ const NewLanding = () => {
           top: window.innerWidth > 768 ? "0" : "21%",
           width: window.innerWidth > 768 ? "7%" : "100%",
           height: window.innerWidth > 768 ? "100%" : "7%",
-          zIndex: "-100",
+          // zIndex: "-100",
           duration: 2,
         },
         "-=2"
@@ -538,7 +538,6 @@ const NewLanding = () => {
     if (isBack) {
       return handleBackClick;
     } else {
-      console.log('abbbbbbbbbbbbbbbbbbbbbss')
       if (isMainBack) {
         return handleLeftClick2;
       } else {
@@ -675,7 +674,7 @@ const NewLanding = () => {
 
         {/* other links section Mobile left-[100%] to left-0*/}
         <div
-          className="block sm:hidden h-[75%] w-full bg-[#3c3c3b] absolute left-[100%] top-[25%]"
+          className="block sm:hidden h-[86%] w-full bg-[#3c3c3b] absolute left-[100%] top-[14%]"
           ref={otherLinksMobileRef}
         >
           <OtherLinksMobile />
