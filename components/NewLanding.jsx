@@ -8,6 +8,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import OtherLinks from "./OtherLinks";
 import OtherLinksMobileCard from "./OtherLinksMobileCard";
 import OtherLinksMobile from "./OtherLinksMobile";
+import ProjectInfo from "./ProjectInfo";
 
 const NewLanding = () => {
   const [isRotated, setIsRotated] = useState(false);
@@ -40,6 +41,8 @@ const NewLanding = () => {
   const leftLogoDivRef = useRef(null);
 
   const logoSFLRef = useRef(null);
+
+  const yellowContentRef = useRef(null)
 
   const timeline = gsap.timeline({
     repeat: 0,
@@ -84,7 +87,7 @@ const NewLanding = () => {
           right: window.innerWidth > 768 ? "0" : "-50%",
           bottom: window.innerWidth > 768 ? "0" : "0",
           left: window.innerWidth > 768 ? "50%" : "0",
-          top: window.innerWidth > 768 ? "0" : "12.5%",//New
+          top: window.innerWidth > 768 ? "0" : "12.5%", //New
           opacity: 1,
           duration: 2,
         },
@@ -143,7 +146,7 @@ const NewLanding = () => {
           right: window.innerWidth > 768 ? "0" : "-50%",
           bottom: window.innerWidth > 768 ? "0" : "0",
           left: window.innerWidth > 768 ? "50%" : "0",
-          top: window.innerWidth > 768 ? "0" : "12.5%",//New
+          top: window.innerWidth > 768 ? "0" : "12.5%", //New
           zIndex: window.innerWidth > 768 ? "100" : "0",
           // zIndex: "100",
           opacity: 1,
@@ -305,11 +308,15 @@ const NewLanding = () => {
         },
         "-=2"
       )
-      .to(teelLogoRef.current, {
-        rotate: window.innerWidth > 768 ? -90 : 0,
-        width: window.innerWidth > 768 ? "80px" : "60px",
-        duration: 2,
-      })
+      .to(
+        teelLogoRef.current,
+        {
+          rotate: window.innerWidth > 768 ? -90 : 0,
+          width: window.innerWidth > 768 ? "80px" : "60px",
+          duration: 2,
+        },
+        "-=2"
+      )
       .to(
         redLogoRef.current,
         {
@@ -318,7 +325,25 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
-      );
+      )
+    .to(
+      yellowLogoRef.current,
+      {
+        display: 'none',
+        opacity: '0',
+        duration: 2,
+      },
+      "-=2"
+    )
+    .to(
+      yellowContentRef.current,
+      {
+        display: 'block',
+        opacity: 1,
+        duration: 2,
+      },
+      "-=2"
+    )
   };
 
   const handleTeelContent = () => {
@@ -353,11 +378,26 @@ const NewLanding = () => {
         },
         "-=2"
       )
-      .to(yellowLogoRef.current, {
-        rotate: window.innerWidth > 768 ? -90 : 0,
-        width: window.innerWidth > 768 ? "80px" : "60px",
-        duration: 2,
-      })
+      .to(
+        yellowLogoRef.current,
+        {
+          rotate: window.innerWidth > 768 ? -90 : 0,
+          width: window.innerWidth > 768 ? "80px" : "60px",
+          display: 'flex',
+          opacity: '1',
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        yellowContentRef.current,
+        {
+          display: 'none',
+          opacity: '0',
+          duration: 2,
+        },
+        "-=2"
+      )
       .to(
         redLogoRef.current,
         {
@@ -402,11 +442,15 @@ const NewLanding = () => {
         },
         "-=2"
       )
-      .to(yellowLogoRef.current, {
-        rotate: window.innerWidth > 768 ? -90 : 0,
-        width: window.innerWidth > 768 ? "80px" : "60px",
-        duration: 2,
-      })
+      .to(
+        yellowLogoRef.current,
+        {
+          rotate: window.innerWidth > 768 ? -90 : 0,
+          width: window.innerWidth > 768 ? "80px" : "60px",
+          duration: 2,
+        },
+        "-=2"
+      )
       .to(
         teelLogoRef.current,
         {
@@ -579,10 +623,7 @@ const NewLanding = () => {
               <IoIosArrowBack size={26} className="text-black" />
               <h1 className="font-semibold text-lg">Back</h1>
             </button> */}
-             <button
-              onClick={clickHandler}
-              ref={testRef}
-            >
+            <button onClick={clickHandler} ref={testRef}>
               <Image
                 src={"/image 13.png"}
                 width={400}
@@ -692,7 +733,7 @@ const NewLanding = () => {
           {/* absolute -left-[50%] top-0 translate-x-1/2 */}
           <button
             onClick={handleYellowContent}
-            className="w-full h-full flex items-center justify-center"
+            className="w-full h-full flex items-center justify-center" 
             ref={yellowLogoRef}
           >
             <Image
@@ -704,6 +745,16 @@ const NewLanding = () => {
               className="w-[120px] sm:w-[200px] h-auto"
             />
           </button>
+          <div className="w-[84%] opacity-0 hidden" ref={yellowContentRef}>
+            <ProjectInfo
+              color={"#f7e114"}
+              image={"image 7"}
+              title={"Shorts"}
+              description={
+                "Platform to promote, support and recognize all those who use an image as a vehicle to express their creativity, feelings, memories; all that a creative, professional or amateur want to transmit to society."
+              }
+            />
+          </div>
         </div>
 
         {/* teel content left-0 sm:left-[50%] top-[50%] sm:top-0*/}

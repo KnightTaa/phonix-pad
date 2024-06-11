@@ -6,6 +6,7 @@ import LandingPage from "@/components/LandingPage";
 import ProjectInfo from "@/components/ProjectInfo";
 import NewLanding from "@/components/NewLanding";
 import LayoutTest from "@/components/LayoutTest";
+import OtherNewLanding from "@/components/OtherNewLanding";
 
 export default function Home() {
   const [loderFinish, setLoderFinish] = useState(false);
@@ -28,7 +29,12 @@ export default function Home() {
   return (
     <main className="">
       {/* <LandingPage /> */}
-      <NewLanding />
+
+      {/* current version */}
+      <NewLanding /> 
+
+      {/* new version */}
+      {/* <OtherNewLanding /> */}
       {/* <LayoutTest /> */}
       
       <div className="hidden">
