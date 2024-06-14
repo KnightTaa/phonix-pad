@@ -126,17 +126,6 @@ const NewLanding = () => {
         },
         "-=2"
       );
-    // .to(
-    //   leftLogoRef.current,
-    //   {
-    //     left: window.innerWidth > 768 ? "" : "0",
-    //     top: window.innerWidth > 768 ? "" : "0",
-    //     paddingLeft: "10px",
-    //     paddingTop: "10px",
-    //     duration: 2,
-    //   },
-    //   "-=2"
-    // );
   };
 
   const handleThreeDotsClick = () => {

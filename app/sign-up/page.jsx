@@ -1,8 +1,35 @@
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
-import React from "react";
-import { BiSolidHide } from "react-icons/bi";
+import { BiSolidHide, BiSolidShow } from "react-icons/bi";
 
+const countries = [
+  { value: "LK", label: "🇱🇰", code: "+94" },
+  { value: "US", label: "🇺🇸", code: "+1" },
+  { value: "IN", label: "🇮🇳", code: "+91" },
+  { value: "UK", label: "🇬🇧", code: "+44" },
+  { value: "CA", label: "🇨🇦", code: "+1" },
+  { value: "AU", label: "🇦🇺", code: "+61" },
+  { value: "DE", label: "🇩🇪", code: "+49" },
+  { value: "FR", label: "🇫🇷", code: "+33" },
+  { value: "JP", label: "🇯🇵", code: "+81" },
+  { value: "CN", label: "🇨🇳", code: "+86" },
+  { value: "BR", label: "🇧🇷", code: "+55" },
+  { value: "RU", label: "🇷🇺", code: "+7" },
+  { value: "MX", label: "🇲🇽", code: "+52" },
+  { value: "AR", label: "🇦🇷", code: "+54"},
+  { value: "TR", label: "🇹🇷", code: "+90"}, 
+  { value: "PH", label: "🇵🇭", code: "+63"},
+];
 const SignUp = () => {
+  const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+  const phonePlaceholder = selectedCountry ? selectedCountry.code : "";
+
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
+  const passwordType = showPassword ? "text" : "password";
   return (
     <div className="px-2 sm:px-72 py-10">
       <form className="border border-gray-950 px-5 sm:px-16 py-10">
@@ -74,18 +101,24 @@ const SignUp = () => {
                   <select
                     id="country"
                     name="country"
+                    value={selectedCountry.value}
                     className="h-full py-0 pl-3 pr-2 border-transparent bg-transparent text-gray-500 sm:text-sm rounded-md focus:ring-0 focus:border-gray-300 outline-none"
+                    onChange={(event) => {
+                      const selectedCountry = countries.find(
+                        (country) => country.value === event.target.value
+                      );
+                      setSelectedCountry(selectedCountry);
+                    }}
                   >
-                    <option value="LK" className="pl-3">
-                      🇱🇰
-                    </option>
-                    <option value="US" className="pl-3">
-                      🇺🇸
-                    </option>
-                    <option value="IN" className="pl-3">
-                      🇮🇳
-                    </option>
-                    {/* Add more options as needed */}
+                    {countries.map((country, index) => (
+                      <option
+                        key={index}
+                        value={country.value}
+                        className="pl-3"
+                      >
+                        {country.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <input
@@ -93,11 +126,10 @@ const SignUp = () => {
                   name="phone"
                   id="phone"
                   className="block w-full pl-16 sm:pl-14 pr-3 py-2 rounded-xl border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-800 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-900 sm:text-sm sm:leading-6"
-                  placeholder="+94"
+                  placeholder={phonePlaceholder}
                 />
               </div>
             </div>
-
             <div className="col-span-full">
               <div className="flex items-center justify-between">
                 <label
@@ -107,22 +139,41 @@ const SignUp = () => {
                   Password
                 </label>
                 <div className="flex items-center gap-2">
-                  <BiSolidHide size={15} className="text-gray-500" />
-                  <p className="block text-sm font-medium leading-6 text-gray-500">
+                  <BiSolidShow
+                    size={20}
+                    className={`${!showPassword ? "text-gray-500" : "hidden"}`}
+                    onClick={togglePassword}
+                  />
+                  <span
+                    className={`${!showPassword ? "text-sm font-medium leading-6 text-gray-500" : "hidden"}`}
+                  >
+                    Show
+                  </span>
+                  <BiSolidHide
+                    size={20}
+                    className={`${showPassword ? "text-gray-500" : "hidden"}`}
+                    onClick={togglePassword}
+                  />
+                  <span
+                    className={`${showPassword ? "text-sm font-medium leading-6 text-gray-500" : "hidden"}`}
+                  >
                     Hide
-                  </p>
+                  </span>
                 </div>
               </div>
               <div className="mt-2">
                 <input
-                  type="password"
+                  type={passwordType}
                   name="password"
                   id="password"
                   autoComplete="+94"
                   className="block w-full rounded-xl border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-800 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-900 sm:text-sm sm:leading-6"
                 />
               </div>
-              <p className="text-xs mt-1 text-gray-500 ">Use 8 or more characters with a mix of letters, numbers & symbols</p>
+              <p className="text-xs mt-1 text-gray-500 ">
+                Use 8 or more characters with a mix of letters, numbers &
+                symbols
+              </p>
             </div>
           </div>
         </div>
