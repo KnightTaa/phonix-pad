@@ -106,7 +106,7 @@ const NewLanding = () => {
       .to(
         testRef.current,
         {
-          scale: 2,
+          scale: window.innerWidth > 768 ? 2 : 1,
           duration: 2,
           onComplete: () => {
             gsap.to(testRef.current, {
@@ -114,27 +114,18 @@ const NewLanding = () => {
               duration: 2,
             });
             gsap.to(leftLogoRef.current, {
-              left: 0,
-              top: 0,
-              paddingTop: "10px",
-              paddingLeft: "10px",
+              left: window.innerWidth > 768 ? "0" : "",
+              top: window.innerWidth > 768 ? "0" : "",
+              translateX: window.innerWidth > 768 ? "0" : "",
+              translateY: window.innerWidth > 768 ? "0" : "",
+              paddingTop: window.innerWidth > 768 ? "10px" : "",
+              paddingLeft: window.innerWidth > 768 ? "10px" : "",
               duration: 2,
             });
           },
         },
         "-=2"
       );
-    // .to(
-    //   leftLogoRef.current,
-    //   {
-    //     left: window.innerWidth > 768 ? "" : "0",
-    //     top: window.innerWidth > 768 ? "" : "0",
-    //     paddingLeft: "10px",
-    //     paddingTop: "10px",
-    //     duration: 2,
-    //   },
-    //   "-=2"
-    // );
   };
 
   const handleThreeDotsClick = () => {
@@ -173,16 +164,18 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
+      )
+      .to(
+        leftLogoRef.current,
+        {
+          left: window.innerWidth > 768 ? "50%" : "",
+          top: window.innerWidth > 768 ? "50%" : "",
+          translateX: window.innerWidth > 768 ? "-50%" : "",
+          translateY: window.innerWidth > 768 ? "-50%" : "",
+          duration: 2,
+        },
+        "-=2"
       );
-    // .to(
-    //   leftLogoRef.current,
-    //   {
-    //     left: window.innerWidth > 768 ? "" : "30%",
-    //     top: window.innerWidth > 768 ? "" : "40%",
-    //     duration: 2,
-    //   },
-    //   "-=2"
-    // );
   };
 
   const handleLeftClick2 = () => {
@@ -216,8 +209,23 @@ const NewLanding = () => {
       .to(
         testRef.current,
         {
-          scale: window.innerWidth > 768 ? 2 : 1,
+          scale: 2,
           duration: 2,
+          onComplete: () => {
+            gsap.to(testRef.current, {
+              scale: 1,
+              duration: 2,
+            });
+            gsap.to(leftLogoRef.current, {
+              left: window.innerWidth > 768 ? "0" : "",
+              top: window.innerWidth > 768 ? "0" : "",
+              translateX: window.innerWidth > 768 ? "0" : "",
+              translateY: window.innerWidth > 768 ? "0" : "",
+              paddingTop: window.innerWidth > 768 ? "20px" : "",
+              paddingLeft: window.innerWidth > 768 ? "25px" : "",
+              duration: 2,
+            });
+          },
         },
         "-=2"
       );
