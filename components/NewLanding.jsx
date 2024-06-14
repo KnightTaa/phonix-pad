@@ -42,7 +42,9 @@ const NewLanding = () => {
 
   const logoSFLRef = useRef(null);
 
-  const yellowContentRef = useRef(null)
+  const yellowContentRef = useRef(null);
+
+  const leftLogoRef = useRef(null);
 
   const timeline = gsap.timeline({
     repeat: 0,
@@ -100,7 +102,26 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
+      )
+      .to(
+        testRef.current,
+        {
+          scale: window.innerWidth > 768 ? 2 : 1,
+          duration: 2,
+        },
+        "-=2"
       );
+    // .to(
+    //   leftLogoRef.current,
+    //   {
+    //     left: window.innerWidth > 768 ? "" : "0",
+    //     top: window.innerWidth > 768 ? "" : "0",
+    //     paddingLeft: "10px",
+    //     paddingTop: "10px",
+    //     duration: 2,
+    //   },
+    //   "-=2"
+    // );
   };
 
   const handleThreeDotsClick = () => {
@@ -131,7 +152,24 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
+      )
+      .to(
+        testRef.current,
+        {
+          scale: window.innerWidth > 768 ? 1 : 1,
+          duration: 2,
+        },
+        "-=2"
       );
+    // .to(
+    //   leftLogoRef.current,
+    //   {
+    //     left: window.innerWidth > 768 ? "" : "30%",
+    //     top: window.innerWidth > 768 ? "" : "40%",
+    //     duration: 2,
+    //   },
+    //   "-=2"
+    // );
   };
 
   const handleLeftClick2 = () => {
@@ -158,6 +196,14 @@ const NewLanding = () => {
         leftDivRef.current,
         {
           height: window.innerWidth > 768 ? "100%" : "15%",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        testRef.current,
+        {
+          scale: window.innerWidth > 768 ? 2 : 1,
           duration: 2,
         },
         "-=2"
@@ -326,24 +372,24 @@ const NewLanding = () => {
         },
         "-=2"
       )
-    .to(
-      yellowLogoRef.current,
-      {
-        display: 'none',
-        opacity: '0',
-        duration: 2,
-      },
-      "-=2"
-    )
-    .to(
-      yellowContentRef.current,
-      {
-        display: 'block',
-        opacity: 1,
-        duration: 2,
-      },
-      "-=2"
-    )
+      .to(
+        yellowLogoRef.current,
+        {
+          display: "none",
+          opacity: "0",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        yellowContentRef.current,
+        {
+          display: "block",
+          opacity: 1,
+          duration: 2,
+        },
+        "-=2"
+      );
   };
 
   const handleTeelContent = () => {
@@ -383,8 +429,8 @@ const NewLanding = () => {
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
           width: window.innerWidth > 768 ? "80px" : "60px",
-          display: 'flex',
-          opacity: '1',
+          display: "flex",
+          opacity: "1",
           duration: 2,
         },
         "-=2"
@@ -392,8 +438,8 @@ const NewLanding = () => {
       .to(
         yellowContentRef.current,
         {
-          display: 'none',
-          opacity: '0',
+          display: "none",
+          opacity: "0",
           duration: 2,
         },
         "-=2"
@@ -623,16 +669,18 @@ const NewLanding = () => {
               <IoIosArrowBack size={26} className="text-black" />
               <h1 className="font-semibold text-lg">Back</h1>
             </button> */}
-            <button onClick={clickHandler} ref={testRef}>
-              <Image
-                src={"/image 13.png"}
-                width={400}
-                height={400}
-                alt={"logo"}
-                ref={logo1Ref}
-                className="w-[150px] sm:w-[250px] h-auto"
-              />
-            </button>
+            <div className="absolute" ref={leftLogoRef}>
+              <button onClick={clickHandler} ref={testRef}>
+                <Image
+                  src={"/image 13.png"}
+                  width={400}
+                  height={400}
+                  alt={"logo"}
+                  ref={logo1Ref}
+                  className="w-[150px] sm:w-[250px] h-auto"
+                />
+              </button>
+            </div>
           </div>
         </div>
         {/* absolute bottom-0 -right-3 */}
@@ -733,7 +781,7 @@ const NewLanding = () => {
           {/* absolute -left-[50%] top-0 translate-x-1/2 */}
           <button
             onClick={handleYellowContent}
-            className="w-full h-full flex items-center justify-center" 
+            className="w-full h-full flex items-center justify-center"
             ref={yellowLogoRef}
           >
             <Image
