@@ -106,8 +106,21 @@ const NewLanding = () => {
       .to(
         testRef.current,
         {
-          scale: window.innerWidth > 768 ? 2 : 1,
+          scale: 2,
           duration: 2,
+          onComplete: () => {
+            gsap.to(testRef.current, {
+              scale: 1,
+              duration: 2,
+            });
+            gsap.to(leftLogoRef.current, {
+              left: 0,
+              top: 0,
+              paddingTop: "10px",
+              paddingLeft: "10px",
+              duration: 2,
+            });
+          },
         },
         "-=2"
       );
