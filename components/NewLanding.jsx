@@ -110,18 +110,18 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
-      )
-      // .to(
-      //   leftLogoRef.current,
-      //   {
-      //     left: window.innerWidth > 768 ? "" : "0",
-      //     top: window.innerWidth > 768 ? "" : "0",
-      //     paddingLeft: "10px",
-      //     paddingTop: "10px",
-      //     duration: 2,
-      //   },
-      //   "-=2"
-      // );
+      );
+    // .to(
+    //   leftLogoRef.current,
+    //   {
+    //     left: window.innerWidth > 768 ? "" : "0",
+    //     top: window.innerWidth > 768 ? "" : "0",
+    //     paddingLeft: "10px",
+    //     paddingTop: "10px",
+    //     duration: 2,
+    //   },
+    //   "-=2"
+    // );
   };
 
   const handleThreeDotsClick = () => {
@@ -160,16 +160,16 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
-      )
-      // .to(
-      //   leftLogoRef.current,
-      //   {
-      //     left: window.innerWidth > 768 ? "" : "30%",
-      //     top: window.innerWidth > 768 ? "" : "40%",
-      //     duration: 2,
-      //   },
-      //   "-=2"
-      // );
+      );
+    // .to(
+    //   leftLogoRef.current,
+    //   {
+    //     left: window.innerWidth > 768 ? "" : "30%",
+    //     top: window.innerWidth > 768 ? "" : "40%",
+    //     duration: 2,
+    //   },
+    //   "-=2"
+    // );
   };
 
   const handleLeftClick2 = () => {
@@ -207,7 +207,7 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
-      )
+      );
   };
 
   const handleRightClick = () => {
