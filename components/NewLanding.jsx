@@ -173,16 +173,17 @@ const NewLanding = () => {
         {
           scale: window.innerWidth > 768 ? 1 : 1,
           duration: 2,
-          onComplete: () => {
-            gsap.to(leftLogoRef.current, {
-              scale: 1,
-              left: window.innerWidth > 768 ? '50%' : '',
-              top: window.innerWidth > 768 ? '50%' : '',
-              translateX: window.innerWidth > 768 ? '-50%' : '',
-              translateY: window.innerWidth > 768 ? '-50%' : '', 
-              duration: 2,
-            });
-          }
+        },
+        "-=2"
+      )
+      .to(
+        leftLogoRef.current,
+        {
+          left: window.innerWidth > 768 ? "50%" : "",
+          top: window.innerWidth > 768 ? "50%" : "",
+          translateX: window.innerWidth > 768 ? "-50%" : "",
+          translateY: window.innerWidth > 768 ? "-50%" : "",
+          duration: 2,
         },
         "-=2"
       );
