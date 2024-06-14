@@ -199,7 +199,15 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
-      );
+      )
+      .to(
+        testRef.current,
+        {
+          scale: window.innerWidth > 768 ? 2 : 1,
+          duration: 2,
+        },
+        "-=2"
+      )
   };
 
   const handleRightClick = () => {
