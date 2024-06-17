@@ -28,7 +28,7 @@ const ProjectInfo = ({ color, image, title, description, link }) => {
       <div className="absolute left-0 bottom-[28%] sm:bottom-0 p-4 sm:p-10">
         <div className="flex items-start flex-col gap-4">
           <div className="flex items-center justify-center gap-3">
-            <h1 className="text-3xl sm:text-6xl font-bold uppercase text-white">
+            <h1 className="text-2xl sm:text-6xl font-bold uppercase text-white">
               {title}
             </h1>
             <h1 className="text-3xl sm:text-6xl font-bold uppercase">
@@ -36,7 +36,7 @@ const ProjectInfo = ({ color, image, title, description, link }) => {
             </h1>
           </div>
           <div className="w-full sm:w-[50%]">
-            <p className="text-xl leading-8 font-medium">{description}</p>
+            <p className="text-lg leading-8 font-medium">{description}</p>
           </div>
         </div>
       </div>

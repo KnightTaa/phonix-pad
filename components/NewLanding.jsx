@@ -726,30 +726,30 @@ const NewLanding = () => {
           className="w-full sm:w-[50%] h-[50%] sm:h-full bg-black z-20 absolute bottom-0 right-[-100%]"
           ref={rightBlackRef}
         >
-          <div
-            className="w-full h-full flex items-center justify-center relative"
-            ref={test2Ref}
-          >
-            {/* hidden opacity-0 top-0 right-1/2 translate-x-1/2 rotate-90*/}
-            <div
-              className="absolute -top-1 right-0 sm:right-1/2 translate-x-0 sm:translate-x-1/2 translate-y-1/2 sm:translate-y-0 rotate-0 sm:rotate-90 mr-2 sm:mr-0 hidden opacity-0 bg-green-400"
-              ref={otherLinksThreeDotRef}
-            >
-              <button onClick={handleOtherLinks} className="flex items-center justify-center">
-                <HiDotsHorizontal size={34} className="text-white" />
-              </button>
-            </div>
-            <button onClick={handleRightClick}>
-              <Image
-                src={"/image 1.png"}
-                width={400}
-                height={400}
-                alt={"logo"}
-                ref={logoRef}
-                className="w-[150px] sm:w-[230px] h-auto p-1 sm:p-0"
-              />
-            </button>
-          </div>
+           <div
+             className="w-full h-full flex items-center justify-center relative"
+             ref={test2Ref}
+           >
+             {/* hidden opacity-0 top-0 right-1/2 translate-x-1/2 rotate-90   sm:right-1/2 translate-x-0 sm:translate-x-1/2 translate-y-1/2 sm:translate-y-0*/}
+             <div
+              className="absolute top-1/2 transform -translate-y-1/2 right-0 mr-2 rotate-0 sm:rotate-90 hidden opacity-0"
+               ref={otherLinksThreeDotRef}
+             >
+               <button onClick={handleOtherLinks} className="flex items-center justify-center">
+                 <HiDotsHorizontal size={34} className="text-white" />
+               </button>
+             </div>
+             <button onClick={handleRightClick}>
+               <Image
+                 src={"/image 1.png"}
+                 width={400}
+                 height={400}
+                 alt={"logo"}
+                 ref={logoRef}
+                 className="w-[150px] sm:w-[230px] h-auto p-1 sm:p-0"
+               />
+             </button>
+           </div>
         </div>
 
         {/* content */}
