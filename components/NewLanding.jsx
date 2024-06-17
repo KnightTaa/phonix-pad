@@ -134,7 +134,7 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
-      )
+      );
   };
 
   const handleThreeDotsClick = () => {
@@ -498,25 +498,25 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
-      )
-      // .to(
-      //   teelLogoRef.current,
-      //   {
-      //     display: "none",
-      //     opacity: "0",
-      //     duration: 2,
-      //   },
-      //   "-=2"
-      // )
-      // .to(
-      //   teelContentRef.current,
-      //   {
-      //     display: "block",
-      //     opacity: 1,
-      //     duration: 2,
-      //   },
-      //   "-=2"
-      // );
+      );
+    // .to(
+    //   teelLogoRef.current,
+    //   {
+    //     display: "none",
+    //     opacity: "0",
+    //     duration: 2,
+    //   },
+    //   "-=2"
+    // )
+    // .to(
+    //   teelContentRef.current,
+    //   {
+    //     display: "block",
+    //     opacity: 1,
+    //     duration: 2,
+    //   },
+    //   "-=2"
+    // );
   };
 
   const handleRedContent = () => {
@@ -750,30 +750,33 @@ const NewLanding = () => {
           className="w-full sm:w-[50%] h-[50%] sm:h-full bg-black z-20 absolute bottom-0 right-[-100%]"
           ref={rightBlackRef}
         >
-           <div
-             className="w-full h-full flex items-center justify-center relative"
-             ref={test2Ref}
-           >
-             {/* hidden opacity-0 top-0 right-1/2 translate-x-1/2 rotate-90   sm:right-1/2 translate-x-0 sm:translate-x-1/2 translate-y-1/2 sm:translate-y-0*/}
-             <div
+          <div
+            className="w-full h-full flex items-center justify-center relative"
+            ref={test2Ref}
+          >
+            {/* hidden opacity-0 top-0 right-1/2 translate-x-1/2 rotate-90   sm:right-1/2 translate-x-0 sm:translate-x-1/2 translate-y-1/2 sm:translate-y-0*/}
+            <div
               className="absolute top-1/2 transform -translate-y-1/2 right-0 mr-2 rotate-0 sm:rotate-90 hidden opacity-0"
-               ref={otherLinksThreeDotRef}
-             >
-               <button onClick={handleOtherLinks} className="flex items-center justify-center">
-                 <HiDotsHorizontal size={34} className="text-white" />
-               </button>
-             </div>
-             <button onClick={handleRightClick}>
-               <Image
-                 src={"/image 1.png"}
-                 width={400}
-                 height={400}
-                 alt={"logo"}
-                 ref={logoRef}
-                 className="w-[150px] sm:w-[230px] h-auto p-1 sm:p-0"
-               />
-             </button>
-           </div>
+              ref={otherLinksThreeDotRef}
+            >
+              <button
+                onClick={handleOtherLinks}
+                className="flex items-center justify-center"
+              >
+                <HiDotsHorizontal size={34} className="text-white" />
+              </button>
+            </div>
+            <button onClick={handleRightClick}>
+              <Image
+                src={"/image 1.png"}
+                width={400}
+                height={400}
+                alt={"logo"}
+                ref={logoRef}
+                className="w-[150px] sm:w-[230px] h-auto p-1 sm:p-0"
+              />
+            </button>
+          </div>
         </div>
 
         {/* content */}
@@ -853,7 +856,10 @@ const NewLanding = () => {
               className="w-[120px] sm:w-[200px] h-auto"
             />
           </button>
-          <div className="w-full sm:w-[84%] h-full opacity-0 hidden" ref={yellowContentRef}>
+          <div
+            className="w-full sm:w-[84%] h-full opacity-0 hidden"
+            ref={yellowContentRef}
+          >
             <ProjectInfo
               link={"shorts"}
               color={"#f7e114"}
@@ -915,6 +921,17 @@ const NewLanding = () => {
               className="w-[120px] sm:w-[200px] h-auto p-1 sm:p-0"
             />
           </button>
+          <div className="w-[84%] opacity-0 hidden" ref={teelContentRef}>
+            <ProjectInfo
+              link={"brands"}
+              color={"#ee1d52"}
+              image={"image 10"}
+              title={"Brands"}
+              description={
+                "Platform to promote, support and recognize all those who use an image as a vehicle to express their creativity, feelings, memories; all that a creative, professional or amateur want to transmit to society."
+              }
+            />
+          </div>
         </div>
       </div>
     </section>
