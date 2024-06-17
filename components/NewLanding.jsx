@@ -126,7 +126,15 @@ const NewLanding = () => {
           },
         },
         "-=2"
-      );
+      )
+      .to(
+        threeDotRef.current,
+        {
+          opacity: 1,
+          duration: 2,
+        },
+        "-=2"
+      )
   };
 
   const handleThreeDotsClick = () => {
@@ -173,6 +181,14 @@ const NewLanding = () => {
           top: window.innerWidth > 768 ? "50%" : "",
           translateX: window.innerWidth > 768 ? "-50%" : "",
           translateY: window.innerWidth > 768 ? "-50%" : "",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        threeDotRef.current,
+        {
+          opacity: 0,
           duration: 2,
         },
         "-=2"
@@ -227,6 +243,14 @@ const NewLanding = () => {
               duration: 2,
             });
           },
+        },
+        "-=2"
+      )
+      .to(
+        threeDotRef.current,
+        {
+          opacity: 1,
+          duration: 2,
         },
         "-=2"
       );
@@ -681,7 +705,7 @@ const NewLanding = () => {
     <section className="w-full h-screen overflow-hidden relative">
       <div className="h-screen w-full flex flex-col sm:flex-row justify-between relative">
         <div
-          className="block sm:hidden absolute top-0 right-[-100%] z-10 mr-2 mt-2 opacity-1"
+          className="block sm:hidden absolute top-0 right-[-100%] z-10 mr-2 mt-2 opacity-0"
           ref={threeDotRef}
         >
           <button onClick={handleThreeDotsClick}>
