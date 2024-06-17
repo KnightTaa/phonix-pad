@@ -713,7 +713,7 @@ const NewLanding = () => {
                   height={400}
                   alt={"logo"}
                   ref={logo1Ref}
-                  className="w-[150px] sm:w-[250px] h-auto"
+                  className="w-[150px] sm:w-[250px] h-auto p-1 sm:p-0"
                 />
               </button>
             </div>
@@ -732,10 +732,10 @@ const NewLanding = () => {
           >
             {/* hidden opacity-0 top-0 right-1/2 translate-x-1/2 rotate-90*/}
             <div
-              className="absolute top-0 right-0 sm:right-1/2 translate-x-0 sm:translate-x-1/2 translate-y-1/2 sm:translate-y-0 rotate-0 sm:rotate-90 mr-2 sm:mr-0 mt-0 sm:mt-2 hidden opacity-0"
+              className="absolute -top-1 right-0 sm:right-1/2 translate-x-0 sm:translate-x-1/2 translate-y-1/2 sm:translate-y-0 rotate-0 sm:rotate-90 mr-2 sm:mr-0 hidden opacity-0 bg-green-400"
               ref={otherLinksThreeDotRef}
             >
-              <button onClick={handleOtherLinks}>
+              <button onClick={handleOtherLinks} className="flex items-center justify-center">
                 <HiDotsHorizontal size={34} className="text-white" />
               </button>
             </div>
@@ -746,7 +746,7 @@ const NewLanding = () => {
                 height={400}
                 alt={"logo"}
                 ref={logoRef}
-                className="w-[150px] sm:w-[230px] h-auto"
+                className="w-[150px] sm:w-[230px] h-auto p-1 sm:p-0"
               />
             </button>
           </div>
@@ -829,7 +829,7 @@ const NewLanding = () => {
               className="w-[120px] sm:w-[200px] h-auto"
             />
           </button>
-          <div className="w-[84%] opacity-0 hidden" ref={yellowContentRef}>
+          <div className="w-full sm:w-[84%] h-full opacity-0 hidden" ref={yellowContentRef}>
             <ProjectInfo
               link={"shorts"}
               color={"#f7e114"}
@@ -857,10 +857,10 @@ const NewLanding = () => {
               height={400}
               alt={"logo"}
               ref={teelLogoRef}
-              className="w-[120px] sm:w-[200px] h-auto"
+              className="w-[120px] sm:w-[200px] h-auto p-1 sm:p-0"
             />
           </button>
-          {/* <div className="w-[84%] opacity-0 hidden" ref={teelContentRef}>
+          <div className="w-[84%] opacity-0 hidden" ref={teelContentRef}>
             <ProjectInfo
               link={"products"}
               color={"#00d3c8"}
@@ -870,7 +870,7 @@ const NewLanding = () => {
                 "Platform to promote, support and recognize all those who use an image as a vehicle to express their creativity, feelings, memories; all that a creative, professional or amateur want to transmit to society."
               }
             />
-          </div> */}
+          </div>
         </div>
 
         {/* red content left-0 sm:left-[75%] top-[75%] sm:top-0*/}
@@ -888,7 +888,7 @@ const NewLanding = () => {
               height={400}
               alt={"logo"}
               ref={redLogoRef}
-              className="w-[120px] sm:w-[200px] h-auto"
+              className="w-[120px] sm:w-[200px] h-auto p-1 sm:p-0"
             />
           </button>
         </div>

@@ -12,7 +12,7 @@ const ProjectInfo = ({ color, image, title, description, link }) => {
           width={400}
           height={400}
           alt="logo"
-          className="w-[140px] sm:w-[200px] h-auto"
+          className="w-[80px] sm:w-[200px] h-auto"
         />
         <Link href={`/sign-up/${link}`}>
           <Image
@@ -20,12 +20,12 @@ const ProjectInfo = ({ color, image, title, description, link }) => {
             width={400}
             height={400}
             alt={"logo"}
-            className="w-[100px] sm:w-[160px] h-auto"
+            className="w-[60px] sm:w-[160px] h-auto"
           />
         </Link>
       </div>
       {/* info */}
-      <div className="absolute left-0 bottom-0 p-4 sm:p-10">
+      <div className="absolute left-0 bottom-[28%] sm:bottom-0 p-4 sm:p-10">
         <div className="flex items-start flex-col gap-4">
           <div className="flex items-center justify-center gap-3">
             <h1 className="text-3xl sm:text-6xl font-bold uppercase text-white">
