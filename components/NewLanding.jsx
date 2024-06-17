@@ -755,10 +755,11 @@ const NewLanding = () => {
             ref={test2Ref}
           >
             {/* hidden opacity-0 top-0 right-1/2 translate-x-1/2 rotate-90   sm:right-1/2 translate-x-0 sm:translate-x-1/2 translate-y-1/2 sm:translate-y-0*/}
-            <div
-              className="absolute top-1/2 transform -translate-y-1/2 right-0 mr-2 rotate-0 sm:rotate-90 hidden opacity-0"
-              ref={otherLinksThreeDotRef}
-            >
+             <div
+              className="absolute top-1/2 right-0 sm:top-0 sm:left-1/2 transform -translate-y-1/2 sm:translate-y-1/2 sm:-translate-x-1/2 hidden rotate-0 sm:rotate-90 opacity-0 sm:flex items-center justify-center mr-2 sm:mr-0 mt-0 sm:mt-2"
+// -          className="absolute top-1/2 right-0 transform -translate-y-1/2 mr-2 rotate-0 sm:rotate-90 hidden opacity-0 bg-green-300"
+               ref={otherLinksThreeDotRef}
+             >
               <button
                 onClick={handleOtherLinks}
                 className="flex items-center justify-center"
