@@ -226,7 +226,7 @@ const NewLanding = () => {
       .to(
         testRef.current,
         {
-          scale: 2,
+          scale: window.innerWidth > 768 ? 2 : 1,
           duration: 2,
           onComplete: () => {
             gsap.to(testRef.current, {
@@ -263,6 +263,7 @@ const NewLanding = () => {
       .to(logoRef.current, {
         rotate: window.innerWidth > 768 ? -90 : 0,
         width: window.innerWidth > 768 ? "180px" : "80px",
+        scale: 1,
         duration: 2,
       })
       .to(
@@ -270,6 +271,7 @@ const NewLanding = () => {
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
           width: window.innerWidth > 768 ? "180px" : "80px",
+          scale: 1,
           duration: 2,
         },
         "-=2"
@@ -623,7 +625,7 @@ const NewLanding = () => {
         logoRef.current,
         {
           rotate: 0,
-          scale: window.innerWidth > 768 ? 1.2 : 1,
+          scale: window.innerWidth > 768 ? 1.4 : 2,
           duration: 2,
         },
         "-=2"
@@ -632,7 +634,7 @@ const NewLanding = () => {
         logo1Ref.current,
         {
           rotate: 0,
-          scale: window.innerWidth > 768 ? 1.2 : 1,
+          scale: window.innerWidth > 768 ? 1.4 : 2,
           duration: 2,
         },
         "-=2"
