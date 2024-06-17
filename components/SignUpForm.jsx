@@ -171,7 +171,7 @@ const SignUpForm = () => {
           <h1
             className={`uppercase text-xl text-start sm:text-4xl font-semibold mb-10 text-white`}
           >
-            Sign In
+            Sign Up
           </h1>
           <div className="space-y-12">
             <div className="grid grid-cols-1 gap-x-6 gap-y-7 sm:grid-cols-6">
@@ -206,7 +206,7 @@ const SignUpForm = () => {
                     name="last-name"
                     id="last-name"
                     autoComplete="family-name"
-                    className="block w-full rounded-lg border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-800 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-900 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-lg border-0 py-1.5 px-2 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -224,7 +224,7 @@ const SignUpForm = () => {
                     name="email"
                     type="email"
                     autoComplete="email"
-                    className="block w-full rounded-lg border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-800 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-900 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-lg border-0 py-1.5 px-2 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                   />
                 </div>
               </div>
@@ -265,7 +265,7 @@ const SignUpForm = () => {
                     type="text"
                     name="phone"
                     id="phone"
-                    className="block w-full pl-16 sm:pl-14 pr-3 py-2 rounded-lg border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-800 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-900 sm:text-sm sm:leading-6"
+                    className="block w-full pl-16 sm:pl-14 pr-3 py-2 rounded-lg border-0 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                     placeholder={phonePlaceholder}
                   />
                 </div>
@@ -315,7 +315,7 @@ const SignUpForm = () => {
                     name="password"
                     id="password"
                     autoComplete="+94"
-                    className="block w-full rounded-lg border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-800 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-900 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-lg border-0 py-1.5 px-2 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                   />
                 </div>
                 <p className="text-xs mt-1 text-white/80">
