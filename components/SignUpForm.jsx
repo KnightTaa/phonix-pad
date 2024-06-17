@@ -167,7 +167,7 @@ const SignUpForm = () => {
         </div>
 
         {/* right side */}
-        <div className="w-full md:w-full lg:w-1/2 p-2 sm:p-8 mt-5 sm:mt-0 bg-black rounded-tr-none sm:rounded-tr-[25%]">
+        <div className="w-full md:w-full lg:w-1/2 py-5 px-2 sm:p-8 mt-5 sm:mt-0 bg-black rounded-tr-none sm:rounded-tr-[25%]">
           <h1
             className={`uppercase text-xl text-start sm:text-4xl font-semibold mb-10 text-white`}
           >
