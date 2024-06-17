@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ProjectInfo = ({ color, image, title, description }) => {
+const ProjectInfo = ({ color, image, title, description, link }) => {
   return (
     <section className={`w-full h-screen bg-[${color}] relative`}>
       {/* logo */}
@@ -14,7 +14,7 @@ const ProjectInfo = ({ color, image, title, description }) => {
           alt="logo"
           className="w-[140px] sm:w-[200px] h-auto"
         />
-        <Link href={"/sign-up"}>
+        <Link href={`/sign-up/${link}`}>
           <Image
             src={"/REGISTER1.png"}
             width={400}

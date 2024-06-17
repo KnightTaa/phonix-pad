@@ -43,6 +43,7 @@ const NewLanding = () => {
   const logoSFLRef = useRef(null);
 
   const yellowContentRef = useRef(null);
+  const teelContentRef = useRef(null);
 
   const leftLogoRef = useRef(null);
 
@@ -157,14 +158,14 @@ const NewLanding = () => {
         },
         "-=2"
       )
-      .to(
-        testRef.current,
-        {
-          scale: window.innerWidth > 768 ? 1 : 1,
-          duration: 2,
-        },
-        "-=2"
-      )
+      // .to(
+      //   testRef.current,
+      //   {
+      //     scale: window.innerWidth > 768 ? 1 : 1,
+      //     duration: 2,
+      //   },
+      //   "-=2"
+      // )
       .to(
         leftLogoRef.current,
         {
@@ -473,7 +474,25 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
-      );
+      )
+      // .to(
+      //   teelLogoRef.current,
+      //   {
+      //     display: "none",
+      //     opacity: "0",
+      //     duration: 2,
+      //   },
+      //   "-=2"
+      // )
+      // .to(
+      //   teelContentRef.current,
+      //   {
+      //     display: "block",
+      //     opacity: 1,
+      //     duration: 2,
+      //   },
+      //   "-=2"
+      // );
   };
 
   const handleRedContent = () => {
@@ -685,7 +704,7 @@ const NewLanding = () => {
             >
               <IoIosArrowBack size={26} className="text-black" />
               <h1 className="font-semibold text-lg">Back</h1>
-            </button> */}
+            </button> w-full h-full flex items-center justify-center*/}
             <div className="absolute" ref={leftLogoRef}>
               <button onClick={clickHandler} ref={testRef}>
                 <Image
@@ -812,6 +831,7 @@ const NewLanding = () => {
           </button>
           <div className="w-[84%] opacity-0 hidden" ref={yellowContentRef}>
             <ProjectInfo
+              link={"shorts"}
               color={"#f7e114"}
               image={"image 7"}
               title={"Shorts"}
@@ -840,6 +860,17 @@ const NewLanding = () => {
               className="w-[120px] sm:w-[200px] h-auto"
             />
           </button>
+          {/* <div className="w-[84%] opacity-0 hidden" ref={teelContentRef}>
+            <ProjectInfo
+              link={"products"}
+              color={"#00d3c8"}
+              image={"image 11"}
+              title={"Products"}
+              description={
+                "Platform to promote, support and recognize all those who use an image as a vehicle to express their creativity, feelings, memories; all that a creative, professional or amateur want to transmit to society."
+              }
+            />
+          </div> */}
         </div>
 
         {/* red content left-0 sm:left-[75%] top-[75%] sm:top-0*/}

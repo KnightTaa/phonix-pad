@@ -17,11 +17,11 @@ const countries = [
   { value: "BR", label: "🇧🇷", code: "+55" },
   { value: "RU", label: "🇷🇺", code: "+7" },
   { value: "MX", label: "🇲🇽", code: "+52" },
-  { value: "AR", label: "🇦🇷", code: "+54"},
-  { value: "TR", label: "🇹🇷", code: "+90"}, 
-  { value: "PH", label: "🇵🇭", code: "+63"},
+  { value: "AR", label: "🇦🇷", code: "+54" },
+  { value: "TR", label: "🇹🇷", code: "+90" },
+  { value: "PH", label: "🇵🇭", code: "+63" },
 ];
-const SignUp = () => {
+const SignUpForm1 = () => {
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
   const phonePlaceholder = selectedCountry ? selectedCountry.code : "";
 
@@ -145,7 +145,11 @@ const SignUp = () => {
                     onClick={togglePassword}
                   />
                   <span
-                    className={`${!showPassword ? "text-sm font-medium leading-6 text-gray-500" : "hidden"}`}
+                    className={`${
+                      !showPassword
+                        ? "text-sm font-medium leading-6 text-gray-500"
+                        : "hidden"
+                    }`}
                   >
                     Show
                   </span>
@@ -155,7 +159,11 @@ const SignUp = () => {
                     onClick={togglePassword}
                   />
                   <span
-                    className={`${showPassword ? "text-sm font-medium leading-6 text-gray-500" : "hidden"}`}
+                    className={`${
+                      showPassword
+                        ? "text-sm font-medium leading-6 text-gray-500"
+                        : "hidden"
+                    }`}
                   >
                     Hide
                   </span>
@@ -239,4 +247,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignUpForm1;
