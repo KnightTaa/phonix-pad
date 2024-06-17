@@ -707,10 +707,10 @@ const NewLanding = () => {
     <section className="w-full h-screen overflow-hidden relative">
       <div className="h-screen w-full flex flex-col sm:flex-row justify-between relative">
         <div
-          className="block sm:hidden absolute top-0 right-[-100%] z-10 mr-2 mt-2 opacity-0"
+          className="block sm:hidden absolute top-0 right-[-100%] z-10 mr-2 mt-2 opacity-0 outline-none"
           ref={threeDotRef}
         >
-          <button onClick={handleThreeDotsClick}>
+          <button onClick={handleThreeDotsClick} className="outline-none">
             <HiDotsHorizontal size={36} />
           </button>
         </div>
@@ -732,7 +732,7 @@ const NewLanding = () => {
               <h1 className="font-semibold text-lg">Back</h1>
             </button> w-full h-full flex items-center justify-center*/}
             <div className="absolute" ref={leftLogoRef}>
-              <button onClick={clickHandler} ref={testRef}>
+              <button onClick={clickHandler} ref={testRef} className="outline-none">
                 <Image
                   src={"/image 13.png"}
                   width={400}
@@ -764,12 +764,12 @@ const NewLanding = () => {
              >
               <button
                 onClick={handleOtherLinks}
-                className="flex items-center justify-center"
+                className="flex items-center justify-center outline-none"
               >
                 <HiDotsHorizontal size={34} className="text-white" />
               </button>
             </div>
-            <button onClick={handleRightClick}>
+            <button onClick={handleRightClick} className="outline-none">
               <Image
                 src={"/image 1.png"}
                 width={400}
@@ -788,8 +788,8 @@ const NewLanding = () => {
           className="w-full sm:w-[50%] h-[50%] sm:h-full opacity-0 flex items-start justify-between flex-col z-10 absolute right-0 sm:-right-[50%] -bottom-[50%] sm:bottom-0"
           ref={contentRef}
         >
-          <div className="hidden w-full p-5 sm:flex items-center justify-end">
-            <button onClick={handleThreeDotsClick}>
+          <div className="hidden w-full p-5 sm:flex items-center justify-end outline-none">
+            <button onClick={handleThreeDotsClick} className="outline-none">
               <HiDotsHorizontal size={36} />
             </button>
           </div>
@@ -847,7 +847,7 @@ const NewLanding = () => {
           {/* absolute -left-[50%] top-0 translate-x-1/2 */}
           <button
             onClick={handleYellowContent}
-            className="w-full h-full flex items-center justify-center"
+            className="w-full h-full flex items-center justify-center outline-none"
             ref={yellowLogoRef}
           >
             <Image
@@ -882,7 +882,7 @@ const NewLanding = () => {
         >
           <button
             onClick={handleTeelContent}
-            className="w-full h-full flex items-center justify-center"
+            className="w-full h-full flex items-center justify-center outline-none"
           >
             <Image
               src={"/image 11.png"}
@@ -913,7 +913,7 @@ const NewLanding = () => {
         >
           <button
             onClick={handleRedContent}
-            className="w-full h-full flex items-center justify-center"
+            className="w-full h-full flex items-center justify-center outline-none"
           >
             <Image
               src={"/image 10.png"}
