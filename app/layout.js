@@ -4,7 +4,7 @@ import "./globals.css";
 const arial = localfont({
   src: [{
     path: '../public/fonts/arial.ttf',
-    weight: '400',
+    // weight: '400',
   }],
   variable: "--font-arial",
 })
