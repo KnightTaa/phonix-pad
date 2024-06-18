@@ -14,6 +14,7 @@ const NewLanding = () => {
   const [isRotated, setIsRotated] = useState(false);
   const [isBack, setIsBack] = useState(false);
   const [isMainBack, setIsMainBack] = useState(false);
+  const [isRightClicked, setIsRightClicked] = useState(false);
 
   const rightBlackRef = useRef(null);
   const threeDotRef = useRef(null);
@@ -33,6 +34,7 @@ const NewLanding = () => {
 
   const testRef = useRef(null);
   const test2Ref = useRef(null);
+  const test3Ref = useRef(null);
 
   const otherLinksRef = useRef(null);
   const otherLinksMobileRef = useRef(null);
@@ -259,6 +261,7 @@ const NewLanding = () => {
   const handleRightClick = () => {
     setIsRotated(!isRotated);
     setIsBack(true);
+    setIsRightClicked(true);
     timeline
       .to(logoRef.current, {
         rotate: window.innerWidth > 768 ? -90 : 0,
@@ -288,6 +291,14 @@ const NewLanding = () => {
         testRef.current,
         {
           pointerEvents: "pointer",
+        },
+        "-=2"
+      )
+      // After right Section clicked Disable Awards button
+      .to(
+        test3Ref.current,
+        {
+          pointerEvents: "none",
         },
         "-=2"
       )
@@ -420,6 +431,7 @@ const NewLanding = () => {
         },
         "-=2"
       )
+      // Logo Hide
       .to(
         yellowLogoRef.current,
         {
@@ -429,15 +441,16 @@ const NewLanding = () => {
         },
         "-=2"
       )
-      .to(
-        yellowContentRef.current,
-        {
-          display: "block",
-          opacity: 1,
-          duration: 2,
-        },
-        "-=2"
-      );
+      //Content Show
+    .to(
+      yellowContentRef.current,
+      {
+        display: "block",
+        opacity: 1,
+        duration: 2,
+      },
+      "-=2"
+    );
   };
 
   const handleTeelContent = () => {
@@ -559,6 +572,8 @@ const NewLanding = () => {
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
           width: window.innerWidth > 768 ? "80px" : "60px",
+          display: "flex",
+          opacity: "1",
           duration: 2,
         },
         "-=2"
@@ -669,7 +684,36 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
-      );
+      )
+      // After back Clicked Right section awards button enable
+      .to(
+        test3Ref.current,
+        {
+          pointerEvents: "auto",
+        },
+        "-=2"
+      )
+
+      // Content Hide
+      .to(
+        yellowContentRef.current,
+        {
+          display: "none",
+          opacity: 0,
+          duration: 2,
+        },
+        "-=2"
+      )
+      // Logo Show
+      .to(
+        yellowLogoRef.current,
+        {
+          display: "flex",
+          opacity: 1,
+          duration: 2,
+        },
+        "-=2"
+      )
   };
 
   const handleOtherLinks = () => {
@@ -703,6 +747,7 @@ const NewLanding = () => {
   };
 
   const clickHandler = getClickHandler();
+
   return (
     <section className="w-full h-screen overflow-hidden relative">
       <div className="h-screen w-full flex flex-col sm:flex-row justify-between relative">
@@ -732,7 +777,11 @@ const NewLanding = () => {
               <h1 className="font-semibold text-lg">Back</h1>
             </button> w-full h-full flex items-center justify-center*/}
             <div className="absolute" ref={leftLogoRef}>
-              <button onClick={clickHandler} ref={testRef} className="outline-none">
+              <button
+                onClick={clickHandler}
+                ref={testRef}
+                className="outline-none"
+              >
                 <Image
                   src={"/image 13.png"}
                   width={400}
@@ -757,11 +806,11 @@ const NewLanding = () => {
             ref={test2Ref}
           >
             {/* hidden opacity-0 top-0 right-1/2 translate-x-1/2 rotate-90   sm:right-1/2 translate-x-0 sm:translate-x-1/2 translate-y-1/2 sm:translate-y-0*/}
-             <div
+            <div
               className="absolute top-1/2 right-0 sm:top-0 sm:left-1/2 transform -translate-y-1/2 sm:translate-y-1/2 sm:-translate-x-1/2 hidden rotate-0 sm:rotate-90 opacity-0 sm:flex items-center justify-center mr-2 sm:mr-0 mt-0 sm:mt-2"
-// -          className="absolute top-1/2 right-0 transform -translate-y-1/2 mr-2 rotate-0 sm:rotate-90 hidden opacity-0 bg-green-300"
-               ref={otherLinksThreeDotRef}
-             >
+              //            className="absolute top-1/2 right-0 transform -translate-y-1/2 mr-2 rotate-0 sm:rotate-90 hidden opacity-0 bg-green-300"
+              ref={otherLinksThreeDotRef}
+            >
               <button
                 onClick={handleOtherLinks}
                 className="flex items-center justify-center outline-none"
@@ -769,7 +818,11 @@ const NewLanding = () => {
                 <HiDotsHorizontal size={34} className="text-white" />
               </button>
             </div>
-            <button onClick={handleRightClick} className="outline-none">
+            <button
+              onClick={handleRightClick}
+              ref={test3Ref}
+              className="outline-none"
+            >
               <Image
                 src={"/image 1.png"}
                 width={400}
@@ -844,7 +897,9 @@ const NewLanding = () => {
           className="h-[28.7%] sm:h-screen w-full sm:w-[28.7%] bg-[#f7e114] absolute left-0 sm:left-[100%] top-[100%] sm:top-0"
           ref={yellowDivRef}
         >
-          {/* absolute -left-[50%] top-0 translate-x-1/2 */}
+          {/* absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 */}
+          {/* top-0 right-[16%] pt-4 pr-4 */}
+          {/* absolute inset-0 flex items-center justify-center outline-none w-full h-full flex items-center justify-center outline-none*/}
           <button
             onClick={handleYellowContent}
             className="w-full h-full flex items-center justify-center outline-none"
@@ -893,7 +948,7 @@ const NewLanding = () => {
               className="w-[120px] sm:w-[200px] h-auto p-1 sm:p-0"
             />
           </button>
-          <div className="w-[84%] opacity-0 hidden" ref={teelContentRef}>
+          <div className="w-[84%] opacity-0 hidden">
             <ProjectInfo
               link={"products"}
               color={"#00d3c8"}
@@ -924,7 +979,7 @@ const NewLanding = () => {
               className="w-[120px] sm:w-[200px] h-auto p-1 sm:p-0"
             />
           </button>
-          <div className="w-[84%] opacity-0 hidden" ref={teelContentRef}>
+          <div className="w-[84%] opacity-0 hidden">
             <ProjectInfo
               link={"brands"}
               color={"#ee1d52"}
