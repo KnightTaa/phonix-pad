@@ -10,7 +10,7 @@ import "./globals.css";
 // })
 
 const arial = localfont({
-  src: '../public/fonts/arial.ttf',
+  src: './fonts/arial.ttf',
 })
 
 export const metadata = {
