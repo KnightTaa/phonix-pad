@@ -11,7 +11,7 @@ const SignInForm = () => {
   };
   const passwordType = showPassword ? "text" : "password";
   return (
-    <div className="px-2 sm:px-72 py-10 ">
+    <div className="px-2 sm:px-72 py-10 font-arial">
       <form className="border border-gray-950 px-5 sm:px-16 py-10 bg-black">
         <h1
           className={`uppercase text-xl text-start sm:text-4xl font-semibold mb-10 text-white`}

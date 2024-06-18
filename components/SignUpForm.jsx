@@ -58,7 +58,7 @@ const SignUpForm = () => {
     }
   };
   return (
-    <section className={`w-full min-h-screen ${bgColor}`}>
+    <section className={`w-full min-h-screen font-arial ${bgColor}`}>
       <Wrapper>
         <form className="w-full flex flex-col md:flex-col lg:flex-row items-center justify-between gap-10 p-2 sm:p-4">
           {/* left side */}

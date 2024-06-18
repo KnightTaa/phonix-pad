@@ -749,7 +749,7 @@ const NewLanding = () => {
   const clickHandler = getClickHandler();
 
   return (
-    <section className="w-full h-screen overflow-hidden relative">
+    <section className="w-full h-screen overflow-hidden relative font-arial">
       <div className="h-screen w-full flex flex-col sm:flex-row justify-between relative">
         <div
           className="block sm:hidden absolute top-0 right-[-100%] z-10 mr-2 mt-2 opacity-0 outline-none"
