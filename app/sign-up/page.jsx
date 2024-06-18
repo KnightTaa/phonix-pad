@@ -1,7 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { BiSolidHide, BiSolidShow } from "react-icons/bi";
+import API from '../../services/api';
+
 
 const countries = [
   { value: "LK", label: "🇱🇰", code: "+94" },
@@ -30,6 +32,20 @@ const SignUp = () => {
     setShowPassword(!showPassword);
   };
   const passwordType = showPassword ? "text" : "password";
+
+  useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const response = await API.get('/user');
+            console.log('aaaaaaaa', response);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+    fetchData();
+}, []);
+
   return (
     <div className="px-2 sm:px-72 py-10">
       <form className="border border-gray-950 px-5 sm:px-16 py-10">

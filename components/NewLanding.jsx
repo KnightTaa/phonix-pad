@@ -394,6 +394,29 @@ const NewLanding = () => {
         "-=2"
       )
       .to(
+        logoSFLRef.current,
+        {
+          scale: window.innerWidth > 768 ? 2 : 1,
+          duration: 2,
+          onComplete: () => {
+            gsap.to(logoSFLRef.current, {
+              scale: 1,
+              duration: 2,
+            });
+            gsap.to(logoSFLRef.current, {
+              left: window.innerWidth > 768 ? "0" : "",
+              top: window.innerWidth > 768 ? "0" : "",
+              translateX: window.innerWidth > 768 ? "0" : "",
+              translateY: window.innerWidth > 768 ? "0" : "",
+              paddingTop: window.innerWidth > 768 ? "10px" : "",
+              paddingLeft: window.innerWidth > 768 ? "10px" : "",
+              duration: 2,
+            });
+          },
+        },
+        "-=2"
+      )
+      .to(
         yellowLogoRef.current,
         {
           display: "none",
@@ -649,11 +672,9 @@ const NewLanding = () => {
 
   const getClickHandler = () => {
     if (isBack) {
-      console.log('vvvvvvvvv', isMainBack);
       return handleBackClick;
     } else {
       if (isMainBack) {
-        console.log('aaaaaaaaa', isMainBack);
         return handleLeftClick2;
       } else {
         return handleLeftClick;
