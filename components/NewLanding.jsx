@@ -46,6 +46,9 @@ const NewLanding = () => {
 
   const yellowContentRef = useRef(null);
   const teelContentRef = useRef(null);
+  const redContentRef = useRef(null);
+  const teelNewLogoRef = useRef(null);
+  const redNewLogoRef = useRef(null);
 
   const leftLogoRef = useRef(null);
 
@@ -433,6 +436,29 @@ const NewLanding = () => {
       )
       // Logo Hide
       .to(
+        logoSFLRef.current,
+        {
+          scale: window.innerWidth > 768 ? 2 : 1,
+          duration: 2,
+          onComplete: () => {
+            gsap.to(logoSFLRef.current, {
+              scale: 1,
+              duration: 2,
+            });
+            gsap.to(logoSFLRef.current, {
+              left: window.innerWidth > 768 ? "0" : "",
+              top: window.innerWidth > 768 ? "0" : "",
+              translateX: window.innerWidth > 768 ? "0" : "",
+              translateY: window.innerWidth > 768 ? "0" : "",
+              paddingTop: window.innerWidth > 768 ? "10px" : "",
+              paddingLeft: window.innerWidth > 768 ? "10px" : "",
+              duration: 2,
+            });
+          },
+        },
+        "-=2"
+      )
+      .to(
         yellowLogoRef.current,
         {
           display: "none",
@@ -444,6 +470,42 @@ const NewLanding = () => {
       //Content Show
     .to(
       yellowContentRef.current,
+      {
+        display: "block",
+        opacity: 1,
+        duration: 2,
+      },
+      "-=2"
+    )
+    .to(
+      teelContentRef.current,
+      {
+        display: "none",
+        opacity: "0",
+        duration: 2,
+      },
+      "-=2"
+    )
+    .to(
+      teelNewLogoRef.current,
+      {
+        display: "block",
+        opacity: 1,
+        duration: 2,
+      },
+      "-=2"
+    )
+    .to(
+      redContentRef.current,
+      {
+        display: "none",
+        opacity: "0",
+        duration: 2,
+      },
+      "-=2"
+    )
+    .to(
+      redNewLogoRef.current,
       {
         display: "block",
         opacity: 1,
@@ -513,25 +575,61 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
-      );
-    // .to(
-    //   teelLogoRef.current,
-    //   {
-    //     display: "none",
-    //     opacity: "0",
-    //     duration: 2,
-    //   },
-    //   "-=2"
-    // )
-    // .to(
-    //   teelContentRef.current,
-    //   {
-    //     display: "block",
-    //     opacity: 1,
-    //     duration: 2,
-    //   },
-    //   "-=2"
-    // );
+      )
+    .to(
+      teelNewLogoRef.current,
+      {
+        display: "none",
+        opacity: "0",
+        duration: 2,
+      },
+      "-=2"
+    )
+    .to(
+      teelContentRef.current,
+      {
+        display: "block",
+        opacity: 1,
+        duration: 2,
+      },
+      "-=2"
+    )
+    .to(
+      redContentRef.current,
+      {
+        display: "none",
+        opacity: "0",
+        duration: 2,
+      },
+      "-=2"
+    )
+    .to(
+      redNewLogoRef.current,
+      {
+        display: "block",
+        opacity: 1,
+        duration: 2,
+      },
+      "-=2"
+    )
+    .to(
+      yellowContentRef.current,
+      {
+        display: "none",
+        opacity: "0",
+        duration: 2,
+      },
+      "-=2"
+    )
+    .to(
+      yellowLogoRef.current,
+      {
+        display: "block",
+        opacity: 1,
+        duration: 2,
+      },
+      "-=2"
+    );
   };
 
   const handleRedContent = () => {
@@ -586,6 +684,60 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
+      )
+      .to(
+        redNewLogoRef.current,
+        {
+          display: "none",
+          opacity: "0",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        redContentRef.current,
+        {
+          display: "block",
+          opacity: 1,
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        teelContentRef.current,
+        {
+          display: "none",
+          opacity: "0",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        teelNewLogoRef.current,
+        {
+          display: "block",
+          opacity: 1,
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        yellowContentRef.current,
+        {
+          display: "none",
+          opacity: "0",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        yellowLogoRef.current,
+        {
+          display: "block",
+          opacity: 1,
+          duration: 2,
+        },
+        "-=2"
       );
   };
 
@@ -597,7 +749,9 @@ const NewLanding = () => {
         left: window.innerWidth > 768 ? "150%" : "0",
         top: window.innerWidth > 768 ? "0" : "100%",
         duration: 2,
-      })
+      },
+      "-=2"
+      )
       .to(
         teelDivRef.current,
         {
@@ -938,6 +1092,7 @@ const NewLanding = () => {
           <button
             onClick={handleTeelContent}
             className="w-full h-full flex items-center justify-center outline-none"
+            ref={teelNewLogoRef}
           >
             <Image
               src={"/image 11.png"}
@@ -948,7 +1103,7 @@ const NewLanding = () => {
               className="w-[120px] sm:w-[200px] h-auto p-1 sm:p-0"
             />
           </button>
-          <div className="w-[84%] opacity-0 hidden">
+          <div className="w-[84%] opacity-0 hidden" ref={teelContentRef}>
             <ProjectInfo
               link={"products"}
               color={"#00d3c8"}
@@ -969,6 +1124,7 @@ const NewLanding = () => {
           <button
             onClick={handleRedContent}
             className="w-full h-full flex items-center justify-center outline-none"
+            ref={redNewLogoRef}
           >
             <Image
               src={"/image 10.png"}
@@ -979,7 +1135,7 @@ const NewLanding = () => {
               className="w-[120px] sm:w-[200px] h-auto p-1 sm:p-0"
             />
           </button>
-          <div className="w-[84%] opacity-0 hidden">
+          <div className="w-[84%] opacity-0 hidden" ref={redContentRef}>
             <ProjectInfo
               link={"brands"}
               color={"#ee1d52"}
