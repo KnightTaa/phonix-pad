@@ -404,12 +404,9 @@ const NewLanding = () => {
         },
         "-=2"
       )
-
       .to(
-        teelNewLogoRef.current,
+        teelLogoRef.current,
         {
-          x: "0%",
-          y: "0%",
           rotate: "0",
           duration: 2,
           onComplete: () => {
