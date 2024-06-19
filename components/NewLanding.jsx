@@ -388,6 +388,7 @@ const NewLanding = () => {
   };
 
   const handleYellowContent = () => {
+    timeline.restart();
     timeline
       .to(yellowDivRef.current, {
         width: window.innerWidth > 768 ? "87%" : "100%",
