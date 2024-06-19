@@ -461,6 +461,8 @@ const NewLanding = () => {
       .to(
         yellowLogoRef.current,
         {
+          x: '25%',
+          y: '-40%',
           display: "none",
           opacity: "0",
           duration: 2,
@@ -468,51 +470,51 @@ const NewLanding = () => {
         "-=2"
       )
       //Content Show
-    .to(
-      yellowContentRef.current,
-      {
-        display: "block",
-        opacity: 1,
-        duration: 2,
-      },
-      "-=2"
-    )
-    .to(
-      teelContentRef.current,
-      {
-        display: "none",
-        opacity: "0",
-        duration: 2,
-      },
-      "-=2"
-    )
-    .to(
-      teelNewLogoRef.current,
-      {
-        display: "block",
-        opacity: 1,
-        duration: 2,
-      },
-      "-=2"
-    )
-    .to(
-      redContentRef.current,
-      {
-        display: "none",
-        opacity: "0",
-        duration: 2,
-      },
-      "-=2"
-    )
-    .to(
-      redNewLogoRef.current,
-      {
-        display: "block",
-        opacity: 1,
-        duration: 2,
-      },
-      "-=2"
-    );
+      .to(
+        yellowContentRef.current,
+        {
+          display: "block",
+          opacity: 1,
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        teelContentRef.current,
+        {
+          display: "none",
+          opacity: "0",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        teelNewLogoRef.current,
+        {
+          display: "block",
+          opacity: 1,
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        redContentRef.current,
+        {
+          display: "none",
+          opacity: "0",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        redNewLogoRef.current,
+        {
+          display: "block",
+          opacity: 1,
+          duration: 2,
+        },
+        "-=2"
+      );
   };
 
   const handleTeelContent = () => {
@@ -576,60 +578,62 @@ const NewLanding = () => {
         },
         "-=2"
       )
-    .to(
-      teelNewLogoRef.current,
-      {
-        display: "none",
-        opacity: "0",
-        duration: 2,
-      },
-      "-=2"
-    )
-    .to(
-      teelContentRef.current,
-      {
-        display: "block",
-        opacity: 1,
-        duration: 2,
-      },
-      "-=2"
-    )
-    .to(
-      redContentRef.current,
-      {
-        display: "none",
-        opacity: "0",
-        duration: 2,
-      },
-      "-=2"
-    )
-    .to(
-      redNewLogoRef.current,
-      {
-        display: "block",
-        opacity: 1,
-        duration: 2,
-      },
-      "-=2"
-    )
-    .to(
-      yellowContentRef.current,
-      {
-        display: "none",
-        opacity: "0",
-        duration: 2,
-      },
-      "-=2"
-    )
-    .to(
-      yellowLogoRef.current,
-      {
-        display: "block",
-        opacity: 1,
-        duration: 2,
-      },
-      "-=2"
-    );
+      .to(
+        teelNewLogoRef.current,
+        {
+          display: "none",
+          opacity: "0",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        teelContentRef.current,
+        {
+          display: "block",
+          opacity: 1,
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        redContentRef.current,
+        {
+          display: "none",
+          opacity: "0",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        redNewLogoRef.current,
+        {
+          display: "block",
+          opacity: 1,
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        yellowContentRef.current,
+        {
+          display: "none",
+          opacity: "0",
+          duration: 2,
+        },
+        "-=2"
+      )
+      .to(
+        yellowLogoRef.current,
+        {
+          x: '0%',
+          y: '0%',
+          display: "block",
+          opacity: 1,
+          duration: 2,
+        },
+        "-=2"
+      );
   };
 
   const handleRedContent = () => {
@@ -745,12 +749,14 @@ const NewLanding = () => {
     setIsMainBack(true);
     setIsBack(false);
     timeline
-      .to(redDivRef.current, {
-        left: window.innerWidth > 768 ? "150%" : "0",
-        top: window.innerWidth > 768 ? "0" : "100%",
-        duration: 2,
-      },
-      "-=2"
+      .to(
+        redDivRef.current,
+        {
+          left: window.innerWidth > 768 ? "150%" : "0",
+          top: window.innerWidth > 768 ? "0" : "100%",
+          duration: 2,
+        },
+        "-=2"
       )
       .to(
         teelDivRef.current,
@@ -867,7 +873,7 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
-      )
+      );
   };
 
   const handleOtherLinks = () => {
@@ -1065,7 +1071,7 @@ const NewLanding = () => {
               height={400}
               alt={"logo"}
               ref={logoSFLRef}
-              className="w-[120px] sm:w-[200px] h-auto"
+              className="w-[120px] sm:w-[200px] !scale-[1] h-auto"
             />
           </button>
           <div
