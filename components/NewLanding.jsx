@@ -477,8 +477,8 @@ const NewLanding = () => {
         teelLogoRef.current,
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
-          // width: window.innerWidth > 768 ? "80px" : "60px",
-          width: "auto",
+          width: window.innerWidth > 768 ? "auto" : "60px",
+          // width: "auto",
           scale: 1,
           duration: 2,
         },
@@ -488,8 +488,8 @@ const NewLanding = () => {
         redLogoRef.current,
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
-          // width: window.innerWidth > 768 ? "80px" : "60px",
-          width: "auto",
+          width: window.innerWidth > 768 ? "auto" : "60px",
+          // width: "auto",
           scale: 1,
           duration: 2,
         },
@@ -619,7 +619,7 @@ const NewLanding = () => {
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
           // width: window.innerWidth > 768 ? "80px" : "60px",
-          width: "auto",
+          width: window.innerWidth > 768 ? "auto" : "60px",
           scale: 1,
           // display: "flex",
           opacity: "1",
@@ -641,7 +641,7 @@ const NewLanding = () => {
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
           // width: window.innerWidth > 768 ? "80px" : "60px",
-          width: "auto",
+          width: window.innerWidth > 768 ? "auto" : "60px",
           scale: 1,
           duration: 2,
         },
@@ -750,7 +750,7 @@ const NewLanding = () => {
           rotate: window.innerWidth > 768 ? -90 : 0,
           scale: 1,
           // width: window.innerWidth > 768 ? "80px" : "60px",
-          width: "auto",
+          width: window.innerWidth > 768 ? "auto" : "60px",
           display: "flex",
           opacity: "1",
           duration: 2,
@@ -763,7 +763,7 @@ const NewLanding = () => {
           rotate: window.innerWidth > 768 ? -90 : 0,
           scale: 1,
           // width: window.innerWidth > 768 ? "80px" : "60px",
-          width: "auto",
+          width: window.innerWidth > 768 ? "auto" : "60px",
           duration: 2,
         },
         "-=2"
@@ -1196,7 +1196,7 @@ const NewLanding = () => {
               className="w-[120px] sm:w-[200px] h-auto p-1 sm:p-0"
             />
           </button>
-          <div className="w-[84%] opacity-0 hidden" ref={teelContentRef}>
+          <div className="w-full sm:w-[84%] h-full opacity-0 hidden" ref={teelContentRef}>
             <ProjectInfo
               link={"products"}
               color={"#00d3c8"}
@@ -1228,7 +1228,7 @@ const NewLanding = () => {
               className="w-[120px] sm:w-[200px] h-auto p-1 sm:p-0"
             />
           </button>
-          <div className="w-[84%] opacity-0 hidden" ref={redContentRef}>
+          <div className="w-full sm:w-[84%] h-full opacity-0 hidden" ref={redContentRef}>
             <ProjectInfo
               link={"brands"}
               color={"#ee1d52"}
