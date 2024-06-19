@@ -362,7 +362,7 @@ const NewLanding = () => {
         {
           width: redDivRef.current.style.width === "86%" ? "28.7%" : "",
           height: redDivRef.current.style.height === "86%" ? "28.7%" : "",
-          left: window.innerWidth > 768 ? "71.4%" : "0",
+          left: window.innerWidth > 768 ? "71.2%" : "0",
           top: window.innerWidth > 768 ? "0" : "71.4%",
           duration: 2,
         },
@@ -388,7 +388,7 @@ const NewLanding = () => {
   };
 
   const handleYellowContent = () => {
-    timeline.restart();
+    // timeline.restart();
     timeline
       .to(yellowDivRef.current, {
         width: window.innerWidth > 768 ? "87%" : "100%",
@@ -409,7 +409,7 @@ const NewLanding = () => {
       .to(
         redDivRef.current,
         {
-          left: window.innerWidth > 768 ? "94%" : "0",
+          left: window.innerWidth > 768 ? "93.2%" : "0",
           top: window.innerWidth > 768 ? "0" : "94%",
           width: window.innerWidth > 768 ? "7%" : "100%",
           height: window.innerWidth > 768 ? "100%" : "7%",
@@ -421,7 +421,9 @@ const NewLanding = () => {
         teelLogoRef.current,
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
-          width: window.innerWidth > 768 ? "80px" : "60px",
+          // width: window.innerWidth > 768 ? "80px" : "60px",
+          width: 'auto',
+          scale: 1,
           duration: 2,
         },
         "-=2"
@@ -430,35 +432,37 @@ const NewLanding = () => {
         redLogoRef.current,
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
-          width: window.innerWidth > 768 ? "80px" : "60px",
+          // width: window.innerWidth > 768 ? "80px" : "60px",
+          width: 'auto',
+          scale: 1,
           duration: 2,
         },
         "-=2"
       )
       // Logo Hide
-      .to(
-        logoSFLRef.current,
-        {
-          scale: window.innerWidth > 768 ? 2 : 1,
-          duration: 2,
-          onComplete: () => {
-            gsap.to(logoSFLRef.current, {
-              scale: 1,
-              duration: 2,
-            });
-            gsap.to(logoSFLRef.current, {
-              left: window.innerWidth > 768 ? "0" : "",
-              top: window.innerWidth > 768 ? "0" : "",
-              translateX: window.innerWidth > 768 ? "0" : "",
-              translateY: window.innerWidth > 768 ? "0" : "",
-              paddingTop: window.innerWidth > 768 ? "10px" : "",
-              paddingLeft: window.innerWidth > 768 ? "10px" : "",
-              duration: 2,
-            });
-          },
-        },
-        "-=2"
-      )
+      // .to(
+      //   logoSFLRef.current,
+      //   {
+      //     scale: window.innerWidth > 768 ? 2 : 1,
+      //     duration: 2,
+      //     onComplete: () => {
+      //       gsap.to(logoSFLRef.current, {
+      //         scale: 1,
+      //         duration: 2,
+      //       });
+      //       gsap.to(logoSFLRef.current, {
+      //         left: window.innerWidth > 768 ? "0" : "",
+      //         top: window.innerWidth > 768 ? "0" : "",
+      //         translateX: window.innerWidth > 768 ? "0" : "",
+      //         translateY: window.innerWidth > 768 ? "0" : "",
+      //         paddingTop: window.innerWidth > 768 ? "10px" : "",
+      //         paddingLeft: window.innerWidth > 768 ? "10px" : "",
+      //         duration: 2,
+      //       });
+      //     },
+      //   },
+      //   "-=2"
+      // )
       .to(
         yellowLogoRef.current,
         {
@@ -554,8 +558,10 @@ const NewLanding = () => {
         yellowLogoRef.current,
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
-          width: window.innerWidth > 768 ? "80px" : "60px",
-          display: "flex",
+          // width: window.innerWidth > 768 ? "80px" : "60px",
+          width: 'auto',
+          scale: 1,
+          // display: "flex",
           opacity: "1",
           duration: 2,
         },
@@ -574,7 +580,9 @@ const NewLanding = () => {
         redLogoRef.current,
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
-          width: window.innerWidth > 768 ? "80px" : "60px",
+          // width: window.innerWidth > 768 ? "80px" : "60px",
+          width: 'auto',
+          scale: 1,
           duration: 2,
         },
         "-=2"
@@ -582,6 +590,8 @@ const NewLanding = () => {
       .to(
         teelNewLogoRef.current,
         {
+          x: '25%',
+          y: '-40%',
           display: "none",
           opacity: "0",
           duration: 2,
@@ -674,7 +684,9 @@ const NewLanding = () => {
         yellowLogoRef.current,
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
-          width: window.innerWidth > 768 ? "80px" : "60px",
+          scale: 1,
+          // width: window.innerWidth > 768 ? "80px" : "60px",
+          width: 'auto',
           display: "flex",
           opacity: "1",
           duration: 2,
@@ -685,7 +697,9 @@ const NewLanding = () => {
         teelLogoRef.current,
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
-          width: window.innerWidth > 768 ? "80px" : "60px",
+          scale: 1,
+          // width: window.innerWidth > 768 ? "80px" : "60px",
+          width: 'auto',
           duration: 2,
         },
         "-=2"
