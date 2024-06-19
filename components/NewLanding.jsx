@@ -9,6 +9,7 @@ import OtherLinks from "./OtherLinks";
 import OtherLinksMobileCard from "./OtherLinksMobileCard";
 import OtherLinksMobile from "./OtherLinksMobile";
 import ProjectInfo from "./ProjectInfo";
+import Link from "next/link";
 
 const NewLanding = () => {
   const [isRotated, setIsRotated] = useState(false);
@@ -51,6 +52,8 @@ const NewLanding = () => {
   const redNewLogoRef = useRef(null);
 
   const leftLogoRef = useRef(null);
+  const newYellowContentRef = useRef(null);
+  const infoRef = useRef(null);
 
   const timeline = gsap.timeline({
     repeat: 0,
@@ -399,6 +402,7 @@ const NewLanding = () => {
             gsap.to(yellowLogoRef.current, {
               marginLeft: "auto",
               marginRight: "auto",
+              zIndex: '10',
             });
           },
         },
@@ -407,7 +411,7 @@ const NewLanding = () => {
       .to(
         logoSFLRef.current,
         {
-          width: window.innerWidth > 768 ? "180px" : "80px", 
+          width: window.innerWidth > 768 ? "180px" : "80px",
         },
         "-=2"
       )
@@ -496,50 +500,52 @@ const NewLanding = () => {
         "-=2"
       )
       // Logo Hide
-      // .to(
-      //   logoSFLRef.current,
-      //   {
-      //     scale: window.innerWidth > 768 ? 2 : 1,
-      //     duration: 2,
-      //     onComplete: () => {
-      //       gsap.to(logoSFLRef.current, {
-      //         scale: 1,
-      //         duration: 2,
-      //       });
-      //       gsap.to(logoSFLRef.current, {
-      //         left: window.innerWidth > 768 ? "0" : "",
-      //         top: window.innerWidth > 768 ? "0" : "",
-      //         translateX: window.innerWidth > 768 ? "0" : "",
-      //         translateY: window.innerWidth > 768 ? "0" : "",
-      //         paddingTop: window.innerWidth > 768 ? "10px" : "",
-      //         paddingLeft: window.innerWidth > 768 ? "10px" : "",
-      //         duration: 2,
-      //       });
-      //     },
-      //   },
-      //   "-=2"
-      // )
       .to(
         yellowLogoRef.current,
         {
           x: "25%",
           y: "-40%",
-          display: "none",
+          // display: "none",
           opacity: "0",
           duration: 2,
+          onStart: () => {
+            gsap.to(
+              yellowContentRef.current,
+              {
+                opacity: 1,
+                duration: 2,
+              },
+              "-=2"
+            );
+          }
         },
         "-=2"
       )
       //Content Show
-      .to(
-        yellowContentRef.current,
-        {
-          display: "block",
-          opacity: 1,
-          duration: 2,
-        },
-        "-=2"
-      )
+      // .to(
+      //   yellowContentRef.current,
+      //   {
+      //     // display: "block",
+      //     opacity: '1',
+      //     duration: 2,
+      //     onStart: () => {
+      //       gsap.to(newYellowContentRef.current, {
+      //         opacity: 1,
+      //         duration: 2,
+      //       }, "-=2")
+
+      //     }
+      //   },
+      //   "-=2"
+      // )
+      // .to(
+      //   newYellowContentRef.current,
+      //   {
+      //     opacity: 1,
+      //     duration: 2,
+      //   },
+      //   "-=2"
+      // )
       .to(
         teelContentRef.current,
         {
@@ -1147,9 +1153,11 @@ const NewLanding = () => {
           {/* absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 */}
           {/* top-0 right-[16%] pt-4 pr-4 */}
           {/* absolute inset-0 flex items-center justify-center outline-none w-full h-full flex items-center justify-center outline-none*/}
+          {/* w-full h-full flex items-center justify-center outline-none bg-blue-200 */}
+          <div className="w-full h-full relative">
           <button
             onClick={handleYellowContent}
-            className="w-full h-full flex items-center justify-center outline-none"
+            className="absolute inset-0 flex items-center justify-center outline-none"
             ref={yellowLogoRef}
           >
             <Image
@@ -1162,7 +1170,7 @@ const NewLanding = () => {
             />
           </button>
           <div
-            className="w-full sm:w-[84%] h-full opacity-0 hidden"
+            className="w-full sm:w-[84%] h-full opacity-0"
             ref={yellowContentRef}
           >
             <ProjectInfo
@@ -1174,6 +1182,49 @@ const NewLanding = () => {
                 "Platform to promote, support and recognize all those who use an image as a vehicle to express their creativity, feelings, memories; all that a creative, professional or amateur want to transmit to society."
               }
             />
+          </div>
+          
+            {/* <div className={`w-full h-screen bg-[#f7e114] relative`} ref={newYellowContentRef}>
+              <div
+                className="absolute top-0 right-[-50%] flex flex-col gap-4 mr-6 mt-6"
+              >
+                <Image
+                  src={`/image 7.png`}
+                  width={400}
+                  height={400}
+                  alt="logo"
+                  className="w-[80px] sm:w-[200px] h-auto"
+                />
+                <Link href={`/sign-up/shorts`}>
+                  <Image
+                    src={"/REGISTER1.png"}
+                    width={400}
+                    height={400}
+                    alt={"logo"}
+                    className="w-[60px] sm:w-[160px] h-auto"
+                  />
+                </Link>
+              </div>
+              <div className="absolute left-0 bottom-[28%] sm:bottom-0 p-4 sm:p-10">
+                <div className="flex items-start flex-col gap-4">
+                  <div className="flex items-center justify-center gap-3">
+                    <h1 className="text-2xl sm:text-6xl font-bold uppercase text-white font-arial">
+                      Shorts
+                    </h1>
+                    <h1 className="text-3xl sm:text-6xl font-bold uppercase font-arial">
+                      For Life
+                    </h1>
+                  </div>
+                  <div className="w-full sm:w-[50%]">
+                    <p className="text-lg leading-8 font-medium font-arial">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Minus sed eligendi libero aliquid mollitia dolores error
+                      iusto architecto ducimus blanditiis?
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div> */}
           </div>
         </div>
 
@@ -1196,7 +1247,10 @@ const NewLanding = () => {
               className="w-[120px] sm:w-[200px] h-auto p-1 sm:p-0"
             />
           </button>
-          <div className="w-full sm:w-[84%] h-full opacity-0 hidden" ref={teelContentRef}>
+          <div
+            className="w-full sm:w-[84%] h-full opacity-0 hidden"
+            ref={teelContentRef}
+          >
             <ProjectInfo
               link={"products"}
               color={"#00d3c8"}
@@ -1228,7 +1282,10 @@ const NewLanding = () => {
               className="w-[120px] sm:w-[200px] h-auto p-1 sm:p-0"
             />
           </button>
-          <div className="w-full sm:w-[84%] h-full opacity-0 hidden" ref={redContentRef}>
+          <div
+            className="w-full sm:w-[84%] h-full opacity-0 hidden"
+            ref={redContentRef}
+          >
             <ProjectInfo
               link={"brands"}
               color={"#ee1d52"}
