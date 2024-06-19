@@ -408,9 +408,10 @@ const NewLanding = () => {
         teelLogoRef.current,
         {
           rotate: "0",
+          width: window.innerWidth > 768 ? "180px" : "80px",
           duration: 2,
           onComplete: () => {
-            gsap.to(teelNewLogoRef.current, {
+            gsap.to(teelLogoRef.current, {
               marginLeft: "auto",
               marginRight: "auto",
             });
@@ -418,6 +419,21 @@ const NewLanding = () => {
         },
         "-=2"
       )
+      .to(
+        redLogoRef.current,
+        {
+          rotate: "0",
+          width: window.innerWidth > 768 ? "180px" : "80px",
+          duration: 2,
+          onComplete: () => {
+            gsap.to(redLogoRef.current, {
+              marginLeft: "auto",
+              marginRight: "auto",
+            });
+          },
+        },
+        "-=2"
+      );
   };
 
   const handleYellowContent = () => {
