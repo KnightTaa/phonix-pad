@@ -12,6 +12,9 @@ module.exports = {
           DEFAULT: '#c3c3c3',
           hover: '#a7a7a7',
         }
+      },
+      fontFamily: {
+        arial: ['var(--font-arial)'],
       }
     },
   },

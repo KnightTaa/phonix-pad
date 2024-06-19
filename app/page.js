@@ -37,7 +37,7 @@ export default function Home() {
       {/* <OtherNewLanding /> */}
       {/* <LayoutTest /> */}
       
-      <div className="hidden">
+      {/* <div className="hidden">
         <div className="mb-10">
           <ProjectInfo
             color={"#f7e114"}
@@ -68,7 +68,7 @@ export default function Home() {
             }
           />
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }

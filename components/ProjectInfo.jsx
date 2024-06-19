@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ProjectInfo = ({ color, image, title, description }) => {
+const ProjectInfo = ({ color, image, title, description, link }) => {
   return (
     <section className={`w-full h-screen bg-[${color}] relative`}>
       {/* logo */}
@@ -12,31 +12,31 @@ const ProjectInfo = ({ color, image, title, description }) => {
           width={400}
           height={400}
           alt="logo"
-          className="w-[140px] sm:w-[200px] h-auto"
+          className="w-[80px] sm:w-[200px] h-auto"
         />
-        <Link href={"/sign-up"}>
+        <Link href={`/sign-up/${link}`}>
           <Image
             src={"/REGISTER1.png"}
             width={400}
             height={400}
             alt={"logo"}
-            className="w-[100px] sm:w-[160px] h-auto"
+            className="w-[60px] sm:w-[160px] h-auto"
           />
         </Link>
       </div>
       {/* info */}
-      <div className="absolute left-0 bottom-0 p-4 sm:p-10">
+      <div className="absolute left-0 bottom-[28%] sm:bottom-0 p-4 sm:p-10">
         <div className="flex items-start flex-col gap-4">
           <div className="flex items-center justify-center gap-3">
-            <h1 className="text-3xl sm:text-6xl font-bold uppercase text-white">
+            <h1 className="text-2xl sm:text-6xl font-bold uppercase text-white font-arial">
               {title}
             </h1>
-            <h1 className="text-3xl sm:text-6xl font-bold uppercase">
+            <h1 className="text-3xl sm:text-6xl font-bold uppercase font-arial">
               For Life
             </h1>
           </div>
           <div className="w-full sm:w-[50%]">
-            <p className="text-xl leading-8 font-medium">{description}</p>
+            <p className="text-lg leading-8 font-medium font-arial">{description}</p>
           </div>
         </div>
       </div>
