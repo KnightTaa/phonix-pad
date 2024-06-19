@@ -266,8 +266,8 @@ const NewLanding = () => {
     setIsRotated(!isRotated);
     setIsBack(true);
     setIsRightClicked(true);
-    console.log("right clicked");
-
+    console.log('right clicked')
+    
     timeline
       .to(logoRef.current, {
         rotate: window.innerWidth > 768 ? -90 : 0,
@@ -387,40 +387,7 @@ const NewLanding = () => {
           duration: 2,
         },
         "-=2"
-      )
-      .to(
-        yellowLogoRef.current,
-        {
-          x: "0%",
-          y: "0%",
-          rotate: "0",
-          duration: 2,
-          onComplete: () => {
-            gsap.to(yellowLogoRef.current, {
-              marginLeft: "auto",
-              marginRight: "auto",
-            });
-          },
-        },
-        "-=2"
-      )
-
-      .to(
-        teelNewLogoRef.current,
-        {
-          x: "0%",
-          y: "0%",
-          rotate: "0",
-          duration: 2,
-          onComplete: () => {
-            gsap.to(teelNewLogoRef.current, {
-              marginLeft: "auto",
-              marginRight: "auto",
-            });
-          },
-        },
-        "-=2"
-      )
+      );
   };
 
   const handleYellowContent = () => {
@@ -458,7 +425,7 @@ const NewLanding = () => {
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
           // width: window.innerWidth > 768 ? "80px" : "60px",
-          width: "auto",
+          width: 'auto',
           scale: 1,
           duration: 2,
         },
@@ -469,7 +436,7 @@ const NewLanding = () => {
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
           // width: window.innerWidth > 768 ? "80px" : "60px",
-          width: "auto",
+          width: 'auto',
           scale: 1,
           duration: 2,
         },
@@ -502,8 +469,8 @@ const NewLanding = () => {
       .to(
         yellowLogoRef.current,
         {
-          x: "25%",
-          y: "-40%",
+          x: '25%',
+          y: '-40%',
           display: "none",
           opacity: "0",
           duration: 2,
@@ -532,8 +499,8 @@ const NewLanding = () => {
       .to(
         teelNewLogoRef.current,
         {
-          x: "0%",
-          y: "0%",
+          x: '0%',
+          y: '0%',
           display: "block",
           opacity: 1,
           duration: 2,
@@ -552,8 +519,8 @@ const NewLanding = () => {
       .to(
         redNewLogoRef.current,
         {
-          x: "0%",
-          y: "0%",
+          x: '0%',
+          y: '0%',
           display: "block",
           opacity: 1,
           duration: 2,
@@ -599,7 +566,7 @@ const NewLanding = () => {
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
           // width: window.innerWidth > 768 ? "80px" : "60px",
-          width: "auto",
+          width: 'auto',
           scale: 1,
           // display: "flex",
           opacity: "1",
@@ -621,7 +588,7 @@ const NewLanding = () => {
         {
           rotate: window.innerWidth > 768 ? -90 : 0,
           // width: window.innerWidth > 768 ? "80px" : "60px",
-          width: "auto",
+          width: 'auto',
           scale: 1,
           duration: 2,
         },
@@ -630,8 +597,8 @@ const NewLanding = () => {
       .to(
         teelNewLogoRef.current,
         {
-          x: "25%",
-          y: "-40%",
+          x: '25%',
+          y: '-40%',
           display: "none",
           opacity: "0",
           duration: 2,
@@ -641,8 +608,8 @@ const NewLanding = () => {
       .to(
         teelContentRef.current,
         {
-          x: "0%",
-          y: "0%",
+          x: '0%',
+          y: '0%',
           display: "block",
           opacity: 1,
           duration: 2,
@@ -661,8 +628,8 @@ const NewLanding = () => {
       .to(
         redNewLogoRef.current,
         {
-          x: "0%",
-          y: "0%",
+          x: '0%',
+          y: '0%',
           display: "block",
           opacity: 1,
           duration: 2,
@@ -681,8 +648,8 @@ const NewLanding = () => {
       .to(
         yellowLogoRef.current,
         {
-          x: "0%",
-          y: "0%",
+          x: '0%',
+          y: '0%',
           display: "block",
           opacity: 1,
           duration: 2,
@@ -730,7 +697,7 @@ const NewLanding = () => {
           rotate: window.innerWidth > 768 ? -90 : 0,
           scale: 1,
           // width: window.innerWidth > 768 ? "80px" : "60px",
-          width: "auto",
+          width: 'auto',
           display: "flex",
           opacity: "1",
           duration: 2,
@@ -743,7 +710,7 @@ const NewLanding = () => {
           rotate: window.innerWidth > 768 ? -90 : 0,
           scale: 1,
           // width: window.innerWidth > 768 ? "80px" : "60px",
-          width: "auto",
+          width: 'auto',
           duration: 2,
         },
         "-=2"
@@ -751,8 +718,8 @@ const NewLanding = () => {
       .to(
         redNewLogoRef.current,
         {
-          x: "25%",
-          y: "-40%",
+          x: '25%',
+          y: '-40%',
           display: "none",
           opacity: "0",
           duration: 2,
@@ -762,8 +729,8 @@ const NewLanding = () => {
       .to(
         redContentRef.current,
         {
-          x: "0%",
-          y: "0%",
+          x: '0%',
+          y: '0%',
           display: "block",
           opacity: 1,
           duration: 2,
@@ -782,8 +749,8 @@ const NewLanding = () => {
       .to(
         teelNewLogoRef.current,
         {
-          x: "0%",
-          y: "0%",
+          x: '0%',
+          y: '0%',
           display: "block",
           opacity: 1,
           duration: 2,
@@ -802,8 +769,8 @@ const NewLanding = () => {
       .to(
         yellowLogoRef.current,
         {
-          x: "0%",
-          y: "0%",
+          x: '0%',
+          y: '0%',
           display: "block",
           opacity: 1,
           duration: 2,
