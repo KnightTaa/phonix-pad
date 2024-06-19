@@ -405,6 +405,13 @@ const NewLanding = () => {
         "-=2"
       )
       .to(
+        logoSFLRef.current,
+        {
+          width: window.innerWidth > 768 ? "180px" : "80px", 
+        },
+        "-=2"
+      )
+      .to(
         teelLogoRef.current,
         {
           rotate: "0",
