@@ -8,6 +8,7 @@ import NewLanding from "@/components/NewLanding";
 import LayoutTest from "@/components/LayoutTest";
 import OtherNewLanding from "@/components/OtherNewLanding";
 import OtherTestLanding from "@/components/OtherTestLanding";
+import Toast from '../components/ToastContainer';
 
 export default function Home() {
   const [loderFinish, setLoderFinish] = useState(false);
@@ -35,7 +36,7 @@ export default function Home() {
       {/* <NewLanding />  */}
 
       <OtherTestLanding />
-
+      <Toast />
       {/* new version */}
       {/* <OtherNewLanding /> */}
       {/* <LayoutTest /> */}
