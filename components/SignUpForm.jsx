@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { BiSolidHide, BiSolidShow } from "react-icons/bi";
 import Image from "next/image";
@@ -24,7 +24,7 @@ const countries = [
   { value: "PH", label: "🇵🇭", code: "+63" },
 ];
 
-const SignUpForm = () => {
+const SignUpForm = ({ slug }) => {
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
   const phonePlaceholder = selectedCountry ? selectedCountry.code : "";
 
@@ -37,6 +37,22 @@ const SignUpForm = () => {
   const [selectedRadio, setSelectedRadio] = useState("shorts");
   const [bgColor, setBgColor] = useState("bg-yellow-400");
   const [textColor, setTextColor] = useState("text-black");
+
+  useEffect(() => {
+    if (slug === "shorts") {
+      setSelectedRadio("shorts");
+      setBgColor("bg-[#f7e114]");
+      setTextColor("text-black");
+    } else if (slug === "brands") {
+      setSelectedRadio("brands");
+      setBgColor("bg-[#ee1d52]");
+      setTextColor("text-white");
+    } else if (slug === "products") {
+      setSelectedRadio("products");
+      setBgColor("bg-[#00d3c8]");
+      setTextColor("text-black");
+    }
+  }, [slug]);
 
   const handleRadioChange = (radioId) => {
     setSelectedRadio(radioId);

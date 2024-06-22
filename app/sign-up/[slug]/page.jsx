@@ -2,7 +2,8 @@ import SignUpForm from "@/components/SignUpForm";
 import Image from "next/image";
 import Link from "next/link";
 
-const SignUp = () => {
+const SignUp = ({ params }) => {
+  let slug = params.slug;
   return (
     <div className="w-full min-h-screen flex flex-col sm:flex-row relative">
       <div className="w-full sm:w-[7.5%] bg-black">
@@ -19,7 +20,7 @@ const SignUp = () => {
         </div>
       </div>
       <div className="w-full sm:w-[92.5%]">
-        <SignUpForm />
+        <SignUpForm slug={slug}/>
       </div>
     </div>
   );
