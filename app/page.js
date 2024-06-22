@@ -7,6 +7,7 @@ import ProjectInfo from "@/components/ProjectInfo";
 import NewLanding from "@/components/NewLanding";
 import LayoutTest from "@/components/LayoutTest";
 import OtherNewLanding from "@/components/OtherNewLanding";
+import OtherTestLanding from "@/components/OtherTestLanding";
 
 export default function Home() {
   const [loderFinish, setLoderFinish] = useState(false);
@@ -31,7 +32,9 @@ export default function Home() {
       {/* <LandingPage /> */}
 
       {/* current version */}
-      <NewLanding /> 
+      {/* <NewLanding />  */}
+
+      <OtherTestLanding />
 
       {/* new version */}
       {/* <OtherNewLanding /> */}
