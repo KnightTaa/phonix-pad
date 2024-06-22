@@ -4,6 +4,8 @@ import Link from "next/link";
 import { BiSolidHide, BiSolidShow } from "react-icons/bi";
 import Image from "next/image";
 import Wrapper from "./Wrapper";
+import API from "../services/api";
+import { toast } from 'react-toastify';
 
 const countries = [
   { value: "LK", label: "🇱🇰", code: "+94" },
@@ -37,6 +39,15 @@ const SignUpForm = ({ slug }) => {
   const [selectedRadio, setSelectedRadio] = useState("shorts");
   const [bgColor, setBgColor] = useState("bg-yellow-400");
   const [textColor, setTextColor] = useState("text-black");
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+    password: '',
+    password_confirmation: '',
+    mobile: '',
+    eventType: '',
+  });
 
   useEffect(() => {
     if (slug === "shorts") {
@@ -60,23 +71,66 @@ const SignUpForm = ({ slug }) => {
       case "shorts":
         setBgColor("bg-[#f7e114]");
         setTextColor("text-black");
+        setFormData((prevData) => ({
+          ...prevData,
+          ['eventType']: 'shorts',
+        }));
         break;
       case "brands":
         setBgColor("bg-[#ee1d52]");
         setTextColor("text-white");
+        setFormData((prevData) => ({
+          ...prevData,
+          ['eventType']: 'brands',
+        }));
         break;
       case "products":
         setBgColor("bg-[#00d3c8]");
         setTextColor("text-black");
+        setFormData((prevData) => ({
+          ...prevData,
+          ['eventType']: 'products',
+        }));
         break;
       default:
         break;
     }
   };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  
+
+  const handleSubmit = async (e) => {
+    console.log('aaaaaaaaaaa.aaaaaaaa..', formData);
+    e.preventDefault();
+    let postdata = {
+      "name": formData.firstname + ' ' + formData.lastname,
+      "email": formData.email,
+      "password": formData.password,
+      "password_confirmation": formData.password,
+      "mobile": formData.mobile,
+      "eventType": formData.eventType ? formData.eventType : 'shorts',
+    };
+    try {
+      const response = await API.post('/register', postdata);
+      localStorage.setItem('access_token', response.data.access_token);
+      toast.success('Register successfully!');
+    } catch (error) {
+      console.error('Error posting data:', error);
+      toast.error('Error submitting form');
+    }
+  };
   return (
+     
     <section className={`w-full min-h-screen font-arial ${bgColor}`}>
       <Wrapper>
-        <form className="w-full flex flex-col md:flex-col lg:flex-row items-center justify-between gap-10 p-2 sm:p-4">
+        <form className="w-full flex flex-col md:flex-col lg:flex-row items-center justify-between gap-10 p-2 sm:p-4" onSubmit={handleSubmit}>
           {/* left side */}
           <div className="w-full min-h-screen md:w-full lg:w-1/2 flex justify-center flex-col gap-2">
             <fieldset className="mt-5">
@@ -93,11 +147,10 @@ const SignUpForm = ({ slug }) => {
                 />
                 <div
                   onClick={() => handleRadioChange("shorts")}
-                  className={`cursor-pointer transition-all duration-300 ${
-                    selectedRadio === "shorts"
+                  className={`cursor-pointer transition-all duration-300 ${selectedRadio === "shorts"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
-                  }`}
+                    }`}
                 >
                   <Image
                     src="/image 7.png"
@@ -118,11 +171,10 @@ const SignUpForm = ({ slug }) => {
                 {/* "w-[100px]" : "w-[80px]" */}
                 <div
                   onClick={() => handleRadioChange("brands")}
-                  className={`cursor-pointer transition-all duration-300 ${
-                    selectedRadio === "brands"
+                  className={`cursor-pointer transition-all duration-300 ${selectedRadio === "brands"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
-                  }`}
+                    }`}
                 >
                   <Image
                     src="/image 10.png"
@@ -142,11 +194,10 @@ const SignUpForm = ({ slug }) => {
                 />
                 <div
                   onClick={() => handleRadioChange("products")}
-                  className={`cursor-pointer transition-all duration-300 ${
-                    selectedRadio === "products"
+                  className={`cursor-pointer transition-all duration-300 ${selectedRadio === "products"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
-                  }`}
+                    }`}
                 >
                   <Image
                     src="/image 11.png"
@@ -209,8 +260,9 @@ const SignUpForm = ({ slug }) => {
                   <div className="mt-2">
                     <input
                       type="text"
-                      name="first-name"
+                      name="firstname"
                       id="first-name"
+                      onChange={handleChange}
                       autoComplete="given-name"
                       className="block w-full rounded-lg border-0 py-1.5 px-2 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                     />
@@ -227,8 +279,9 @@ const SignUpForm = ({ slug }) => {
                   <div className="mt-2">
                     <input
                       type="text"
-                      name="last-name"
-                      id="last-name"
+                      name="lastname"
+                      onChange={handleChange}
+                      id="lastname"
                       autoComplete="family-name"
                       className="block w-full rounded-lg border-0 py-1.5 px-2 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                     />
@@ -246,6 +299,7 @@ const SignUpForm = ({ slug }) => {
                     <input
                       id="email"
                       name="email"
+                      onChange={handleChange}
                       type="email"
                       autoComplete="email"
                       className="block w-full rounded-lg border-0 py-1.5 px-2 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
@@ -287,8 +341,9 @@ const SignUpForm = ({ slug }) => {
                     </div>
                     <input
                       type="text"
-                      name="phone"
+                      name="mobile"
                       id="phone"
+                      onChange={handleChange}
                       className="block w-full pl-16 sm:pl-14 pr-3 py-2 rounded-lg border-0 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                       placeholder={phonePlaceholder}
                     />
@@ -309,11 +364,10 @@ const SignUpForm = ({ slug }) => {
                         onClick={togglePassword}
                       />
                       <span
-                        className={`${
-                          !showPassword
+                        className={`${!showPassword
                             ? "text-sm font-medium leading-6 text-white"
                             : "hidden"
-                        }`}
+                          }`}
                       >
                         Show
                       </span>
@@ -323,11 +377,10 @@ const SignUpForm = ({ slug }) => {
                         onClick={togglePassword}
                       />
                       <span
-                        className={`${
-                          showPassword
+                        className={`${showPassword
                             ? "text-sm font-medium leading-6 text-white"
                             : "hidden"
-                        }`}
+                          }`}
                       >
                         Hide
                       </span>
@@ -338,6 +391,7 @@ const SignUpForm = ({ slug }) => {
                       type={passwordType}
                       name="password"
                       id="password"
+                      onChange={handleChange}
                       autoComplete="+94"
                       className="block w-full rounded-lg border-0 py-1.5 px-2 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                     />
@@ -394,7 +448,7 @@ const SignUpForm = ({ slug }) => {
             </fieldset>
             <div className="mt-6 flex items-center justify-start gap-x-6">
               <button
-                type="button"
+                type="submit"
                 className="text-sm font-semibold leading-6 bg-primary px-6 py-2 rounded-full text-white hover:bg-primary-hover transition-all duration-200"
               >
                 Sign Up

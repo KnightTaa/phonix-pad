@@ -1,5 +1,6 @@
 import localfont from "next/font/local";
 import "./globals.css";
+import Toast from '../components/ToastContainer';
 
 const arial = localfont({
   src: './fonts/arial.ttf',
@@ -13,7 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={arial.className}>{children}</body>
+      <body className={arial.className}>
+        {children}
+        <Toast />
+      </body>
     </html>
   );
 }
