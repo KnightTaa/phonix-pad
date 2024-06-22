@@ -505,7 +505,6 @@ const NewLanding = () => {
         {
           x: "25%",
           y: "-40%",
-          // display: "none",
           opacity: "0",
           duration: 2,
           onStart: () => {
