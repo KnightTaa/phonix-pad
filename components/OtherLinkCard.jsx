@@ -1,10 +1,12 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-const OtherLinkCard = ({ color, logo }) => {
+const OtherLinkCard = ({ className, logo }) => {
   return (
-    <div className={`w-full sm:w-1/3 h-1/3 sm:h-full bg-[${color}]`}>
-      <button className="w-full h-full flex items-center justify-center">
+    <div className={`w-full sm:w-1/3 h-1/3 sm:h-full`}>
+      <Link href={`/${logo}`} className={cn("w-full h-full flex items-center justify-center", className)}>
         <Image
           src={`/${logo}.png`}
           width={500}
@@ -12,9 +14,10 @@ const OtherLinkCard = ({ color, logo }) => {
           alt="MAGAZINE.png"
           className="w-[250px] sm:w-[400px] h-auto object-cover"
         />
-      </button>
+      </Link>
     </div>
   );
 };
 
 export default OtherLinkCard;
+// className={`w-full h-full flex items-center justify-center ${className}`}

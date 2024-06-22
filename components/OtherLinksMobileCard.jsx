@@ -1,10 +1,12 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-const OtherLinksMobileCard = ({ color, logo }) => {
+const OtherLinksMobileCard = ({ className, logo }) => {
   return (
-    <div className={`h-1/3 bg-[${color}]`}>
-      <button className="w-full h-full flex items-center justify-center">
+    <div className={cn("h-1/3", className)}>
+      <Link href={`/${logo}`} className="w-full h-full flex items-center justify-center">
         <Image
           src={`/${logo}.png`}
           width={400}
@@ -12,9 +14,12 @@ const OtherLinksMobileCard = ({ color, logo }) => {
           alt="logo"
           className="w-[200px] h-auto object-cover"
         />
-      </button>
+      </Link>
     </div>
   );
 };
 
 export default OtherLinksMobileCard;
+
+// className={`h-1/3 ${className}`}
+

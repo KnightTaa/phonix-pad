@@ -902,7 +902,7 @@ const OtherTestLanding = () => {
         {
           left: otherLinksMobileRef.current.style.left === "0%" ? "100%" : "0%",
           duration: 2,
-          zIndex: "40",
+          zIndex: "999",
           ease: "power3.inOut",
         },
         "-=2"
@@ -1061,6 +1061,14 @@ const OtherTestLanding = () => {
         opacity: 0,
         duration: 2,
         ease: 'power3.inOut'
+      },
+      "-=2"
+    )
+    .to(
+      redClickButtonRef.current,
+      {
+        zIndex: '10',
+
       },
       "-=2"
     )
