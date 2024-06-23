@@ -4,7 +4,10 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section className="w-full h-screen overflow-hidden">
+    <section className="w-full h-screen overflow-hidden relative">
+      <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[200px] md:text-[400px] lg:text-[700px] 2xl:text-[800px] font-bold text-black/5 -z-10">
+        404
+      </h1>
       <Wrapper className="w-full h-full flex flex-col md:flex-col lg:flex-row items-center justify-between">
         {/* left */}
         <div className="w-full lg:w-[50%] h-[50%] sm:h-full flex items-center justify-center">
