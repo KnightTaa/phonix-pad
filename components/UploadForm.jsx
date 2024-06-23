@@ -5,23 +5,23 @@ import { CloudArrowUpIcon } from "@heroicons/react/24/solid";
 import Wrapper from "@/components/Wrapper";
 
 const countries = [
-    { value: "LK", label: "🇱🇰", code: "+94" },
-    { value: "US", label: "🇺🇸", code: "+1" },
-    { value: "IN", label: "🇮🇳", code: "+91" },
-    { value: "UK", label: "🇬🇧", code: "+44" },
-    { value: "CA", label: "🇨🇦", code: "+1" },
-    { value: "AU", label: "🇦🇺", code: "+61" },
-    { value: "DE", label: "🇩🇪", code: "+49" },
-    { value: "FR", label: "🇫🇷", code: "+33" },
-    { value: "JP", label: "🇯🇵", code: "+81" },
-    { value: "CN", label: "🇨🇳", code: "+86" },
-    { value: "BR", label: "🇧🇷", code: "+55" },
-    { value: "RU", label: "🇷🇺", code: "+7" },
-    { value: "MX", label: "🇲🇽", code: "+52" },
-    { value: "AR", label: "🇦🇷", code: "+54" },
-    { value: "TR", label: "🇹🇷", code: "+90" },
-    { value: "PH", label: "🇵🇭", code: "+63" },
-  ];
+  { value: "LK", label: "🇱🇰", code: "+94" },
+  { value: "US", label: "🇺🇸", code: "+1" },
+  { value: "IN", label: "🇮🇳", code: "+91" },
+  { value: "UK", label: "🇬🇧", code: "+44" },
+  { value: "CA", label: "🇨🇦", code: "+1" },
+  { value: "AU", label: "🇦🇺", code: "+61" },
+  { value: "DE", label: "🇩🇪", code: "+49" },
+  { value: "FR", label: "🇫🇷", code: "+33" },
+  { value: "JP", label: "🇯🇵", code: "+81" },
+  { value: "CN", label: "🇨🇳", code: "+86" },
+  { value: "BR", label: "🇧🇷", code: "+55" },
+  { value: "RU", label: "🇷🇺", code: "+7" },
+  { value: "MX", label: "🇲🇽", code: "+52" },
+  { value: "AR", label: "🇦🇷", code: "+54" },
+  { value: "TR", label: "🇹🇷", code: "+90" },
+  { value: "PH", label: "🇵🇭", code: "+63" },
+];
 
 const UploadForm = ({ slug }) => {
   const [selectedRadio, setSelectedRadio] = useState("shorts");
@@ -96,7 +96,9 @@ const UploadForm = ({ slug }) => {
                 <div
                   onClick={() => handleRadioChange("shorts")}
                   className={`cursor-pointer transition-all duration-300 ${
-                    selectedRadio === "shorts" ? "w-[100px] md:w-[120px] lg:w-[200px]" : "w-[80px] md:w-[120px] lg:w-[160px]"
+                    selectedRadio === "shorts"
+                      ? "w-[100px] md:w-[120px] lg:w-[200px]"
+                      : "w-[80px] md:w-[120px] lg:w-[160px]"
                   }`}
                 >
                   <Image
@@ -118,7 +120,9 @@ const UploadForm = ({ slug }) => {
                 <div
                   onClick={() => handleRadioChange("brands")}
                   className={`cursor-pointer transition-all duration-300 ${
-                    selectedRadio === "brands" ? "w-[100px] md:w-[120px] lg:w-[200px]" : "w-[80px] md:w-[120px] lg:w-[160px]"
+                    selectedRadio === "brands"
+                      ? "w-[100px] md:w-[120px] lg:w-[200px]"
+                      : "w-[80px] md:w-[120px] lg:w-[160px]"
                   }`}
                 >
                   <Image
@@ -140,7 +144,9 @@ const UploadForm = ({ slug }) => {
                 <div
                   onClick={() => handleRadioChange("products")}
                   className={`cursor-pointer transition-all duration-300 ${
-                    selectedRadio === "products" ? "w-[100px] md:w-[120px] lg:w-[200px]" : "w-[80px] md:w-[120px] lg:w-[160px]"
+                    selectedRadio === "products"
+                      ? "w-[100px] md:w-[120px] lg:w-[200px]"
+                      : "w-[80px] md:w-[120px] lg:w-[160px]"
                   }`}
                 >
                   <Image
@@ -171,8 +177,11 @@ const UploadForm = ({ slug }) => {
             </p>
           </div>
           {/* right side */}
-          <div className="w-full md:w-full lg:w-1/2 p-4 sm:p-8 mt-5 sm:mt-0 bg-black rounded-tr-none sm:rounded-tr-[20%]">
-          <h1
+          <div className="w-full md:w-full lg:w-1/2 p-4 sm:p-8 mt-5 sm:mt-0 bg-black rounded-tr-none sm:rounded-tr-[20%] relative">
+            <div
+              className={`hidden sm:block w-5 h-5 rounded-full absolute bottom-0 right-0 mb-4 mr-4 ${bgColor}`}
+            />
+            <h1
               className={`uppercase text-xl text-start sm:text-4xl font-semibold mb-10 text-white`}
             >
               Upload
@@ -242,7 +251,7 @@ const UploadForm = ({ slug }) => {
                   </label>
                   <div className="mt-1 relative rounded-md shadow-sm">
                     <div className="absolute inset-y-0 left-0 flex items-center justify-center">
-                    <select
+                      <select
                         id="country"
                         name="country"
                         value={selectedCountry.value}

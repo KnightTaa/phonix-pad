@@ -6,7 +6,7 @@ import { BiSolidHide, BiSolidShow } from "react-icons/bi";
 import Image from "next/image";
 import Wrapper from "./Wrapper";
 import API from "../services/api";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const countries = [
   { value: "LK", label: "🇱🇰", code: "+94" },
@@ -27,6 +27,16 @@ const countries = [
   { value: "PH", label: "🇵🇭", code: "+63" },
 ];
 
+// Create a map for the criteria descriptions
+const criteriaDescriptions = {
+  shorts:
+    "shots Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab.",
+  brands:
+    "brands Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab..",
+  products:
+    "products Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab.",
+};
+
 const SignUpForm = ({ slug }) => {
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
   const phonePlaceholder = selectedCountry ? selectedCountry.code : "";
@@ -40,14 +50,15 @@ const SignUpForm = ({ slug }) => {
   const [selectedRadio, setSelectedRadio] = useState("shorts");
   const [bgColor, setBgColor] = useState("bg-yellow-400");
   const [textColor, setTextColor] = useState("text-black");
+  const [criteria, setCriteria] = useState(criteriaDescriptions["shorts"]);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-    password: '',
-    password_confirmation: '',
-    mobile: '',
-    eventType: '',
+    name: "",
+    email: "",
+    message: "",
+    password: "",
+    password_confirmation: "",
+    mobile: "",
+    eventType: "",
   });
 
   useEffect(() => {
@@ -72,25 +83,28 @@ const SignUpForm = ({ slug }) => {
       case "shorts":
         setBgColor("bg-[#f7e114]");
         setTextColor("text-black");
+        setCriteria(criteriaDescriptions["shorts"]);
         setFormData((prevData) => ({
           ...prevData,
-          ['eventType']: 'shorts',
+          ["eventType"]: "shorts",
         }));
         break;
       case "brands":
         setBgColor("bg-[#ee1d52]");
         setTextColor("text-white");
+        setCriteria(criteriaDescriptions["brands"]);
         setFormData((prevData) => ({
           ...prevData,
-          ['eventType']: 'brands',
+          ["eventType"]: "brands",
         }));
         break;
       case "products":
         setBgColor("bg-[#00d3c8]");
         setTextColor("text-black");
+        setCriteria(criteriaDescriptions["products"]);
         setFormData((prevData) => ({
           ...prevData,
-          ['eventType']: 'products',
+          ["eventType"]: "products",
         }));
         break;
       default:
@@ -105,17 +119,16 @@ const SignUpForm = ({ slug }) => {
       [name]: value,
     }));
   };
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     let postdata = {
-      "name": formData.firstname + ' ' + formData.lastname,
-      "email": formData.email,
-      "password": formData.password,
-      "password_confirmation": formData.password,
-      "mobile": formData.mobile,
-      "eventType": formData.eventType ? formData.eventType : 'shorts',
+      name: formData.firstname + " " + formData.lastname,
+      email: formData.email,
+      password: formData.password,
+      password_confirmation: formData.password,
+      mobile: formData.mobile,
+      eventType: formData.eventType ? formData.eventType : "shorts",
     };
     try {
       const response = await API.post('/register', postdata);
@@ -123,15 +136,17 @@ const SignUpForm = ({ slug }) => {
       toast.success('Register successfully!');
       router.push('/uploads');
     } catch (error) {
-      console.error('Error posting data:', error);
-      toast.error('Error submitting form');
+      console.error("Error posting data:", error);
+      toast.error("Error submitting form");
     }
   };
   return (
-     
     <section className={`w-full min-h-screen font-arial ${bgColor}`}>
       <Wrapper>
-        <form className="w-full flex flex-col md:flex-col lg:flex-row items-center justify-between gap-10 p-2 sm:p-4" onSubmit={handleSubmit}>
+        <form
+          className="w-full flex flex-col md:flex-col lg:flex-row items-center justify-between gap-10 p-2 sm:p-4"
+          onSubmit={handleSubmit}
+        >
           {/* left side */}
           <div className="w-full min-h-screen md:w-full lg:w-1/2 flex justify-center flex-col gap-2">
             <fieldset className="mt-5">
@@ -148,10 +163,11 @@ const SignUpForm = ({ slug }) => {
                 />
                 <div
                   onClick={() => handleRadioChange("shorts")}
-                  className={`cursor-pointer transition-all duration-300 ${selectedRadio === "shorts"
+                  className={`cursor-pointer transition-all duration-300 ${
+                    selectedRadio === "shorts"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
-                    }`}
+                  }`}
                 >
                   <Image
                     src="/image 7.png"
@@ -172,10 +188,11 @@ const SignUpForm = ({ slug }) => {
                 {/* "w-[100px]" : "w-[80px]" */}
                 <div
                   onClick={() => handleRadioChange("brands")}
-                  className={`cursor-pointer transition-all duration-300 ${selectedRadio === "brands"
+                  className={`cursor-pointer transition-all duration-300 ${
+                    selectedRadio === "brands"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
-                    }`}
+                  }`}
                 >
                   <Image
                     src="/image 10.png"
@@ -195,10 +212,11 @@ const SignUpForm = ({ slug }) => {
                 />
                 <div
                   onClick={() => handleRadioChange("products")}
-                  className={`cursor-pointer transition-all duration-300 ${selectedRadio === "products"
+                  className={`cursor-pointer transition-all duration-300 ${
+                    selectedRadio === "products"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
-                    }`}
+                  }`}
                 >
                   <Image
                     src="/image 11.png"
@@ -218,32 +236,15 @@ const SignUpForm = ({ slug }) => {
             <p
               className={`text-base sm:text-lg font-normal mt-5 leading-6 sm:leading-8 ${textColor}`}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              {criteria}
             </p>
           </div>
 
           {/* right side */}
-          <div className="w-full md:w-full lg:w-1/2 py-5 px-2 sm:p-8 mt-5 sm:mt-0 bg-black rounded-tr-none sm:rounded-tr-[20%]">
+          <div className="w-full md:w-full lg:w-1/2 py-5 px-2 sm:p-8 mt-5 sm:mt-0 bg-black rounded-tr-none sm:rounded-tr-[20%] relative">
+            <div
+              className={`hidden sm:block w-5 h-5 rounded-full absolute bottom-0 right-0 mb-5 mr-5 ${bgColor}`}
+            />
             <h1
               className={`uppercase text-xl text-start sm:text-4xl font-semibold mb-10 text-white`}
             >
@@ -365,10 +366,11 @@ const SignUpForm = ({ slug }) => {
                         onClick={togglePassword}
                       />
                       <span
-                        className={`${!showPassword
+                        className={`${
+                          !showPassword
                             ? "text-sm font-medium leading-6 text-white"
                             : "hidden"
-                          }`}
+                        }`}
                       >
                         Show
                       </span>
@@ -378,10 +380,11 @@ const SignUpForm = ({ slug }) => {
                         onClick={togglePassword}
                       />
                       <span
-                        className={`${showPassword
+                        className={`${
+                          showPassword
                             ? "text-sm font-medium leading-6 text-white"
                             : "hidden"
-                          }`}
+                        }`}
                       >
                         Hide
                       </span>
