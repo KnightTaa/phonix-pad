@@ -107,7 +107,6 @@ const SignUpForm = ({ slug }) => {
   
 
   const handleSubmit = async (e) => {
-    console.log('aaaaaaaaaaa.aaaaaaaa..', formData);
     e.preventDefault();
     let postdata = {
       "name": formData.firstname + ' ' + formData.lastname,
