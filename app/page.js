@@ -29,7 +29,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="">
+    <main className="bg-slate-100">
       {/* <LandingPage /> */}
 
       {/* current version */}
