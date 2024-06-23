@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import UploadForm from "@/components/UploadForm";
 import Link from "next/link";
 
-const Uploads = () => {
+const Uploads = ({ params }) => {
+  let slug = params.slug;
   return (
     <div className="w-full min-h-screen flex flex-col sm:flex-row relative">
       <div className="w-full sm:w-[7.5%] bg-black">
@@ -21,7 +22,7 @@ const Uploads = () => {
         </div>
       </div>
       <div className="w-full sm:w-[92.5%] flex items-center justify-center">
-        <UploadForm />
+        <UploadForm slug={slug}/>
       </div>
     </div>
   );
