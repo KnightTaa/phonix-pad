@@ -23,12 +23,23 @@ const countries = [
   { value: "PH", label: "🇵🇭", code: "+63" },
 ];
 
+const criteriaDescriptions = {
+  shorts:
+    "shots Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab.",
+  brands:
+    "brands Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab..",
+  products:
+    "products Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab.",
+};
+
 const UploadForm = ({ slug }) => {
   const [selectedRadio, setSelectedRadio] = useState("shorts");
   const [bgColor, setBgColor] = useState("bg-yellow-400");
   const [textColor, setTextColor] = useState("text-black");
-
+  const [criteria, setCriteria] = useState(criteriaDescriptions["shorts"]);
+  const [selectedTheme, setSelectedTheme] = useState("shorts");
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+
   const phonePlaceholder = selectedCountry ? selectedCountry.code : "";
   
 
@@ -41,14 +52,17 @@ const UploadForm = ({ slug }) => {
       setSelectedRadio("shorts");
       setBgColor("bg-[#f7e114]");
       setTextColor("text-black");
+      setSelectedTheme("shorts");
     } else if (slug === "brands") {
       setSelectedRadio("brands");
       setBgColor("bg-[#ee1d52]");
       setTextColor("text-white");
+      setSelectedTheme("brands");
     } else if (slug === "products") {
       setSelectedRadio("products");
       setBgColor("bg-[#00d3c8]");
       setTextColor("text-black");
+      setSelectedTheme("products");
     }
   }, [slug]);
 
@@ -58,14 +72,20 @@ const UploadForm = ({ slug }) => {
       case "shorts":
         setBgColor("bg-[#f7e114]");
         setTextColor("text-black");
+        setCriteria(criteriaDescriptions["shorts"]);
+        setSelectedTheme("shorts");
         break;
       case "brands":
         setBgColor("bg-[#ee1d52]");
         setTextColor("text-white");
+        setCriteria(criteriaDescriptions["brands"]);
+        setSelectedTheme("brands");
         break;
       case "products":
         setBgColor("bg-[#00d3c8]");
         setTextColor("text-black");
+        setCriteria(criteriaDescriptions["products"]);
+        setSelectedTheme("products");
         break;
       default:
         break;
@@ -167,13 +187,7 @@ const UploadForm = ({ slug }) => {
             <p
               className={`text-base sm:text-lg font-medium mt-5 leading-6 sm:leading-8 ${textColor}`}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              {criteria}
             </p>
           </div>
           {/* right side */}
@@ -278,29 +292,34 @@ const UploadForm = ({ slug }) => {
                       type="text"
                       name="phone"
                       id="phone"
-                      className="block w-full pl-16 sm:pl-14 pr-3 py-2 rounded-lg border-0 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                      className="block w-full pl-16 sm:pl-16 pr-3 py-2 rounded-lg border-0 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                       placeholder={phonePlaceholder}
                     />
                   </div>
                 </div>
-
-                <div className="col-span-full">
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium leading-6 text-white"
-                  >
-                    Theme
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="last-name"
-                      id="last-name"
-                      autoComplete="family-name"
-                      className="block w-full rounded-lg border-0 py-1.5 px-2 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
+                 <div className="col-span-full">
+                   <label
+                    htmlFor="theme"
+                     className="block text-sm font-medium leading-6 text-white"
+                   >
+                     Theme
+                   </label>
+                  <div className="mt-2 relative rounded-md shadow-sm">
+                    <select
+                      id="theme"
+                      name="theme"
+                      className="block w-full px-3 py-2 rounded-lg border-0 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                      // onChange={(event) => setSelectedRadio(event.target.value)}
+                      value={selectedTheme}
+                      onChange={(event) => setSelectedTheme(event.target.value)}
+                      disabled //If you want selectable remove this. else add this
+                    >
+                      <option value="shorts">Shorts</option>
+                      <option value="brands">Brands</option>
+                      <option value="products">Products</option>
+                    </select>
+                   </div>
+                 </div>
 
                 <div className="col-span-full">
                   <label
