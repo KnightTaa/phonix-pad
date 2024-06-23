@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation';
 import Link from "next/link";
 import { BiSolidHide, BiSolidShow } from "react-icons/bi";
 import Image from "next/image";
@@ -120,6 +121,7 @@ const SignUpForm = ({ slug }) => {
       const response = await API.post('/register', postdata);
       localStorage.setItem('access_token', response.data.access_token);
       toast.success('Register successfully!');
+      router.push('/uploads');
     } catch (error) {
       console.error('Error posting data:', error);
       toast.error('Error submitting form');
