@@ -1225,7 +1225,7 @@ const OtherTestLanding = () => {
             </button>
             {/* Register Button */}
             <div className="absolute right-[15%] xl:right-[6.4%] 2xl:right-[5.8%] top-[22%] sm:top-[20%] z-10">
-              <Link href={"/sign-up/shorts"}>
+              <Link href={"/uploads/shorts"}>
                 <Image
                   src={"/REGISTER1.png"}
                   width={400}
@@ -1285,7 +1285,7 @@ const OtherTestLanding = () => {
             </button>
             {/* Register Button */}
             <div className="absolute right-[15%] xl:right-[6.4%] 2xl:right-[5.8%] top-[22%] sm:top-[20%] z-10">
-              <Link href={"/sign-up/products"}>
+              <Link href={"/uploads/products"}>
                 <Image
                   src={"/REGISTER1.png"}
                   width={400}
@@ -1343,7 +1343,7 @@ const OtherTestLanding = () => {
             </button>
             {/* Register Button */}
             <div className="absolute right-[15%] xl:right-[6.4%] 2xl:right-[5.8%] top-[22%] sm:top-[20%] z-10">
-              <Link href={"/sign-up/brands"}>
+              <Link href={"/uploads/brands"}>
                 <Image
                   src={"/REGISTER1.png"}
                   width={400}

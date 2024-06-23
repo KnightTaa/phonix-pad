@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CloudArrowUpIcon } from "@heroicons/react/24/solid";
 import Wrapper from "@/components/Wrapper";
 
@@ -23,17 +23,34 @@ const countries = [
     { value: "PH", label: "🇵🇭", code: "+63" },
   ];
 
-const UploadForm = () => {
+const UploadForm = ({ slug }) => {
   const [selectedRadio, setSelectedRadio] = useState("shorts");
   const [bgColor, setBgColor] = useState("bg-yellow-400");
   const [textColor, setTextColor] = useState("text-black");
 
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
   const phonePlaceholder = selectedCountry ? selectedCountry.code : "";
+  
 
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
+
+  useEffect(() => {
+    if (slug === "shorts") {
+      setSelectedRadio("shorts");
+      setBgColor("bg-[#f7e114]");
+      setTextColor("text-black");
+    } else if (slug === "brands") {
+      setSelectedRadio("brands");
+      setBgColor("bg-[#ee1d52]");
+      setTextColor("text-white");
+    } else if (slug === "products") {
+      setSelectedRadio("products");
+      setBgColor("bg-[#00d3c8]");
+      setTextColor("text-black");
+    }
+  }, [slug]);
 
   const handleRadioChange = (radioId) => {
     setSelectedRadio(radioId);
@@ -198,7 +215,7 @@ const UploadForm = () => {
                   </div>
                 </div>
 
-                <div className="col-span-full">
+                <div className="sm:col-span-3">
                   <label
                     htmlFor="email"
                     className="block text-sm font-medium leading-6 text-white"
@@ -216,7 +233,7 @@ const UploadForm = () => {
                   </div>
                 </div>
 
-                <div className="col-span-full">
+                <div className="sm:col-span-3">
                   <label
                     htmlFor="phone"
                     className="block text-sm font-medium leading-6 text-white"
@@ -257,6 +274,43 @@ const UploadForm = () => {
                     />
                   </div>
                 </div>
+
+                <div className="col-span-full">
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium leading-6 text-white"
+                  >
+                    Theme
+                  </label>
+                  <div className="mt-2">
+                    <input
+                      type="text"
+                      name="last-name"
+                      id="last-name"
+                      autoComplete="family-name"
+                      className="block w-full rounded-lg border-0 py-1.5 px-2 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+
+                <div className="col-span-full">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium leading-6 text-white"
+                  >
+                    Description
+                  </label>
+                  <div className="mt-2">
+                    <textarea
+                      id="description"
+                      name="description"
+                      type="description"
+                      autoComplete="email"
+                      className="w-full p-4 bg-white border border-gray-200 rounded-lg outline-none resize-none min-h-[150px]"
+                    ></textarea>
+                  </div>
+                </div>
+
                 <div className="col-span-full">
                   <label
                     htmlFor="cover-photo"
