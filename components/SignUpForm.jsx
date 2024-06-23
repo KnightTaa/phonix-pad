@@ -5,7 +5,7 @@ import { BiSolidHide, BiSolidShow } from "react-icons/bi";
 import Image from "next/image";
 import Wrapper from "./Wrapper";
 import API from "../services/api";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const countries = [
   { value: "LK", label: "🇱🇰", code: "+94" },
@@ -51,13 +51,13 @@ const SignUpForm = ({ slug }) => {
   const [textColor, setTextColor] = useState("text-black");
   const [criteria, setCriteria] = useState(criteriaDescriptions["shorts"]);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-    password: '',
-    password_confirmation: '',
-    mobile: '',
-    eventType: '',
+    name: "",
+    email: "",
+    message: "",
+    password: "",
+    password_confirmation: "",
+    mobile: "",
+    eventType: "",
   });
 
   useEffect(() => {
@@ -85,7 +85,7 @@ const SignUpForm = ({ slug }) => {
         setCriteria(criteriaDescriptions["shorts"]);
         setFormData((prevData) => ({
           ...prevData,
-          ['eventType']: 'shorts',
+          ["eventType"]: "shorts",
         }));
         break;
       case "brands":
@@ -94,7 +94,7 @@ const SignUpForm = ({ slug }) => {
         setCriteria(criteriaDescriptions["brands"]);
         setFormData((prevData) => ({
           ...prevData,
-          ['eventType']: 'brands',
+          ["eventType"]: "brands",
         }));
         break;
       case "products":
@@ -103,7 +103,7 @@ const SignUpForm = ({ slug }) => {
         setCriteria(criteriaDescriptions["products"]);
         setFormData((prevData) => ({
           ...prevData,
-          ['eventType']: 'products',
+          ["eventType"]: "products",
         }));
         break;
       default:
@@ -118,33 +118,34 @@ const SignUpForm = ({ slug }) => {
       [name]: value,
     }));
   };
-  
 
   const handleSubmit = async (e) => {
-    console.log('aaaaaaaaaaa.aaaaaaaa..', formData);
+    console.log("aaaaaaaaaaa.aaaaaaaa..", formData);
     e.preventDefault();
     let postdata = {
-      "name": formData.firstname + ' ' + formData.lastname,
-      "email": formData.email,
-      "password": formData.password,
-      "password_confirmation": formData.password,
-      "mobile": formData.mobile,
-      "eventType": formData.eventType ? formData.eventType : 'shorts',
+      name: formData.firstname + " " + formData.lastname,
+      email: formData.email,
+      password: formData.password,
+      password_confirmation: formData.password,
+      mobile: formData.mobile,
+      eventType: formData.eventType ? formData.eventType : "shorts",
     };
     try {
-      const response = await API.post('/register', postdata);
-      localStorage.setItem('access_token', response.data.access_token);
-      toast.success('Register successfully!');
+      const response = await API.post("/register", postdata);
+      localStorage.setItem("access_token", response.data.access_token);
+      toast.success("Register successfully!");
     } catch (error) {
-      console.error('Error posting data:', error);
-      toast.error('Error submitting form');
+      console.error("Error posting data:", error);
+      toast.error("Error submitting form");
     }
   };
   return (
-     
     <section className={`w-full min-h-screen font-arial ${bgColor}`}>
       <Wrapper>
-        <form className="w-full flex flex-col md:flex-col lg:flex-row items-center justify-between gap-10 p-2 sm:p-4" onSubmit={handleSubmit}>
+        <form
+          className="w-full flex flex-col md:flex-col lg:flex-row items-center justify-between gap-10 p-2 sm:p-4"
+          onSubmit={handleSubmit}
+        >
           {/* left side */}
           <div className="w-full min-h-screen md:w-full lg:w-1/2 flex justify-center flex-col gap-2">
             <fieldset className="mt-5">
@@ -161,10 +162,11 @@ const SignUpForm = ({ slug }) => {
                 />
                 <div
                   onClick={() => handleRadioChange("shorts")}
-                  className={`cursor-pointer transition-all duration-300 ${selectedRadio === "shorts"
+                  className={`cursor-pointer transition-all duration-300 ${
+                    selectedRadio === "shorts"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
-                    }`}
+                  }`}
                 >
                   <Image
                     src="/image 7.png"
@@ -185,10 +187,11 @@ const SignUpForm = ({ slug }) => {
                 {/* "w-[100px]" : "w-[80px]" */}
                 <div
                   onClick={() => handleRadioChange("brands")}
-                  className={`cursor-pointer transition-all duration-300 ${selectedRadio === "brands"
+                  className={`cursor-pointer transition-all duration-300 ${
+                    selectedRadio === "brands"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
-                    }`}
+                  }`}
                 >
                   <Image
                     src="/image 10.png"
@@ -208,10 +211,11 @@ const SignUpForm = ({ slug }) => {
                 />
                 <div
                   onClick={() => handleRadioChange("products")}
-                  className={`cursor-pointer transition-all duration-300 ${selectedRadio === "products"
+                  className={`cursor-pointer transition-all duration-300 ${
+                    selectedRadio === "products"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
-                    }`}
+                  }`}
                 >
                   <Image
                     src="/image 11.png"
@@ -236,7 +240,10 @@ const SignUpForm = ({ slug }) => {
           </div>
 
           {/* right side */}
-          <div className="w-full md:w-full lg:w-1/2 py-5 px-2 sm:p-8 mt-5 sm:mt-0 bg-black rounded-tr-none sm:rounded-tr-[20%]">
+          <div className="w-full md:w-full lg:w-1/2 py-5 px-2 sm:p-8 mt-5 sm:mt-0 bg-black rounded-tr-none sm:rounded-tr-[20%] relative">
+            <div
+              className={`hidden sm:block w-5 h-5 rounded-full absolute bottom-0 right-0 mb-5 mr-5 ${bgColor}`}
+            />
             <h1
               className={`uppercase text-xl text-start sm:text-4xl font-semibold mb-10 text-white`}
             >
@@ -358,10 +365,11 @@ const SignUpForm = ({ slug }) => {
                         onClick={togglePassword}
                       />
                       <span
-                        className={`${!showPassword
+                        className={`${
+                          !showPassword
                             ? "text-sm font-medium leading-6 text-white"
                             : "hidden"
-                          }`}
+                        }`}
                       >
                         Show
                       </span>
@@ -371,10 +379,11 @@ const SignUpForm = ({ slug }) => {
                         onClick={togglePassword}
                       />
                       <span
-                        className={`${showPassword
+                        className={`${
+                          showPassword
                             ? "text-sm font-medium leading-6 text-white"
                             : "hidden"
-                          }`}
+                        }`}
                       >
                         Hide
                       </span>

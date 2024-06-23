@@ -117,7 +117,10 @@ const SignInForm = () => {
 
         {/* Right Side */}
         <div className="w-full min-h-screen md:w-full lg:w-1/2 flex items-center justify-center -mt-44 sm:mt-0">
-          <form className="border w-full border-gray-950 px-5 sm:px-16 py-10 bg-black rounded-tr-none sm:rounded-tr-[20%]">
+          <form className="border w-full border-gray-950 px-5 sm:px-16 py-10 bg-black rounded-tr-none sm:rounded-tr-[20%] relative">
+            <div
+              className={`hidden sm:block w-5 h-5 rounded-full absolute bottom-0 right-0 mb-5 mr-5 ${bgColor}`}
+            />
             <h1
               className={`uppercase text-xl text-start sm:text-4xl font-semibold mb-10 text-white`}
             >
