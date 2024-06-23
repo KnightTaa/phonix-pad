@@ -41,7 +41,6 @@ const UploadForm = ({ slug }) => {
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
 
   const phonePlaceholder = selectedCountry ? selectedCountry.code : "";
-  
 
   const togglePassword = () => {
     setShowPassword(!showPassword);
@@ -297,13 +296,13 @@ const UploadForm = ({ slug }) => {
                     />
                   </div>
                 </div>
-                 <div className="col-span-full">
-                   <label
+                <div className="col-span-full">
+                  <label
                     htmlFor="theme"
-                     className="block text-sm font-medium leading-6 text-white"
-                   >
-                     Theme
-                   </label>
+                    className="block text-sm font-medium leading-6 text-white"
+                  >
+                    Theme
+                  </label>
                   <div className="mt-2 relative rounded-md shadow-sm">
                     <select
                       id="theme"
@@ -318,8 +317,8 @@ const UploadForm = ({ slug }) => {
                       <option value="brands">Brands</option>
                       <option value="products">Products</option>
                     </select>
-                   </div>
-                 </div>
+                  </div>
+                </div>
 
                 <div className="col-span-full">
                   <label
