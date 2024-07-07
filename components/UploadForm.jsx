@@ -147,9 +147,14 @@ const UploadForm = ({ slug }) => {
       console.log(pair[0] + ': ' + pair[1], 'formData');
   }
 
-  const response = await fetch('http://localhost:8000/api/upload', {
-    method: 'POST',
-    body: formData,
+//   const response = await fetch('http://localhost:8000/api/upload', {
+//     method: 'POST',
+//     body: formData,
+// });
+
+const response = await fetch('https://padawards.com.phoenixlk.com/backend/public/api/upload', {
+  method: 'POST',
+  body: formData,
 });
     // const response = await API.post('/upload', formData);
 
