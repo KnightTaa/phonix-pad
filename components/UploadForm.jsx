@@ -3,6 +3,8 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { CloudArrowUpIcon } from "@heroicons/react/24/solid";
 import Wrapper from "@/components/Wrapper";
+import API from "../services/api";
+import { toast } from "react-toastify";
 
 const countries = [
   { value: "LK", label: "🇱🇰", code: "+94" },
@@ -26,9 +28,9 @@ const countries = [
 const criteriaDescriptions = {
   shorts:
     "shots Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab.",
-  brands:
+  brand:
     "brands Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab..",
-  products:
+  project:
     "products Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab.",
 };
 
@@ -54,8 +56,11 @@ const UploadForm = ({ slug }) => {
   };
 
   const handleFileChange = (e) => {
-    console.log(e.target.files[0]);
-    setFile(e.target.files[0]);
+    // console.log(e.target.files[0]);
+    // setFile(e.target.files[0]);
+    const selectedFile = e.target.files[0];
+        console.log("Selected File:", selectedFile);
+        setFile(selectedFile);
   };
 
   const handleFNameChange = (e) => {
@@ -85,16 +90,16 @@ const UploadForm = ({ slug }) => {
       setBgColor("bg-[#f7e114]");
       setTextColor("text-black");
       setSelectedTheme("shorts");
-    } else if (slug === "brands") {
-      setSelectedRadio("brands");
+    } else if (slug === "brand") {
+      setSelectedRadio("brand");
       setBgColor("bg-[#ee1d52]");
       setTextColor("text-white");
-      setSelectedTheme("brands");
-    } else if (slug === "products") {
-      setSelectedRadio("products");
+      setSelectedTheme("brand");
+    } else if (slug === "project") {
+      setSelectedRadio("project");
       setBgColor("bg-[#00d3c8]");
       setTextColor("text-black");
-      setSelectedTheme("products");
+      setSelectedTheme("project");
     }
   }, [slug]);
 
@@ -107,17 +112,17 @@ const UploadForm = ({ slug }) => {
         setCriteria(criteriaDescriptions["shorts"]);
         setSelectedTheme("shorts");
         break;
-      case "brands":
+      case "brand":
         setBgColor("bg-[#ee1d52]");
         setTextColor("text-white");
-        setCriteria(criteriaDescriptions["brands"]);
-        setSelectedTheme("brands");
+        setCriteria(criteriaDescriptions["brand"]);
+        setSelectedTheme("brand");
         break;
-      case "products":
+      case "project":
         setBgColor("bg-[#00d3c8]");
         setTextColor("text-black");
-        setCriteria(criteriaDescriptions["products"]);
-        setSelectedTheme("products");
+        setCriteria(criteriaDescriptions["project"]);
+        setSelectedTheme("project");
         break;
       default:
         break;
@@ -125,6 +130,7 @@ const UploadForm = ({ slug }) => {
   };
 
   const handleSubmit = async (e) => {
+    console.log(file, 'afa');
     e.preventDefault();
     const formData = new FormData();
     formData.append('file', file);
@@ -133,15 +139,26 @@ const UploadForm = ({ slug }) => {
     formData.append('email', email);
     formData.append('phoneNumber', phone);
     formData.append('decription', dis);
-    formData.append('eventType', selectedTheme);
+    formData.append('eventType', (selectedTheme === "shorts") ? "life" : selectedTheme);
 
-    const response = await API.post('/upload', formData);
+    // console.log(formData, 'formData');
+
+    for (let pair of formData.entries()) {
+      console.log(pair[0] + ': ' + pair[1], 'formData');
+  }
+
+  const response = await fetch('http://localhost:8000/api/upload', {
+    method: 'POST',
+    body: formData,
+});
+    // const response = await API.post('/upload', formData);
 
     const data = await response.json();
     if (response.ok) {
-        setMessage(`Files uploaded successfully: ${data.paths.join(', ')}, Text: ${data.text}`);
+      toast.success('Register successfully!');
     } else {
-        setMessage(`Error uploading files: ${data.error}`);
+      console.error("Error posting data:", error);
+      toast.error("Error submitting form");
     }
 };
   return (
@@ -183,17 +200,17 @@ const UploadForm = ({ slug }) => {
                   />
                 </div>
                 <input
-                  id="brands"
-                  name="project"
+                  id="brand"
+                  name="brand"
                   type="radio"
                   className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600 hidden"
-                  checked={selectedRadio === "brands"}
-                  onChange={() => handleRadioChange("brands")}
+                  checked={selectedRadio === "brand"}
+                  onChange={() => handleRadioChange("brand")}
                 />
                 <div
-                  onClick={() => handleRadioChange("brands")}
+                  onClick={() => handleRadioChange("brand")}
                   className={`cursor-pointer transition-all duration-300 ${
-                    selectedRadio === "brands"
+                    selectedRadio === "brand"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
                   }`}
@@ -207,17 +224,17 @@ const UploadForm = ({ slug }) => {
                   />
                 </div>
                 <input
-                  id="products"
+                  id="project"
                   name="project"
                   type="radio"
                   className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600 hidden"
-                  checked={selectedRadio === "products"}
-                  onChange={() => handleRadioChange("products")}
+                  checked={selectedRadio === "project"}
+                  onChange={() => handleRadioChange("project")}
                 />
                 <div
-                  onClick={() => handleRadioChange("products")}
+                  onClick={() => handleRadioChange("project")}
                   className={`cursor-pointer transition-all duration-300 ${
-                    selectedRadio === "products"
+                    selectedRadio === "project"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
                   }`}
@@ -372,8 +389,8 @@ const UploadForm = ({ slug }) => {
                       disabled //If you want selectable remove this. else add this
                     >
                       <option value="shorts">Shorts</option>
-                      <option value="brands">Brands</option>
-                      <option value="products">Products</option>
+                      <option value="brand">Brands</option>
+                      <option value="project">Products</option>
                     </select>
                   </div>
                 </div>
