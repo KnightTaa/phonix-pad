@@ -39,12 +39,45 @@ const UploadForm = ({ slug }) => {
   const [criteria, setCriteria] = useState(criteriaDescriptions["shorts"]);
   const [selectedTheme, setSelectedTheme] = useState("shorts");
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+  const [file, setFile] = useState(null);
+  const [fName, setFname] = useState('');
+  const [lName, setLname] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [dis, setDis] = useState('');
+  const [message, setMessage] = useState('');
 
   const phonePlaceholder = selectedCountry ? selectedCountry.code : "";
 
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
+
+  const handleFileChange = (e) => {
+    console.log(e.target.files[0]);
+    setFile(e.target.files[0]);
+  };
+
+  const handleFNameChange = (e) => {
+    setFname(e.target.value);
+  };
+
+  const handleLNameChange = (e) => {
+    setLname(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePhoneChange = (e) => {
+    setPhone(e.target.value);
+  };
+
+  const handleDisChange = (e) => {
+    setDis(e.target.value);
+  };
+
 
   useEffect(() => {
     if (slug === "shorts") {
@@ -90,10 +123,31 @@ const UploadForm = ({ slug }) => {
         break;
     }
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('name', fName + " " + lName);
+    formData.append('filename', 'test123');
+    formData.append('email', email);
+    formData.append('phoneNumber', phone);
+    formData.append('decription', dis);
+    formData.append('eventType', selectedTheme);
+
+    const response = await API.post('/upload', formData);
+
+    const data = await response.json();
+    if (response.ok) {
+        setMessage(`Files uploaded successfully: ${data.paths.join(', ')}, Text: ${data.text}`);
+    } else {
+        setMessage(`Error uploading files: ${data.error}`);
+    }
+};
   return (
     <section className={`w-full min-h-screen font-arial ${bgColor}`}>
       <Wrapper className="w-full min-h-screen flex flex-col items-center justify-center">
-        <form className="w-full flex flex-col md:flex-col lg:flex-row justify-between gap-5 p-2 sm:p-4">
+        <form className="w-full flex flex-col md:flex-col lg:flex-row justify-between gap-5 p-2 sm:p-4" onSubmit={handleSubmit}>
           {/* left side */}
           <div className="w-full md:w-full lg:w-1/2 flex flex-col gap-2">
             <h1
@@ -214,6 +268,7 @@ const UploadForm = ({ slug }) => {
                       name="first-name"
                       id="first-name"
                       autoComplete="given-name"
+                      onChange={handleFNameChange}
                       className="block w-full rounded-lg border-0 py-1.5 px-2 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -232,6 +287,7 @@ const UploadForm = ({ slug }) => {
                       name="last-name"
                       id="last-name"
                       autoComplete="family-name"
+                      onChange={handleLNameChange}
                       className="block w-full rounded-lg border-0 py-1.5 px-2 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -250,6 +306,7 @@ const UploadForm = ({ slug }) => {
                       name="email"
                       type="email"
                       autoComplete="email"
+                      onChange={handleEmailChange}
                       className="block w-full rounded-lg border-0 py-1.5 px-2 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                     />
                   </div>
@@ -293,6 +350,7 @@ const UploadForm = ({ slug }) => {
                       id="phone"
                       className="block w-full pl-16 sm:pl-16 pr-3 py-2 rounded-lg border-0 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                       placeholder={phonePlaceholder}
+                      onChange={handlePhoneChange}
                     />
                   </div>
                 </div>
@@ -333,6 +391,7 @@ const UploadForm = ({ slug }) => {
                       name="description"
                       type="description"
                       autoComplete="email"
+                      onChange={handleDisChange}
                       className="w-full p-4 bg-white border border-gray-200 rounded-lg outline-none resize-none min-h-[150px]"
                     ></textarea>
                   </div>
@@ -361,6 +420,7 @@ const UploadForm = ({ slug }) => {
                           name="file-upload"
                           type="file"
                           className="sr-only"
+                          onChange={handleFileChange}
                         />
                       </label>
                       <p className="pl-1 text-white/75">or drag and drop</p>
@@ -383,7 +443,7 @@ const UploadForm = ({ slug }) => {
             </div>
             <div className="mt-6 flex items-center justify-start gap-x-6">
               <button
-                type="button"
+                type="submit"
                 className="text-sm w-full font-semibold leading-6 bg-primary px-6 py-2 rounded-full text-white hover:bg-primary-hover transition-all duration-200"
               >
                 Submit
