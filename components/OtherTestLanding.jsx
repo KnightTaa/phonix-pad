@@ -133,8 +133,10 @@ const OtherTestLanding = () => {
               top: "0",
               translateX: "0",
               translateY: "0",
-              paddingTop: "10px",
-              paddingLeft: "10px",
+              marginTop: window.innerWidth > 768 ? "40px" : "20px",
+              marginLeft: window.innerWidth > 768 ? "40px" : "20px",
+              // paddingTop: "10px",
+              // paddingLeft: "10px",
               duration: 2,
               ease: "power3.inOut",
             });
@@ -211,8 +213,10 @@ const OtherTestLanding = () => {
               top: "0",
               translateX: "0",
               translateY: "0",
-              paddingTop: "30px",
-              paddingLeft: "40px",
+              marginTop: window.innerWidth > 768 ? "60px" : "40px",
+              marginLeft: window.innerWidth > 768 ? "80px" : "60px",
+              // paddingTop: "30px",
+              // paddingLeft: "40px",
               duration: 2,
               ease: "power3.inOut",
             });
@@ -253,8 +257,9 @@ const OtherTestLanding = () => {
           top: "50%",
           translateX: "-50%",
           translateY: "-50%",
-          paddingTop: "10px", //New
-          paddingLeft: "10px", //New
+          margin: "auto",
+          // paddingTop: "10px", 
+          // paddingLeft: "10px", 
           duration: 2,
           ease: "power3.inOut",
         },
@@ -307,7 +312,8 @@ const OtherTestLanding = () => {
       .to(
         logo1Ref.current,
         {
-          scale: window.innerWidth > 768 ? `${isNotFresh ? 2.6 : 1}` : "1.1",
+          scale: window.innerWidth > 768 ? `${isNotFresh ? 2 : 1}` : "1.1",
+          // {isNotFresh ? 2.6 : 1}
           duration: 2,
           ease: "power3.inOut",
         },
@@ -1156,19 +1162,21 @@ const OtherTestLanding = () => {
         </div>
         {/* content */}
         <div
-          className="w-full sm:w-[50%] h-[50%] sm:h-full flex items-start justify-between flex-col absolute right-0 sm:-right-[50%] -bottom-[50%] sm:bottom-0"
+          className="w-full sm:w-[50%] h-[50%] sm:h-full flex items-start sm:items-end justify-between flex-col absolute right-0 sm:-right-[50%] -bottom-[50%] sm:bottom-0"
           ref={contentRef}
         >
-          <div className="hidden w-full p-5 sm:flex items-center justify-end outline-none">
+          {/* hidden w-full p-5 sm:flex items-center justify-end outline-none */}
+          <div className="hidden mr-10 mt-10 sm:flex self-end outline-none">
             <button onClick={handleThreeDotsClick} className="outline-none">
               <HiDotsHorizontal size={36} />
             </button>
           </div>
-          <div className="p-5 flex items-end flex-col gap-2 sm:gap-10">
-            <h1 className="text-2xl sm:text-5xl font-semibold text-end">
+          {/* p-5 flex items-end flex-col gap-2 sm:gap-10 */}
+          <div className="sm:w-[70%] mr-2 ml-2 sm:mr-10 sm:ml-0 mt-10 sm:mt-0 flex items-end flex-col gap-2 sm:gap-10">
+            <h1 className="text-2xl sm:text-5xl font-semibold">
               Phoenix Arts and Design (PAD)
             </h1>
-            <p className="text-base sm:text-xl font-medium text-end">
+            <p className="text-base sm:text-xl font-medium !leading-[30px]">
               Is a platform dedicated to supporting and raising awareness for,
               designers, artists and creatives in Sri Lanka and the region.
               <br />
@@ -1241,7 +1249,18 @@ const OtherTestLanding = () => {
               className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1]"
               ref={ycontentRef}
             >
-              <div className="flex items-start flex-col gap-4">
+              <div className="flex flex-col items-start justify-center gap-3 w-[40%]">
+                <h1 className="text-2xl sm:text-6xl font-bold uppercase text-white font-arial">
+                  Shots <span className="text-black">For Life</span>
+                </h1>
+                <p className="text-lg leading-8 font-medium font-arial">
+                  Platform to promote, support and recognize all those who use
+                  an image as a vehicle to express their creativity, feelings,
+                  memories; all that a creative, professional or amateur want to
+                  transmit to society.
+                </p>
+              </div>
+              {/* <div className="flex items-start flex-col gap-4">
                 <div className="flex items-center justify-center gap-3">
                   <h1 className="text-2xl sm:text-6xl font-bold uppercase text-white font-arial">
                     Shots
@@ -1258,7 +1277,7 @@ const OtherTestLanding = () => {
                     to transmit to society.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -1301,7 +1320,17 @@ const OtherTestLanding = () => {
               className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1]"
               ref={tcontentRef}
             >
-              <div className="flex items-start flex-col gap-4">
+              <div className="flex flex-col items-start justify-center gap-3 w-[50%]">
+                <h1 className="text-2xl sm:text-6xl font-bold uppercase text-white font-arial">
+                Produts <span className="text-black">For Life</span>
+                </h1>
+                <p className="text-lg leading-8 font-medium font-arial">
+                Platform to promote all those who want to bring color to our
+                    lives, by creating bold, impactful, and meaningful visual
+                    languages that tell important stories.
+                </p>
+              </div>
+              {/* <div className="flex items-start flex-col gap-4">
                 <div className="flex items-center justify-center gap-3">
                   <h1 className="text-2xl sm:text-6xl font-bold uppercase text-white font-arial">
                     Produts
@@ -1317,7 +1346,7 @@ const OtherTestLanding = () => {
                     languages that tell important stories.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -1359,7 +1388,19 @@ const OtherTestLanding = () => {
               className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1]"
               ref={rcontentRef}
             >
-              <div className="flex items-start flex-col gap-4">
+              <div className="flex flex-col items-start justify-center gap-3 w-[45%]">
+                <h1 className="text-2xl sm:text-6xl font-bold uppercase text-white font-arial">
+                  Brands <span className="text-black">For Life</span>
+                </h1>
+                <p className="text-lg leading-8 font-medium font-arial">
+                  Platform to join and promote all individuals who want to
+                  improve peoples lives by creating better products, objects,
+                  services to solve specific or general challenges. By creating
+                  better and respectful products we will grow as a society, the
+                  soul of PAD.
+                </p>
+              </div>
+              {/* <div className="flex items-start flex-col gap-4">
                 <div className="flex items-center justify-center gap-3">
                   <h1 className="text-2xl sm:text-6xl font-bold uppercase text-white font-arial">
                     Brands
@@ -1377,7 +1418,7 @@ const OtherTestLanding = () => {
                     society, the soul of PAD.
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState, useEffect } from "react";
 import gsap from "gsap";
 import OtherTestLanding from "@/components/OtherTestLanding";
 import Toast from "../components/ToastContainer";
@@ -21,6 +21,21 @@ export default function Home() {
     });
 
     return () => context.revert();
+  }, []);
+
+  // Prevent ctrl scroll
+  useEffect(() => {
+    const preventZoom = (event) => {
+      if (event.ctrlKey) {
+        event.preventDefault();
+      }
+    };
+  
+    window.addEventListener('wheel', preventZoom, { passive: false });
+  
+    return () => {
+      window.removeEventListener('wheel', preventZoom);
+    };
   }, []);
 
   return (
