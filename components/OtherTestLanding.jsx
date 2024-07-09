@@ -1350,9 +1350,9 @@ const OtherTestLanding = () => {
             </div>
           </div>
         </div>
-        {/* red content absolute left-[72%]*/}
+        {/* red content absolute left-[72%] ee1d52*/}
         <div
-          className="h-[28%] sm:h-screen w-full sm:w-[28%] absolute left-0 sm:left-[100%] top-[100%] sm:top-0 bg-[#ee1d52]"
+          className="h-[28%] sm:h-screen w-full sm:w-[28%] absolute left-0 sm:left-[100%] top-[100%] sm:top-0 bg-[#ea4747]"
           ref={redDivRef}
         >
           <div className="w-full h-full relative">
