@@ -273,7 +273,7 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
             <h1
               className={`uppercase text-xl text-start sm:text-4xl font-semibold mb-10 text-white`}
             >
-              Upload
+              Pad Awards Submission
             </h1>
             <div className="space-y-12">
               <div className="grid grid-cols-1 gap-x-6 gap-y-7 sm:grid-cols-6">
@@ -378,10 +378,10 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
                 </div>
                 <div className="col-span-full">
                   <label
-                    htmlFor="theme"
+                    htmlFor="Category"
                     className="block text-sm font-medium leading-6 text-white"
                   >
-                    Theme
+                    Category
                   </label>
                   <div className="mt-2 relative rounded-md shadow-sm">
                     <select
@@ -393,9 +393,39 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
                       onChange={(event) => setSelectedTheme(event.target.value)}
                       disabled //If you want selectable remove this. else add this
                     >
-                      <option value="shorts">Shorts</option>
-                      <option value="brand">Brands</option>
-                      <option value="project">Products</option>
+                      <option value="shorts">Shots for life</option>
+                      <option value="brand">Brands for life</option>
+                      <option value="project">Products for life</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="col-span-full">
+                  <label
+                    htmlFor="Moods"
+                    className="block text-sm font-medium leading-6 text-white"
+                  >
+                    Moods
+                  </label>
+                  <div className="mt-2 relative rounded-md shadow-sm">
+                    <select
+                      id="Moods"
+                      name="Moods"
+                      className="block w-full px-3 py-2 rounded-lg border-0 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                      // onChange={(event) => setSelectedRadio(event.target.value)}
+                      value={selectedTheme}
+                      onChange={(event) => setSelectedTheme(event.target.value)}
+                    >
+                      <option value="eternal">Eternal</option>
+                      <option value=" endlesssummer">Endless Summer</option>
+                      <option value="urbansoul">Urban Soul</option>
+                      <option value="urbansoul">The Whim</option>
+                      <option value="urbansoul">fantasy</option>
+                      <option value="urbansoul">Crazy About</option>
+                      <option value="urbansoul">Nothing Hidden</option>
+                      <option value="urbansoul">Where The Air Flows</option>
+                      <option value="urbansoul">cool things</option>
+                      <option value="urbansoul">Wonderland</option>
                     </select>
                   </div>
                 </div>
@@ -454,7 +484,7 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
                   </div>
                   <div className="mt-2 flex flex-col gap-4">
                     <span className="text-sm font-medium text-white">
-                      Uploading - 3/3 files
+                      Uploading - 1/1 files
                     </span>
                     <span className="text-sm font-medium text-white">
                       Uploaded

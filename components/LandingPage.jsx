@@ -139,8 +139,8 @@ const LandingPage = () => {
               top: "0",
               translateX: "0",
               translateY: "0",
-              marginTop: window.innerWidth > 768 ? "40px" : "20px",
-              marginLeft: window.innerWidth > 768 ? "40px" : "20px",
+              marginTop: window.innerWidth > 768 ? "70px" : "20px",
+              marginLeft: window.innerWidth > 768 ? "70px" : "20px",
               // marginTop: "40px",
               // marginLeft: "40px",
               duration: 2,
@@ -219,7 +219,7 @@ const LandingPage = () => {
               top: "0",
               translateX: "0",
               translateY: "0",
-              marginTop: window.innerWidth > 768 ? "60px" : "40px",
+              marginTop: window.innerWidth > 768 ? "70px" : "40px",
               marginLeft: window.innerWidth > 768 ? "80px" : "60px",
               // marginTop: "60px",
               // marginLeft: "80px",
@@ -1347,12 +1347,12 @@ const LandingPage = () => {
           className="w-full sm:w-[50%] h-[50%] sm:h-full flex items-start sm:items-end justify-between flex-col absolute right-0 sm:-right-[50%] -bottom-[50%] sm:bottom-0"
           ref={contentRef}
         >
-          <div className="hidden mr-10 mt-10 sm:flex self-end outline-none">
+          <div className="hidden mr-10 mt-10 sm:flex self-end outline-none ssss">
             <button onClick={handleThreeDotsClick} className="outline-none">
               <HiDotsHorizontal size={36} />
             </button>
           </div>
-          <div className="mr-2 ml-2 sm:mr-10 sm:ml-0 mt-10 sm:mt-0 flex items-end flex-col gap-2 sm:gap-10 sm:w-[70%]">
+          <div className="mr-2 ml-2 sm:mr-10 sm:ml-0 mt-10 sm:mt-0 flex items-end flex-col gap-2 sm:gap-10 sm:w-[70%] aaaaa">
             <h1 className="text-3xl xl:text-4xl 2xl:text-5xl font-semibold">
               Phoenix Arts and Design (PAD)
             </h1>
@@ -1440,7 +1440,7 @@ const LandingPage = () => {
             </div>
             {/* Content -z-[1]*/}
             <div
-              className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1]"
+              className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1] dis-width"
               ref={ycontentRef}
             >
               {/* <div className="flex flex-col items-start justify-center gap-3 w-[40%]">
@@ -1524,7 +1524,7 @@ const LandingPage = () => {
             </div>
             {/* Content */}
             <div
-              className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1]"
+              className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1] dis-width"
               ref={tcontentRef}
             >
               {/* <div className="flex flex-col items-start justify-center gap-3 w-[50%]">
@@ -1548,7 +1548,7 @@ const LandingPage = () => {
                   </h1>
                 </div>
                 <div className="w-full sm:w-[50%]">
-                  <p className="text-lg leading-8 font-medium font-arial">
+                  <p className="text-lg leading-8 font-medium font-arial dis-width-teer">
                     Platform to promote all those who want to bring color to our
                     lives, by creating bold, impactful, and meaningful visual
                     languages that tell important stories.
@@ -1580,7 +1580,7 @@ const LandingPage = () => {
             </button>
             {/* Register Button absolute right-[15%] xl:right-[6.4%] 2xl:right-[5.8%] top-[22%] sm:top-[20%] z-10*/}
             <div className="absolute right-0 mr-[1.12rem] mt-3 2xl:mr-6 2xl:mt-4  xl:mr-[1.12rem] xl:mt-2 flex flex-col items-start justify-center gap-4 z-10">
-              
+
               {/* New 7/10/24 start */}
               <Image
                 src={"/image 10.png"}
@@ -1605,7 +1605,7 @@ const LandingPage = () => {
             </div>
             {/* Content */}
             <div
-              className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1]"
+              className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1] dis-width"
               ref={rcontentRef}
             >
               {/* <div className="flex flex-col items-start justify-center gap-3 w-[45%]">
@@ -1630,7 +1630,7 @@ const LandingPage = () => {
                   </h1>
                 </div>
                 <div className="w-full sm:w-[50%]">
-                  <p className="text-lg leading-8 font-medium font-arial">
+                  <p className="text-lg leading-8 font-medium font-arial dis-width-red">
                     Platform to join and promote all individuals who want to
                     improve peoples lives by creating better products, objects,
                     services to solve specific or general challenges. By

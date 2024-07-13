@@ -6,3 +6,27 @@ input[type="checkbox"]:checked {
     background-color: black;
     border-color: black;
   }
+
+
+  .aaaaa{
+    margin-right: 52px;
+  }
+
+  .ssss{
+    /* margin-right: 70px; */
+    margin-top: 59px;
+  }
+
+  .dis-width{
+    width: 67vw;
+  }
+
+  .dis-width-red{
+    width: 35vw;
+    word-wrap: break-word;
+  }
+
+  .dis-width-teer {
+    width: 39vw;
+    word-wrap: break-word;
+}
