@@ -360,9 +360,9 @@ const LandingPage = () => {
           //New 7/10/24
           onComplete: () => {
             gsap.to(yellowClickButtonRef.current, {
-              zIndex: '10',
-            })
-          }
+              zIndex: "10",
+            });
+          },
         },
         "-=2"
       )
@@ -390,9 +390,9 @@ const LandingPage = () => {
           //New 7/10/24
           onComplete: () => {
             gsap.to(teelClickButtonRef.current, {
-              zIndex: '10',
-            })
-          }
+              zIndex: "10",
+            });
+          },
         },
         "-=2"
       )
@@ -420,9 +420,9 @@ const LandingPage = () => {
           //New 7/10/24
           onComplete: () => {
             gsap.to(redClickButtonRef.current, {
-              zIndex: '10',
-            })
-          }
+              zIndex: "10",
+            });
+          },
         },
         "-=2"
       )
@@ -1207,7 +1207,7 @@ const LandingPage = () => {
           display: "block",
           onStart: () => {
             gsap.to(yellowClickButtonRef.current, {
-              zIndex: '',
+              zIndex: "",
               // zIndex: window.innerWidth > 1440 ? "" : "10",
             });
           },
@@ -1229,7 +1229,7 @@ const LandingPage = () => {
           display: "block",
           onStart: () => {
             gsap.to(teelClickButtonRef.current, {
-              zIndex: '',
+              zIndex: "",
               // zIndex: window.innerWidth > 1440 ? "" : "10",
             });
           },
@@ -1251,7 +1251,7 @@ const LandingPage = () => {
           display: "block",
           onStart: () => {
             gsap.to(redClickButtonRef.current, {
-              zIndex: '',
+              zIndex: "",
               // zIndex: window.innerWidth > 1440 ? "" : "10",
             });
           },
@@ -1352,8 +1352,8 @@ const LandingPage = () => {
               <HiDotsHorizontal size={36} />
             </button>
           </div>
-          <div className="mr-2 ml-2 sm:mr-10 sm:ml-0 mt-10 sm:mt-0 flex items-end flex-col gap-2 sm:gap-10 sm:w-[70%] aaaaa">
-            <h1 className="text-3xl xl:text-4xl 2xl:text-5xl font-semibold">
+          <div className="mr-2 ml-2 sm:mr-10 sm:ml-0 mt-10 sm:mt-0 flex items-start flex-col gap-2 sm:gap-10 sm:w-[70%] text-justify">
+            <h1 className="text-2xl xl:text-4xl 2xl:text-5xl font-semibold">
               Phoenix Arts and Design (PAD)
             </h1>
             <p className="text-base xl:text-lg 2xl:text-xl font-medium">
@@ -1415,7 +1415,6 @@ const LandingPage = () => {
             {/* Register Button absolute right-[15%] lg:right-[7.6%] xl:right-[6.4%] 2xl:right-[5.8%] top-[22%] sm:top-[20%] z-10*/}
             {/* 2xl:mr-6 2xl:mt-4  xl:mr-[1.12rem] xl:mt-2 df mr-[1.12rem] mt-3*/}
             <div className="absolute right-0 mr-[1.12rem] mt-3 2xl:mr-6 2xl:mt-4  xl:mr-[1.12rem] xl:mt-2 flex flex-col items-start justify-center gap-4 z-10">
-
               {/* New 7/10/24 start */}
               <Image
                 src={"/image 7.png"}
@@ -1443,29 +1442,19 @@ const LandingPage = () => {
               className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1] dis-width"
               ref={ycontentRef}
             >
-              {/* <div className="flex flex-col items-start justify-center gap-3 w-[40%]">
-                <h1 className="text-2xl sm:text-6xl font-bold uppercase text-white font-arial">
-                  Shots <span className="text-black">For Life</span>
-                </h1>
-                <p className="text-lg leading-8 font-medium font-arial">
-                  Platform to promote, support and recognize all those who use
-                  an image as a vehicle to express their creativity, feelings,
-                  memories; all that a creative, professional or amateur want to
-                  transmit to society.
-                </p>
-              </div> */}
-
-              <div className="flex items-start flex-col gap-4">
-                <div className="flex items-center justify-center gap-3">
-                  <h1 className="text-2xl sm:text-6xl font-bold uppercase text-white font-arial">
+              <div className="flex items-start flex-col gap-4 text-justify w-full xl:w-[50%] 2xl:w-[50%]">
+                {/* Title */}
+                <div className="flex items-center justify-between gap-3 tracking-wider mb-2">
+                  <h1 className="text-2xl xl:text-5xl 2xl:text-[3.80rem] font-bold uppercase text-white font-arial">
                     Shots
                   </h1>
-                  <h1 className="text-3xl sm:text-6xl font-bold uppercase font-arial">
+                  <h1 className="text-3xl xl:text-5xl 2xl:text-[3.80rem] font-bold uppercase font-arial">
                     For Life
                   </h1>
                 </div>
-                <div className="w-full sm:w-[50%]">
-                  <p className="text-lg leading-8 font-medium font-arial">
+                {/* description */}
+                <div className="">
+                  <p className="text-lg leading-8 font-medium font-arial teste">
                     Platform to promote, support and recognize all those who use
                     an image as a vehicle to express their creativity, feelings,
                     memories; all that a creative, professional or amateur want
@@ -1499,7 +1488,6 @@ const LandingPage = () => {
             </button>
             {/* Register Button right-[15%] xl:right-[6.4%] 2xl:right-[5.8%] top-[22%] sm:top-[20%] z-10*/}
             <div className="absolute right-0 mr-[1.12rem] mt-3 2xl:mr-6 2xl:mt-4  xl:mr-[1.12rem] xl:mt-2 flex flex-col items-start justify-center gap-4 z-10">
-
               {/* New 7/10/24 start */}
               <Image
                 src={"/image 11.png"}
@@ -1527,28 +1515,17 @@ const LandingPage = () => {
               className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1] dis-width"
               ref={tcontentRef}
             >
-              {/* <div className="flex flex-col items-start justify-center gap-3 w-[50%]">
-                <h1 className="text-2xl sm:text-6xl font-bold uppercase text-white font-arial">
-                  Produts <span className="text-black">For Life</span>
-                </h1>
-                <p className="text-lg leading-8 font-medium font-arial">
-                  Platform to promote all those who want to bring color to our
-                  lives, by creating bold, impactful, and meaningful visual
-                  languages that tell important stories.
-                </p>
-              </div> */}
-
-              <div className="flex items-start flex-col gap-4">
-                <div className="flex items-center justify-center gap-3">
-                  <h1 className="text-2xl sm:text-6xl font-bold uppercase text-white font-arial">
+              <div className="flex items-start flex-col gap-4 text-justify w-full xl:w-[55%] 2xl:w-[50%]">
+                <div className="flex items-center justify-between gap-3 w-full ">
+                  <h1 className="text-2xl xl:text-5xl 2xl:text-6xl tracking-wide font-bold uppercase text-white font-arial">
                     Produts
                   </h1>
-                  <h1 className="text-3xl sm:text-6xl font-bold uppercase font-arial">
+                  <h1 className="text-3xl xl:text-5xl 2xl:text-6xl tracking-wide font-bold uppercase font-arial">
                     For Life
                   </h1>
                 </div>
-                <div className="w-full sm:w-[50%]">
-                  <p className="text-lg leading-8 font-medium font-arial dis-width-teer">
+                <div className="">
+                  <p className="text-lg leading-8 font-medium font-arial">
                     Platform to promote all those who want to bring color to our
                     lives, by creating bold, impactful, and meaningful visual
                     languages that tell important stories.
@@ -1580,7 +1557,6 @@ const LandingPage = () => {
             </button>
             {/* Register Button absolute right-[15%] xl:right-[6.4%] 2xl:right-[5.8%] top-[22%] sm:top-[20%] z-10*/}
             <div className="absolute right-0 mr-[1.12rem] mt-3 2xl:mr-6 2xl:mt-4  xl:mr-[1.12rem] xl:mt-2 flex flex-col items-start justify-center gap-4 z-10">
-
               {/* New 7/10/24 start */}
               <Image
                 src={"/image 10.png"}
@@ -1608,29 +1584,17 @@ const LandingPage = () => {
               className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1] dis-width"
               ref={rcontentRef}
             >
-              {/* <div className="flex flex-col items-start justify-center gap-3 w-[45%]">
-                <h1 className="text-2xl sm:text-6xl font-bold uppercase text-white font-arial">
-                  Brands <span className="text-black">For Life</span>
-                </h1>
-                <p className="text-lg leading-8 font-medium font-arial">
-                  Platform to join and promote all individuals who want to
-                  improve peoples lives by creating better products, objects,
-                  services to solve specific or general challenges. By creating
-                  better and respectful products we will grow as a society, the
-                  soul of PAD.
-                </p>
-              </div> */}
-              <div className="flex items-start flex-col gap-4">
-                <div className="flex items-center justify-center gap-3">
-                  <h1 className="text-2xl sm:text-6xl font-bold uppercase text-white font-arial">
+              <div className="flex items-start flex-col gap-4 text-justify w-full xl:w-[50%] 2xl:w-[45%]">
+                <div className="flex items-center justify-start gap-3 w-full">
+                  <h1 className="text-2xl xl:text-5xl 2xl:text-6xl font-bold uppercase text-white font-arial">
                     Brands
                   </h1>
-                  <h1 className="text-3xl sm:text-6xl font-bold uppercase font-arial">
+                  <h1 className="text-3xl xl:text-5xl 2xl:text-6xl font-bold uppercase font-arial">
                     For Life
                   </h1>
                 </div>
-                <div className="w-full sm:w-[50%]">
-                  <p className="text-lg leading-8 font-medium font-arial dis-width-red">
+                <div className="">
+                  <p className="text-lg leading-8 font-medium font-arial test12">
                     Platform to join and promote all individuals who want to
                     improve peoples lives by creating better products, objects,
                     services to solve specific or general challenges. By

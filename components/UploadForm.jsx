@@ -259,11 +259,92 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
             >
               Select your project
             </h1>
-            <p
-              className={`text-base sm:text-lg font-medium mt-5 leading-6 sm:leading-8 ${textColor}`}
+            <div
+              className={`text-base sm:text-lg font-medium mt-5 ${textColor}`}
             >
-              {criteria}
-            </p>
+              {/* {criteria} */}
+              <ol class="list-decimal pl-6 space-y-4">
+                <li>
+                  <strong>Categories:</strong>
+                  <ul class="list-disc pl-6 space-y-1">
+                    <li>Shots for Life (Photography)</li>
+                    <li>Brands for Life (Graphic Designing)</li>
+                    <li>Products for Life (Product Designing)</li>
+                  </ul>
+                </li>
+
+                <li>Submissions are open to any creative mind.</li>
+
+                <li>
+                  <strong>Submission formats:</strong>
+                  <ul class="list-disc pl-6 space-y-1">
+                    <li>
+                      Shots for Life: requires a submission of the photo in .jpg
+                      or .png format.
+                    </li>
+                    <li>
+                      Brands for Life: requires a submission of the brand
+                      identity design in .pdf format (no page count limitation).
+                    </li>
+                    <li>
+                      Products for Life: requires a submission of the
+                      product/service design/description in .pdf format (no page
+                      count limitation).
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  Select and get inspired by one of the following themes/moods
+                  and relate your submission to it: eternal, endless summer,
+                  urban soul, the whim, fantasy, crazy about, nothing hidden,
+                  where the air flows, cool things, wonderland. You can find
+                  these moods in our Collection 2024 Lookbook at{" "}
+                  <a
+                    href="https://phoenix.lk/downloads"
+                    class="text-blue-500 underline"
+                  >
+                    phoenix.lk/downloads
+                  </a>
+                  .
+                </li>
+
+                <li>
+                  Submissions will be evaluated based on relevance to the
+                  selected competition theme, formal proposal, creativity,
+                  technical execution, and final outcome.
+                </li>
+
+                <li>
+                  The submission deadline is the{" "}
+                  <strong>16th of September, 2024</strong>.
+                </li>
+
+                <li>
+                  Submit the duly filled form at{" "}
+                  <a
+                    href="https://pad.phoenix.lk"
+                    class="text-blue-500 underline"
+                  >
+                    pad.phoenix.lk
+                  </a>
+                  .
+                </li>
+
+                <li>Super prizes will be awarded to winners.</li>
+
+                <li>
+                  For any queries, reach out to us through Instagram at{" "}
+                  <a
+                    href="https://instagram.com/pad.phoenix"
+                    class="text-blue-500 underline"
+                  >
+                    @pad.phoenix
+                  </a>
+                  .
+                </li>
+              </ol>
+            </div>
           </div>
           {/* right side */}
           <div className="w-full md:w-full lg:w-1/2 p-4 sm:p-8 mt-5 sm:mt-0 bg-black rounded-tr-none sm:rounded-tr-[20%] relative">
@@ -477,7 +558,7 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
                       </label>
                       <p className="pl-1 text-white/75">or drag and drop</p>
                     </div>
-                    <p className="text-xs leading-5 text-white/75">
+                    <p className="text-xs leading-5 text-white/75 text-center">
                       Supported formats: JPEG, PNG, GIF, MP4, PDF, PSD, AI,
                       WORD, PPT
                     </p>

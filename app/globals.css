@@ -30,3 +30,12 @@ input[type="checkbox"]:checked {
     width: 39vw;
     word-wrap: break-word;
 }
+@media only screen and (min-width: 1024px) {
+  .teste {
+    width: 26vw;
+  }
+
+  .test12 {
+    width: 28vw;
+  }
+}
