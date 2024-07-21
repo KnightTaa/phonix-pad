@@ -139,8 +139,8 @@ const LandingPage = () => {
               top: "0",
               translateX: "0",
               translateY: "0",
-              marginTop: window.innerWidth > 768 ? "40px" : "20px",
-              marginLeft: window.innerWidth > 768 ? "40px" : "20px",
+              marginTop: window.innerWidth > 768 ? "70px" : "20px",
+              marginLeft: window.innerWidth > 768 ? "70px" : "20px",
               // marginTop: "40px",
               // marginLeft: "40px",
               duration: 2,
@@ -219,7 +219,7 @@ const LandingPage = () => {
               top: "0",
               translateX: "0",
               translateY: "0",
-              marginTop: window.innerWidth > 768 ? "60px" : "40px",
+              marginTop: window.innerWidth > 768 ? "70px" : "40px",
               marginLeft: window.innerWidth > 768 ? "80px" : "60px",
               // marginTop: "60px",
               // marginLeft: "80px",
@@ -586,11 +586,11 @@ const LandingPage = () => {
             });
 
             // New 7/10/24
-            gsap.to(afyellowLogoRef.current, {
+            gsap.set(afyellowLogoRef.current, {
               opacity: 1,
               duration: 1,
               onComplete: () => {
-                gsap.to(yellowLogoRef.current, {
+                gsap.set(yellowLogoRef.current, {
                   display: "none",
                 });
               },
@@ -1347,13 +1347,13 @@ const LandingPage = () => {
           className="w-full sm:w-[50%] h-[50%] sm:h-full flex items-start sm:items-end justify-between flex-col absolute right-0 sm:-right-[50%] -bottom-[50%] sm:bottom-0"
           ref={contentRef}
         >
-          <div className="hidden mr-10 mt-10 sm:flex self-end outline-none">
+          <div className="hidden mr-10 mt-10 sm:flex self-end outline-none ssss">
             <button onClick={handleThreeDotsClick} className="outline-none">
               <HiDotsHorizontal size={36} />
             </button>
           </div>
           <div className="mr-2 ml-2 sm:mr-10 sm:ml-0 mt-10 sm:mt-0 flex items-start flex-col gap-2 sm:gap-10 sm:w-[70%] text-justify">
-            <h1 className="text-2xl xl:text-4xl 2xl:text-5xl font-semibold">
+            <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
               Phoenix Arts and Design (PAD)
             </h1>
             <p className="text-base xl:text-lg 2xl:text-xl font-medium">
@@ -1426,7 +1426,7 @@ const LandingPage = () => {
               />
               {/* New 7/10/24 end */}
 
-              <Link href={"/uploads"}>
+              <Link href={"/apply"}>
                 <Image
                   src={"/REGISTER1.png"}
                   width={400}
@@ -1439,28 +1439,34 @@ const LandingPage = () => {
             </div>
             {/* Content -z-[1]*/}
             <div
-              className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1]"
+              className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1] dis-width"
               ref={ycontentRef}
             >
-              <div className="flex items-start flex-col gap-4 text-justify w-full xl:w-[50%] 2xl:w-[40%]">
+              <div className="flex items-start flex-col gap-4 text-justify w-full xl:w-[50%] 2xl:w-[50%]">
                 {/* Title */}
                 <div className="flex items-center justify-between gap-3 tracking-wider mb-2">
                   <h1 className="text-2xl xl:text-5xl 2xl:text-[3.80rem] font-bold uppercase text-white font-arial">
-                    Shots
-                  </h1>
-                  <h1 className="text-3xl xl:text-5xl 2xl:text-[3.80rem] font-bold uppercase font-arial">
-                    For Life
+                    Shots <span className="font-bold uppercase font-arial text-black"> For Life</span>
                   </h1>
                 </div>
                 {/* description */}
-                <div className="">
+
+                <div class="container mx-auto justify-between">
+                  <div class="w-full pr-10 xl:pr-2 2xl:pr-2">
+                    Platform to promote, support and recognize all those who use
+                    an image as a vehicle to express their creativity, feelings,
+                    memories; all that a creative, professional or amateur want
+                    to transmit to society.
+                  </div>
+                </div>
+                {/* <div className="w-[96%] xl:w-[79%] 2xl:w-[79%]">
                   <p className="text-lg leading-8 font-medium font-arial">
                     Platform to promote, support and recognize all those who use
                     an image as a vehicle to express their creativity, feelings,
                     memories; all that a creative, professional or amateur want
                     to transmit to society.
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -1499,7 +1505,7 @@ const LandingPage = () => {
               />
               {/* New 7/10/24 end */}
 
-              <Link href={"/uploads"}>
+              <Link href={"/apply"}>
                 <Image
                   src={"/REGISTER1.png"}
                   width={400}
@@ -1512,32 +1518,36 @@ const LandingPage = () => {
             </div>
             {/* Content */}
             <div
-              className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1]"
+              className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1] dis-width"
               ref={tcontentRef}
             >
-              <div className="flex items-start flex-col gap-4 text-justify w-full xl:w-[55%] 2xl:w-[50%]">
+              <div className="flex items-start flex-col gap-4 text-justify w-full xl:w-[60%] 2xl:w-[60%]">
                 <div className="flex items-center justify-between gap-3 w-full ">
-                  <h1 className="text-2xl xl:text-5xl 2xl:text-6xl tracking-wide font-bold uppercase text-white font-arial">
-                    Produts
-                  </h1>
-                  <h1 className="text-3xl xl:text-5xl 2xl:text-6xl tracking-wide font-bold uppercase font-arial">
-                    For Life
+                  <h1 className="text-2xl xl:text-5xl 2xl:text-6xl font-bold uppercase text-white font-arial">
+                   Products <span className="font-bold uppercase font-arial text-black"> For Life</span>
                   </h1>
                 </div>
-                <div className="">
+                <div class="container mx-auto justify-between">
+                  <div class="w-full pr-5 xl:pr-6 2xl:pr-6">
+                    Platform to promote all those who want to bring color to our
+                    lives, by creating bold, impactful, and meaningful visual
+                    languages that tell important stories.
+                  </div>
+                </div>
+                {/* <div className="w-[96%] xl:w-[96%] 2xl:w-[74%]">
                   <p className="text-lg leading-8 font-medium font-arial">
                     Platform to promote all those who want to bring color to our
                     lives, by creating bold, impactful, and meaningful visual
                     languages that tell important stories.
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
         </div>
         {/* red content absolute left-[72%]*/}
         <div
-          className="h-[28%] sm:h-screen w-full sm:w-[28%] absolute left-0 sm:left-[100%] top-[100%] sm:top-0 bg-[#ee1d52]"
+          className="h-[28%] sm:h-screen w-full sm:w-[28%] absolute left-0 sm:left-[100%] top-[100%] sm:top-0 bg-[#ea4747]"
           ref={redDivRef}
         >
           <div className="w-full h-full relative">
@@ -1568,7 +1578,7 @@ const LandingPage = () => {
               />
               {/* New 7/10/24 end */}
 
-              <Link href={"/uploads"}>
+              <Link href={"/apply"}>
                 <Image
                   src={"/REGISTER1.png"}
                   width={400}
@@ -1581,27 +1591,31 @@ const LandingPage = () => {
             </div>
             {/* Content */}
             <div
-              className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1]"
+              className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1] dis-width"
               ref={rcontentRef}
             >
-              <div className="flex items-start flex-col gap-4 text-justify w-full xl:w-[50%] 2xl:w-[45%]">
+              <div className="flex items-start flex-col gap-4 text-justify w-full xl:w-[60%] 2xl:w-[60%]">
                 <div className="flex items-center justify-start gap-3 w-full">
                   <h1 className="text-2xl xl:text-5xl 2xl:text-6xl font-bold uppercase text-white font-arial">
-                    Brands
-                  </h1>
-                  <h1 className="text-3xl xl:text-5xl 2xl:text-6xl font-bold uppercase font-arial">
-                    For Life
+                    Brands <span className="font-bold uppercase font-arial text-black"> For Life</span>
                   </h1>
                 </div>
-                <div className="">
-                  <p className="text-lg leading-8 font-medium font-arial">
+                <div class="container mx-auto justify-between">
+                  <div class="w-full pr-8 xl:pr-20 2xl:pr-20">
+                    Platform to promote all those who want to bring color to our
+                    lives, by creating bold, impactful, and meaningful visual
+                    languages that tell important stories.
+                  </div>
+                </div>
+                {/* <div className="w-[95%] xl:w-[75%] 2xl:w-[75%]">
+                  <p className="text-lg leading-8 font-medium font-arial w-full">
                     Platform to join and promote all individuals who want to
                     improve peoples lives by creating better products, objects,
                     services to solve specific or general challenges. By
                     creating better and respectful products we will grow as a
                     society, the soul of PAD.
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

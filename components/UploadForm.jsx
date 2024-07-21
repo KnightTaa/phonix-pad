@@ -36,7 +36,7 @@ const criteriaDescriptions = {
 
 const UploadForm = ({ slug }) => {
   const [selectedRadio, setSelectedRadio] = useState("shorts");
-  const [bgColor, setBgColor] = useState("bg-yellow-400");
+  const [bgColor, setBgColor] = useState("bg-[#f7e114]");
   const [textColor, setTextColor] = useState("text-black");
   const [criteria, setCriteria] = useState(criteriaDescriptions["shorts"]);
   const [selectedTheme, setSelectedTheme] = useState("shorts");
@@ -92,7 +92,7 @@ const UploadForm = ({ slug }) => {
       setSelectedTheme("shorts");
     } else if (slug === "brand") {
       setSelectedRadio("brand");
-      setBgColor("bg-[#ee1d52]");
+      setBgColor("bg-[#ea4747]");
       setTextColor("text-white");
       setSelectedTheme("brand");
     } else if (slug === "project") {
@@ -113,7 +113,7 @@ const UploadForm = ({ slug }) => {
         setSelectedTheme("shorts");
         break;
       case "brand":
-        setBgColor("bg-[#ee1d52]");
+        setBgColor("bg-[#ea4747]");
         setTextColor("text-white");
         setCriteria(criteriaDescriptions["brand"]);
         setSelectedTheme("brand");
@@ -259,11 +259,92 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
             >
               Select your project
             </h1>
-            <p
-              className={`text-base sm:text-lg font-medium mt-5 leading-6 sm:leading-8 ${textColor}`}
+            <div
+              className={`text-base sm:text-lg font-medium mt-5 ${textColor}`}
             >
-              {criteria}
-            </p>
+              {/* {criteria} */}
+              <ol class="list-decimal pl-6 space-y-4">
+                <li>
+                  <strong>Categories:</strong>
+                  <ul class="list-disc pl-6 space-y-1">
+                    <li>Shots for Life (Photography)</li>
+                    <li>Brands for Life (Graphic Designing)</li>
+                    <li>Products for Life (Product Designing)</li>
+                  </ul>
+                </li>
+
+                <li>Submissions are open to any creative mind.</li>
+
+                <li>
+                  <strong>Submission formats:</strong>
+                  <ul class="list-disc pl-6 space-y-1">
+                    <li>
+                      Shots for Life: requires a submission of the photo in .jpg
+                      or .png format.
+                    </li>
+                    <li>
+                      Brands for Life: requires a submission of the brand
+                      identity design in .pdf format (no page count limitation).
+                    </li>
+                    <li>
+                      Products for Life: requires a submission of the
+                      product/service design/description in .pdf format (no page
+                      count limitation).
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  Select and get inspired by one of the following themes/moods
+                  and relate your submission to it: eternal, endless summer,
+                  urban soul, the whim, fantasy, crazy about, nothing hidden,
+                  where the air flows, cool things, wonderland. You can find
+                  these moods in our Collection 2024 Lookbook at{" "}
+                  <a
+                    href="https://phoenix.lk/downloads"
+                    class="text-blue-500 underline"
+                  >
+                    phoenix.lk/downloads
+                  </a>
+                  .
+                </li>
+
+                <li>
+                  Submissions will be evaluated based on relevance to the
+                  selected competition theme, formal proposal, creativity,
+                  technical execution, and final outcome.
+                </li>
+
+                <li>
+                  The submission deadline is the{" "}
+                  <strong>16th of September, 2024</strong>.
+                </li>
+
+                <li>
+                  Submit the duly filled form at{" "}
+                  <a
+                    href="https://pad.phoenix.lk"
+                    class="text-blue-500 underline"
+                  >
+                    pad.phoenix.lk
+                  </a>
+                  .
+                </li>
+
+                <li>Super prizes will be awarded to winners.</li>
+
+                <li>
+                  For any queries, reach out to us through Instagram at{" "}
+                  <a
+                    href="https://instagram.com/pad.phoenix"
+                    class="text-blue-500 underline"
+                  >
+                    @pad.phoenix
+                  </a>
+                  .
+                </li>
+              </ol>
+            </div>
           </div>
           {/* right side */}
           <div className="w-full md:w-full lg:w-1/2 p-4 sm:p-8 mt-5 sm:mt-0 bg-black rounded-tr-none sm:rounded-tr-[20%] relative">
@@ -273,7 +354,7 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
             <h1
               className={`uppercase text-xl text-start sm:text-4xl font-semibold mb-10 text-white`}
             >
-              Upload
+              Pad Awards Submission
             </h1>
             <div className="space-y-12">
               <div className="grid grid-cols-1 gap-x-6 gap-y-7 sm:grid-cols-6">
@@ -378,10 +459,10 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
                 </div>
                 <div className="col-span-full">
                   <label
-                    htmlFor="theme"
+                    htmlFor="Category"
                     className="block text-sm font-medium leading-6 text-white"
                   >
-                    Theme
+                    Category
                   </label>
                   <div className="mt-2 relative rounded-md shadow-sm">
                     <select
@@ -393,9 +474,39 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
                       onChange={(event) => setSelectedTheme(event.target.value)}
                       disabled //If you want selectable remove this. else add this
                     >
-                      <option value="shorts">Shorts</option>
-                      <option value="brand">Brands</option>
-                      <option value="project">Products</option>
+                      <option value="shorts">Shots for life</option>
+                      <option value="brand">Brands for life</option>
+                      <option value="project">Products for life</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="col-span-full">
+                  <label
+                    htmlFor="Moods"
+                    className="block text-sm font-medium leading-6 text-white"
+                  >
+                    Moods
+                  </label>
+                  <div className="mt-2 relative rounded-md shadow-sm">
+                    <select
+                      id="Moods"
+                      name="Moods"
+                      className="block w-full px-3 py-2 rounded-lg border-0 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                      // onChange={(event) => setSelectedRadio(event.target.value)}
+                      value={selectedTheme}
+                      onChange={(event) => setSelectedTheme(event.target.value)}
+                    >
+                      <option value="eternal">Eternal</option>
+                      <option value=" endlesssummer">Endless Summer</option>
+                      <option value="urbansoul">Urban Soul</option>
+                      <option value="urbansoul">The Whim</option>
+                      <option value="urbansoul">fantasy</option>
+                      <option value="urbansoul">Crazy About</option>
+                      <option value="urbansoul">Nothing Hidden</option>
+                      <option value="urbansoul">Where The Air Flows</option>
+                      <option value="urbansoul">cool things</option>
+                      <option value="urbansoul">Wonderland</option>
                     </select>
                   </div>
                 </div>
@@ -447,14 +558,14 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
                       </label>
                       <p className="pl-1 text-white/75">or drag and drop</p>
                     </div>
-                    <p className="text-xs leading-5 text-white/75">
+                    <p className="text-xs leading-5 text-white/75 text-center">
                       Supported formats: JPEG, PNG, GIF, MP4, PDF, PSD, AI,
                       WORD, PPT
                     </p>
                   </div>
                   <div className="mt-2 flex flex-col gap-4">
                     <span className="text-sm font-medium text-white">
-                      Uploading - 3/3 files
+                      Uploading - 1/1 files
                     </span>
                     <span className="text-sm font-medium text-white">
                       Uploaded
