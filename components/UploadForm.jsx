@@ -36,7 +36,7 @@ const criteriaDescriptions = {
 
 const UploadForm = ({ slug }) => {
   const [selectedRadio, setSelectedRadio] = useState("shorts");
-  const [bgColor, setBgColor] = useState("bg-yellow-400");
+  const [bgColor, setBgColor] = useState("bg-[#f7e114]");
   const [textColor, setTextColor] = useState("text-black");
   const [criteria, setCriteria] = useState(criteriaDescriptions["shorts"]);
   const [selectedTheme, setSelectedTheme] = useState("shorts");
@@ -92,7 +92,7 @@ const UploadForm = ({ slug }) => {
       setSelectedTheme("shorts");
     } else if (slug === "brand") {
       setSelectedRadio("brand");
-      setBgColor("bg-[#ee1d52]");
+      setBgColor("bg-[#ea4747]");
       setTextColor("text-white");
       setSelectedTheme("brand");
     } else if (slug === "project") {
@@ -113,7 +113,7 @@ const UploadForm = ({ slug }) => {
         setSelectedTheme("shorts");
         break;
       case "brand":
-        setBgColor("bg-[#ee1d52]");
+        setBgColor("bg-[#ea4747]");
         setTextColor("text-white");
         setCriteria(criteriaDescriptions["brand"]);
         setSelectedTheme("brand");

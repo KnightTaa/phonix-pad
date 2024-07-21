@@ -5,10 +5,24 @@ import gsap from "gsap";
 import OtherTestLanding from "@/components/OtherTestLanding";
 import Toast from "../components/ToastContainer";
 import LandingPage from "@/components/LandingPage";
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [loderFinish, setLoderFinish] = useState(false);
   const [timeline, setTimeline] = useState(null);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      console.log(performance.getEntriesByType('navigation')[0].type, 'reload');
+      if (performance.getEntriesByType('navigation')[0].type === 'reload') {
+        // Redirect to image page on reload
+        router.refresh('/apply');
+        
+      }
+    }
+  }, []);
 
   useLayoutEffect(() => {
     const context = gsap.context(() => {

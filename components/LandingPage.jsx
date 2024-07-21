@@ -586,11 +586,11 @@ const LandingPage = () => {
             });
 
             // New 7/10/24
-            gsap.to(afyellowLogoRef.current, {
+            gsap.set(afyellowLogoRef.current, {
               opacity: 1,
               duration: 1,
               onComplete: () => {
-                gsap.to(yellowLogoRef.current, {
+                gsap.set(yellowLogoRef.current, {
                   display: "none",
                 });
               },
@@ -1353,7 +1353,7 @@ const LandingPage = () => {
             </button>
           </div>
           <div className="mr-2 ml-2 sm:mr-10 sm:ml-0 mt-10 sm:mt-0 flex items-start flex-col gap-2 sm:gap-10 sm:w-[70%] text-justify">
-            <h1 className="text-2xl xl:text-4xl 2xl:text-5xl font-semibold">
+            <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
               Phoenix Arts and Design (PAD)
             </h1>
             <p className="text-base xl:text-lg 2xl:text-xl font-medium">
@@ -1426,7 +1426,7 @@ const LandingPage = () => {
               />
               {/* New 7/10/24 end */}
 
-              <Link href={"/uploads"}>
+              <Link href={"/apply"}>
                 <Image
                   src={"/REGISTER1.png"}
                   width={400}
@@ -1505,7 +1505,7 @@ const LandingPage = () => {
               />
               {/* New 7/10/24 end */}
 
-              <Link href={"/uploads"}>
+              <Link href={"/apply"}>
                 <Image
                   src={"/REGISTER1.png"}
                   width={400}
@@ -1524,7 +1524,7 @@ const LandingPage = () => {
               <div className="flex items-start flex-col gap-4 text-justify w-full xl:w-[60%] 2xl:w-[60%]">
                 <div className="flex items-center justify-between gap-3 w-full ">
                   <h1 className="text-2xl xl:text-5xl 2xl:text-6xl font-bold uppercase text-white font-arial">
-                    Produts <span className="font-bold uppercase font-arial text-black"> For Life</span>
+                   Products <span className="font-bold uppercase font-arial text-black"> For Life</span>
                   </h1>
                 </div>
                 <div class="container mx-auto justify-between">
@@ -1547,7 +1547,7 @@ const LandingPage = () => {
         </div>
         {/* red content absolute left-[72%]*/}
         <div
-          className="h-[28%] sm:h-screen w-full sm:w-[28%] absolute left-0 sm:left-[100%] top-[100%] sm:top-0 bg-[#ee1d52]"
+          className="h-[28%] sm:h-screen w-full sm:w-[28%] absolute left-0 sm:left-[100%] top-[100%] sm:top-0 bg-[#ea4747]"
           ref={redDivRef}
         >
           <div className="w-full h-full relative">
@@ -1578,7 +1578,7 @@ const LandingPage = () => {
               />
               {/* New 7/10/24 end */}
 
-              <Link href={"/uploads"}>
+              <Link href={"/apply"}>
                 <Image
                   src={"/REGISTER1.png"}
                   width={400}
