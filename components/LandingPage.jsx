@@ -1283,8 +1283,8 @@ const LandingPage = () => {
           className="block sm:hidden absolute top-0 right-[0%] z-10 mr-2 mt-2 opacity-0 outline-none"
           ref={threeDotsRef}
         >
-          <button onClick={handleThreeDotsClick} className="outline-none">
-            <HiDotsHorizontal size={36} />
+          <button onClick={handleThreeDotsClick} className="outline-none hidden">
+            <HiDotsHorizontal size={38} />
           </button>
         </div>
         {/* left */}
@@ -1316,7 +1316,8 @@ const LandingPage = () => {
             >
               <button
                 onClick={handleOtherLinks}
-                className="flex items-center justify-center outline-none"
+                // flex items-center justify-center outline-none
+                className="items-center justify-center outline-none hidden"
               >
                 <HiDotsHorizontal
                   size={34}

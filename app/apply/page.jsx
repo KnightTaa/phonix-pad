@@ -7,7 +7,7 @@ import Link from "next/link";
 const Uploads = () => {
   return (
     <div className="w-full min-h-screen flex flex-col sm:flex-row relative">
-      <div className="w-full sm:w-[7.5%] bg-black">
+      <div className="w-full max-h-screen sticky top-0 sm:w-[7.5%] z-50 bg-black">
         <div className="w-full h-full rotate-0 sm:-rotate-[90deg] flex items-center justify-center">
           <Link href={"/"}>
             <Image

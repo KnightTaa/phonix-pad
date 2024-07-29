@@ -55,12 +55,6 @@ const Shots = () => {
         <li>Your entry must be your own work</li>
 
         <li>
-          Submissions will be evaluated based on relevance to the selected
-          competition theme, formal proposal, creativity, technical execution,
-          and final outcome.
-        </li>
-
-        <li>
           Image format <strong>JPEG</strong>.
         </li>
 
@@ -117,7 +111,7 @@ const Brands = () => {
         <li>Tell us the prompt you chose</li>
 
         <li>
-          Tell us how your photo relates to your chosen prompt (150 words max)
+        The reason you chose the product/service and how it was inspired by the prompt you chose (Max 150 words)
         </li>
 
         <li>
@@ -178,14 +172,14 @@ const Products = () => {
           Design a product inspired by one of the ten moods in our{" "}
           <strong> <a
                 href="https://phoenix.lk/media/downloads/Lookbook-LR31.1.2024.pdf"
-                className="text-black-500 underline"
+                className="text-blue-500 underline"
               >2024 collection Lookbook</a></strong>
         </li>
 
         <li>Tell us the prompt you chose</li>
 
         <li>
-          Tell us how your photo relates to your chosen prompt (150 words max)
+        How your product relates to the prompt you chose (Max 150 words)
         </li>
 
         <li>
@@ -797,7 +791,7 @@ const UploadForm = ({ slug }) => {
                       Upload your File
                     </label>
                     <div
-                      className={`w-full h-[200px] flex flex-col justify-center items-center border-dashed border-2 ${
+                      className={`w-full h-[200px] flex flex-col justify-center items-center border-dashed border-2 rounded-lg ${
                         file ? "border-green-500" : "border-[#666666]"
                       }`}
                     >
