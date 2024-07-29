@@ -76,7 +76,7 @@ const Shots = () => {
           For any queries, reach out to us through Instagram at{" "}
           <a
             href="https://instagram.com/pad.phoenix"
-            class="text-blue-500 underline"
+            className="text-blue-500 underline"
           >
             @pad.phoenix
           </a>
@@ -146,7 +146,7 @@ const Brands = () => {
           For any queries, reach out to us through Instagram at{" "}
           <a
             href="https://instagram.com/pad.phoenix"
-            class="text-blue-500 underline"
+            className="text-blue-500 underline"
           >
             @pad.phoenix
           </a>
@@ -226,7 +226,7 @@ const Products = () => {
           For any queries, reach out to us through Instagram at{" "}
           <a
             href="https://instagram.com/pad.phoenix"
-            class="text-blue-500 underline"
+            className="text-blue-500 underline"
           >
             @pad.phoenix
           </a>
@@ -817,8 +817,7 @@ const UploadForm = ({ slug }) => {
                             : "Browse or drag and drop"}
                         </span>
                         <span className="text-xs text-center">
-                          Supported formats: JPEG, PNG, GIF, MP4, PDF, PSD, AI,
-                          WORD, PPT
+                          Supported formats: JPEG, PDF
                         </span>
                       </label>
                     </div>
