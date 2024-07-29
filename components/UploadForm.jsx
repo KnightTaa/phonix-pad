@@ -34,15 +34,12 @@ const Shots = () => {
       <ol class="list-decimal pl-6 space-y-4 mt-5 mb-5">
         <li>
           Pick one of the 10 moods from our{" "}
-          <strong>2024 collection Lookbook</strong>
-          <ul>
-            <li>
-              <a
+          <strong> <a
                 href="https://phoenix.lk/media/downloads/Lookbook-LR31.1.2024.pdf"
                 className="text-blue-500 underline"
-              >
-                (https://phoenix.lk/media/downloads/Lookbook-LR31.1.2024.pdf)
-              </a>{" "}
+              >2024 collection Lookbook</a></strong>
+          <ul>
+            <li>
               as a prompt for your entry and share your interpretation of the
               chosen prompt with your photograph
             </li>
@@ -110,7 +107,10 @@ const Brands = () => {
         <li>
           Pick <strong>any</strong> product or service inspired by one of the
           ten moods in our
-          <strong> 2024 Collection Lookbook</strong>, and develop a hypothetical
+          <strong> <strong> <a
+                href="https://phoenix.lk/media/downloads/Lookbook-LR31.1.2024.pdf"
+                className="text-blue-500 underline"
+              >2024 collection Lookbook</a></strong></strong>, and develop a hypothetical
           brand identity for it
         </li>
 
@@ -176,7 +176,10 @@ const Products = () => {
       <ol class="list-decimal pl-6 space-y-4 mt-5 mb-5">
         <li>
           Design a product inspired by one of the ten moods in our{" "}
-          <strong>2024 Collection Lookbook!</strong>
+          <strong> <a
+                href="https://phoenix.lk/media/downloads/Lookbook-LR31.1.2024.pdf"
+                className="text-black-500 underline"
+              >2024 collection Lookbook</a></strong>
         </li>
 
         <li>Tell us the prompt you chose</li>
@@ -258,7 +261,7 @@ const criteriaTitles = {
 
 const UploadForm = ({ slug }) => {
   const [selectedRadio, setSelectedRadio] = useState("shorts");
-  const [bgColor, setBgColor] = useState("bg-yellow-400");
+  const [bgColor, setBgColor] = useState("bg-[#f7e114]");
   const [textColor, setTextColor] = useState("text-black");
   const [title, setTitle] = useState(criteriaTitles["shorts"]);
   const [criteria, setCriteria] = useState(criteriaDescriptions["shorts"]);
@@ -316,7 +319,7 @@ const UploadForm = ({ slug }) => {
       setSelectedTheme("shorts");
     } else if (slug === "brand") {
       setSelectedRadio("brand");
-      setBgColor("bg-[#ee1d52]");
+      setBgColor("bg-[#ea4747]");
       setTextColor("text-white");
       setSelectedTheme("brand");
     } else if (slug === "project") {
@@ -338,7 +341,7 @@ const UploadForm = ({ slug }) => {
         setSelectedTheme("shorts");
         break;
       case "brand":
-        setBgColor("bg-[#ee1d52]");
+        setBgColor("bg-[#ea4747]");
         setTextColor("text-white/90");
         setCriteria(criteriaDescriptions["brand"]);
         setTitle(criteriaTitles["brand"]);
