@@ -25,29 +25,254 @@ const countries = [
   { value: "PH", label: "🇵🇭", code: "+63" },
 ];
 
+const Shots = () => {
+  return (
+    <>
+      <strong className="">
+        All entries must meet the following criteria:
+      </strong>
+      <ol class="list-decimal pl-6 space-y-4 mt-5 mb-5">
+        <li>
+          Pick one of the 10 moods from our{" "}
+          <strong>2024 collection Lookbook</strong>
+          <ul>
+            <li>
+              <a
+                href="https://phoenix.lk/media/downloads/Lookbook-LR31.1.2024.pdf"
+                className="text-blue-500 underline"
+              >
+                (https://phoenix.lk/media/downloads/Lookbook-LR31.1.2024.pdf)
+              </a>{" "}
+              as a prompt for your entry and share your interpretation of the
+              chosen prompt with your photograph
+            </li>
+          </ul>
+        </li>
+
+        <li>Tell us the prompt you chose</li>
+
+        <li>
+          Tell us how your photo relates to your chosen prompt (150 words max)
+        </li>
+
+        <li>Your entry must be your own work</li>
+
+        <li>
+          Submissions will be evaluated based on relevance to the selected
+          competition theme, formal proposal, creativity, technical execution,
+          and final outcome.
+        </li>
+
+        <li>
+          Image format <strong>JPEG</strong>.
+        </li>
+
+        <li>
+          Image size: No more than <strong>25MB</strong>.
+        </li>
+
+        <li>
+          Our only rule is that we want to see your photo as is (ie, No
+          technical retouching, edits or copyright logos will be allowed)
+        </li>
+
+        <li>
+          Enter by submitting your Photo online at pad.phoenix.lk. The
+          submission deadline is the <strong>16th of September, 2024</strong>
+        </li>
+
+        <li>
+          For any queries, reach out to us through Instagram at{" "}
+          <a
+            href="https://instagram.com/pad.phoenix"
+            class="text-blue-500 underline"
+          >
+            @pad.phoenix
+          </a>
+          .
+        </li>
+      </ol>
+      <strong>
+        Super prizes await the winners! We look forward to your entry & all the
+        best!!
+      </strong>
+    </>
+  );
+};
+
+const Brands = () => {
+  return (
+    <>
+      <strong className="">
+        All entries must meet the following criteria:
+      </strong>
+      <ol class="list-decimal pl-6 space-y-4 mt-5 mb-5">
+        <li>
+          Pick <strong>any</strong> product or service inspired by one of the
+          ten moods in our
+          <strong> 2024 Collection Lookbook</strong>, and develop a hypothetical
+          brand identity for it
+        </li>
+
+        <li>Tell us the prompt you chose</li>
+
+        <li>
+          Tell us how your photo relates to your chosen prompt (150 words max)
+        </li>
+
+        <li>
+          <strong>Your brand identity should include:</strong>
+          <ul className="list-disc pl-6 space-y-1">
+            <li>
+              Not just a logo, but also examples of its application across
+              different items as part of the product’s brand visual system (as
+              many examples you create, the more opportunity for the jury to
+              understand your idea)
+            </li>
+            <li>How would you promote your product/service</li>
+          </ul>
+        </li>
+
+        <li>Your entry must be your own work</li>
+
+        <li>
+          Entry format: <strong>PDF</strong>.
+        </li>
+
+        <li>
+          Entry file size: No more than <strong>25MB</strong>.
+        </li>
+
+        <li>
+          Enter by submitting your Photo online at pad.phoenix.lk. The
+          submission deadline is the <strong>16th of September, 2024</strong>
+        </li>
+
+        <li>
+          For any queries, reach out to us through Instagram at{" "}
+          <a
+            href="https://instagram.com/pad.phoenix"
+            class="text-blue-500 underline"
+          >
+            @pad.phoenix
+          </a>
+          .
+        </li>
+      </ol>
+      <strong>
+        Super prizes await the winners! We look forward to your entry & all the
+        best!!
+      </strong>
+    </>
+  );
+};
+
+const Products = () => {
+  return (
+    <>
+      <strong className="">
+        All entries must meet the following criteria:
+      </strong>
+      <ol class="list-decimal pl-6 space-y-4 mt-5 mb-5">
+        <li>
+          Design a product inspired by one of the ten moods in our{" "}
+          <strong>2024 Collection Lookbook!</strong>
+        </li>
+
+        <li>Tell us the prompt you chose</li>
+
+        <li>
+          Tell us how your photo relates to your chosen prompt (150 words max)
+        </li>
+
+        <li>
+          <strong>
+            The following must come through clearly in your entry:
+          </strong>
+          <ul className="list-disc pl-6 space-y-1">
+            <li>
+              Your process of identifying the idea, the conceptualization, and
+              the conclusion
+            </li>
+            <li>
+              Concept sketches (the more, the better – we would like to see how
+              you put your ideas on paper!)
+            </li>
+            <li>
+              A prototype that tests functional and aesthetic aspects (this can
+              be a 3D model or a physical prototype with clay). Please insert
+              clear and legible images/renders of the prototypes
+            </li>
+            <li>
+              Your presentation should communicate the final product in a clear
+              and understandable
+            </li>
+          </ul>
+        </li>
+
+        <li>Your entry must be your own work</li>
+
+        <li>
+          Entry format: <strong>PDF</strong>.
+        </li>
+
+        <li>
+          Entry file size: No more than <strong>25MB</strong>.
+        </li>
+
+        <li>
+          Enter by submitting your Photo online at pad.phoenix.lk. The
+          submission deadline is the <strong>16th of September, 2024</strong>
+        </li>
+
+        <li>
+          For any queries, reach out to us through Instagram at{" "}
+          <a
+            href="https://instagram.com/pad.phoenix"
+            class="text-blue-500 underline"
+          >
+            @pad.phoenix
+          </a>
+          .
+        </li>
+      </ol>
+      <strong>
+        Super prizes await the winners! We look forward to your entry & all the
+        best!!
+      </strong>
+    </>
+  );
+};
+
 const criteriaDescriptions = {
-  shorts:
-    "shots Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab.",
-  brand:
-    "brands Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab..",
-  project:
-    "products Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur ducimus ab sunt mollitia, magnam eveniet. Similique tempora eligendi dolorem soluta veritatis laboriosam nostrum quo culpa aperiam officiis doloremque pariatur excepturi voluptates magni mollitia corrupti, dicta ut rem laborum possimus illum nobis? Vero deserunt eum repellendus porro in nobis excepturi, est earum aspernatur quos necessitatibus tempore a nihil facere ab beatae doloribus libero animi quisquam, rerum molestias neque! Vel non deleniti dignissimos cumque perferendis distinctio voluptatum praesentium officia explicabo ab.",
+  shorts: <Shots />,
+  brand: <Brands />,
+  project: <Products />,
+};
+
+const criteriaTitles = {
+  shorts: "Shots for Life (Photography)",
+  brand: "Brands for Life (Graphic Design)",
+  project: "Products for Life (Product & Industrial Design)",
 };
 
 const UploadForm = ({ slug }) => {
   const [selectedRadio, setSelectedRadio] = useState("shorts");
-  const [bgColor, setBgColor] = useState("bg-[#f7e114]");
+  const [bgColor, setBgColor] = useState("bg-yellow-400");
   const [textColor, setTextColor] = useState("text-black");
+  const [title, setTitle] = useState(criteriaTitles["shorts"]);
   const [criteria, setCriteria] = useState(criteriaDescriptions["shorts"]);
   const [selectedTheme, setSelectedTheme] = useState("shorts");
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
   const [file, setFile] = useState(null);
-  const [fName, setFname] = useState('');
-  const [lName, setLname] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [dis, setDis] = useState('');
-  const [message, setMessage] = useState('');
+  const [fName, setFname] = useState("");
+  const [lName, setLname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [dis, setDis] = useState("");
+  const [message, setMessage] = useState("");
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [uploading, setUploading] = useState(false);
 
   const phonePlaceholder = selectedCountry ? selectedCountry.code : "";
 
@@ -59,8 +284,8 @@ const UploadForm = ({ slug }) => {
     // console.log(e.target.files[0]);
     // setFile(e.target.files[0]);
     const selectedFile = e.target.files[0];
-        console.log("Selected File:", selectedFile);
-        setFile(selectedFile);
+    console.log("Selected File:", selectedFile);
+    setFile(selectedFile);
   };
 
   const handleFNameChange = (e) => {
@@ -83,7 +308,6 @@ const UploadForm = ({ slug }) => {
     setDis(e.target.value);
   };
 
-
   useEffect(() => {
     if (slug === "shorts") {
       setSelectedRadio("shorts");
@@ -92,7 +316,7 @@ const UploadForm = ({ slug }) => {
       setSelectedTheme("shorts");
     } else if (slug === "brand") {
       setSelectedRadio("brand");
-      setBgColor("bg-[#ea4747]");
+      setBgColor("bg-[#ee1d52]");
       setTextColor("text-white");
       setSelectedTheme("brand");
     } else if (slug === "project") {
@@ -110,18 +334,21 @@ const UploadForm = ({ slug }) => {
         setBgColor("bg-[#f7e114]");
         setTextColor("text-black");
         setCriteria(criteriaDescriptions["shorts"]);
+        setTitle(criteriaTitles["shorts"]);
         setSelectedTheme("shorts");
         break;
       case "brand":
-        setBgColor("bg-[#ea4747]");
-        setTextColor("text-white");
+        setBgColor("bg-[#ee1d52]");
+        setTextColor("text-white/90");
         setCriteria(criteriaDescriptions["brand"]);
+        setTitle(criteriaTitles["brand"]);
         setSelectedTheme("brand");
         break;
       case "project":
         setBgColor("bg-[#00d3c8]");
         setTextColor("text-black");
         setCriteria(criteriaDescriptions["project"]);
+        setTitle(criteriaTitles["project"]);
         setSelectedTheme("project");
         break;
       default:
@@ -129,9 +356,58 @@ const UploadForm = ({ slug }) => {
     }
   };
 
+  // Previous Handle Submit Function
+
+  // const handleSubmit = async (e) => {
+  //   console.log(file, "afa");
+  //   e.preventDefault();
+  //   const formData = new FormData();
+  //   formData.append("file", file);
+  //   formData.append("name", fName + " " + lName);
+  //   formData.append("filename", "test123");
+  //   formData.append("email", email);
+  //   formData.append("phoneNumber", phone);
+  //   formData.append("decription", dis);
+  //   formData.append(
+  //     "eventType",
+  //     selectedTheme === "shorts" ? "life" : selectedTheme
+  //   );
+
+  //   // console.log(formData, 'formData');
+
+  //   for (let pair of formData.entries()) {
+  //     console.log(pair[0] + ": " + pair[1], "formData");
+  //   }
+
+  //   //   const response = await fetch('http://localhost:8000/api/upload', {
+  //   //     method: 'POST',
+  //   //     body: formData,
+  //   // });
+
+  //   const response = await fetch(
+  //     "https://padawards.com.phoenixlk.com/backend/public/api/upload",
+  //     {
+  //       method: "POST",
+  //       body: formData,
+  //     }
+  //   );
+  //   // const response = await API.post('/upload', formData);
+
+  //   const data = await response.json();
+  //   if (response.ok) {
+  //     toast.success("Register successfully!");
+  //   } else {
+  //     console.error("Error posting data:", error);
+  //     toast.error("Error submitting form");
+  //   }
+  // };
+
+
+
+  // New Handle Submit Function
   const handleSubmit = async (e) => {
-    console.log(file, 'afa');
     e.preventDefault();
+    setUploading(true);
     const formData = new FormData();
     formData.append('file', file);
     formData.append('name', fName + " " + lName);
@@ -141,35 +417,53 @@ const UploadForm = ({ slug }) => {
     formData.append('decription', dis);
     formData.append('eventType', (selectedTheme === "shorts") ? "life" : selectedTheme);
 
-    // console.log(formData, 'formData');
-
     for (let pair of formData.entries()) {
       console.log(pair[0] + ': ' + pair[1], 'formData');
-  }
-
-//   const response = await fetch('http://localhost:8000/api/upload', {
-//     method: 'POST',
-//     body: formData,
-// });
-
-const response = await fetch('https://padawards.com.phoenixlk.com/backend/public/api/upload', {
-  method: 'POST',
-  body: formData,
-});
-    // const response = await API.post('/upload', formData);
-
-    const data = await response.json();
-    if (response.ok) {
-      toast.success('Register successfully!');
-    } else {
-      console.error("Error posting data:", error);
-      toast.error("Error submitting form");
     }
-};
+
+    try {
+      const response = await fetch('https://padawards.com.phoenixlk.com/backend/public/api/upload', {
+        method: 'POST',
+        body: formData,
+        onUploadProgress: (progressEvent) => {
+          const total = progressEvent.total;
+          const current = progressEvent.loaded;
+          const progress = Math.round((current / total) * 100);
+          setUploadProgress(progress);
+        }
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        toast.success('Register successfully!');
+        setMessage("Uploaded");
+        setUploading(false);
+        setUploadProgress(0);
+        setFile(null);
+        setFname('');
+        setLname('');
+        setEmail('');
+        setPhone('');
+        setDis('');
+      } else {
+        console.error("Error posting data:", data);
+        toast.error("Error submitting form");
+        setUploading(false);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Error submitting form");
+      setUploading(false);
+    }
+  };
+
   return (
     <section className={`w-full min-h-screen font-arial ${bgColor}`}>
       <Wrapper className="w-full min-h-screen flex flex-col items-center justify-center">
-        <form className="w-full flex flex-col md:flex-col lg:flex-row justify-between gap-5 p-2 sm:p-4" onSubmit={handleSubmit}>
+        <form
+          className="w-full flex flex-col md:flex-col lg:flex-row justify-between gap-5 p-2 sm:p-4"
+          onSubmit={handleSubmit}
+        >
           {/* left side */}
           <div className="w-full md:w-full lg:w-1/2 flex flex-col gap-2">
             <h1
@@ -255,95 +549,14 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
               </div>
             </fieldset>
             <h1
-              className={`uppercase text-xl text-start sm:text-3xl font-semibold mt-10 ${textColor}`}
+              className={`uppercase text-xl text-start sm:text-2xl font-bold mt-5 ${textColor}`}
             >
-              Select your project
+              Applying Criteria for {title}
             </h1>
             <div
               className={`text-base sm:text-lg font-medium mt-5 ${textColor}`}
             >
-              {/* {criteria} */}
-              <ol class="list-decimal pl-6 space-y-4">
-                <li>
-                  <strong>Categories:</strong>
-                  <ul class="list-disc pl-6 space-y-1">
-                    <li>Shots for Life (Photography)</li>
-                    <li>Brands for Life (Graphic Designing)</li>
-                    <li>Products for Life (Product Designing)</li>
-                  </ul>
-                </li>
-
-                <li>Submissions are open to any creative mind.</li>
-
-                <li>
-                  <strong>Submission formats:</strong>
-                  <ul class="list-disc pl-6 space-y-1">
-                    <li>
-                      Shots for Life: requires a submission of the photo in .jpg
-                      or .png format.
-                    </li>
-                    <li>
-                      Brands for Life: requires a submission of the brand
-                      identity design in .pdf format (no page count limitation).
-                    </li>
-                    <li>
-                      Products for Life: requires a submission of the
-                      product/service design/description in .pdf format (no page
-                      count limitation).
-                    </li>
-                  </ul>
-                </li>
-
-                <li>
-                  Select and get inspired by one of the following themes/moods
-                  and relate your submission to it: eternal, endless summer,
-                  urban soul, the whim, fantasy, crazy about, nothing hidden,
-                  where the air flows, cool things, wonderland. You can find
-                  these moods in our Collection 2024 Lookbook at{" "}
-                  <a
-                    href="https://phoenix.lk/downloads"
-                    class="text-blue-500 underline"
-                  >
-                    phoenix.lk/downloads
-                  </a>
-                  .
-                </li>
-
-                <li>
-                  Submissions will be evaluated based on relevance to the
-                  selected competition theme, formal proposal, creativity,
-                  technical execution, and final outcome.
-                </li>
-
-                <li>
-                  The submission deadline is the{" "}
-                  <strong>16th of September, 2024</strong>.
-                </li>
-
-                <li>
-                  Submit the duly filled form at{" "}
-                  <a
-                    href="https://pad.phoenix.lk"
-                    class="text-blue-500 underline"
-                  >
-                    pad.phoenix.lk
-                  </a>
-                  .
-                </li>
-
-                <li>Super prizes will be awarded to winners.</li>
-
-                <li>
-                  For any queries, reach out to us through Instagram at{" "}
-                  <a
-                    href="https://instagram.com/pad.phoenix"
-                    class="text-blue-500 underline"
-                  >
-                    @pad.phoenix
-                  </a>
-                  .
-                </li>
-              </ol>
+              {criteria}
             </div>
           </div>
           {/* right side */}
@@ -354,7 +567,7 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
             <h1
               className={`uppercase text-xl text-start sm:text-4xl font-semibold mb-10 text-white`}
             >
-              Pad Awards Submission
+              Upload
             </h1>
             <div className="space-y-12">
               <div className="grid grid-cols-1 gap-x-6 gap-y-7 sm:grid-cols-6">
@@ -459,7 +672,7 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
                 </div>
                 <div className="col-span-full">
                   <label
-                    htmlFor="Category"
+                    htmlFor="theme"
                     className="block text-sm font-medium leading-6 text-white"
                   >
                     Category
@@ -474,39 +687,9 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
                       onChange={(event) => setSelectedTheme(event.target.value)}
                       disabled //If you want selectable remove this. else add this
                     >
-                      <option value="shorts">Shots for life</option>
-                      <option value="brand">Brands for life</option>
-                      <option value="project">Products for life</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="col-span-full">
-                  <label
-                    htmlFor="Moods"
-                    className="block text-sm font-medium leading-6 text-white"
-                  >
-                    Moods
-                  </label>
-                  <div className="mt-2 relative rounded-md shadow-sm">
-                    <select
-                      id="Moods"
-                      name="Moods"
-                      className="block w-full px-3 py-2 rounded-lg border-0 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                      // onChange={(event) => setSelectedRadio(event.target.value)}
-                      value={selectedTheme}
-                      onChange={(event) => setSelectedTheme(event.target.value)}
-                    >
-                      <option value="eternal">Eternal</option>
-                      <option value=" endlesssummer">Endless Summer</option>
-                      <option value="urbansoul">Urban Soul</option>
-                      <option value="urbansoul">The Whim</option>
-                      <option value="urbansoul">fantasy</option>
-                      <option value="urbansoul">Crazy About</option>
-                      <option value="urbansoul">Nothing Hidden</option>
-                      <option value="urbansoul">Where The Air Flows</option>
-                      <option value="urbansoul">cool things</option>
-                      <option value="urbansoul">Wonderland</option>
+                      <option value="shorts">Shorts for Life</option>
+                      <option value="brand">Brands for Life</option>
+                      <option value="project">Products for Life</option>
                     </select>
                   </div>
                 </div>
@@ -524,6 +707,7 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
                       name="description"
                       type="description"
                       autoComplete="email"
+                      placeholder="Description..."
                       onChange={handleDisChange}
                       className="w-full p-4 bg-white border border-gray-200 rounded-lg outline-none resize-none min-h-[150px]"
                     ></textarea>
@@ -531,7 +715,9 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
                 </div>
 
                 <div className="col-span-full">
-                  <label
+
+                  
+                  {/* <label
                     htmlFor="cover-photo"
                     className="block text-sm font-medium leading-6 text-white"
                   >
@@ -558,18 +744,67 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
                       </label>
                       <p className="pl-1 text-white/75">or drag and drop</p>
                     </div>
-                    <p className="text-xs leading-5 text-white/75 text-center">
+                    <p className="text-xs leading-5 text-center text-white/75">
                       Supported formats: JPEG, PNG, GIF, MP4, PDF, PSD, AI,
                       WORD, PPT
                     </p>
                   </div>
                   <div className="mt-2 flex flex-col gap-4">
                     <span className="text-sm font-medium text-white">
-                      Uploading - 1/1 files
+                      Uploading - 3/3 files
                     </span>
                     <span className="text-sm font-medium text-white">
                       Uploaded
                     </span>
+                  </div> */}
+
+
+                  <div className="w-full flex flex-col gap-2">
+                    <label htmlFor="file-upload" className="text-white">
+                      Upload your File
+                    </label>
+                    <div
+                      className={`w-full h-[200px] flex flex-col justify-center items-center border-dashed border-2 ${
+                        file ? "border-green-500" : "border-[#666666]"
+                      }`}
+                    >
+                      <input
+                        id="file-upload"
+                        name="file-upload"
+                        type="file"
+                        className="sr-only"
+                        onChange={handleFileChange}
+                        required
+                      />
+                      <label
+                        htmlFor="file-upload"
+                        className={`relative flex flex-col justify-center items-center text-sm font-medium cursor-pointer text-white`}
+                      >
+                        <CloudArrowUpIcon
+                          className="h-12 w-12"
+                          aria-hidden="true"
+                        />
+                        <span>
+                          {file
+                            ? `Selected: ${file.name}`
+                            : "Browse or drag and drop"}
+                        </span>
+                        <span className="text-xs text-center">
+                          Supported formats: JPEG, PNG, GIF, MP4, PDF, PSD, AI,
+                          WORD, PPT
+                        </span>
+                      </label>
+                    </div>
+                    {uploading && (
+                      <div className="w-full text-center mt-2 text-white">
+                        Uploading - {uploadProgress}%
+                      </div>
+                    )}
+                    {message && (
+                      <div className="w-full text-center mt-2 text-green-500">
+                        {message}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -578,6 +813,7 @@ const response = await fetch('https://padawards.com.phoenixlk.com/backend/public
               <button
                 type="submit"
                 className="text-sm w-full font-semibold leading-6 bg-primary px-6 py-2 rounded-full text-white hover:bg-primary-hover transition-all duration-200"
+                disabled={uploading}
               >
                 Submit
               </button>
