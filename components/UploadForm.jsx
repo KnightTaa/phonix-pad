@@ -684,7 +684,7 @@ const UploadForm = ({ slug }) => {
                       onChange={(event) => setSelectedTheme(event.target.value)}
                       disabled //If you want selectable remove this. else add this
                     >
-                      <option value="shorts">Shorts for Life</option>
+                      <option value="shorts">Shots for Life</option>
                       <option value="brand">Brands for Life</option>
                       <option value="project">Products for Life</option>
                     </select>
