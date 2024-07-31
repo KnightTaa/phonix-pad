@@ -6,7 +6,6 @@ import { HiDotsHorizontal } from "react-icons/hi";
 import Link from "next/link";
 import OtherLinks from "./OtherLinks";
 import OtherLinksMobile from "./OtherLinksMobile";
-// import TransitionLinks from "@/utils/TransitionLinks";
 
 const LandingPage = () => {
   const logo1Ref = useRef(null);
@@ -106,6 +105,23 @@ const LandingPage = () => {
         "-=2"
       )
 
+      // After Finalize bellow code please delete
+
+      // .to(
+      //   contentRef.current,
+      //   {
+      //     right: window.innerWidth > 768 ? "0" : "-50%",
+      //     bottom: window.innerWidth > 768 ? "0" : "0",
+      //     left: window.innerWidth > 768 ? "50%" : "0",
+      //     top: window.innerWidth > 768 ? "0" : "12.5%",
+      //     duration: 2,
+      //     ease: "power3.inOut",
+      //   },
+      //   "-=2"
+      // )
+
+      // After Finalize above code please delete
+
       .to(
         leftClickButtonRef.current,
         {
@@ -142,6 +158,8 @@ const LandingPage = () => {
 
     timeline
       .to(rightDivRef.current, {
+        // right: window.innerWidth > 768 ? "-50%" : "0",
+        // bottom: window.innerWidth > 768 ? "0" : "-50%",
         opacity: 0,
         duration: 2,
         ease: "power3.inOut",
@@ -167,6 +185,23 @@ const LandingPage = () => {
         "-=2"
       )
 
+      // After Finalize bellow code please delete
+
+      // .to(
+      //   contentRef.current,
+      //   {
+      //     right: window.innerWidth > 768 ? "0" : "-50%",
+      //     bottom: window.innerWidth > 768 ? "0" : "0",
+      //     left: window.innerWidth > 768 ? "50%" : "0",
+      //     top: window.innerWidth > 768 ? "0" : "12.5%",
+      //     duration: 2,
+      //     ease: "power3.inOut",
+      //   },
+      //   "-=2"
+      // )
+
+      // After Finalize above code please delete
+
       .to(
         leftClickButtonRef.current,
         {
@@ -186,6 +221,8 @@ const LandingPage = () => {
               translateY: "0",
               marginTop: window.innerWidth > 768 ? "70px" : "40px",
               marginLeft: window.innerWidth > 768 ? "80px" : "60px",
+              // marginTop: "60px",
+              // marginLeft: "80px",
               duration: 2,
               ease: "power3.inOut",
             });
@@ -403,6 +440,7 @@ const LandingPage = () => {
         yellowLogoRef.current,
         {
           rotate: "0",
+          // scale: window.innerWidth > 768 ? '1': `${isBackNew ? `${isOpen ? '1' : '1.8'}` : '1'}`,
           duration: 2,
         },
         "-=2"
@@ -412,6 +450,7 @@ const LandingPage = () => {
         teelLogoRef.current,
         {
           rotate: "0",
+          // scale: window.innerWidth > 768 ? '1': `${isBackNew ? `${isTOpen ? '1' : '1.8'}` : '1'}`,
           duration: 2,
         },
         "-=2"
@@ -420,6 +459,7 @@ const LandingPage = () => {
         redLogoRef.current,
         {
           rotate: "0",
+          // scale: window.innerWidth > 768 ? '1': `${isBackNew ? `${isROpen ? '1' : '1.8'}` : '1'}`,
           duration: 2,
         },
         "-=2"
@@ -1243,8 +1283,8 @@ const LandingPage = () => {
           className="block sm:hidden absolute top-0 right-[0%] z-10 mr-2 mt-2 opacity-0 outline-none"
           ref={threeDotsRef}
         >
-          <button onClick={handleThreeDotsClick} className="outline-none hidden">
-            <HiDotsHorizontal size={38} />
+          <button onClick={handleThreeDotsClick} className="outline-none">
+            <HiDotsHorizontal size={36} />
           </button>
         </div>
         {/* left */}
@@ -1276,8 +1316,7 @@ const LandingPage = () => {
             >
               <button
                 onClick={handleOtherLinks}
-                // flex items-center justify-center outline-none
-                className="items-center justify-center outline-none hidden"
+                className="flex items-center justify-center outline-none"
               >
                 <HiDotsHorizontal
                   size={34}
@@ -1359,17 +1398,77 @@ const LandingPage = () => {
           ref={yellowDivRef}
         >
           <div className="w-full h-full relative">
-            <Link href={"/apply"}
+            <button
               className="absolute top-[0%] right-[0%] transform translate-x-0 translate-y-0 inset-0 flex items-center justify-center outline-none"
+              onClick={handleYellowClick}
+              ref={yellowClickButtonRef}
             >
               <Image
                 src={"/image 7.png"}
                 width={400}
                 height={400}
                 alt={"logo"}
+                ref={yellowLogoRef}
                 className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[200px] h-auto block"
               />
-            </Link>
+            </button>
+            {/* Register Button absolute right-[15%] lg:right-[7.6%] xl:right-[6.4%] 2xl:right-[5.8%] top-[22%] sm:top-[20%] z-10*/}
+            {/* 2xl:mr-6 2xl:mt-4  xl:mr-[1.12rem] xl:mt-2 df mr-[1.12rem] mt-3*/}
+            <div className="absolute right-0 mr-[1.12rem] mt-3 2xl:mr-6 2xl:mt-4  xl:mr-[1.12rem] xl:mt-2 flex flex-col items-start justify-center gap-4 z-10">
+              {/* New 7/10/24 start */}
+              <Image
+                src={"/image 7.png"}
+                width={400}
+                height={400}
+                alt={"logo"}
+                ref={afyellowLogoRef}
+                className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[200px] h-auto opacity-[0]"
+              />
+              {/* New 7/10/24 end */}
+
+              <Link href={"/apply"}>
+                <Image
+                  src={"/REGISTER1.png"}
+                  width={400}
+                  height={400}
+                  alt={"logo"}
+                  ref={registerLogoRef}
+                  className="w-[60px] md:w-[80px] xl:w-[100px] 2xl:w-[150px] h-auto opacity-0"
+                />
+              </Link>
+            </div>
+            {/* Content -z-[1]*/}
+            <div
+              className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1] dis-width"
+              ref={ycontentRef}
+            >
+              <div className="flex items-start flex-col gap-4 text-justify w-full xl:w-[50%] 2xl:w-[50%]">
+                {/* Title */}
+                <div className="flex items-center justify-between gap-3 tracking-wider mb-2">
+                  <h1 className="text-2xl xl:text-5xl 2xl:text-[3.80rem] font-bold uppercase text-white font-arial">
+                    Shots <span className="font-bold uppercase font-arial text-black"> For Life</span>
+                  </h1>
+                </div>
+                {/* description */}
+
+                <div class="container mx-auto justify-between">
+                  <div class="w-full pr-10 xl:pr-2 2xl:pr-2">
+                    Platform to promote, support and recognize all those who use
+                    an image as a vehicle to express their creativity, feelings,
+                    memories; all that a creative, professional or amateur want
+                    to transmit to society.
+                  </div>
+                </div>
+                {/* <div className="w-[96%] xl:w-[79%] 2xl:w-[79%]">
+                  <p className="text-lg leading-8 font-medium font-arial">
+                    Platform to promote, support and recognize all those who use
+                    an image as a vehicle to express their creativity, feelings,
+                    memories; all that a creative, professional or amateur want
+                    to transmit to society.
+                  </p>
+                </div> */}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1379,18 +1478,71 @@ const LandingPage = () => {
           ref={teelDivRef}
         >
           <div className="w-full h-full relative">
-            <Link
-              href={"/apply"}
+            <button
               className="absolute top-[0%] right-[0%] transform translate-x-0 translate-y-0 inset-0 flex items-center justify-center outline-none"
+              onClick={handleTeelClick}
+              ref={teelClickButtonRef}
             >
               <Image
                 src={"/image 11.png"}
                 width={400}
                 height={400}
                 alt={"logo"}
+                ref={teelLogoRef}
                 className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[200px] h-auto block"
               />
-            </Link>
+            </button>
+            {/* Register Button right-[15%] xl:right-[6.4%] 2xl:right-[5.8%] top-[22%] sm:top-[20%] z-10*/}
+            <div className="absolute right-0 mr-[1.12rem] mt-3 2xl:mr-6 2xl:mt-4  xl:mr-[1.12rem] xl:mt-2 flex flex-col items-start justify-center gap-4 z-10">
+              {/* New 7/10/24 start */}
+              <Image
+                src={"/image 11.png"}
+                width={400}
+                height={400}
+                alt={"logo"}
+                ref={afteelLogoRef}
+                className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[200px] h-auto opacity-0"
+              />
+              {/* New 7/10/24 end */}
+
+              <Link href={"/apply"}>
+                <Image
+                  src={"/REGISTER1.png"}
+                  width={400}
+                  height={400}
+                  alt={"logo"}
+                  ref={tregisterLogoRef}
+                  className="w-[60px] md:w-[80px] xl:w-[100px] 2xl:w-[150px] h-auto opacity-0"
+                />
+              </Link>
+            </div>
+            {/* Content */}
+            <div
+              className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1] dis-width"
+              ref={tcontentRef}
+            >
+              <div className="flex items-start flex-col gap-4 text-justify w-full xl:w-[60%] 2xl:w-[60%]">
+                <div className="flex items-center justify-between gap-3 w-full ">
+                  <h1 className="text-2xl xl:text-5xl 2xl:text-6xl font-bold uppercase text-white font-arial">
+                   Products <span className="font-bold uppercase font-arial text-black"> For Life</span>
+                  </h1>
+                </div>
+                <div class="container mx-auto justify-between">
+                  <div class="w-full pr-5 xl:pr-6 2xl:pr-6">
+                    Platform to promote all those who want to bring color to our
+                    lives, by creating bold, impactful, and meaningful visual
+                    languages that tell important stories.
+                  </div>
+                </div>
+                {/* <div className="w-[96%] xl:w-[96%] 2xl:w-[74%]">
+                  <p className="text-lg leading-8 font-medium font-arial">
+                    Platform to promote all those who want to bring color to our
+                    lives, by creating bold, impactful, and meaningful visual
+                    languages that tell important stories.
+                  </p>
+                </div> */}
+              </div>
+            </div>
           </div>
         </div>
         {/* red content absolute left-[72%]*/}
@@ -1399,18 +1551,73 @@ const LandingPage = () => {
           ref={redDivRef}
         >
           <div className="w-full h-full relative">
-            <Link
-              href={"/apply"}
+            <button
               className="absolute inset-0 flex items-center justify-center outline-none"
+              onClick={handleRedClick}
+              ref={redClickButtonRef}
             >
               <Image
                 src={"/image 10.png"}
                 width={400}
                 height={400}
                 alt={"logo"}
+                ref={redLogoRef}
                 className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[200px] h-auto block"
               />
-            </Link>
+            </button>
+            {/* Register Button absolute right-[15%] xl:right-[6.4%] 2xl:right-[5.8%] top-[22%] sm:top-[20%] z-10*/}
+            <div className="absolute right-0 mr-[1.12rem] mt-3 2xl:mr-6 2xl:mt-4  xl:mr-[1.12rem] xl:mt-2 flex flex-col items-start justify-center gap-4 z-10">
+              {/* New 7/10/24 start */}
+              <Image
+                src={"/image 10.png"}
+                width={400}
+                height={400}
+                alt={"logo"}
+                ref={afredLogoRef}
+                className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[200px] h-auto opacity-0"
+              />
+              {/* New 7/10/24 end */}
+
+              <Link href={"/apply"}>
+                <Image
+                  src={"/REGISTER1.png"}
+                  width={400}
+                  height={400}
+                  alt={"logo"}
+                  ref={rregisterLogoRef}
+                  className="w-[60px] md:w-[80px] xl:w-[100px] 2xl:w-[150px] h-auto opacity-0"
+                />
+              </Link>
+            </div>
+            {/* Content */}
+            <div
+              className="absolute left-0 bottom-0 ml-5 sm:ml-10 mb-5 sm:mb-10 opacity-0 -z-[1] dis-width"
+              ref={rcontentRef}
+            >
+              <div className="flex items-start flex-col gap-4 text-justify w-full xl:w-[60%] 2xl:w-[60%]">
+                <div className="flex items-center justify-start gap-3 w-full">
+                  <h1 className="text-2xl xl:text-5xl 2xl:text-6xl font-bold uppercase text-white font-arial">
+                    Brands <span className="font-bold uppercase font-arial text-black"> For Life</span>
+                  </h1>
+                </div>
+                <div class="container mx-auto justify-between">
+                  <div class="w-full pr-8 xl:pr-20 2xl:pr-20">
+                    Platform to promote all those who want to bring color to our
+                    lives, by creating bold, impactful, and meaningful visual
+                    languages that tell important stories.
+                  </div>
+                </div>
+                {/* <div className="w-[95%] xl:w-[75%] 2xl:w-[75%]">
+                  <p className="text-lg leading-8 font-medium font-arial w-full">
+                    Platform to join and promote all individuals who want to
+                    improve peoples lives by creating better products, objects,
+                    services to solve specific or general challenges. By
+                    creating better and respectful products we will grow as a
+                    society, the soul of PAD.
+                  </p>
+                </div> */}
+              </div>
+            </div>
           </div>
         </div>
       </div>
