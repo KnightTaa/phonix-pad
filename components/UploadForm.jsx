@@ -5,6 +5,7 @@ import { CloudArrowUpIcon } from "@heroicons/react/24/solid";
 import Wrapper from "@/components/Wrapper";
 import API from "../services/api";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 const countries = [
   { value: "LK", label: "🇱🇰", code: "+94" },
@@ -34,10 +35,15 @@ const Shots = () => {
       <ol class="list-decimal pl-6 space-y-4 mt-5 mb-5">
         <li>
           Pick one of the 10 moods from our{" "}
-          <strong> <a
-                href="https://phoenix.lk/media/downloads/Lookbook-LR31.1.2024.pdf"
-                className="text-blue-500 underline"
-              >2024 collection Lookbook</a></strong>
+          <strong>
+            {" "}
+            <a
+              href="https://phoenix.lk/media/downloads/Lookbook-LR31.1.2024.pdf"
+              className="text-blue-500 underline"
+            >
+              2024 collection Lookbook
+            </a>
+          </strong>
           <ul>
             <li>
               as a prompt for your entry and share your interpretation of the
@@ -101,17 +107,26 @@ const Brands = () => {
         <li>
           Pick <strong>any</strong> product or service inspired by one of the
           ten moods in our
-          <strong> <strong> <a
+          <strong>
+            {" "}
+            <strong>
+              {" "}
+              <a
                 href="https://phoenix.lk/media/downloads/Lookbook-LR31.1.2024.pdf"
                 className="text-blue-500 underline"
-              >2024 collection Lookbook</a></strong></strong>, and develop a hypothetical
-          brand identity for it
+              >
+                2024 collection Lookbook
+              </a>
+            </strong>
+          </strong>
+          , and develop a hypothetical brand identity for it
         </li>
 
         <li>Tell us the prompt you chose</li>
 
         <li>
-        The reason you chose the product/service and how it was inspired by the prompt you chose (Max 150 words)
+          The reason you chose the product/service and how it was inspired by
+          the prompt you chose (Max 150 words)
         </li>
 
         <li>
@@ -170,16 +185,21 @@ const Products = () => {
       <ol class="list-decimal pl-6 space-y-4 mt-5 mb-5">
         <li>
           Design a product inspired by one of the ten moods in our{" "}
-          <strong> <a
-                href="https://phoenix.lk/media/downloads/Lookbook-LR31.1.2024.pdf"
-                className="text-blue-500 underline"
-              >2024 collection Lookbook</a></strong>
+          <strong>
+            {" "}
+            <a
+              href="https://phoenix.lk/media/downloads/Lookbook-LR31.1.2024.pdf"
+              className="text-blue-500 underline"
+            >
+              2024 collection Lookbook
+            </a>
+          </strong>
         </li>
 
         <li>Tell us the prompt you chose</li>
 
         <li>
-        How your product relates to the prompt you chose (Max 150 words)
+          How your product relates to the prompt you chose (Max 150 words)
         </li>
 
         <li>
@@ -241,6 +261,42 @@ const Products = () => {
   );
 };
 
+const DesShots = () => {
+  return (
+    <div class="container mx-auto justify-between">
+      <p class="w-full text-justify text-lg pr-10 xl:pr-2 2xl:pr-2">
+        Platform to promote, support and recognize all those who use an image as
+        a vehicle to express their creativity, feelings, memories; all that a
+        creative, professional or amateur want to transmit to society.
+      </p>
+    </div>
+  );
+};
+
+const DesBrands = () => {
+  return (
+    <div class="container mx-auto justify-between">
+      <p class="w-full text-justify text-lg text-white pr-5 xl:pr-6 2xl:pr-6">
+        Platform to promote all those who want to bring color to our lives, by
+        creating bold, impactful, and meaningful visual languages that tell
+        important stories.
+      </p>
+    </div>
+  );
+};
+
+const DesProducts = () => {
+  return (
+    <div class="container mx-auto justify-between">
+      <p class="w-full text-justify text-lg pr-8 xl:pr-20 2xl:pr-20">
+        Platform to promote all those who want to bring color to our lives, by
+        creating bold, impactful, and meaningful visual languages that tell
+        important stories.
+      </p>
+    </div>
+  );
+};
+
 const criteriaDescriptions = {
   shorts: <Shots />,
   brand: <Brands />,
@@ -253,12 +309,27 @@ const criteriaTitles = {
   project: "Products for Life (Product & Industrial Design)",
 };
 
+const descriptions = {
+  shorts: <DesShots />,
+  brand: <DesBrands />,
+  project: <DesProducts />,
+};
+
+const DesTitles = {
+  shorts: "Shots",
+  brand: "Brands",
+  project: "Products",
+};
+
 const UploadForm = ({ slug }) => {
+  const router = useRouter();
   const [selectedRadio, setSelectedRadio] = useState("shorts");
   const [bgColor, setBgColor] = useState("bg-[#f7e114]");
   const [textColor, setTextColor] = useState("text-black");
   const [title, setTitle] = useState(criteriaTitles["shorts"]);
+  const [desTitle, setDesTitle] = useState(DesTitles["shorts"]);
   const [criteria, setCriteria] = useState(criteriaDescriptions["shorts"]);
+  const [description, setDescription] = useState(descriptions["shorts"]);
   const [selectedTheme, setSelectedTheme] = useState("shorts");
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
   const [file, setFile] = useState(null);
@@ -332,6 +403,8 @@ const UploadForm = ({ slug }) => {
         setTextColor("text-black");
         setCriteria(criteriaDescriptions["shorts"]);
         setTitle(criteriaTitles["shorts"]);
+        setDesTitle(DesTitles["shorts"]);
+        setDescription(descriptions["shorts"]);
         setSelectedTheme("shorts");
         break;
       case "brand":
@@ -339,6 +412,8 @@ const UploadForm = ({ slug }) => {
         setTextColor("text-white/90");
         setCriteria(criteriaDescriptions["brand"]);
         setTitle(criteriaTitles["brand"]);
+        setDesTitle(DesTitles["brand"]);
+        setDescription(descriptions["brand"]);
         setSelectedTheme("brand");
         break;
       case "project":
@@ -346,6 +421,8 @@ const UploadForm = ({ slug }) => {
         setTextColor("text-black");
         setCriteria(criteriaDescriptions["project"]);
         setTitle(criteriaTitles["project"]);
+        setDesTitle(DesTitles["project"]);
+        setDescription(descriptions["project"]);
         setSelectedTheme("project");
         break;
       default:
@@ -353,104 +430,65 @@ const UploadForm = ({ slug }) => {
     }
   };
 
-  // Previous Handle Submit Function
-
-  // const handleSubmit = async (e) => {
-  //   console.log(file, "afa");
-  //   e.preventDefault();
-  //   const formData = new FormData();
-  //   formData.append("file", file);
-  //   formData.append("name", fName + " " + lName);
-  //   formData.append("filename", "test123");
-  //   formData.append("email", email);
-  //   formData.append("phoneNumber", phone);
-  //   formData.append("decription", dis);
-  //   formData.append(
-  //     "eventType",
-  //     selectedTheme === "shorts" ? "life" : selectedTheme
-  //   );
-
-  //   // console.log(formData, 'formData');
-
-  //   for (let pair of formData.entries()) {
-  //     console.log(pair[0] + ": " + pair[1], "formData");
-  //   }
-
-  //   //   const response = await fetch('http://localhost:8000/api/upload', {
-  //   //     method: 'POST',
-  //   //     body: formData,
-  //   // });
-
-  //   const response = await fetch(
-  //     "https://padawards.com.phoenixlk.com/backend/public/api/upload",
-  //     {
-  //       method: "POST",
-  //       body: formData,
-  //     }
-  //   );
-  //   // const response = await API.post('/upload', formData);
-
-  //   const data = await response.json();
-  //   if (response.ok) {
-  //     toast.success("Register successfully!");
-  //   } else {
-  //     console.error("Error posting data:", error);
-  //     toast.error("Error submitting form");
-  //   }
-  // };
-
-
-
   // New Handle Submit Function
   const handleSubmit = async (e) => {
     e.preventDefault();
     setUploading(true);
     const formData = new FormData();
-    formData.append('file', file);
-    formData.append('name', fName + " " + lName);
-    formData.append('filename', 'test123');
-    formData.append('email', email);
-    formData.append('phoneNumber', phone);
-    formData.append('decription', dis);
-    formData.append('eventType', (selectedTheme === "shorts") ? "life" : selectedTheme);
+    formData.append("file", file);
+    formData.append("name", fName + " " + lName);
+    formData.append("filename", "test123");
+    formData.append("email", email);
+    formData.append("phoneNumber", phone);
+    formData.append("decription", dis);
+    formData.append(
+      "eventType",
+      selectedTheme === "shorts" ? "life" : selectedTheme
+    );
 
     for (let pair of formData.entries()) {
-      console.log(pair[0] + ': ' + pair[1], 'formData');
+      console.log(pair[0] + ": " + pair[1], "formData");
     }
 
     try {
-      const response = await fetch('https://padawards.com.phoenixlk.com/backend/public/api/upload', {
-        method: 'POST',
-        body: formData,
-        onUploadProgress: (progressEvent) => {
-          const total = progressEvent.total;
-          const current = progressEvent.loaded;
-          const progress = Math.round((current / total) * 100);
-          setUploadProgress(progress);
+      const response = await fetch(
+        "https://padawards.com.phoenixlk.com/backend/public/api/upload",
+        {
+          method: "POST",
+          body: formData,
+          onUploadProgress: (progressEvent) => {
+            const total = progressEvent.total;
+            const current = progressEvent.loaded;
+            const progress = Math.round((current / total) * 100);
+            setUploadProgress(progress);
+          },
         }
-      });
+      );
 
       const data = await response.json();
       if (response.ok) {
-        toast.success('Register successfully!');
-        setMessage("Uploaded");
-        setUploading(false);
-        setUploadProgress(0);
-        setFile(null);
-        setFname('');
-        setLname('');
-        setEmail('');
-        setPhone('');
-        setDis('');
+        // toast.success("Register successfully!");
+        // setMessage("Uploaded");
+        // setUploading(false);
+        // setUploadProgress(0);
+        // setFile(null);
+        // setFname("");
+        // setLname("");
+        // setEmail("");
+        // setPhone("");
+        // setDis("");
+        router.push("/success");
       } else {
-        console.error("Error posting data:", data);
-        toast.error("Error submitting form");
-        setUploading(false);
+        // console.error("Error posting data:", data);
+        // toast.error("Error submitting form");
+        router.push("/error");
+        // setUploading(false);
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      toast.error("Error submitting form");
-      setUploading(false);
+      // console.error("Error submitting form:", error);
+      // toast.error("Error submitting form");
+      router.push("/error");
+      // setUploading(false);
     }
   };
 
@@ -545,6 +583,19 @@ const UploadForm = ({ slug }) => {
                 </div>
               </div>
             </fieldset>
+            <div className="my-5">
+              <h2 className="uppercase text-2xl text-start sm:text-5xl font-semibold text-white font-arial">
+                {desTitle}{" "}
+                <span className="font-bold uppercase font-arial text-black">
+                  {" "}
+                  For Life
+                </span>
+              </h2>
+
+              <br />
+
+              {description}
+            </div>
             <h1
               className={`uppercase text-xl text-start sm:text-2xl font-bold mt-5 ${textColor}`}
             >
@@ -742,8 +793,6 @@ const UploadForm = ({ slug }) => {
                 </div>
 
                 <div className="col-span-full">
-
-                  
                   {/* <label
                     htmlFor="cover-photo"
                     className="block text-sm font-medium leading-6 text-white"
@@ -784,7 +833,6 @@ const UploadForm = ({ slug }) => {
                       Uploaded
                     </span>
                   </div> */}
-
 
                   <div className="w-full flex flex-col gap-2">
                     <label htmlFor="file-upload" className="text-white">
