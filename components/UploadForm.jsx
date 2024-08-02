@@ -765,7 +765,7 @@ const UploadForm = ({ slug }) => {
                     htmlFor="Moods"
                     className="block text-sm font-medium leading-6 text-white"
                   >
-                    Moods
+                    Select your Mood (Theme)
                   </label>
                   <div className="mt-2 relative rounded-md shadow-sm">
                     <select
@@ -795,7 +795,7 @@ const UploadForm = ({ slug }) => {
                     htmlFor="email"
                     className="block text-sm font-medium leading-6 text-white"
                   >
-                    Description
+                    Tell us how your submission related to the Theme
                   </label>
                   <div className="mt-2">
                     <textarea
