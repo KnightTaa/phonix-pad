@@ -40,6 +40,7 @@ const Shots = () => {
             <a
               href="https://phoenix.lk/media/downloads/Lookbook-LR31.1.2024.pdf"
               className="text-blue-500 underline"
+              target="_blank"
             >
               2024 collection Lookbook
             </a>
@@ -75,7 +76,7 @@ const Shots = () => {
 
         <li>
           Enter by submitting your Photo online at pad.phoenix.lk. The
-          submission deadline is the <strong>16th of September, 2024</strong>
+          submission deadline is the <strong>30th of September, 2024</strong>
         </li>
 
         <li>
@@ -83,6 +84,7 @@ const Shots = () => {
           <a
             href="https://instagram.com/pad.phoenix"
             className="text-blue-500 underline"
+            target="_blank"
           >
             @pad.phoenix
           </a>
@@ -114,6 +116,7 @@ const Brands = () => {
               <a
                 href="https://phoenix.lk/media/downloads/Lookbook-LR31.1.2024.pdf"
                 className="text-blue-500 underline"
+                target="_blank"
               >
                 2024 collection Lookbook
               </a>
@@ -154,7 +157,7 @@ const Brands = () => {
 
         <li>
           Enter by submitting your Photo online at pad.phoenix.lk. The
-          submission deadline is the <strong>16th of September, 2024</strong>
+          submission deadline is the <strong>30th of September, 2024</strong>
         </li>
 
         <li>
@@ -162,6 +165,7 @@ const Brands = () => {
           <a
             href="https://instagram.com/pad.phoenix"
             className="text-blue-500 underline"
+            target="_blank"
           >
             @pad.phoenix
           </a>
@@ -190,6 +194,7 @@ const Products = () => {
             <a
               href="https://phoenix.lk/media/downloads/Lookbook-LR31.1.2024.pdf"
               className="text-blue-500 underline"
+              target="_blank"
             >
               2024 collection Lookbook
             </a>
@@ -239,7 +244,7 @@ const Products = () => {
 
         <li>
           Enter by submitting your Photo online at pad.phoenix.lk. The
-          submission deadline is the <strong>16th of September, 2024</strong>
+          submission deadline is the <strong>30th of September, 2024</strong>
         </li>
 
         <li>
@@ -247,6 +252,7 @@ const Products = () => {
           <a
             href="https://instagram.com/pad.phoenix"
             className="text-blue-500 underline"
+            target="_blank"
           >
             @pad.phoenix
           </a>
@@ -298,39 +304,39 @@ const DesProducts = () => {
 };
 
 const criteriaDescriptions = {
-  shorts: <Shots />,
-  brand: <Brands />,
-  project: <Products />,
+  shots: <Shots />,
+  brands: <Brands />,
+  products: <Products />,
 };
 
 const criteriaTitles = {
-  shorts: "Shots for Life (Photography)",
-  brand: "Brands for Life (Graphic Design)",
-  project: "Products for Life (Product & Industrial Design)",
+  shots: "Shots for Life (Photography)",
+  brands: "Brands for Life (Graphic Design)",
+  products: "Products for Life (Product & Industrial Design)",
 };
 
 const descriptions = {
-  shorts: <DesShots />,
-  brand: <DesBrands />,
-  project: <DesProducts />,
+  shots: <DesShots />,
+  brands: <DesBrands />,
+  products: <DesProducts />,
 };
 
 const DesTitles = {
-  shorts: "Shots",
-  brand: "Brands",
-  project: "Products",
+  shots: "Shots",
+  brands: "Brands",
+  products: "Products",
 };
 
 const UploadForm = ({ slug }) => {
   const router = useRouter();
-  const [selectedRadio, setSelectedRadio] = useState("shorts");
+  const [selectedRadio, setSelectedRadio] = useState("shots");
   const [bgColor, setBgColor] = useState("bg-[#f7e114]");
   const [textColor, setTextColor] = useState("text-black");
-  const [title, setTitle] = useState(criteriaTitles["shorts"]);
-  const [desTitle, setDesTitle] = useState(DesTitles["shorts"]);
-  const [criteria, setCriteria] = useState(criteriaDescriptions["shorts"]);
-  const [description, setDescription] = useState(descriptions["shorts"]);
-  const [selectedTheme, setSelectedTheme] = useState("shorts");
+  const [title, setTitle] = useState(criteriaTitles["shots"]);
+  const [desTitle, setDesTitle] = useState(DesTitles["shots"]);
+  const [criteria, setCriteria] = useState(criteriaDescriptions["shots"]);
+  const [description, setDescription] = useState(descriptions["shots"]);
+  const [selectedTheme, setSelectedTheme] = useState("shots");
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
   const [file, setFile] = useState(null);
   const [fName, setFname] = useState("");
@@ -377,53 +383,65 @@ const UploadForm = ({ slug }) => {
   };
 
   useEffect(() => {
-    if (slug === "shorts") {
-      setSelectedRadio("shorts");
+    if (slug === "shots") {
+      setSelectedRadio("shots");
       setBgColor("bg-[#f7e114]");
       setTextColor("text-black");
-      setSelectedTheme("shorts");
-    } else if (slug === "brand") {
-      setSelectedRadio("brand");
+      setSelectedTheme("shots");
+      setCriteria(criteriaDescriptions["shots"]);
+      setTitle(criteriaTitles["shots"]);
+      setDesTitle(DesTitles["shots"]);
+      setDescription(descriptions["shots"]);
+    } else if (slug === "brands") {
+      setSelectedRadio("brands");
       setBgColor("bg-[#ea4747]");
       setTextColor("text-white");
-      setSelectedTheme("brand");
-    } else if (slug === "project") {
-      setSelectedRadio("project");
+      setSelectedTheme("brands");
+      setCriteria(criteriaDescriptions["brands"]);
+      setTitle(criteriaTitles["brands"]);
+      setDesTitle(DesTitles["brands"]);
+      setDescription(descriptions["brands"]);
+    } else if (slug === "products") {
+      setSelectedRadio("products");
       setBgColor("bg-[#00d3c8]");
       setTextColor("text-black");
-      setSelectedTheme("project");
+      setSelectedTheme("products");
+      setCriteria(criteriaDescriptions["products"]);
+      setTitle(criteriaTitles["products"]);
+      setDesTitle(DesTitles["products"]);
+      setDescription(descriptions["products"]);
     }
   }, [slug]);
 
   const handleRadioChange = (radioId) => {
     setSelectedRadio(radioId);
     switch (radioId) {
-      case "shorts":
+      case "shots":
         setBgColor("bg-[#f7e114]");
         setTextColor("text-black");
-        setCriteria(criteriaDescriptions["shorts"]);
-        setTitle(criteriaTitles["shorts"]);
-        setDesTitle(DesTitles["shorts"]);
-        setDescription(descriptions["shorts"]);
-        setSelectedTheme("shorts");
+        setCriteria(criteriaDescriptions["shots"]);
+        setTitle(criteriaTitles["shots"]);
+        setDesTitle(DesTitles["shots"]);
+        setDescription(descriptions["shots"]);
+        setSelectedTheme("shots");
         break;
-      case "brand":
+      case "brands":
         setBgColor("bg-[#ea4747]");
         setTextColor("text-white/90");
-        setCriteria(criteriaDescriptions["brand"]);
-        setTitle(criteriaTitles["brand"]);
-        setDesTitle(DesTitles["brand"]);
-        setDescription(descriptions["brand"]);
-        setSelectedTheme("brand");
+        setCriteria(criteriaDescriptions["brands"]);
+        setTitle(criteriaTitles["brands"]);
+        setDesTitle(DesTitles["brands"]);
+        setDescription(descriptions["brands"]);
+        setSelectedTheme("brands");
         break;
-      case "project":
+      case "products":
         setBgColor("bg-[#00d3c8]");
         setTextColor("text-black");
-        setCriteria(criteriaDescriptions["project"]);
-        setTitle(criteriaTitles["project"]);
-        setDesTitle(DesTitles["project"]);
-        setDescription(descriptions["project"]);
-        setSelectedTheme("project");
+        setCriteria(criteriaDescriptions["products"]);
+        setTitle(criteriaTitles["products"]);
+        setDesTitle(DesTitles["products"]);
+        setDescription(descriptions["products"]);
+        setSelectedTheme("products");
         break;
       default:
         break;
@@ -443,7 +461,7 @@ const UploadForm = ({ slug }) => {
     formData.append("decription", dis);
     formData.append(
       "eventType",
-      selectedTheme === "shorts" ? "life" : selectedTheme
+      selectedTheme === "shots" ? "life" : selectedTheme
     );
 
     for (let pair of formData.entries()) {
@@ -510,17 +528,17 @@ const UploadForm = ({ slug }) => {
             <fieldset className="mt-5">
               <div className="flex items-center gap-10">
                 <input
-                  id="shorts"
-                  name="project"
+                  id="shots"
+                  name="shots"
                   type="radio"
                   className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600 hidden"
-                  checked={selectedRadio === "shorts"}
-                  onChange={() => handleRadioChange("shorts")}
+                  checked={selectedRadio === "shots"}
+                  onChange={() => handleRadioChange("shots")}
                 />
                 <div
-                  onClick={() => handleRadioChange("shorts")}
+                  onClick={() => handleRadioChange("shots")}
                   className={`cursor-pointer transition-all duration-300 ${
-                    selectedRadio === "shorts"
+                    selectedRadio === "shots"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
                   }`}
@@ -534,17 +552,17 @@ const UploadForm = ({ slug }) => {
                   />
                 </div>
                 <input
-                  id="brand"
-                  name="brand"
+                  id="brands"
+                  name="brands"
                   type="radio"
                   className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600 hidden"
-                  checked={selectedRadio === "brand"}
-                  onChange={() => handleRadioChange("brand")}
+                  checked={selectedRadio === "brands"}
+                  onChange={() => handleRadioChange("brands")}
                 />
                 <div
-                  onClick={() => handleRadioChange("brand")}
+                  onClick={() => handleRadioChange("brands")}
                   className={`cursor-pointer transition-all duration-300 ${
-                    selectedRadio === "brand"
+                    selectedRadio === "brands"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
                   }`}
@@ -558,17 +576,17 @@ const UploadForm = ({ slug }) => {
                   />
                 </div>
                 <input
-                  id="project"
-                  name="project"
+                  id="products"
+                  name="products"
                   type="radio"
                   className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600 hidden"
-                  checked={selectedRadio === "project"}
-                  onChange={() => handleRadioChange("project")}
+                  checked={selectedRadio === "products"}
+                  onChange={() => handleRadioChange("products")}
                 />
                 <div
-                  onClick={() => handleRadioChange("project")}
+                  onClick={() => handleRadioChange("products")}
                   className={`cursor-pointer transition-all duration-300 ${
-                    selectedRadio === "project"
+                    selectedRadio === "products"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
                   }`}
@@ -735,9 +753,9 @@ const UploadForm = ({ slug }) => {
                       onChange={(event) => setSelectedTheme(event.target.value)}
                       disabled //If you want selectable remove this. else add this
                     >
-                      <option value="shorts">Shots for Life</option>
-                      <option value="brand">Brands for Life</option>
-                      <option value="project">Products for Life</option>
+                      <option value="shots">Shots for Life</option>
+                      <option value="brands">Brands for Life</option>
+                      <option value="products">Products for Life</option>
                     </select>
                   </div>
                 </div>
