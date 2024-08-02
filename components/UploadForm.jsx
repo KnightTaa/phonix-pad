@@ -803,7 +803,7 @@ const UploadForm = ({ slug }) => {
                       name="description"
                       type="description"
                       autoComplete="email"
-                      placeholder="Description..."
+                      placeholder="Tell us how your submission related to the Theme"
                       onChange={handleDisChange}
                       className="w-full p-4 bg-white border border-gray-200 rounded-lg outline-none resize-none min-h-[150px]"
                     ></textarea>
