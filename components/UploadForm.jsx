@@ -475,7 +475,7 @@ const UploadForm = ({ slug }) => {
         {
           method: "POST",
           headers: {
-            'Content-Type': 'multipart/form-data',
+            // 'Content-Type': 'multipart/form-data',
             'Authorization': 'Bearer 17|Xd9A9wAgcN8oYCeck3BRRc83bged5AQZbig7t3cZ1efba533', 
           },
           body: formData,
@@ -504,14 +504,14 @@ const UploadForm = ({ slug }) => {
       } else {
         // console.error("Error posting data:", data);
         // toast.error("Error submitting form");
-        router.push("/error");
         // setUploading(false);
+        router.push("/error");
       }
     } catch (error) {
       // console.error("Error submitting form:", error);
       // toast.error("Error submitting form");
-      router.push("/error");
       // setUploading(false);
+      router.push("/error");
     }
   };
 
