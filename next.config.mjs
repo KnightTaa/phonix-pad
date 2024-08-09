@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // output: "export",
-    images: {
-      loader: "custom",
-      loaderFile: "./loader.js",
-    },
-  };
-  
-  export default nextConfig;
-  
+  crossOrigin: "anonymous",
+  // output: "export",
+  images: {
+    loader: "custom",
+    loaderFile: "./loader.js",
+  },
+};
+
+export default nextConfig;
