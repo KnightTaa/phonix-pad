@@ -476,6 +476,7 @@ const UploadForm = ({ slug }) => {
           method: "POST",
           headers: {
             'Content-Type': 'multipart/form-data',
+            'Authorization': 'Bearer 17|Xd9A9wAgcN8oYCeck3BRRc83bged5AQZbig7t3cZ1efba533', 
           },
           body: formData,
           onUploadProgress: (progressEvent) => {
