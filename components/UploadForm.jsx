@@ -425,7 +425,7 @@ const UploadForm = ({ slug }) => {
     }
 
     try {
-      const response = await fetch('https://padawards.com.phoenixlk.com/backend/public/api/upload', {
+      const response = await fetch('https://pad-admin.phoenix.lk/padadminsub/public/api/upload', {
         method: 'POST',
         body: formData,
         onUploadProgress: (progressEvent) => {
