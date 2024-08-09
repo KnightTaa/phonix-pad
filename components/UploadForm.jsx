@@ -461,7 +461,7 @@ const UploadForm = ({ slug }) => {
     formData.append("decription", dis);
     formData.append(
       "eventType",
-      selectedTheme === "shots" ? "short" : selectedTheme
+      selectedTheme === "shots" ? "short" : selectedTheme === "brands" ? "brand" : "project"
     );
     formData.append("eventMood", selectedMood);
 
