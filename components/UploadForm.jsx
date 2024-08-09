@@ -337,7 +337,7 @@ const UploadForm = ({ slug }) => {
   const [criteria, setCriteria] = useState(criteriaDescriptions["shots"]);
   const [description, setDescription] = useState(descriptions["shots"]);
   const [selectedTheme, setSelectedTheme] = useState("shots");
-  const [selectedMood, setSelectedMood] = useState("shots");
+  const [selectedMood, setSelectedMood] = useState("eternal");
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
   const [file, setFile] = useState(null);
   const [fName, setFname] = useState("");
@@ -474,6 +474,9 @@ const UploadForm = ({ slug }) => {
         "https://pad-admin.phoenix.lk/padadminsub/public/api/upload",
         {
           method: "POST",
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
           body: formData,
           onUploadProgress: (progressEvent) => {
             const total = progressEvent.total;
