@@ -337,6 +337,7 @@ const UploadForm = ({ slug }) => {
   const [criteria, setCriteria] = useState(criteriaDescriptions["shots"]);
   const [description, setDescription] = useState(descriptions["shots"]);
   const [selectedTheme, setSelectedTheme] = useState("shots");
+  const [selectedMood, setSelectedMood] = useState("shots");
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
   const [file, setFile] = useState(null);
   const [fName, setFname] = useState("");
@@ -455,14 +456,14 @@ const UploadForm = ({ slug }) => {
     const formData = new FormData();
     formData.append("file", file);
     formData.append("name", fName + " " + lName);
-    formData.append("filename", "test123");
     formData.append("email", email);
     formData.append("phoneNumber", phone);
     formData.append("decription", dis);
     formData.append(
       "eventType",
-      selectedTheme === "shots" ? "life" : selectedTheme
+      selectedTheme === "shots" ? "short" : selectedTheme
     );
+    formData.append("eventMood", selectedMood);
 
     for (let pair of formData.entries()) {
       console.log(pair[0] + ": " + pair[1], "formData");
@@ -773,8 +774,8 @@ const UploadForm = ({ slug }) => {
                       name="Moods"
                       className="block w-full px-3 py-2 rounded-lg border-0 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
                       // onChange={(event) => setSelectedRadio(event.target.value)}
-                      value={selectedTheme}
-                      onChange={(event) => setSelectedTheme(event.target.value)}
+                      value={selectedMood}
+                      onChange={(event) => setSelectedMood(event.target.value)}
                     >
                       <option value="eternal">Eternal</option>
                       <option value=" endlesssummer">Endless Summer</option>
