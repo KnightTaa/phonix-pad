@@ -1243,7 +1243,10 @@ const LandingPage = () => {
           className="block sm:hidden absolute top-0 right-[0%] z-10 mr-2 mt-2 opacity-0 outline-none"
           ref={threeDotsRef}
         >
-          <button onClick={handleThreeDotsClick} className="outline-none hidden">
+          <button
+            onClick={handleThreeDotsClick}
+            className="outline-none hidden"
+          >
             <HiDotsHorizontal size={38} />
           </button>
         </div>
@@ -1359,7 +1362,8 @@ const LandingPage = () => {
           ref={yellowDivRef}
         >
           <div className="w-full h-full relative">
-            <Link href={"/apply"}
+            <Link
+              href={"/apply/shots"}
               className="absolute top-[0%] right-[0%] transform translate-x-0 translate-y-0 inset-0 flex items-center justify-center outline-none"
             >
               <Image
@@ -1380,7 +1384,7 @@ const LandingPage = () => {
         >
           <div className="w-full h-full relative">
             <Link
-              href={"/apply"}
+              href={`/apply/products`}
               className="absolute top-[0%] right-[0%] transform translate-x-0 translate-y-0 inset-0 flex items-center justify-center outline-none"
             >
               <Image
@@ -1400,7 +1404,7 @@ const LandingPage = () => {
         >
           <div className="w-full h-full relative">
             <Link
-              href={"/apply"}
+              href={"/apply/brands"}
               className="absolute inset-0 flex items-center justify-center outline-none"
             >
               <Image

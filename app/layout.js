@@ -8,8 +8,8 @@ const arial = localfont({
 });
 
 export const metadata = {
-  title: "Pad Frontend",
-  description: "Test frontend for phonix pad",
+  title: "Phoenix Arts and Design",
+  description: "Phoenix Arts and Design Studio",
 };
 
 export default function RootLayout({ children }) {
