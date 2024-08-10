@@ -361,12 +361,7 @@ const UploadForm = ({ slug }) => {
     const maxSize = 25 * 1024 * 1024;
     const selectedFile = e.target.files[0];
     console.log("Selected File:", selectedFile);
-    if (
-      selectedFile.type === "image/png" ||
-      selectedFile.type === "image/jpeg" ||
-      selectedFile.type === "image/jpg" ||
-      selectedFile.type === "application/pdf"
-    ) {
+    if (selectedFile.type === "image/png" || selectedFile.type === "image/jpeg" || selectedFile.type === "image/jpg" || selectedFile.type === "application/pdf" || selectedFile.type === "image/heic" || selectedFile.type === "image/heif") {
       if (selectedFile.size < maxSize) {
         setUploadProgress(0);
         setFile(selectedFile);
@@ -479,8 +474,8 @@ const UploadForm = ({ slug }) => {
       selectedTheme === "shots"
         ? "short"
         : selectedTheme === "brands"
-        ? "brand"
-        : "project"
+          ? "brand"
+          : "project"
     );
     formData.append("eventMood", selectedMood);
 
@@ -562,11 +557,10 @@ const UploadForm = ({ slug }) => {
                 />
                 <div
                   onClick={() => handleRadioChange("shots")}
-                  className={`cursor-pointer transition-all duration-300 ${
-                    selectedRadio === "shots"
+                  className={`cursor-pointer transition-all duration-300 ${selectedRadio === "shots"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
-                  }`}
+                    }`}
                 >
                   <Image
                     src="/image 7.png"
@@ -586,11 +580,10 @@ const UploadForm = ({ slug }) => {
                 />
                 <div
                   onClick={() => handleRadioChange("brands")}
-                  className={`cursor-pointer transition-all duration-300 ${
-                    selectedRadio === "brands"
+                  className={`cursor-pointer transition-all duration-300 ${selectedRadio === "brands"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
-                  }`}
+                    }`}
                 >
                   <Image
                     src="/image 10.png"
@@ -610,11 +603,10 @@ const UploadForm = ({ slug }) => {
                 />
                 <div
                   onClick={() => handleRadioChange("products")}
-                  className={`cursor-pointer transition-all duration-300 ${
-                    selectedRadio === "products"
+                  className={`cursor-pointer transition-all duration-300 ${selectedRadio === "products"
                       ? "w-[100px] md:w-[120px] lg:w-[200px]"
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
-                  }`}
+                    }`}
                 >
                   <Image
                     src="/image 11.png"
@@ -882,9 +874,8 @@ const UploadForm = ({ slug }) => {
                       Upload your File
                     </label>
                     <div
-                      className={`w-full h-[200px] flex flex-col justify-center items-center border-dashed border-2 rounded-lg ${
-                        file ? "border-green-500" : "border-[#666666]"
-                      }`}
+                      className={`w-full h-[200px] flex flex-col justify-center items-center border-dashed border-2 rounded-lg ${file ? "border-green-500" : "border-[#666666]"
+                        }`}
                     >
                       <input
                         id="file-upload"
