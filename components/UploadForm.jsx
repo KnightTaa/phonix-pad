@@ -508,15 +508,15 @@ const UploadForm = ({ slug }) => {
         router.push("/success");
       } else {
         // console.error("Error posting data:", data);
-        toast.error("Error submitting form");
+        // toast.error("Error submitting form");
         // setUploading(false);
         // router.push("/error");
       }
     } catch (error) {
       // console.error("Error submitting form:", error);
-      toast.error("Error submitting form");
+      // toast.error("Error submitting form");
       // setUploading(false);
-      // router.push("/error");
+      router.push("/error");
     }
   };
 
