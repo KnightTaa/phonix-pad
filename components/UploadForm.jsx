@@ -794,13 +794,13 @@ const UploadForm = ({ slug }) => {
                       <option value="eternal">Eternal</option>
                       <option value=" endlesssummer">Endless Summer</option>
                       <option value="urbansoul">Urban Soul</option>
-                      <option value="urbansoul">The Whim</option>
-                      <option value="urbansoul">fantasy</option>
-                      <option value="urbansoul">Crazy About</option>
-                      <option value="urbansoul">Nothing Hidden</option>
-                      <option value="urbansoul">Where The Air Flows</option>
-                      <option value="urbansoul">cool things</option>
-                      <option value="urbansoul">Wonderland</option>
+                      <option value="theWhim">The Whim</option>
+                      <option value="fantasy">Fantasy</option>
+                      <option value="crazyabout">Crazy About</option>
+                      <option value="nothinghidden">Nothing Hidden</option>
+                      <option value="wheretheairflows">Where The Air Flows</option>
+                      <option value="coolthings">Cool things</option>
+                      <option value="Wonderland">Wonderland</option>
                     </select>
                   </div>
                 </div>
