@@ -358,9 +358,19 @@ const UploadForm = ({ slug }) => {
   const handleFileChange = (e) => {
     // console.log(e.target.files[0]);
     // setFile(e.target.files[0]);
+    const maxSize = 25 * 1024 * 1024;
     const selectedFile = e.target.files[0];
     console.log("Selected File:", selectedFile);
-    setFile(selectedFile);
+    if(selectedFile.type === "image/png" || selectedFile.type === "image/jpeg" || selectedFile.type === "image/jpg" || selectedFile.type === "application/pdf") {
+      if(selectedFile.size < maxSize){
+        setUploadProgress(0);
+        setFile(selectedFile);
+      }else {
+        toast.error("File size exceeds 25MB")
+      }
+    }else {
+      toast.error("Please select an image file (jpeg, jpg, pdf)")
+    }
   };
 
   const handleFNameChange = (e) => {
@@ -502,16 +512,16 @@ const UploadForm = ({ slug }) => {
         // setDis("");
         router.push("/success");
       } else {
-        console.error("Error posting data:", data);
+        // console.error("Error posting data:", data);
         // toast.error("Error submitting form");
         // setUploading(false);
         // router.push("/error");
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      // console.error("Error submitting form:", error);
       // toast.error("Error submitting form");
       // setUploading(false);
-      // router.push("/error");
+      router.push("/error");
     }
   };
 
