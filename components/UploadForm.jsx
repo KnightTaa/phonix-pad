@@ -359,7 +359,7 @@ const UploadForm = ({ slug }) => {
     // console.log(e.target.files[0]);
     // setFile(e.target.files[0]);
     const selectedFile = e.target.files[0];
-    console.log("Selected File:", selectedFile.type);
+    console.log("Selected File:", selectedFile);
     if(selectedFile.type === "image/png" || selectedFile.type === "image/jpeg" || selectedFile.type === "image/jpg" || selectedFile.type === "application/pdf") {
       setUploadProgress(0);
       setFile(selectedFile);
