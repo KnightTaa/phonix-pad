@@ -493,7 +493,7 @@ const UploadForm = ({ slug }) => {
         // toast.success("Register successfully!");
         // setMessage("Uploaded");
         // setUploading(false);
-        // setUploadProgress(0);
+        setUploadProgress(0);
         // setFile(null);
         // setFname("");
         // setLname("");
