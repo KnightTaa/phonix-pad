@@ -361,7 +361,7 @@ const UploadForm = ({ slug }) => {
     const maxSize = 25 * 1024 * 1024;
     const selectedFile = e.target.files[0];
     console.log("Selected File:", selectedFile);
-    if(selectedFile.type === "image/png" || selectedFile.type === "image/jpeg" || selectedFile.type === "image/jpg" || selectedFile.type === "application/pdf") {
+    if(selectedFile.type === "image/png" || selectedFile.type === "image/jpeg" || selectedFile.type === "image/jpg" || selectedFile.type === "application/pdf" || selectedFile.type === "image/heic" || selectedFile.type === "image/heif") {
       if(selectedFile.size < maxSize){
         setUploadProgress(0);
         setFile(selectedFile);
