@@ -884,7 +884,7 @@ const UploadForm = ({ slug }) => {
                         className="sr-only"
                         onChange={handleFileChange}
                         required
-                        accept=".jpeg,.jpg,.pdf"
+                        accept=".heic,.heif,.jpeg,.jpg,.pdf"
                       />
                       <label
                         htmlFor="file-upload"
