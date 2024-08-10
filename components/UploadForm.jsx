@@ -364,7 +364,7 @@ const UploadForm = ({ slug }) => {
       setUploadProgress(0);
       setFile(selectedFile);
     }else {
-      toast.error("Please select an image file (png, jpeg, jpg, pdf)")
+      toast.error("Please select an image file (jpeg, jpg, pdf)")
     }
   };
 
