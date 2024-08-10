@@ -361,15 +361,20 @@ const UploadForm = ({ slug }) => {
     const maxSize = 25 * 1024 * 1024;
     const selectedFile = e.target.files[0];
     console.log("Selected File:", selectedFile);
-    if(selectedFile.type === "image/png" || selectedFile.type === "image/jpeg" || selectedFile.type === "image/jpg" || selectedFile.type === "application/pdf") {
-      if(selectedFile.size < maxSize){
+    if (
+      selectedFile.type === "image/png" ||
+      selectedFile.type === "image/jpeg" ||
+      selectedFile.type === "image/jpg" ||
+      selectedFile.type === "application/pdf"
+    ) {
+      if (selectedFile.size < maxSize) {
         setUploadProgress(0);
         setFile(selectedFile);
-      }else {
-        toast.error("File size exceeds 25MB")
+      } else {
+        toast.error("File size exceeds 25MB");
       }
-    }else {
-      toast.error("Please select an image file (jpeg, jpg, pdf)")
+    } else {
+      toast.error("Please select an image file (jpeg, jpg, pdf)");
     }
   };
 
@@ -471,7 +476,11 @@ const UploadForm = ({ slug }) => {
     formData.append("decription", dis);
     formData.append(
       "eventType",
-      selectedTheme === "shots" ? "short" : selectedTheme === "brands" ? "brand" : "project"
+      selectedTheme === "shots"
+        ? "short"
+        : selectedTheme === "brands"
+        ? "brand"
+        : "project"
     );
     formData.append("eventMood", selectedMood);
 
@@ -486,7 +495,8 @@ const UploadForm = ({ slug }) => {
           method: "POST",
           headers: {
             // 'Content-Type': 'multipart/form-data',
-            'Authorization': 'Bearer 17|Xd9A9wAgcN8oYCeck3BRRc83bged5AQZbig7t3cZ1efba533', 
+            Authorization:
+              "Bearer 17|Xd9A9wAgcN8oYCeck3BRRc83bged5AQZbig7t3cZ1efba533",
           },
           body: formData,
           onUploadProgress: (progressEvent) => {
@@ -503,7 +513,7 @@ const UploadForm = ({ slug }) => {
         // toast.success("Register successfully!");
         // setMessage("Uploaded");
         // setUploading(false);
-        setUploadProgress(0);
+        setUploadProgress(100);
         // setFile(null);
         // setFname("");
         // setLname("");
@@ -904,7 +914,7 @@ const UploadForm = ({ slug }) => {
                       </label>
                     </div>
                     {uploading && (
-                      <div className="w-full text-center mt-2 text-white">
+                      <div className="w-full text-sm text-center mt-2 text-white">
                         Uploading - {uploadProgress}%
                       </div>
                     )}
@@ -923,7 +933,35 @@ const UploadForm = ({ slug }) => {
                 className="text-sm w-full font-semibold leading-6 bg-primary px-6 py-2 rounded-full text-white hover:bg-primary-hover transition-all duration-200"
                 disabled={uploading}
               >
-                Submit
+                {uploading ? (
+                  <>
+                    <div className="flex items-center justify-center gap-2">
+                      <svg
+                        className="animate-spin h-5 w-5 mr-3 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8v8h8a8 8 0 11-16 0z"
+                        ></path>
+                      </svg>
+                      Uploading...
+                    </div>
+                  </>
+                ) : (
+                  "Submit"
+                )}
               </button>
             </div>
           </div>
