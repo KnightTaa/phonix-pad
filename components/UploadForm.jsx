@@ -523,10 +523,11 @@ const UploadForm = ({ slug }) => {
         // router.push("/error");
       }
     } catch (error) {
+      alert(error);
       // console.error("Error submitting form:", error);
       // toast.error("Error submitting form");
       // setUploading(false);
-      router.push("/error");
+      // router.push("/error");
     }
   };
 
