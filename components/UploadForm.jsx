@@ -930,7 +930,7 @@ const UploadForm = ({ slug }) => {
             <div className="mt-6 flex items-center justify-start gap-x-6">
               <button
                 type="submit"
-                className="text-sm w-full font-semibold leading-6 bg-primary px-6 py-2 rounded-full text-white hover:bg-primary-hover transition-all duration-200"
+                className={`text-sm w-full font-semibold leading-6 px-6 py-2 rounded-full text-white hover:bg-primary-hover transition-all duration-200 ${uploading ? 'bg-primary-hover' : 'bg-primary'}`}
                 disabled={uploading}
               >
                 {uploading ? (
