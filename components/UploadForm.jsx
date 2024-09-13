@@ -348,6 +348,7 @@ const UploadForm = ({ slug }) => {
   const [message, setMessage] = useState("");
   const [uploadProgress, setUploadProgress] = useState(0);
   const [uploading, setUploading] = useState(false);
+  const [isFileReady, setIsFileReady] = useState(false);
 
   const phonePlaceholder = selectedCountry ? selectedCountry.code : "";
 
@@ -355,9 +356,25 @@ const UploadForm = ({ slug }) => {
     setShowPassword(!showPassword);
   };
 
+  // const handleFileChange = (e) => {
+  //   // console.log(e.target.files[0]);
+  //   // setFile(e.target.files[0]);
+  //   const maxSize = 25 * 1024 * 1024;
+  //   const selectedFile = e.target.files[0];
+  //   console.log("Selected File:", selectedFile);
+  //   if (selectedFile.type === "image/png" || selectedFile.type === "image/jpeg" || selectedFile.type === "image/jpg" || selectedFile.type === "application/pdf" || selectedFile.type === "image/heic" || selectedFile.type === "image/heif" || selectedFile.type === "") {
+  //     if (selectedFile.size < maxSize) {
+  //       setUploadProgress(0);
+  //       setFile(selectedFile);
+  //     } else {
+  //       toast.error("File size exceeds 25MB");
+  //     }
+  //   } else {
+  //     toast.error("Please select an image file (jpeg, jpg, pdf)");
+  //   }
+  // };
+
   const handleFileChange = (e) => {
-    // console.log(e.target.files[0]);
-    // setFile(e.target.files[0]);
     const maxSize = 25 * 1024 * 1024;
     const selectedFile = e.target.files[0];
     console.log("Selected File:", selectedFile);
@@ -365,11 +382,14 @@ const UploadForm = ({ slug }) => {
       if (selectedFile.size < maxSize) {
         setUploadProgress(0);
         setFile(selectedFile);
+	setIsFileReady(true);
       } else {
         toast.error("File size exceeds 25MB");
+	setIsFileReady(false);
       }
     } else {
       toast.error("Please select an image file (jpeg, jpg, pdf)");
+      setIsFileReady(false);
     }
   };
 
@@ -460,8 +480,66 @@ const UploadForm = ({ slug }) => {
   };
 
   // New Handle Submit Function
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setUploading(true);
+  //   const formData = new FormData();
+  //   formData.append("file", file);
+  //   formData.append("name", fName + " " + lName);
+  //   formData.append("email", email);
+  //   formData.append("phoneNumber", phone);
+  //   formData.append("decription", dis);
+  //   formData.append(
+  //     "eventType",
+  //     selectedTheme === "shots"
+  //       ? "short"
+  //       : selectedTheme === "brands"
+  //         ? "brand"
+  //         : "project"
+  //   );
+  //   formData.append("eventMood", selectedMood);
+
+  //   for (let pair of formData.entries()) {
+  //     console.log(pair[0] + ": " + pair[1], "formData");
+  //   }
+
+  //   try {
+  //     const response = await fetch(
+  //       "https://pad-admin.phoenix.lk/padadminsub/public/api/upload",
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           Authorization:
+  //             "Bearer 17|Xd9A9wAgcN8oYCeck3BRRc83bged5AQZbig7t3cZ1efba533",
+  //         },
+  //         body: formData,
+  //         onUploadProgress: (progressEvent) => {
+  //           const total = progressEvent.total;
+  //           const current = progressEvent.loaded;
+  //           const progress = Math.round((current / total) * 100);
+  //           setUploadProgress(progress);
+  //         },
+  //       }
+  //     );
+
+  //     const data = await response.json();
+  //     if (response.ok) {
+  //       setUploadProgress(100);
+  //       router.push("/success");
+  //     } else {
+  //       router.push("/error");
+  //     }
+  //   } catch (error) {
+  //     router.push("/error");
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!isFileReady) {
+      toast.error("Please select a valid file before submitting");
+      return;
+    }
     setUploading(true);
     const formData = new FormData();
     formData.append("file", file);
@@ -505,29 +583,13 @@ const UploadForm = ({ slug }) => {
 
       const data = await response.json();
       if (response.ok) {
-        // toast.success("Register successfully!");
-        // setMessage("Uploaded");
-        // setUploading(false);
         setUploadProgress(100);
-        // setFile(null);
-        // setFname("");
-        // setLname("");
-        // setEmail("");
-        // setPhone("");
-        // setDis("");
         router.push("/success");
       } else {
-        // console.error("Error posting data:", data);
-        // toast.error("Error submitting form");
-        // setUploading(false);
-        // router.push("/error");
+        router.push("/error");
       }
     } catch (error) {
-      alert(error);
-      // console.error("Error submitting form:", error);
-      // toast.error("Error submitting form");
-      // setUploading(false);
-      // router.push("/error");
+      router.push("/error");
     }
   };
 
@@ -922,8 +984,10 @@ const UploadForm = ({ slug }) => {
             <div className="mt-6 flex items-center justify-start gap-x-6">
               <button
                 type="submit"
-                className={`text-sm w-full font-semibold leading-6 px-6 py-2 rounded-full text-white hover:bg-primary-hover transition-all duration-200 ${uploading ? 'bg-primary-hover' : 'bg-primary'}`}
-                disabled={uploading}
+                className={`text-sm w-full font-semibold leading-6 px-6 py-2 rounded-full text-white hover:bg-primary-hover transition-all duration-200 ${
+                  uploading || !isFileReady ? 'bg-primary-hover cursor-not-allowed' : 'bg-primary'
+                }`}
+                disabled={uploading || !isFileReady}
               >
                 {uploading ? (
                   <>
