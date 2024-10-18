@@ -76,7 +76,7 @@ const Shots = () => {
 
         <li>
           Enter by submitting your Photo online at pad.phoenix.lk. The
-          submission deadline is the <strong>30th of September, 2024</strong>
+          submission deadline is the <strong>31st of October, 2024</strong>
         </li>
 
         <li>
@@ -157,7 +157,7 @@ const Brands = () => {
 
         <li>
           Enter by submitting your Photo online at pad.phoenix.lk. The
-          submission deadline is the <strong>30th of September, 2024</strong>
+          submission deadline is the <strong>31st of October, 2024</strong>
         </li>
 
         <li>
@@ -244,7 +244,7 @@ const Products = () => {
 
         <li>
           Enter by submitting your Photo online at pad.phoenix.lk. The
-          submission deadline is the <strong>30th of September, 2024</strong>
+          submission deadline is the <strong>31st of October, 2024</strong>
         </li>
 
         <li>
