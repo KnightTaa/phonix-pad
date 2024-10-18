@@ -93,7 +93,7 @@ const Shots = () => {
       </ol>
       <strong>
         Super prizes await the winners! We look forward to your entry & all the
-        best!
+        best!!
       </strong>
     </>
   );
