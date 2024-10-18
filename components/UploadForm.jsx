@@ -625,6 +625,7 @@ const UploadForm = ({ slug }) => {
                       : "w-[80px] md:w-[120px] lg:w-[160px]"
                     }`}
                 >
+                  
                   <Image
                     src="/image 7.png"
                     width={400}
