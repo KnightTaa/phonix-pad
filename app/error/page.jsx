@@ -15,7 +15,7 @@ const Error = () => {
           <div className="flex flex-col items-center lg:items-start gap-4">
             <h1 className="text-3xl sm:text-4xl font-bold">Oops! something went wrong</h1>
             <p className="text-base sm:text-lg font-normal">
-              The link you followed may be broken, or the page may have been removed.
+               Submissions closed! Await results...
             </p>
             <Link
               className="bg-primary hover:bg-primary-hover px-5 py-2 rounded-full text-base sm:text-lg font-light text-white transition-all duration-300"
