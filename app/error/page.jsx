@@ -13,10 +13,10 @@ const Error = () => {
         {/* left */}
         <div className="w-full lg:w-[50%] h-[50%] sm:h-full flex items-center justify-center">
           <div className="flex flex-col items-center lg:items-start gap-4">
-            <h1 className="text-3xl sm:text-4xl font-bold">Oops! something went wrong</h1>
-            <p className="text-base sm:text-lg font-normal">
+            <h1 className="text-3xl sm:text-4xl font-bold">Submissions closed! Await results...</h1>
+            {/* <p className="text-base sm:text-lg font-normal">
                Submissions closed! Await results...
-            </p>
+            </p> */}
             <Link
               className="bg-primary hover:bg-primary-hover px-5 py-2 rounded-full text-base sm:text-lg font-light text-white transition-all duration-300"
               href={"/"}
