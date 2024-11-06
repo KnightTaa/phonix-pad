@@ -562,33 +562,33 @@ const UploadForm = ({ slug }) => {
     }
 
     try {
-      router.push("/error");
-      // const response = await fetch(
-      //   "https://pad-admin.phoenix.lk/padadminsub/public/api/upload",
-      //   {
-      //     method: "POST",
-      //     headers: {
-      //       // 'Content-Type': 'multipart/form-data',
-      //       Authorization:
-      //         "Bearer 17|Xd9A9wAgcN8oYCeck3BRRc83bged5AQZbig7t3cZ1efba533",
-      //     },
-      //     body: formData,
-      //     onUploadProgress: (progressEvent) => {
-      //       const total = progressEvent.total;
-      //       const current = progressEvent.loaded;
-      //       const progress = Math.round((current / total) * 100);
-      //       setUploadProgress(progress);
-      //     },
-      //   }
-      // );
+      // router.push("/error");
+      const response = await fetch(
+        "https://pad-admin.phoenix.lk/padadminsub/public/api/upload",
+        {
+          method: "POST",
+          headers: {
+            // 'Content-Type': 'multipart/form-data',
+            Authorization:
+              "Bearer 17|Xd9A9wAgcN8oYCeck3BRRc83bged5AQZbig7t3cZ1efba533",
+          },
+          body: formData,
+          onUploadProgress: (progressEvent) => {
+            const total = progressEvent.total;
+            const current = progressEvent.loaded;
+            const progress = Math.round((current / total) * 100);
+            setUploadProgress(progress);
+          },
+        }
+      );
 
-      // const data = await response.json();
-      // if (response.ok) {
-      //   setUploadProgress(100);
-      //   router.push("/success");
-      // } else {
-      //   router.push("/error");
-      // }
+      const data = await response.json();
+      if (response.ok) {
+        setUploadProgress(100);
+        router.push("/success");
+      } else {
+        router.push("/error");
+      }
     } catch (error) {
       router.push("/error");
     }
