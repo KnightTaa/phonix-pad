@@ -41,13 +41,22 @@ const WinnersBrand = () => {
         <div className="w-full flex items-center justify-center  h-auto">
           <div className="top-[50%] right-[0%] transform translate-x-0 translate-y-0 inset-0 items-center justify-start w-1/3 p-4">
             <div className="w-full">
-              <Image
-                src={"/image 10.png"}
-                width={400}
-                height={400}
-                alt={"logo"}
-                className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[200px] h-auto block"
-              />
+              <div className="flex">
+                <div className="w-1/12">
+                  <span class="absolute left-6 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[40%]">
+                      Winner
+                  </span>
+                </div>
+                <div className="w-11/12">
+                    <Image
+                    src={"/image 10.png"}
+                    width={400}
+                    height={400}
+                    alt={"logo"}
+                    className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[150px] h-auto block"
+                  />
+                </div>
+              </div>
             </div>
             <div className="items-start my-8 mr-4 w-full">
               {/* <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
@@ -61,13 +70,22 @@ const WinnersBrand = () => {
           </div>
           <div className="top-[0%] right-[0%] transform translate-x-0 translate-y-0 inset-0 items-center justify-start w-1/3">
           <div className="w-full">
-              <Image
-                src={"/image 10.png"}
-                width={400}
-                height={400}
-                alt={"logo"}
-                className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[200px] h-auto block"
-              />
+          <div className="flex">
+                <div className="w-1/12">
+                  <span class="absolute left-2 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[40%]">
+                     1st Runner-up
+                  </span>
+                </div>
+                <div className="w-11/12">
+                    <Image
+                    src={"/image 10.png"}
+                    width={400}
+                    height={400}
+                    alt={"logo"}
+                    className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[150px] h-auto block"
+                  />
+                </div>
+              </div>
             </div>
             <div className="items-start my-8 mr-4 w-full">
               {/* <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
@@ -81,13 +99,23 @@ const WinnersBrand = () => {
           </div>
           <div className="top-[0%] right-[0%] transform translate-x-0 translate-y-0 inset-0 items-center justify-start w-1/3">
           <div className="w-full">
-              <Image
-                src={"/image 10.png"}
-                width={400}
-                height={400}
-                alt={"logo"}
-                className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[200px] h-auto block"
-              />
+              <div className="flex">
+                <div className="w-1/12">
+                  <span class="absolute left-2 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[40%]">
+                    2nd Runner-up
+                  </span>
+                </div>
+                <div className="w-11/12">
+                    <Image
+                    src={"/image 10.png"}
+                    width={400}
+                    height={400}
+                    alt={"logo"}
+                    className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[150px] h-auto block"
+                  />
+                </div>
+              </div>
+              
             </div>
             <div className="items-start my-8 mr-4 w-full">
               {/* <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
