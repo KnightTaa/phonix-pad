@@ -2,6 +2,7 @@ import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import FileViewer from "@/components/FileViewer";
 
 const Winnersproduct = () => {
   return (
@@ -39,7 +40,42 @@ const Winnersproduct = () => {
           </div>
         </div>
         <div className="w-full flex items-center justify-center  h-auto">
-          <div className="top-[50%] right-[0%] transform translate-x-0 translate-y-0 inset-0 items-center justify-start w-1/3 p-4">
+
+        <div className="top-[50%] right-[0%] transform translate-x-0 translate-y-0 inset-0 items-center justify-start w-full p-4">
+            <div className="w-full">
+              <div className="flex">
+                <div className="w-1/12">
+                  <span class="absolute left-6 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[22%]">
+                    Special Mention
+                  </span>
+                </div>
+                <div className="relative w-11/12 right-[6%]">
+                  <Image
+                    src={"/image 11.png"}
+                    width={400}
+                    height={400}
+                    alt={"logo"}
+                    className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[150px] h-auto block"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="items-start my-8 mr-4 w-full">
+              <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
+               Kathesh Handy
+            </h1>
+              <p className="text-base xl:text-lg 2xl:text-xl font-medium">
+              CADSHAW embodies the best of what our current product portfolio offers. Using existing concepts and functional elements, together with clip-hinges, this design emphasizes ease of manufacturability and assembly. It gives users a clear understanding of how the product works and the range of ways it can be used. With our ever-growing consumer industries, people want to regain control over their clutter while also having quick access when needed. Unlike current storage options, this design encourages organization with easy access and ergonomic comfort, without the need to dig around. The various components, such as drawers, sliding tray inserts, drop-bay, and tabletop basin, make this product adaptable to all kinds of users. Whether you’re a homemaker, hairdresser, shop owner, artist, sports enthusiast, carpenter, gardener, or even a professional LEGO builder, this design seamlessly integrates into your lifestyle.
+              </p>
+              <div className="p-6">
+                {/* <h1 className="text-2xl font-semibold mb-4">File Viewer</h1> */}
+                <FileViewer fileUrl="ProductsforLife/Cadshaw-PFL-specialmention.pdf" />
+                {/* <FileViewer fileUrl="https://example.com/image.jpg" /> */}
+              </div>
+            </div>
+          </div>
+
+          {/* <div className="top-[50%] right-[0%] transform translate-x-0 translate-y-0 inset-0 items-center justify-start w-1/3 p-4">
             <div className="w-full">
               <div className="flex">
                 <div className="w-1/12">
@@ -59,16 +95,16 @@ const Winnersproduct = () => {
               </div>
             </div>
             <div className="items-start my-8 mr-4 w-full">
-              {/* <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
+             <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
               Winner
-            </h1> */}
+            </h1>
               <p className="text-base xl:text-lg 2xl:text-xl font-medium">
                 Is a platform dedicated to supporting and raising awareness for,
                 designers, artists and creatives in Sri Lanka and the region.
               </p>
             </div>
-          </div>
-          <div className="top-[0%] right-[0%] transform translate-x-0 translate-y-0 inset-0 items-center justify-start w-1/3">
+          </div> */}
+          {/* <div className="top-[0%] right-[0%] transform translate-x-0 translate-y-0 inset-0 items-center justify-start w-1/3">
             <div className="w-full">
               <div className="flex">
                 <div className="w-1/12">
@@ -88,16 +124,16 @@ const Winnersproduct = () => {
               </div>
             </div>
             <div className="items-start my-8 mr-4 w-full">
-              {/* <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
+              <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
               Winner
-            </h1> */}
+            </h1> 
               <p className="text-base xl:text-lg 2xl:text-xl font-medium mr-4">
                 Is a platform dedicated to supporting and raising awareness for,
                 designers, artists and creatives in Sri Lanka and the region.
               </p>
             </div>
-          </div>
-          <div className="top-[0%] right-[0%] transform translate-x-0 translate-y-0 inset-0 items-center justify-start w-1/3">
+          </div> */}
+          {/* <div className="top-[0%] right-[0%] transform translate-x-0 translate-y-0 inset-0 items-center justify-start w-1/3">
             <div className="w-full">
               <div className="flex">
                 <div className="w-1/12">
@@ -117,15 +153,15 @@ const Winnersproduct = () => {
               </div>
             </div>
             <div className="items-start my-8 mr-4 w-full">
-              {/* <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
+               <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
               Winner
-            </h1> */}
+            </h1>
               <p className="text-base xl:text-lg 2xl:text-xl font-medium mr-4">
                 Is a platform dedicated to supporting and raising awareness for,
                 designers, artists and creatives in Sri Lanka and the region.
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

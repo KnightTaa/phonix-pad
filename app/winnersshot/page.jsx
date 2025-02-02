@@ -2,6 +2,7 @@ import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import FileViewer from "@/components/FileViewer";
 
 const WinnersShot = () => {
   return (
@@ -43,7 +44,7 @@ const WinnersShot = () => {
             <div className="w-full">
               <div className="flex">
               <div className="w-1/12">
-                <span class="absolute left-6 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[40%]">
+                <span class="absolute left-6 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[24%]">
                   Winner
                 </span>
               </div>
@@ -59,20 +60,24 @@ const WinnersShot = () => {
               </div>
             </div>
             <div className="items-start my-8 mr-4 w-full">
-              {/* <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
-              Winner
-            </h1> */}
+              <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
+              Raoul Rutnam
+            </h1>
               <p className="text-base xl:text-lg 2xl:text-xl font-medium">
-                Is a platform dedicated to supporting and raising awareness for,
-                designers, artists and creatives in Sri Lanka and the region.
+              This photo captures the essence of Whim because after a long journey, coming to the bus stop in Pettah - one of the signs you'd see calling to you is a large LED board that says in bright red "Comfortable Rooms"
               </p>
+              <div className="p-6">
+                {/* <h1 className="text-2xl font-semibold mb-4">File Viewer</h1> */}
+                {/* <FileViewer fileUrl="BrandsforLife/BFL-3rd.pdf" /> */}
+                <FileViewer fileUrl="ShotsforLife/pg10thewhim1st.jpg" />
+              </div>
             </div>
           </div>
           <div className="top-[0%] right-[0%] transform translate-x-0 translate-y-0 inset-0 items-center justify-start w-1/3">
             <div className="w-full">
               <div className="flex">
                 <div className="w-1/12">
-                  <span class="absolute left-2 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[40%]">
+                  <span class="absolute left-2 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[22%]">
                     1st Runner-up
                   </span>
                 </div>
@@ -89,13 +94,17 @@ const WinnersShot = () => {
             </div>
 
             <div className="items-start my-8 mr-4 w-full">
-              {/* <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
-              Winner
-            </h1> */}
+              <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
+              Kaushani bhagya
+            </h1>
               <p className="text-base xl:text-lg 2xl:text-xl font-medium mr-4">
-                Is a platform dedicated to supporting and raising awareness for,
-                designers, artists and creatives in Sri Lanka and the region.
+              There is no wonder in wonderland. It depicts the results of human behavior distorting natural wonders. It has been creatively captured to portray it in a different way. A naturally occurring hole in the center of a natural tree leaf was used to capture the object in question.
               </p>
+              <div className="p-6">
+                {/* <h1 className="text-2xl font-semibold mb-4">File Viewer</h1> */}
+                {/* <FileViewer fileUrl="BrandsforLife/BFL-3rd.pdf" /> */}
+                <FileViewer fileUrl="ShotsforLife/pg24wonderland2nd.jpeg" />
+              </div>
             </div>
 
           </div>
@@ -103,7 +112,7 @@ const WinnersShot = () => {
             <div className="w-full">
               <div className="flex">
                 <div className="w-1/12">
-                  <span class="absolute left-2 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[40%]">
+                  <span class="absolute left-2 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[21%]">
                     2nd Runner-up
                   </span>
                 </div>
@@ -120,13 +129,17 @@ const WinnersShot = () => {
             </div>
 
             <div className="items-start my-8 mr-4 w-full">
-              {/* <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
-              Winner
-            </h1> */}
+              <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-semibold">
+              Nizam Raban
+            </h1>
               <p className="text-base xl:text-lg 2xl:text-xl font-medium mr-4">
-                Is a platform dedicated to supporting and raising awareness for,
-                designers, artists and creatives in Sri Lanka and the region.
+              A capture of a moment between movement and stillness, time and events yet to come and that has come to pass. A moment where the vivid lights split the darkness. A reminder that the world around you is constantly moving as you the observer stand still cool and collected in time and space.
               </p>
+              <div className="p-6">
+                {/* <h1 className="text-2xl font-semibold mb-4">File Viewer</h1> */}
+                {/* <FileViewer fileUrl="BrandsforLife/BFL-3rd.pdf" /> */}
+                <FileViewer fileUrl="ShotsforLife/pg18coolthings3rd.jpg" />
+              </div>
             </div>
           </div>
         </div>
