@@ -45,17 +45,17 @@ const WinnersBrand = () => {
             <div className="w-full">
               <div className="flex">
                 <div className="w-1/12">
-                  <span class="absolute left-6 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[25%]">
+                  <span class="absolute left-6 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[29%]">
                       Winner
                   </span>
                 </div>
                 <div className="w-11/12">
                     <Image
-                    src={"/image 10.png"}
+                    src={"users/PasinduDhananjaya.jpg"}
                     width={400}
                     height={400}
                     alt={"logo"}
-                    className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[150px] h-auto block"
+                    className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[150px] h-[150px] block"
                   />
                 </div>
               </div>
@@ -78,17 +78,17 @@ const WinnersBrand = () => {
           <div className="w-full">
           <div className="flex">
                 <div className="w-1/12">
-                  <span class="absolute left-2 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[25%]">
+                  <span class="absolute left-2 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[29%]">
                      1st Runner-up
                   </span>
                 </div>
                 <div className="w-11/12">
                     <Image
-                    src={"/image 10.png"}
+                    src={"users/SachinthiWirasinha.jpeg"}
                     width={400}
                     height={400}
                     alt={"logo"}
-                    className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[150px] h-auto block"
+                    className="w-[100px] md:w-[130px] xl:w-[140px] 2xl:w-[150px] h-[150px] block"
                   />
                 </div>
               </div>
@@ -111,13 +111,13 @@ const WinnersBrand = () => {
           <div className="w-full">
               <div className="flex">
                 <div className="w-1/12">
-                  <span class="absolute left-2 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[25%]">
+                  <span class="absolute left-2 -rotate-90 transform origin-left text-black font-bold text-2xl xl:text-2xl 2xl:text-2xl top-[29%]">
                     2nd Runner-up
                   </span>
                 </div>
                 <div className="w-11/12">
                     <Image
-                    src={"/image 10.png"}
+                    src={"users/ShenalMendis.jpg"}
                     width={400}
                     height={400}
                     alt={"logo"}
