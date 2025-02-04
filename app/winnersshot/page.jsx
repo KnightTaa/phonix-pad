@@ -67,7 +67,7 @@ const WinnersShot = () => {
             1st Runner-up
           </span>
           <Image
-            src={"users/Images/Kaushanibhagya.jpg"}
+            src={"users/Images/Default.png"}
             width={400}
             height={400}
             alt="1st Runner-up"
