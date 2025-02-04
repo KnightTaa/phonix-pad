@@ -25,14 +25,14 @@ const FileViewer = ({ fileUrl }) => {
         View File <FaExternalLinkAlt />
       </a>
 
-      {isImage && (
+      {/* {isImage && (
         <button
           onClick={() => setImageOpen(true)}
           className="text-white bg-blue-500 px-3 py-1 rounded-md hover:bg-blue-600"
         >
           Preview
         </button>
-      )}
+      )} */}
 
       {isImageOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center">
