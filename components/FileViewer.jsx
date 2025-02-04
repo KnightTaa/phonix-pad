@@ -11,7 +11,7 @@ const FileViewer = ({ fileUrl }) => {
   return (
     <div className="flex items-center gap-3 border p-4 rounded-lg shadow-md">
       {isPdf ? (
-        <FaFilePdf className="text-red-500 text-2xl" />
+        <FaFilePdf className="text-black-500 text-2xl" />
       ) : isImage ? (
         <FaImage className="text-blue-500 text-2xl" />
       ) : null}
