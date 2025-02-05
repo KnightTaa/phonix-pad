@@ -67,7 +67,7 @@ const WinnersShot = () => {
             1st Runner-up
           </span>
           <Image
-            src={"users/Images/profilewoman.png"}
+            src={"users/Images/KaushaniBhagya.jpg"}
             width={400}
             height={400}
             alt="1st Runner-up"
@@ -88,7 +88,7 @@ const WinnersShot = () => {
             2nd Runner-up
           </span>
           <Image
-            src={"users/Images/NizamR.jpg"}
+            src={"users/Images/NizamR1.jpg"}
             width={400}
             height={400}
             alt="2nd Runner-up"
