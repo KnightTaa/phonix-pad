@@ -39,7 +39,7 @@ const Winnersproduct = () => {
       </div>
 
       {/* Winners Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6">
         {/* Winner */}
         <div className="relative text-center p-4">
           <span className="absolute left-0 -rotate-90 origin-left text-black font-bold text-2xl top-1/2 -translate-y-1/2">
@@ -62,8 +62,8 @@ const Winnersproduct = () => {
         </div>
 
         {/* 1st Runner-up */}
-        {/* <div className="relative text-center p-4">
-          <span className="absolute left-0 -rotate-90 origin-left text-black font-bold text-2xl top-1/2 -translate-y-1/2">
+        <div className="relative text-center p-4 m-auto">
+          {/* <span className="absolute left-0 -rotate-90 origin-left text-black font-bold text-2xl top-1/2 -translate-y-1/2">
             1st Runner-up
           </span>
           <Image
@@ -72,15 +72,23 @@ const Winnersproduct = () => {
             height={400}
             alt="1st Runner-up"
             className="w-[140px] h-[140px] object-cover rounded-full mx-auto"
-          />
-          <h2 className="text-2xl font-bold mt-4">Sachinthi Wirasinha</h2>
+          /> */}
+          <h2 className="text-2xl font-bold mt-12 pt-8">Disclaimer – Products for Life Category</h2>
           <p className="text-base">
-            The submission includes the brand identity, brand application and product promotion suggestions for the 'little monsoon' watering can under the prompt, a portal to soothing escape.
+             At Phoenix Arts & Design (PAD) Awards, we uphold the highest standards of those who push the Boundaries by using their creativity, innovation, and design excellence across all creative disciplines. After a thorough evaluation and under our values of Pushing Boundaries and Challenging Perceptions, none of the submissions of Products for Life category fully met the standards required to be selected as a winner as per the jury's opinion.
           </p>
-          <div className="p-4">
+          <br></br>
+          <p className="text-base">
+             However, in recognition of the effort and Interest shown in PAD, we have awarded a <b>special mention</b> for products for Life this year.
+          </p>
+          <br></br>
+          <p className="text-base">
+             We appreciate the dedication of all participants who push the boundaries and encourage continued innovation in future editions of PAD Awards.
+          </p>
+          {/* <div className="p-4">
             <FileViewer fileUrl="BrandsforLife/BFL-2nd.pdf" />
-          </div>
-        </div> */}
+          </div> */}
+        </div>
 
         {/* 2nd Runner-up */}
         {/* <div className="relative text-center p-4">
