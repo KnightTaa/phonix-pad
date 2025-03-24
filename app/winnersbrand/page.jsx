@@ -104,6 +104,21 @@ const WinnersBrand = () => {
             </div>
           </div>
         </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 p-6">
+          <a href="#">
+            <div className="flex items-center justify-center text-center">
+              <Image
+                src={"/image 10.png"}
+                width={100}
+                height={100}
+                alt="trophy"
+                className="w-[80px] md:w-[100px] xl:w-[120px] h-auto"
+              />
+              <h1 className="text-xl font-semibold ml-4">Click to <br /> Download</h1>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   );
