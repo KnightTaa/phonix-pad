@@ -105,7 +105,7 @@ const WinnersShot = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 p-6">
-          <a href="#">
+          <a href="/PAD-Awards - 2024 Booklet.pdf" download={true}>
             <div className="flex items-center justify-center text-center">
               <Image
                 src={"/image 7.png"}
