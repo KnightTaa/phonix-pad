@@ -109,13 +109,13 @@ const WinnersBrand = () => {
           <a href="/PAD-Awards - 2024 Booklet.pdf" download={true}>
             <div className="flex items-center justify-center text-center">
               <Image
-                src={"/PADIcon.png"}
+                src={"/Clicktodownload/PAD Awards results announcement (1).svg"}
                 width={100}
                 height={100}
                 alt="trophy"
                 className="w-[80px] md:w-[100px] xl:w-[120px] h-auto"
               />
-              <h1 className="text-xl font-semibold ml-4">Click to <br /> Download</h1>
+              {/* <h1 className="text-xl font-semibold ml-4">Click to <br /> Download</h1> */}
             </div>
           </a>
         </div>
