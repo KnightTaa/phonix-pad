@@ -109,7 +109,7 @@ const WinnersBrand = () => {
           <a href="/PAD-Awards - 2024 Booklet.pdf" download={true}>
             <div className="flex items-center justify-center text-center">
               <Image
-                src={"/image 10.png"}
+                src={"/PADIcon.png"}
                 width={100}
                 height={100}
                 alt="trophy"
