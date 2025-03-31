@@ -115,7 +115,7 @@ const WinnersBrand = () => {
                 alt="trophy"
                 className="w-[80px] md:w-[100px] xl:w-[120px] h-auto"
               />
-              <h1 className="text-xl font-semibold ml-4">Click to <br /> Download</h1>
+              {/* <h1 className="text-xl font-semibold ml-4">Click to <br /> Download</h1> */}
             </div>
           </a>
         </div>
