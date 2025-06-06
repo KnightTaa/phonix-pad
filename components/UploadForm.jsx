@@ -564,7 +564,7 @@ const UploadForm = ({ slug }) => {
     try {
       // router.push("/error");
       const response = await fetch(
-        "https://pad-admin.phoenix.lk/padadminsub/public/api/upload",
+        "https://pad-backend.phoenix.lk/public/api/upload",
         {
           method: "POST",
           headers: {
