@@ -196,7 +196,7 @@ const Products = () => {
               className="text-blue-500 underline"
               target="_blank"
             >
-              2024 collection Lookbook
+              2025 collection Lookbook
             </a>
           </strong>
         </li>
