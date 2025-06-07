@@ -26,8 +26,28 @@ const WinnersBrand = () => {
       {/* Main Content */}
       <div className="w-full sm:w-[92.5%] bg-[#ea4747]">
         {/* Header */}
-        <div className="w-full flex items-center h-[200px] pl-3">
-          <div className="flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-6">
+          <div className="hidden sm:flex items-center justify-left mb-4">
+            <Link href={"/apply/brands"}>
+              <Image
+                src={"/logo25.png"}
+                width={100}
+                height={100}
+                alt={"logo"}
+                className="w-[80px] sm:w-[110px] h-auto p-5 sm:p-0 mr-4"
+              />
+            </Link>
+            <Link href={"#"}>
+              <Image
+                src={"/logo24.png"}
+                width={100}
+                height={100}
+                alt={"logo"}
+                className="w-[120px] sm:w-[140px] h-auto p-5 sm:p-0"
+              />
+            </Link>
+          </div>
+          <div className="flex items-center justify-center">
             <Image
               src={"/image 10.png"}
               width={100}
