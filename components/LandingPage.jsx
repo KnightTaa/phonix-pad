@@ -1363,7 +1363,8 @@ const LandingPage = () => {
         >
           <div className="w-full h-full relative">
             <Link
-              href={"/event/shots"}
+               href={"/winnersshot"}
+              // href={"/event/shots"}
               className="absolute top-[0%] right-[0%] transform translate-x-0 translate-y-0 inset-0 flex items-center justify-center outline-none"
             >
               <Image
@@ -1384,7 +1385,8 @@ const LandingPage = () => {
         >
           <div className="w-full h-full relative">
             <Link
-              href={`/event/products`}
+              href={'/winnersproduct'}
+              // href={`/event/products`}
               className="absolute top-[0%] right-[0%] transform translate-x-0 translate-y-0 inset-0 flex items-center justify-center outline-none"
             >
               <Image
@@ -1404,7 +1406,8 @@ const LandingPage = () => {
         >
           <div className="w-full h-full relative">
             <Link
-              href={"/event/brands"}
+              href={"/winnersbrand"}
+              // href={"/event/brands"}
               className="absolute inset-0 flex items-center justify-center outline-none"
             >
               <Image
