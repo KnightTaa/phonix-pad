@@ -30,11 +30,28 @@ const Shots = () => {
   return (
     <>
       <strong className="">
+        Connection/s
+      </strong>
+      <p class="w-full text-justify text-lg text-black pr-5 xl:pr-6 2xl:pr-6">
+        This year, PAD Awards 2025 invites creatives to reflect on a powerful and universal idea: Connection/s.
+        As humans, we constantly form connections—not just with people, but with the world around us. The
+        objects we hold onto, the environments we return to, even the memories we cherish—each reflects a
+        bond that is deeply personal, emotional, and sometimes even invisible. We're looking for visual stories
+        that explore the relationship between humans and the non-human. What does it mean to feel
+        connected to a place, a possession, a moment in time? How do these connections shape our lives,
+        identities, and inner worlds? Whether it's the worn-out shoes that walked you through change, a
+        photograph that holds generations of memory, or a simple object that carries sentimental weight—we
+        invite you to express these connections through photography, graphic design, or product design.
+        Interpret the theme in your own voice. Be bold. Be honest. Be imaginative. PAD Awards 2025 is your
+        platform to visually express what Connection/s means to you—through the lens of design, emotion, and
+        experience.
+      </p>
+      <strong className="">
         All entries must meet the following criteria:
       </strong>
       <ol class="list-decimal pl-6 space-y-4 mt-5 mb-5">
         <li>
-          Pick one of the 10 moods from our{" "}
+          {/* Pick one of the 10 moods from our{" "}
           <strong>
             {" "}
             <a
@@ -47,17 +64,13 @@ const Shots = () => {
           </strong>
           <ul>
             <li>
-              as a prompt for your entry and share your interpretation of the
-              chosen prompt with your photograph
+              Create a photograph that interprets the <b>PAD Awards 2025 theme: "Connection/s"</b>
             </li>
-          </ul>
+          </ul> */}
+          Create a photograph that interprets the <strong>PAD Awards 2025 theme: "Connection/s"</strong>
         </li>
 
-        <li>Tell us the prompt you chose</li>
-
-        <li>
-          Tell us how your photo relates to your chosen prompt (150 words max)
-        </li>
+        <li>Tell us how your photo relates to the theme "Connection/s" (150 words max)</li>
 
         <li>Your entry must be your own work</li>
 
@@ -76,7 +89,7 @@ const Shots = () => {
 
         <li>
           Enter by submitting your Photo online at pad.phoenix.lk. The
-          submission deadline is the <strong>31st of October, 2024</strong>
+          submission deadline is the <strong>31st of August, 2025</strong>
         </li>
 
         <li>
@@ -95,6 +108,7 @@ const Shots = () => {
         Super prizes await the winners! We look forward to your entry & all the
         best!!
       </strong>
+      <p><strong>Terms & Conditions: </strong>The PAD jury reserves the right to not select any winners in the event that the submissions do not meet the required standards.</p>
     </>
   );
 };
@@ -103,10 +117,27 @@ const Brands = () => {
   return (
     <>
       <strong className="">
+        Connection/s
+      </strong>
+      <p class="w-full text-justify text-lg text-white pr-5 xl:pr-6 2xl:pr-6">
+        This year, PAD Awards 2025 invites creatives to reflect on a powerful and universal idea: Connection/s.
+        As humans, we constantly form connections—not just with people, but with the world around us. The
+        objects we hold onto, the environments we return to, even the memories we cherish—each reflects a
+        bond that is deeply personal, emotional, and sometimes even invisible. We're looking for visual stories
+        that explore the relationship between humans and the non-human. What does it mean to feel
+        connected to a place, a possession, a moment in time? How do these connections shape our lives,
+        identities, and inner worlds? Whether it's the worn-out shoes that walked you through change, a
+        photograph that holds generations of memory, or a simple object that carries sentimental weight—we
+        invite you to express these connections through photography, graphic design, or product design.
+        Interpret the theme in your own voice. Be bold. Be honest. Be imaginative. PAD Awards 2025 is your
+        platform to visually express what Connection/s means to you—through the lens of design, emotion, and
+        experience.
+      </p>
+      <strong className="">
         All entries must meet the following criteria:
       </strong>
       <ol class="list-decimal pl-6 space-y-4 mt-5 mb-5">
-        <li>
+        {/* <li>
           Pick <strong>any</strong> product or service inspired by one of the
           ten moods in our
           <strong>
@@ -123,9 +154,11 @@ const Brands = () => {
             </strong>
           </strong>
           , and develop a hypothetical brand identity for it
-        </li>
+        </li> */}
 
-        <li>Tell us the prompt you chose</li>
+        <li>Pick any product or service inspired by the <strong>PAD Awards 2025 theme: "Connection/s"</strong>, and develop a hypothetical brand identity for it</li>
+
+        {/* <li>Tell us the prompt you chose</li> */}
 
         <li>
           The reason you chose the product/service and how it was inspired by
@@ -157,7 +190,7 @@ const Brands = () => {
 
         <li>
           Enter by submitting your Photo online at pad.phoenix.lk. The
-          submission deadline is the <strong>31st of October, 2024</strong>
+          submission deadline is the <strong> 31st of August, 2025</strong>
         </li>
 
         <li>
@@ -176,6 +209,7 @@ const Brands = () => {
         Super prizes await the winners! We look forward to your entry & all the
         best!!
       </strong>
+      <p><strong>Terms & Conditions: </strong>The PAD jury reserves the right to not select any winners in the event that the submissions do not meet the required standards.</p>
     </>
   );
 };
@@ -184,10 +218,27 @@ const Products = () => {
   return (
     <>
       <strong className="">
+        Connection/s
+      </strong>
+      <p class="w-full text-justify text-lg text-black pr-5 xl:pr-6 2xl:pr-6">
+        This year, PAD Awards 2025 invites creatives to reflect on a powerful and universal idea: Connection/s.
+        As humans, we constantly form connections—not just with people, but with the world around us. The
+        objects we hold onto, the environments we return to, even the memories we cherish—each reflects a
+        bond that is deeply personal, emotional, and sometimes even invisible. We're looking for visual stories
+        that explore the relationship between humans and the non-human. What does it mean to feel
+        connected to a place, a possession, a moment in time? How do these connections shape our lives,
+        identities, and inner worlds? Whether it's the worn-out shoes that walked you through change, a
+        photograph that holds generations of memory, or a simple object that carries sentimental weight—we
+        invite you to express these connections through photography, graphic design, or product design.
+        Interpret the theme in your own voice. Be bold. Be honest. Be imaginative. PAD Awards 2025 is your
+        platform to visually express what Connection/s means to you—through the lens of design, emotion, and
+        experience.
+      </p>
+      <strong className="">
         All entries must meet the following criteria:
       </strong>
       <ol class="list-decimal pl-6 space-y-4 mt-5 mb-5">
-        <li>
+        {/* <li>
           Design a product inspired by one of the ten moods in our{" "}
           <strong>
             {" "}
@@ -199,12 +250,14 @@ const Products = () => {
               2025 collection Lookbook
             </a>
           </strong>
-        </li>
+        </li> */}
 
-        <li>Tell us the prompt you chose</li>
+        <li>Design a product inspired by the <strong>PAD Awards 2025 theme: "Connection/s"</strong></li>
+
+        {/* <li>Tell us the prompt you chose</li> */}
 
         <li>
-          How your product relates to the prompt you chose (Max 150 words)
+          Tell us how your product relates to the theme "Connection/s" (Max 150 words)
         </li>
 
         <li>
@@ -244,7 +297,7 @@ const Products = () => {
 
         <li>
           Enter by submitting your Photo online at pad.phoenix.lk. The
-          submission deadline is the <strong>31st of October, 2024</strong>
+          submission deadline is the <strong> 31st of August, 2025</strong>
         </li>
 
         <li>
@@ -263,6 +316,7 @@ const Products = () => {
         Super prizes await the winners! We look forward to your entry & all the
         best!!
       </strong>
+      <p><strong>Terms & Conditions: </strong>The PAD jury reserves the right to not select any winners in the event that the submissions do not meet the required standards.</p>
     </>
   );
 };
@@ -555,7 +609,7 @@ const UploadForm = ({ slug }) => {
           ? "brand"
           : "project"
     );
-    formData.append("eventMood", selectedMood);
+    formData.append("eventMood", null);
 
     for (let pair of formData.entries()) {
       console.log(pair[0] + ": " + pair[1], "formData");
@@ -842,7 +896,7 @@ const UploadForm = ({ slug }) => {
                   </div>
                 </div>
 
-                <div className="col-span-full">
+                {/* <div className="col-span-full">
                   <label
                     htmlFor="Moods"
                     className="block text-sm font-medium leading-6 text-white"
@@ -870,7 +924,7 @@ const UploadForm = ({ slug }) => {
                       <option value="Wonderland">Wonderland</option>
                     </select>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="col-span-full">
                   <label
