@@ -26,7 +26,7 @@ const Winnersproduct = () => {
       <div className="w-full sm:w-[92.5%] bg-[#00d3c8]">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-6">
-          <div className="hidden sm:flex items-center justify-left mb-4">
+          <div className="sm:flex items-center justify-left mb-4">
             <Link href={"/apply/products"}>
               <Image
                 src={"/logo25.png"}
