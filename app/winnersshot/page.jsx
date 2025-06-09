@@ -26,14 +26,15 @@ const WinnersShot = () => {
       <div className="w-full sm:w-[92.5%] bg-[#f7e114]">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-6">
-          <div className="sm:flex items-center justify-left mb-4">
+          {/* Left logos */}
+          <div className="flex flex-row sm:flex-row items-center justify-center sm:justify-start mb-4 gap-4">
             <Link href={"/apply/shots"}>
               <Image
                 src={"/logo25.png"}
                 width={100}
                 height={100}
                 alt={"logo"}
-                className="w-[80px] sm:w-[110px] h-auto p-5 sm:p-0 mr-4"
+                className="w-[80px] sm:w-[110px] h-auto p-2"
               />
             </Link>
             <Link href={"#"}>
@@ -42,11 +43,12 @@ const WinnersShot = () => {
                 width={100}
                 height={100}
                 alt={"logo"}
-                className="w-[120px] sm:w-[140px] h-auto p-5 sm:p-0"
+                className="w-[120px] sm:w-[140px] h-auto p-2"
               />
             </Link>
           </div>
-          <div className="flex items-center justify-center">
+          {/* Center trophy and title */}
+          <div className="flex flex-row items-center justify-center col-span-1">
             <Image
               src={"/image 7.png"}
               width={100}
@@ -56,6 +58,8 @@ const WinnersShot = () => {
             />
             <h1 className="text-4xl xl:text-8xl font-semibold ml-4">WINNERS</h1>
           </div>
+          {/* Empty right column for spacing on large screens */}
+          <div className="hidden lg:block"></div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-6">
           {/* Winner */}
