@@ -596,17 +596,17 @@ const UploadForm = ({ slug }) => {
     }
     setUploading(true);
     // Validate input fields
-    if (!fName.trim()) {
+    if (!fName || !fName.trim()) {
       toast.error("First name is required");
       setUploading(false);
       return;
     }
-    if (!lName.trim()) {
+    if (!lName || !lName.trim()) {
       toast.error("Last name is required");
       setUploading(false);
       return;
     }
-    if (!email.trim()) {
+    if (!email || !email.trim()) {
       toast.error("Email is required");
       setUploading(false);
       return;
@@ -617,12 +617,12 @@ const UploadForm = ({ slug }) => {
       setUploading(false);
       return;
     }
-    if (!phone.trim()) {
+    if (!phone || !phone.trim()) {
       toast.error("Phone number is required");
       setUploading(false);
       return;
     }
-    if (!dis.trim()) {
+    if (!dis || !dis.trim()) {
       toast.error("Description is required");
       setUploading(false);
       return;
