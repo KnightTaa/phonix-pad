@@ -26,7 +26,7 @@ const Winnersproduct = () => {
       <div className="w-full sm:w-[92.5%] bg-[#00d3c8]">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-6">
-          <div className="flex flex-col sm:flex-row items-center sm:justify-start justify-center mb-4">
+          {/* <div className="flex flex-col sm:flex-row items-center sm:justify-start justify-center mb-4">
             <Link href={"/apply/products"}>
               <Image
                 src={"/logo25.png"}
@@ -45,14 +45,14 @@ const Winnersproduct = () => {
                 className="w-[120px] sm:w-[140px] h-auto p-5 sm:p-0"
               />
             </Link>
-          </div>
-          <div className="flex flex-col items-center justify-center lg:flex-row lg:items-center lg:justify-center">
+          </div> */}
+          <div className="flex flex-row sm:flex-row items-center justify-center sm:justify-start mb-4 gap-4">
             <Image
               src={"/image 11.png"}
               width={100}
               height={100}
               alt="trophy"
-              className="w-[80px] md:w-[100px] xl:w-[120px] h-auto"
+              className="w-[80px] md:w-[100px] xl:w-[120px] h-auto p-5 sm:p-0 sm:mr-4"
             />
             <h1 className="text-4xl xl:text-8xl font-semibold ml-0 lg:ml-4 mt-4 lg:mt-0 text-center lg:text-left">WINNERS</h1>
           </div>

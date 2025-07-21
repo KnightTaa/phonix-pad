@@ -595,6 +595,39 @@ const UploadForm = ({ slug }) => {
       return;
     }
     setUploading(true);
+    // Validate input fields
+    if (!fName.trim()) {
+      toast.error("First name is required");
+      setUploading(false);
+      return;
+    }
+    if (!lName.trim()) {
+      toast.error("Last name is required");
+      setUploading(false);
+      return;
+    }
+    if (!email.trim()) {
+      toast.error("Email is required");
+      setUploading(false);
+      return;
+    }
+    // Simple email regex for validation
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast.error("Please enter a valid email address");
+      setUploading(false);
+      return;
+    }
+    if (!phone.trim()) {
+      toast.error("Phone number is required");
+      setUploading(false);
+      return;
+    }
+    if (!dis.trim()) {
+      toast.error("Description is required");
+      setUploading(false);
+      return;
+    }
+
     const formData = new FormData();
     formData.append("file", file);
     formData.append("name", fName + " " + lName);
@@ -604,10 +637,10 @@ const UploadForm = ({ slug }) => {
     formData.append(
       "eventType",
       selectedTheme === "shots"
-        ? "short"
-        : selectedTheme === "brands"
-          ? "brand"
-          : "project"
+      ? "short"
+      : selectedTheme === "brands"
+        ? "brand"
+        : "project"
     );
     formData.append("eventMood", null);
 
@@ -655,7 +688,6 @@ const UploadForm = ({ slug }) => {
           className="w-full flex flex-col md:flex-col lg:flex-row justify-between gap-5 p-2 sm:p-4"
           onSubmit={handleSubmit}
         >
-          {/* left side */}
           <div className="w-full md:w-full lg:w-1/2 flex flex-col gap-2">
             <h1
               className={`uppercase text-2xl text-start sm:text-5xl font-semibold ${textColor}`}
@@ -676,11 +708,10 @@ const UploadForm = ({ slug }) => {
                 <div
                   onClick={() => handleRadioChange("shots")}
                   className={`cursor-pointer transition-all duration-300 ${selectedRadio === "shots"
-                      ? "w-[100px] md:w-[120px] lg:w-[200px]"
-                      : "w-[80px] md:w-[120px] lg:w-[160px]"
+                    ? "w-[100px] md:w-[120px] lg:w-[200px]"
+                    : "w-[80px] md:w-[120px] lg:w-[160px]"
                     }`}
                 >
-                  
                   <Image
                     src="/image 7.png"
                     width={400}
@@ -700,8 +731,8 @@ const UploadForm = ({ slug }) => {
                 <div
                   onClick={() => handleRadioChange("brands")}
                   className={`cursor-pointer transition-all duration-300 ${selectedRadio === "brands"
-                      ? "w-[100px] md:w-[120px] lg:w-[200px]"
-                      : "w-[80px] md:w-[120px] lg:w-[160px]"
+                    ? "w-[100px] md:w-[120px] lg:w-[200px]"
+                    : "w-[80px] md:w-[120px] lg:w-[160px]"
                     }`}
                 >
                   <Image
@@ -723,8 +754,8 @@ const UploadForm = ({ slug }) => {
                 <div
                   onClick={() => handleRadioChange("products")}
                   className={`cursor-pointer transition-all duration-300 ${selectedRadio === "products"
-                      ? "w-[100px] md:w-[120px] lg:w-[200px]"
-                      : "w-[80px] md:w-[120px] lg:w-[160px]"
+                    ? "w-[100px] md:w-[120px] lg:w-[200px]"
+                    : "w-[80px] md:w-[120px] lg:w-[160px]"
                     }`}
                 >
                   <Image
@@ -749,6 +780,31 @@ const UploadForm = ({ slug }) => {
               <br />
 
               {description}
+            </div>
+            <div className="mt-5">
+              <div className="mt-8">
+                <button
+                  type="button"
+                  className={`w-full px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-all duration-200
+                    ${selectedRadio === "shots" ? "bg-[#000] text-[#f7e114]"
+                      : selectedRadio === "brands" ? "bg-[#000] text-[#ea4747]"
+                        : selectedRadio === "products" ? "bg-[#000] text-[#00d3c8]"
+                          : "bg-primary text-white"
+                    }`}
+                  onClick={() => {
+                    // Redirect to the corresponding URL based on selectedRadio
+                    if (selectedRadio === "shots") {
+                      window.location.href = "/winnersshot";
+                    } else if (selectedRadio === "brands") {
+                      window.location.href = "/winnersbrand";
+                    } else if (selectedRadio === "products") {
+                      window.location.href = "/winnersproduct";
+                    }
+                  }}
+                >
+                  Past Winners
+                </button>
+              </div>
             </div>
             <h1
               className={`uppercase text-xl text-start sm:text-2xl font-bold mt-5 ${textColor}`}
@@ -884,10 +940,9 @@ const UploadForm = ({ slug }) => {
                       id="theme"
                       name="theme"
                       className="block w-full px-3 py-2 rounded-lg border-0 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                      // onChange={(event) => setSelectedRadio(event.target.value)}
                       value={selectedTheme}
                       onChange={(event) => setSelectedTheme(event.target.value)}
-                      disabled //If you want selectable remove this. else add this
+                      disabled
                     >
                       <option value="shots">Shots for Life</option>
                       <option value="brands">Brands for Life</option>
@@ -895,36 +950,6 @@ const UploadForm = ({ slug }) => {
                     </select>
                   </div>
                 </div>
-
-                {/* <div className="col-span-full">
-                  <label
-                    htmlFor="Moods"
-                    className="block text-sm font-medium leading-6 text-white"
-                  >
-                    Select your Mood (Theme)
-                  </label>
-                  <div className="mt-2 relative rounded-md shadow-sm">
-                    <select
-                      id="Moods"
-                      name="Moods"
-                      className="block w-full px-3 py-2 rounded-lg border-0 outline-none text-gray-900 shadow-sm placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                      // onChange={(event) => setSelectedRadio(event.target.value)}
-                      value={selectedMood}
-                      onChange={(event) => setSelectedMood(event.target.value)}
-                    >
-                      <option value="eternal">Eternal</option>
-                      <option value=" endlesssummer">Endless Summer</option>
-                      <option value="urbansoul">Urban Soul</option>
-                      <option value="theWhim">The Whim</option>
-                      <option value="fantasy">Fantasy</option>
-                      <option value="crazyabout">Crazy About</option>
-                      <option value="nothinghidden">Nothing Hidden</option>
-                      <option value="wheretheairflows">Where The Air Flows</option>
-                      <option value="coolthings">Cool things</option>
-                      <option value="Wonderland">Wonderland</option>
-                    </select>
-                  </div>
-                </div> */}
 
                 <div className="col-span-full">
                   <label
@@ -947,47 +972,6 @@ const UploadForm = ({ slug }) => {
                 </div>
 
                 <div className="col-span-full">
-                  {/* <label
-                    htmlFor="cover-photo"
-                    className="block text-sm font-medium leading-6 text-white"
-                  >
-                    Upload your File
-                  </label>
-                  <div className="mt-2 flex flex-col items-center justify-center rounded-lg border border-dashed border-white/35 px-6 py-10">
-                    <CloudArrowUpIcon
-                      className="mx-auto h-12 w-12 text-gray-300"
-                      aria-hidden="true"
-                    />
-                    <div className="mt-4 flex text-sm leading-6 text-gray-600">
-                      <label
-                        htmlFor="file-upload"
-                        className="relative cursor-pointer rounded-xl font-semibold text-white/75 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-white transition-all duration-200"
-                      >
-                        <span>Browse</span>
-                        <input
-                          id="file-upload"
-                          name="file-upload"
-                          type="file"
-                          className="sr-only"
-                          onChange={handleFileChange}
-                        />
-                      </label>
-                      <p className="pl-1 text-white/75">or drag and drop</p>
-                    </div>
-                    <p className="text-xs leading-5 text-center text-white/75">
-                      Supported formats: JPEG, PNG, GIF, MP4, PDF, PSD, AI,
-                      WORD, PPT
-                    </p>
-                  </div>
-                  <div className="mt-2 flex flex-col gap-4">
-                    <span className="text-sm font-medium text-white">
-                      Uploading - 3/3 files
-                    </span>
-                    <span className="text-sm font-medium text-white">
-                      Uploaded
-                    </span>
-                  </div> */}
-
                   <div className="w-full flex flex-col gap-2">
                     <label htmlFor="file-upload" className="text-white">
                       Upload your File
