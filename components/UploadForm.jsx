@@ -1025,7 +1025,7 @@ const UploadForm = ({ slug }) => {
               <button
                 type="submit"
                 className={`text-sm w-full font-semibold leading-6 px-6 py-2 rounded-full text-white hover:bg-primary-hover transition-all duration-200 ${
-                  uploading || !isFileReady ? 'bg-primary-hover cursor-not-allowed' : 'bg-primary'
+                  uploading || !isFileReady ? 'bg-black cursor-not-allowed' : 'bg-primary'
                 }`}
                 disabled={uploading || !isFileReady}
               >
