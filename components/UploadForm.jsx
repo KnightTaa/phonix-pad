@@ -781,8 +781,33 @@ const UploadForm = ({ slug }) => {
 
               {description}
             </div>
-            <div className="mt-5">
-              <div className="mt-8">
+            <div className="mt-1">
+              <div className="mt-2">
+                <button
+                  type="button"
+                  className={`w-full px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-all duration-200
+                    ${selectedRadio === "shots" ? "bg-[#000] text-[#f7e114]"
+                      : selectedRadio === "brands" ? "bg-[#000] text-[#ea4747]"
+                        : selectedRadio === "products" ? "bg-[#000] text-[#00d3c8]"
+                          : "bg-primary text-white"
+                    }`}
+                  onClick={() => {
+                    // Redirect to the corresponding URL based on selectedRadio
+                    if (selectedRadio === "shots") {
+                      window.location.href = "/winnersshot2025";
+                    } else if (selectedRadio === "brands") {
+                      window.location.href = "/winnersbrand2025";
+                    } else if (selectedRadio === "products") {
+                      window.location.href = "/winnersproduct2025";
+                    }
+                  }}
+                >
+                  Past Winners 2025
+                </button>
+              </div>
+            </div>
+            <div className="mt-1">
+              <div className="mt-2">
                 <button
                   type="button"
                   className={`w-full px-6 py-2 rounded-full font-semibold hover:opacity-90 transition-all duration-200
@@ -802,7 +827,7 @@ const UploadForm = ({ slug }) => {
                     }
                   }}
                 >
-                  Past Winners
+                  Past Winners 2024
                 </button>
               </div>
             </div>

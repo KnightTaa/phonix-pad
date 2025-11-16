@@ -27,16 +27,7 @@ const WinnersShot = () => {
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-6">
           {/* Left logos */}
-          {/* <div className="flex flex-row sm:flex-row items-center justify-center sm:justify-start mb-4 gap-4">
-            <Link href={"/apply/shots"}>
-              <Image
-                src={"/logo25.png"}
-                width={100}
-                height={100}
-                alt={"logo"}
-                className="w-[80px] sm:w-[110px] h-auto p-2"
-              />
-            </Link>
+          <div className="flex flex-row sm:flex-row items-center justify-center sm:justify-start mb-4 gap-4">
             <Link href={"#"}>
               <Image
                 src={"/logo24.png"}
@@ -46,7 +37,17 @@ const WinnersShot = () => {
                 className="w-[120px] sm:w-[140px] h-auto p-2"
               />
             </Link>
-          </div> */}
+            <Link href={"/winnersshot2025"}>
+              <Image
+                src={"/logo25.png"}
+                width={100}
+                height={100}
+                alt={"logo"}
+                className="w-[80px] sm:w-[110px] h-auto p-2"
+              />
+            </Link>
+            
+          </div>
           {/* Center trophy and title */}
           <div className="flex flex-row sm:flex-row items-center justify-center sm:justify-start mb-4 gap-4">
             <Image
