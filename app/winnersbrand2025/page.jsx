@@ -1,0 +1,151 @@
+"use client";
+import Wrapper from "@/components/Wrapper";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import FileViewer from "@/components/FileViewer";
+
+const WinnersBrand = () => {
+  return (
+    <div className="w-full min-h-screen flex flex-col sm:flex-row relative">
+      {/* Sidebar */}
+      <div className="w-full max-h-screen sticky top-0 sm:w-[7.5%] z-50 bg-black">
+        <div className="w-full h-full rotate-0 sm:-rotate-[90deg] flex items-center justify-center">
+          <Link href={"/"}>
+            <Image
+              src={"/image 1.png"}
+              width={400}
+              height={400}
+              alt={"logo"}
+              className="w-[150px] sm:w-[250px] h-auto p-5 sm:p-0"
+            />
+          </Link>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="w-full sm:w-[92.5%] bg-[#ea4747]">
+        {/* Header */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-6">
+          {/* Logos */}
+          <div className="flex flex-col sm:flex-row items-center sm:justify-start justify-center mb-4 gap-2">
+            <Link href={"/winnersbrand"}>
+              <Image
+                src={"/logo24.png"}
+                width={100}
+                height={100}
+                alt={"logo"}
+                className="w-[80px] sm:w-[110px] h-auto p-5 sm:p-0 sm:mr-4"
+              />
+            </Link>
+            <Link href={"#"}>
+              <Image
+                src={"/logo25.png"}
+                width={100}
+                height={100}
+                alt={"logo"}
+                className="w-[120px] sm:w-[140px] h-auto p-5 sm:p-0"
+              />
+            </Link>
+          </div>
+          {/* Title */}
+          <div className="flex flex-row sm:flex-row items-center justify-center sm:justify-start mb-4 gap-4">
+            <Image
+              src={"/image 10.png"}
+              width={100}
+              height={100}
+              alt="trophy"
+              className="w-[80px] md:w-[100px] xl:w-[120px] h-auto p-5 sm:p-0 sm:mr-4"
+            />
+            <h1 className="text-4xl xl:text-8xl font-semibold sm:ml-4 mt-4 sm:mt-0 text-center sm:text-left">
+              WINNERS
+            </h1>
+          </div>
+        </div>
+
+        {/* Winners Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-6">
+          {/* Winner */}
+          <div className="relative text-center p-4">
+            <span className="absolute left-0 -rotate-90 origin-left text-black font-bold text-2xl top-1/2 -translate-y-1/2">
+              Winner
+            </span>
+            <Image
+              src={"Brands_for_Life_2025/wi.jpeg"}
+              width={400}
+              height={400}
+              alt="Winner"
+              className="w-[140px] h-[140px] object-cover rounded-full mx-auto"
+            />
+            <h2 className="text-2xl font-bold mt-4">Yash Rungta</h2>
+            <p className="text-base">
+               The theme of Connections is often seen as human-to-human, but I wanted to explore how non-living things can also hold profound bonds with us. My submission branding for Organic Pops, a healthy makhana snack embodies connections on multiple levels. First, it reconnects us with nostalgia: makhana has always been a part of Indian households, rituals, and everyday snacking, yet was forgotten until recently. It also represents a connection to farmers, whose skill and tradition bring this food to life, and whose story is reflected in the brand’s identity. On a contemporary level, it connects to the conscious consumer, who seeks healthier alternatives in a world dominated by processed snacks. The branding is not just about a logo or guidelines, but about creating a cohesive visual and emotional language one that bridges culture, heritage, and modern lifestyle. In essence, Organic Pops is a story of connections past, present, and future.
+             </p>
+            <div className="p-4">
+              <FileViewer fileUrl="Brands_for_Life_2025/w.pdf" />
+            </div>
+          </div>
+
+          {/* 1st Runner-up */}
+          <div className="relative text-center p-4">
+            <span className="absolute left-0 -rotate-90 origin-left text-black font-bold text-2xl top-1/2 -translate-y-1/2">
+              1st Runner-up
+            </span>
+            <Image
+              src={"Brands_for_Life_2025/2i.jpg"}
+              width={400}
+              height={400}
+              alt="1st Runner-up"
+              className="w-[140px] h-[140px] object-cover rounded-full mx-auto"
+            />
+            <h2 className="text-2xl font-bold mt-4">Miley Singh</h2>
+            <p className="text-base">
+              I chose a “by women, for women” cab service because of the comfort and ease I have experienced in women-only spaces. These environments create a sense of trust that allows genuine conversations to happen naturally. A cab ride with a woman driver can feel less like a transaction and more like a shared moment, where passengers feel understood and safe. Such experiences turn everyday travel into an opportunity to connect, making the journey as meaningful as the destination
+            </p>
+            <div className="p-4">
+              <FileViewer fileUrl="Brands_for_Life_2025/2.pdf" />
+            </div>
+          </div>
+
+          {/* 2nd Runner-up */}
+          <div className="relative text-center p-4">
+            <span className="absolute left-0 -rotate-90 origin-left text-black font-bold text-2xl top-1/2 -translate-y-1/2">
+              2nd Runner-up
+            </span>
+            <Image
+              src={"Brands_for_Life_2025/3i.jpeg"}
+              width={400}
+              height={400}
+              alt="2nd Runner-up"
+              className="w-[140px] h-[140px] object-cover rounded-full mx-auto"
+            />
+            <h2 className="text-2xl font-bold mt-4">G.H.G. Sathsarani</h2>
+            <p className="text-base">
+              Music & Human Connection I created Sithara, a music studio brand built on the idea that music is the universal language of connection. This project was designed to capture the soul of music and its power to unite people across cultures and generations. It is a creative space where every note is crafted not just to be heard, but to be truly felt.
+            </p>
+            <div className="p-4">
+              <FileViewer fileUrl="Brands_for_Life_2025/3.pdf" />
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 p-6">
+          <a href="/PAD 2025 Booklet.pdf" download={true}>
+            <div className="flex items-center justify-center text-center">
+              {/* <Image
+                src={"/Clicktodownload/PAD Awards results announcement (1).svg"}
+                width={100}
+                height={100}
+                alt="trophy"
+                className="w-[80px] md:w-[100px] xl:w-[120px] h-auto"
+              /> */}
+              <h1 className="text-xl font-semibold ml-4">Click to <br /> Download</h1>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default WinnersBrand;

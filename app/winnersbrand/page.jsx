@@ -28,17 +28,8 @@ const WinnersBrand = () => {
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-6">
           {/* Logos */}
-          {/* <div className="flex flex-col sm:flex-row items-center sm:justify-start justify-center mb-4 gap-2">
-            <Link href={"/apply/brands"}>
-              <Image
-                src={"/logo25.png"}
-                width={100}
-                height={100}
-                alt={"logo"}
-                className="w-[80px] sm:w-[110px] h-auto p-5 sm:p-0 sm:mr-4"
-              />
-            </Link>
-            <Link href={"#"}>
+          <div className="flex flex-col sm:flex-row items-center sm:justify-start justify-center mb-4 gap-2">
+             <Link href={"#"}>
               <Image
                 src={"/logo24.png"}
                 width={100}
@@ -47,7 +38,17 @@ const WinnersBrand = () => {
                 className="w-[120px] sm:w-[140px] h-auto p-5 sm:p-0"
               />
             </Link>
-          </div> */}
+            <Link href={"/winnersbrand2025"}>
+              <Image
+                src={"/logo25.png"}
+                width={100}
+                height={100}
+                alt={"logo"}
+                className="w-[80px] sm:w-[110px] h-auto p-5 sm:p-0 sm:mr-4"
+              />
+            </Link>
+           
+          </div>
           {/* Title */}
           <div className="flex flex-row sm:flex-row items-center justify-center sm:justify-start mb-4 gap-4">
             <Image
