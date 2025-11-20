@@ -65,7 +65,7 @@ const Winnersproduct = () => {
               Special Mention
             </span>
             <Image
-              src={"Products_for_Life_2025/Kaveeshavihangi.jpg"}
+              src={"Products_for_Life_2025/Default.png"}
               width={400}
               height={400}
               alt="Winner"
@@ -76,7 +76,7 @@ const Winnersproduct = () => {
               My product design, Kindred Mugs brings the theme of connection to life by making warmth dependent on togetherness. It reflects how closeness, both emotional and physical, is essential to activating something special — in this case, the heat that keeps your drink warm. Just like our relationships, the warmth doesn’t start until both ends connect.
             </p>
             <div className="p-4">
-              <FileViewer fileUrl="Products_for_Life_2025/1.pdf" />
+              <FileViewer fileUrl="Products_for_Life_2025/3.pdf" />
             </div>
           </div>
 
@@ -107,7 +107,7 @@ const Winnersproduct = () => {
             Special Mention
           </span>
           <Image
-            src={"users/Images/Default.png"}
+            src={"users/Images/Kaveeshavihangi.jpg"}
             width={400}
             height={400}
             alt="2nd Runner-up"
@@ -118,7 +118,7 @@ const Winnersproduct = () => {
              The Sri Lankan black pepper industry faces a significant challenge as its unique flavor and aroma are often lost during local storage at the farmer level. This drawback reduces the competitiveness of Sri Lankan pepper in international markets, despite its higher potential, ultimately lowering farmers’ profits. Hump Storage is a specialized solution designed for small-scale pepper farmers to address this issue directly. Crafted from wood and cane, it offers a balance of functionality, durability, and natural aesthetics, ensuring both practicality and cultural relevance. Beyond solving the storage problem, Hump Storage also minimizes inefficiencies in harvesting, making it an integrated support for farmers. More importantly, it transforms storage from a mere function into a meaningful connection—linking farmers to effective preservation, protecting the flavor, aroma, and quality of their pepper, and ensuring labor translates into fair profit. In essence, Hump Storage safeguards not just pepper, but also dignity, effort, and livelihoods.
           </p>
           <div className="p-4">
-            <FileViewer fileUrl="Products_for_Life_2025/3.pdf" />
+            <FileViewer fileUrl="Products_for_Life_2025/1.pdf" />
           </div>
         </div>
         </div>
